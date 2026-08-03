@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Pawnbroker
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: 4f951b31ccac41f088010fe13a03a343
+  Intro: Three brass balls hang over a hole in the wall. "Cards ARE money," rasps
+    the hole. "I give fair rates for luck you aren't using."
+  Options:
+  - Label: Pawn a card (exile 1 from your discard, +8g)
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238871
+    - rid: 3602687376965238872
+    ResultText: The card vanishes into the hole. Coins roll out.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Keep your luck
+    GoldCost: 0
+    Effects: []
+    ResultText: '"Sentiment. It''s why the House always wins."'
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238871
+      type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Amount: 8
+    - rid: 3602687376965238872
+      type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Kind: 1
+        Count: 1

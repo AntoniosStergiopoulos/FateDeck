@@ -61,9 +61,24 @@ namespace FateDeck.Runtime.Effects.Enemies
                 return 40;
             }
 
+            if (force == catalog.Gloom)
+            {
+                return 45;
+            }
+
             if (force == catalog.Flame || force == catalog.FlamePlus)
             {
                 return 30;
+            }
+
+            if (force == catalog.Mirror || force == catalog.Key || force == catalog.Wisp)
+            {
+                return 25;
+            }
+
+            if (force == catalog.Glass || force == catalog.TempestPlus)
+            {
+                return 5;
             }
 
             return 10;

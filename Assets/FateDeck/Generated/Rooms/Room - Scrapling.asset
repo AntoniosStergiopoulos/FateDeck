@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Scrapling
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 32a962fb16354c219790cdd4bafa833e
+    _value: 3fa60719d15442f69d09a26f61a26635
   Blurb: A Scrapling drags its shield of dead letters.
   Encounter: {fileID: 11400000, guid: 8726dc20bc741c749ad33776ce83a5f0, type: 2}
   IsElite: 0

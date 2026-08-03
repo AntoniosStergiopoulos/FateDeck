@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Wax Cherubs
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 0df1cd56feed48169854b07320d62549
+    _value: 6efc43f9c46b4147b0e9d16015db7d4e
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: af228d3b3790e69488bf6a30b8f19d1f, type: 2}

@@ -8,7 +8,7 @@ namespace FateDeck.Editor
     {
         private static void FillCatalog(FateContentCatalog catalog, FateRulesDefinition rules, Fields fields,
             Forces forces, List<CardDefinition> fateCards, Zones zones, Layouts layouts, Items items,
-            CardDefinition gambler, Rooms rooms)
+            List<CardDefinition> heroes, Rooms rooms)
         {
             catalog.Rules = rules;
 
@@ -24,6 +24,7 @@ namespace FateDeck.Editor
             catalog.CannotPocketField = fields.CannotPocket;
             catalog.CannotStackField = fields.CannotStack;
             catalog.ExileWhenMilledField = fields.ExileWhenMilled;
+            catalog.ExileAfterFlipField = fields.ExileAfterFlip;
             catalog.ForceColorField = fields.ForceColor;
             catalog.ForceGlyphField = fields.ForceGlyph;
 
@@ -60,6 +61,17 @@ namespace FateDeck.Editor
             catalog.Echo = forces.Echo;
             catalog.Void = forces.Void;
             catalog.Doom = forces.Doom;
+            catalog.Tempest = forces.Tempest;
+            catalog.TempestPlus = forces.TempestPlus;
+            catalog.Serpent = forces.Serpent;
+            catalog.SerpentPlus = forces.SerpentPlus;
+            catalog.Glass = forces.Glass;
+            catalog.Gloom = forces.Gloom;
+            catalog.Key = forces.Key;
+            catalog.Mirror = forces.Mirror;
+            catalog.Anchor = forces.Anchor;
+            catalog.Rust = forces.Rust;
+            catalog.Wisp = forces.Wisp;
 
             catalog.FateCardSchema = fields.FateCardSchema;
             catalog.EnemySchema = fields.EnemySchema;
@@ -86,7 +98,7 @@ namespace FateDeck.Editor
             catalog.ItemLayout = layouts.Item;
 
             catalog.Heroes.Clear();
-            catalog.Heroes.Add(gambler);
+            catalog.Heroes.AddRange(heroes);
 
             catalog.CharmPool.Clear();
             catalog.CharmPool.AddRange(items.Charms);
@@ -96,7 +108,9 @@ namespace FateDeck.Editor
             catalog.Biome1Rooms.Clear();
             catalog.Biome1Rooms.AddRange(rooms.Pool);
             catalog.Biome1Opening = rooms.Opening;
-            catalog.Biome1Elite = rooms.Elite;
+            catalog.Biome1Elites.Clear();
+            catalog.Biome1Elites.AddRange(rooms.Elites);
+            catalog.Biome1Elite = rooms.Elites.Count > 0 ? rooms.Elites[0] : null;
             catalog.Biome1Boss = rooms.Boss;
             catalog.ForgeShrine = rooms.Forge;
         }

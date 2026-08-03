@@ -9,13 +9,17 @@ namespace FateDeck.Runtime.Effects.Gameplay
     /// overlay (healing which wound is a build decision); headless it heals oldest first.
     /// </summary>
     [Serializable]
-    public class HealWoundsEffect : FateEffect
+    public class HealWoundsEffect : FateEffect, IActionLawPreview
     {
         public int Count = 3;
 
         public override string GetName() => "Heal Wounds";
 
         public override string GetDescription() => $"heal {Count} (return wound cards to the deck)";
+
+        public string PreviewNote => $"heal {Count}";
+
+        public double PreviewForce(double force) => force;
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {

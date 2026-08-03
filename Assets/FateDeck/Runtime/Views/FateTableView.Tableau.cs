@@ -89,7 +89,7 @@ namespace FateDeck.Runtime.Views
             var row = new VisualElement();
             row.style.flexDirection = FlexDirection.Row;
             row.style.flexWrap = Wrap.Wrap;
-            row.style.maxWidth = 320;
+            row.style.maxWidth = 300;
 
             if (session.Deck.Wound.Count == 0)
             {
@@ -97,11 +97,12 @@ namespace FateDeck.Runtime.Views
                 return row;
             }
 
+            float tileWidth = session.Deck.Wound.Count > 5 ? 42 : 52;
             foreach (CardInstance wound in session.Deck.Wound.Cards)
             {
                 CardInstance captured = wound;
                 bool pickable = _woundPicksRemaining > 0;
-                VisualElement tile = CardElementBuilder.ForceTile(_catalog, captured, 52,
+                VisualElement tile = CardElementBuilder.ForceTile(_catalog, captured, tileWidth,
                     pickable ? () => OnWoundClicked(captured) : (System.Action)null,
                     pickable ? "mend?" : null);
                 if (pickable)
@@ -112,7 +113,12 @@ namespace FateDeck.Runtime.Views
                 row.Add(tile);
             }
 
-            return row;
+            // Deep wound rows scroll instead of stretching the tableau off screen.
+            var scroll = new ScrollView(ScrollViewMode.Vertical);
+            scroll.style.maxHeight = 118;
+            scroll.style.maxWidth = 316;
+            scroll.Add(row);
+            return scroll;
         }
 
         private VisualElement BuildPocketSection(FateSession session)
@@ -192,13 +198,22 @@ namespace FateDeck.Runtime.Views
         private void RefreshLeftColumn(FateSession session)
         {
             _leftColumn.Clear();
+            _leftColumn.Add(BuildHeroPanel(session));
 
             VisualElement composition = FateUi.MakePanel($"DRAW PILE · {session.Deck.Draw.Count} CARDS");
+            composition.style.marginTop = 8;
             int total = session.Deck.Draw.Count;
+
+            var rows = FateUi.Column(0);
             foreach (KeyValuePair<MetadataEntry, int> pair in session.Deck.DrawComposition())
             {
-                composition.Add(CompositionRow(pair.Key, pair.Value, total));
+                rows.Add(CompositionRow(pair.Key, pair.Value, total));
             }
+
+            var scroll = new ScrollView(ScrollViewMode.Vertical);
+            scroll.style.maxHeight = 220;
+            scroll.Add(rows);
+            composition.Add(scroll);
 
             if (total == 0)
             {
@@ -216,6 +231,58 @@ namespace FateDeck.Runtime.Views
                 odds.style.marginTop = 8;
                 _leftColumn.Add(odds);
             }
+        }
+
+        /// <summary>The hero card: who you are, what your passive does, and its live charges.</summary>
+        private VisualElement BuildHeroPanel(FateSession session)
+        {
+            VisualElement panel = FateUi.MakePanel();
+            CardInstance hero = session.Hero;
+            string heroName = hero != null ? hero.DisplayName : "THE NAMELESS";
+            Label name = FateUi.Text(heroName.ToUpperInvariant(), 14, FateUi.GoldLeaf);
+            name.style.unityFontStyleAndWeight = FontStyle.Bold;
+            panel.Add(name);
+
+            string passive = hero?.Definition.GetText(_catalog.DescriptionField);
+            if (!string.IsNullOrEmpty(passive))
+            {
+                panel.Add(FateUi.Text(passive, 12, FateUi.BoneDim));
+            }
+
+            var chips = new VisualElement();
+            chips.style.flexDirection = FlexDirection.Row;
+            chips.style.flexWrap = Wrap.Wrap;
+            chips.style.marginTop = 4;
+
+            if (session.DoubleDrawCharges > 0)
+            {
+                chips.Add(FateUi.Chip($"Draw-2 ready x{session.DoubleDrawCharges}", FateUi.Verdigris, 11));
+            }
+
+            if (session.NextPlayerActionBonus > 0)
+            {
+                chips.Add(FateUi.Chip($"Next action +{session.NextPlayerActionBonus:0.#}", FateUi.GoldLeaf, 11));
+            }
+
+            if (session.Deck.ExtraTaxNextReshuffle != 0)
+            {
+                int extra = session.Deck.ExtraTaxNextReshuffle;
+                chips.Add(FateUi.Chip(extra > 0 ? $"Next reshuffle +{extra} Doom" : $"Next reshuffle {extra} Doom",
+                    extra > 0 ? FateUi.Blood : FateUi.Verdigris, 11));
+            }
+
+            if (chips.childCount > 0)
+            {
+                panel.Add(chips);
+            }
+            else
+            {
+                Label idle = FateUi.Text("passive charges appear here when ready", 10, FateUi.BoneDim);
+                idle.style.marginTop = 2;
+                panel.Add(idle);
+            }
+
+            return panel;
         }
 
         private VisualElement CompositionRow(MetadataEntry force, int count, int total)
@@ -257,22 +324,30 @@ namespace FateDeck.Runtime.Views
                 return;
             }
 
-            VisualElement panel = FateUi.MakePanel("RELICS");
+            VisualElement panel = FateUi.MakePanel($"RELICS · {session.RelicZone.Count}");
             panel.name = "relic-panel";
             panel.style.marginBottom = 8;
+
+            var list = FateUi.Column(0);
             foreach (CardInstance relic in session.RelicZone.Cards)
             {
                 Label name = FateUi.Text(relic.DisplayName, 13, FateUi.GoldLeaf);
                 name.style.unityFontStyleAndWeight = FontStyle.Bold;
-                panel.Add(name);
+                list.Add(name);
                 string rules = relic.Definition.GetText(_catalog.DescriptionField);
                 if (!string.IsNullOrEmpty(rules))
                 {
                     Label description = FateUi.Text(rules, 12, FateUi.BoneDim);
                     description.style.marginBottom = 4;
-                    panel.Add(description);
+                    list.Add(description);
                 }
             }
+
+            // Many relics scroll inside the panel rather than crowding out the event log.
+            var scroll = new ScrollView(ScrollViewMode.Vertical);
+            scroll.style.maxHeight = 190;
+            scroll.Add(list);
+            panel.Add(scroll);
 
             _rightColumn.Insert(0, panel);
         }
@@ -315,15 +390,8 @@ namespace FateDeck.Runtime.Views
 
         private void UpdateWoundPrompt()
         {
-            if (_woundPicksRemaining > 0)
-            {
-                SetPrompt($"Choose {_woundPicksRemaining} wound{(_woundPicksRemaining == 1 ? "" : "s")} to mend — "
-                    + "click highlighted cards in the Wound Row below.");
-            }
-            else
-            {
-                MarkScreenDirty();
-            }
+            // BuildPromptArea renders the pending-pick prompt; a rebuild keeps it alive.
+            MarkScreenDirty();
         }
     }
 }

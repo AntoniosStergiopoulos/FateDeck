@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Bonesetter
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: 5647272e0a98494d9e0711cd5e703a0f
+  Intro: A folding chair, a bag of splints, hands like old rope. "Wounds, is it?
+    Sit. The House breaks; I set."
+  Options:
+  - Label: 'Full setting (5g): heal 3 wounds'
+    GoldCost: 5
+    Effects:
+    - rid: 3602687376965238893
+    ResultText: Three cards crack back into place.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: 'Quick look (free): heal 1 wound'
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238894
+    ResultText: '"That one was just dislocated."'
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Walk it off
+    GoldCost: 0
+    Effects: []
+    ResultText: '"They all say that."'
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238893
+      type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 3
+    - rid: 3602687376965238894
+      type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1

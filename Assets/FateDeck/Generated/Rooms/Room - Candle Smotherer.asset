@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c03dae9770d154682b5b6468f2eb23, type: 3}
+  m_Name: Room - Candle Smotherer
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
+  _id:
+    _value: b249bb2443064b0390cef06e6f42ebfe
+  Blurb: Two damp fingers the size of oars. Block means little here.
+  Encounter: {fileID: 11400000, guid: 18c72d936e61860408399f0bd4f9bfbd, type: 2}
+  IsElite: 0
+  RiggedTopForce: {fileID: 0}
+  CharmDropChance: 0.2

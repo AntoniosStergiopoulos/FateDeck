@@ -25,6 +25,7 @@ MonoBehaviour:
   CannotPocketField: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
   CannotStackField: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
   ExileWhenMilledField: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
+  ExileAfterFlipField: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
   ForceColorField: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
   ForceGlyphField: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
   HpField: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
@@ -58,6 +59,17 @@ MonoBehaviour:
   Echo: {fileID: 11400000, guid: 96b672feb50046845ab3541624c206b3, type: 2}
   Void: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
   Doom: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+  Tempest: {fileID: 11400000, guid: 5beee04a9ced1654093b94fcd64f4960, type: 2}
+  TempestPlus: {fileID: 11400000, guid: 97b461dba6ad82c468a91e05d07ba582, type: 2}
+  Serpent: {fileID: 11400000, guid: bd84f1f853c97334f9baee658430330d, type: 2}
+  SerpentPlus: {fileID: 11400000, guid: 586dc03f7ab2aa14fb7225734e9e62c5, type: 2}
+  Glass: {fileID: 11400000, guid: d291a432e73b53e44872c2856ea81e91, type: 2}
+  Gloom: {fileID: 11400000, guid: 7c2e376943398b5458653cbc41678e04, type: 2}
+  Key: {fileID: 11400000, guid: 95d40b2e4f1510641b796a4fc25b9c97, type: 2}
+  Mirror: {fileID: 11400000, guid: bede990ed398007468271708ce547909, type: 2}
+  Anchor: {fileID: 11400000, guid: cd1a6fb9add101043bdb9f233683592f, type: 2}
+  Rust: {fileID: 11400000, guid: 2b51f101e412a2549a2f182793ceafc4, type: 2}
+  Wisp: {fileID: 11400000, guid: 76fff45ed69ab2a418ef76713ed4b83a, type: 2}
   FateCardSchema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   EnemySchema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
   RelicSchema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
@@ -75,6 +87,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5bb3e4f3fb6c6a409696a185cd8eef6, type: 2}
   - {fileID: 11400000, guid: da21d08d9bd77534ba2c5625c7abe564, type: 2}
   - {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
+  - {fileID: 11400000, guid: fccd8d5f4aea61c4ca969324cff2e782, type: 2}
+  - {fileID: 11400000, guid: fa44d04c5b9e666489aac32233354adc, type: 2}
+  - {fileID: 11400000, guid: 00eb5b3c5203b294b9381de80dc1d2d2, type: 2}
+  - {fileID: 11400000, guid: b63eb3a65c2f4d744a018477b89d6a5d, type: 2}
+  - {fileID: 11400000, guid: 2fa61bcb0e8d3654ba2c53781f1048b1, type: 2}
+  - {fileID: 11400000, guid: dcee8b0df9ff6ee4ebea14510d2296c4, type: 2}
+  - {fileID: 11400000, guid: 8c40f0cec14eda34fb04d0d7fc71108d, type: 2}
+  - {fileID: 11400000, guid: a6440d4acf1bcb946b138af6e06b3732, type: 2}
+  - {fileID: 11400000, guid: 6c8aa7f695ba5384daaaea02e7521f1e, type: 2}
+  - {fileID: 11400000, guid: 7ff04a394f3ade94c9549cd511416b82, type: 2}
+  - {fileID: 11400000, guid: bda0a4dc64017d0498b3d94d7cfaf26a, type: 2}
   DrawPile: {fileID: 11400000, guid: 47f0342b175bf29449786ad0c7d7005c, type: 2}
   DiscardPile: {fileID: 11400000, guid: 70a706eb61e9ae241896f5b8146df153, type: 2}
   WoundRow: {fileID: 11400000, guid: 6d0c82b050ecdb04a87a5daba568846a, type: 2}
@@ -91,6 +114,10 @@ MonoBehaviour:
   Panel: {fileID: 11400000, guid: 04c7d211d2b516d4aad01d5c31c0694f, type: 2}
   Heroes:
   - {fileID: 11400000, guid: 77517b371a4d9bb458781d258c38ea51, type: 2}
+  - {fileID: 11400000, guid: e20a486fec7177b4884fad0fc7520727, type: 2}
+  - {fileID: 11400000, guid: f96556792d1c2044fbd6b20e5ec9dfe5, type: 2}
+  - {fileID: 11400000, guid: 9baeabc8f1ff4cb47bd3c75170806382, type: 2}
+  - {fileID: 11400000, guid: fd573f0421d1a5d4e994268e03c0260f, type: 2}
   CharmPool:
   - {fileID: 11400000, guid: 5bc8c0ca16cd74145b4a8b17abca67a6, type: 2}
   - {fileID: 11400000, guid: 8340d62d553a2c44d890dbf17980f46f, type: 2}
@@ -98,6 +125,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f090225969a749249a827fea564e4429, type: 2}
   - {fileID: 11400000, guid: 600b0f55192334f46822f70abc18db1a, type: 2}
   - {fileID: 11400000, guid: 6c252af1bb117ea4ca2b1519d2bcbf80, type: 2}
+  - {fileID: 11400000, guid: a431fb95b16601b4bae5a73c07b6d41a, type: 2}
+  - {fileID: 11400000, guid: ba5812d560ca64a4b8e8a32dbcc09157, type: 2}
+  - {fileID: 11400000, guid: 41e57529f82a1b74da3185fd342b7033, type: 2}
+  - {fileID: 11400000, guid: 134e84b276900824ca53e4f4faebfcaf, type: 2}
+  - {fileID: 11400000, guid: 95c839ed18191a34eaccfc6eff9caec2, type: 2}
+  - {fileID: 11400000, guid: 348a0aec4b7c3644192e891cb3e22dff, type: 2}
+  - {fileID: 11400000, guid: 18b93d35ef7f38c4ea372d73f703f703, type: 2}
+  - {fileID: 11400000, guid: e5c45bbcbe0204e4cafd138105bc58e6, type: 2}
+  - {fileID: 11400000, guid: bdd13be8a32ea4740b75d4d96316635f, type: 2}
+  - {fileID: 11400000, guid: ec4dc45f7dc270b48998673e4c073c0b, type: 2}
+  - {fileID: 11400000, guid: a286341453faa744b9d4b82f9b71cac8, type: 2}
+  - {fileID: 11400000, guid: d06401ad539c0344281c40a9be0f978d, type: 2}
   RelicPool:
   - {fileID: 11400000, guid: d662c1951a555444ba4575ed981ae8de, type: 2}
   - {fileID: 11400000, guid: f31a837f4e4a45c468d2a043c640436e, type: 2}
@@ -105,12 +144,35 @@ MonoBehaviour:
   - {fileID: 11400000, guid: acb1d369b8081534598f2d7e1743b67b, type: 2}
   - {fileID: 11400000, guid: 77caf835553751e4793cfdbddd9ade2a, type: 2}
   - {fileID: 11400000, guid: ad2df7bf925bb2448b1c7896cffc2c98, type: 2}
+  - {fileID: 11400000, guid: 8578607c18ee0d84f8658d0ec3948b90, type: 2}
+  - {fileID: 11400000, guid: 9e67a3fbb607fe24daf8f7a3ae9b90e4, type: 2}
+  - {fileID: 11400000, guid: 4e8408080db24104a8c910628fe8ea2b, type: 2}
+  - {fileID: 11400000, guid: 6fc75101fa528404794fef0becd6fa15, type: 2}
+  - {fileID: 11400000, guid: 416afa2681d5ef04d9a8f864d2296efb, type: 2}
+  - {fileID: 11400000, guid: efca1e89736e5c44085a20e39c06fa45, type: 2}
+  - {fileID: 11400000, guid: 30d946b978f2b684192cf8823bf78b3f, type: 2}
+  - {fileID: 11400000, guid: fbb3771f58019c44e835dc7c9d470be7, type: 2}
+  - {fileID: 11400000, guid: 0ae5b33c03f419a46a9285f59a0d0d17, type: 2}
+  - {fileID: 11400000, guid: 2f334b2f4a7879a44a73853474ad2401, type: 2}
+  - {fileID: 11400000, guid: 87e5e16c659593846a1814e2b97e62b7, type: 2}
+  - {fileID: 11400000, guid: 113fab672f729e64db183e5e5f5982f2, type: 2}
   Biome1Rooms:
   - {fileID: 11400000, guid: 38307bceb5e5a344aa8163cf8aae99b8, type: 2}
   - {fileID: 11400000, guid: 5eb40f863340faf4db4e86d4403caa0b, type: 2}
   - {fileID: 11400000, guid: aa5fb50c4fb0e424ba3923d6eb322bcf, type: 2}
   - {fileID: 11400000, guid: b54447c124d095b42bd79eabff91034d, type: 2}
   - {fileID: 11400000, guid: 0a792ca40ddb3204d9a80b25fa44df5d, type: 2}
+  - {fileID: 11400000, guid: d1b7d1a8858b75447ba2f1b7802886bf, type: 2}
+  - {fileID: 11400000, guid: b1cbd06cdec6f524780d844cd48153c5, type: 2}
+  - {fileID: 11400000, guid: 519780dfc3da2534cabd865802e03bae, type: 2}
+  - {fileID: 11400000, guid: e5347bf95f7381b448f8b75caf8924b2, type: 2}
+  - {fileID: 11400000, guid: 1938f0fe184c2744199baf24ce691065, type: 2}
+  - {fileID: 11400000, guid: babe3bae2672ff44db166aab88adf1be, type: 2}
+  - {fileID: 11400000, guid: 826bace9f7320444d906d3941f667e8a, type: 2}
+  - {fileID: 11400000, guid: 7cea22f6906076b409b499b37bb51028, type: 2}
+  - {fileID: 11400000, guid: 351f16bbe9a3a0a49a82cc54ef54808b, type: 2}
+  - {fileID: 11400000, guid: 13704f7d285c48040a026e02b5a0a7c3, type: 2}
+  - {fileID: 11400000, guid: 6add6cca639e34f488a6b6e06d041502, type: 2}
   - {fileID: 11400000, guid: a3a65d536911c0d479e3581acd4abb71, type: 2}
   - {fileID: 11400000, guid: ce32b439a8c1cdd41bfa6e91f0c0df44, type: 2}
   - {fileID: 11400000, guid: 3af2034b798508b48b63d7dcaacfc067, type: 2}
@@ -119,7 +181,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7a18f4ec27ec2634b9f1e687742d0024, type: 2}
   - {fileID: 11400000, guid: 08b4bcbcf51fe2945a8888a7ce4808e8, type: 2}
   - {fileID: 11400000, guid: e5d1b0cd219818f4ea6df1d87faa2b6d, type: 2}
+  - {fileID: 11400000, guid: 8b3e1d104e479c74a8c16ce161e96351, type: 2}
+  - {fileID: 11400000, guid: a8548d753d837be498c6e7ffb2c4ba36, type: 2}
+  - {fileID: 11400000, guid: 2a80073d6f6da3542bd5be006288cf49, type: 2}
+  - {fileID: 11400000, guid: 31a6e1f69d4b3114a8cb990d68501c87, type: 2}
+  - {fileID: 11400000, guid: a97c555006ae69e4ba5e02cd8bd45f4a, type: 2}
+  - {fileID: 11400000, guid: eb6870650516522479e9b3e64ce21153, type: 2}
+  - {fileID: 11400000, guid: 0c9ab300dc404ea43abfde2587016708, type: 2}
+  - {fileID: 11400000, guid: f879b2044fd989244bb9be35e669e07b, type: 2}
+  - {fileID: 11400000, guid: 3355634e05e14954fbfeb50982dbf50e, type: 2}
+  - {fileID: 11400000, guid: d2c4348694d70b54da91afe15d4e6c6a, type: 2}
+  - {fileID: 11400000, guid: 0914f42ccf91b21438ffd372b5409ba2, type: 2}
   Biome1Opening: {fileID: 11400000, guid: b206095b77dc98049b54333d19e84683, type: 2}
   Biome1Elite: {fileID: 11400000, guid: 458e9582085bce144866b87ae45be31c, type: 2}
+  Biome1Elites:
+  - {fileID: 11400000, guid: 458e9582085bce144866b87ae45be31c, type: 2}
+  - {fileID: 11400000, guid: 6e1bac766ecaf4c499a533fd4dd21866, type: 2}
+  - {fileID: 11400000, guid: 22387b4d215c004459a05df27572c61a, type: 2}
   Biome1Boss: {fileID: 11400000, guid: eb3f7a50b44e7d04392db94b82177a59, type: 2}
   ForgeShrine: {fileID: 11400000, guid: 2ba090c867c2f7746aade1da09bb7363, type: 2}

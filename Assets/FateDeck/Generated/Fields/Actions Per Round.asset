@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Actions Per Round
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: e50d426ca11a431db2cb795b1c074a0e
+    _value: 610cac97aaba426c92d5dcbdb4e1b524
   Kind:
-    rid: 3602687371046289430
+    rid: 3602687376923820115
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289430
+    - rid: 3602687376923820115
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

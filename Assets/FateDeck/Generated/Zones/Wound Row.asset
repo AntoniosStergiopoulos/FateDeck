@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wound Row
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 6cb3cb5e2234414088553029496fe622
+    _value: 922fcd21cf744543b7aa37413e8d025c
   Description: 
   Scope: 0
   Visibility: 0

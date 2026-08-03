@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3804d92343cd0140b24b5e9132d96af, type: 3}
+  m_Name: Room - The Bonesetter
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
+  _id:
+    _value: 1003c1a21f4a4babb62974f94010f37f
+  Blurb: A folding chair waits under a lone bulb.
+  Event: {fileID: 11400000, guid: 240d57791655df64c9741109734836d2, type: 2}

@@ -13,54 +13,54 @@ MonoBehaviour:
   m_Name: Magnet Ring
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 50707f7d98064eeb9693e4262bb2dffc
+    _value: 99d8aad23cad416c8a9c444539d8f36b
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687371046289697
-  - rid: 3602687371046289698
-  - rid: 3602687371046289699
-  - rid: 3602687371046289700
+  - rid: 3602687376923820683
+  - rid: 3602687376923820684
+  - rid: 3602687376923820685
+  - rid: 3602687376923820686
   Variants: []
-  _creationDateTicks: 639213720368635371
+  _creationDateTicks: 639213946090215178
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687371046289697
+    - rid: 3602687376923820683
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: After your action flips Iron, Scry 1.
-    - rid: 3602687371046289698
+    - rid: 3602687376923820684
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687371046289699
+    - rid: 3602687376923820685
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687371046289701
-    - rid: 3602687371046289700
+        - rid: 3602687376923820687
+    - rid: 3602687376923820686
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687371046289701
+    - rid: 3602687376923820687
       type: {class: OnFateFlipTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687371046289702
+        - rid: 3602687376923820688
         AnyContext: 1
         Context: 0
         ForceFilter: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
         Owner: 1
         IncludePocketPlays: 1
-    - rid: 3602687371046289702
+    - rid: 3602687376923820688
       type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

@@ -13,111 +13,117 @@ MonoBehaviour:
   m_Name: Doom
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: a2493970ffdd4e389594bf8d1431a8aa
+    _value: 61193e7721fe49c49f65f06687c7e26a
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687371046289599
-  - rid: 3602687371046289600
-  - rid: 3602687371046289601
-  - rid: 3602687371046289602
-  - rid: 3602687371046289603
-  - rid: 3602687371046289604
-  - rid: 3602687371046289605
-  - rid: 3602687371046289606
-  - rid: 3602687371046289607
-  - rid: 3602687371046289608
-  - rid: 3602687371046289609
+  - rid: 3602687376923820294
+  - rid: 3602687376923820295
+  - rid: 3602687376923820296
+  - rid: 3602687376923820297
+  - rid: 3602687376923820298
+  - rid: 3602687376923820299
+  - rid: 3602687376923820300
+  - rid: 3602687376923820301
+  - rid: 3602687376923820302
+  - rid: 3602687376923820303
+  - rid: 3602687376923820304
+  - rid: 3602687376923820305
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289599
+    - rid: 3602687376923820294
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687371046289610
-        - rid: 3602687371046289611
-    - rid: 3602687371046289600
+        - rid: 3602687376923820306
+        - rid: 3602687376923820307
+    - rid: 3602687376923820295
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687371046289612
-        - rid: 3602687371046289613
-    - rid: 3602687371046289601
+        - rid: 3602687376923820308
+        - rid: 3602687376923820309
+    - rid: 3602687376923820296
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687371046289614
-    - rid: 3602687371046289602
+        - rid: 3602687376923820310
+    - rid: 3602687376923820297
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687371046289615
-    - rid: 3602687371046289603
+        - rid: 3602687376923820311
+    - rid: 3602687376923820298
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687371046289616
-    - rid: 3602687371046289604
+        - rid: 3602687376923820312
+    - rid: 3602687376923820299
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 1
-    - rid: 3602687371046289605
+    - rid: 3602687376923820300
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 1
-    - rid: 3602687371046289606
+    - rid: 3602687376923820301
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 1
-    - rid: 3602687371046289607
+    - rid: 3602687376923820302
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
+        Value: 0
+    - rid: 3602687376923820303
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.62, g: 0.16, b: 0.19, a: 1}
-    - rid: 3602687371046289608
+    - rid: 3602687376923820304
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: X
-    - rid: 3602687371046289609
+    - rid: 3602687376923820305
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: The worst, always. Cannot be pocketed or stacked; milled Doom is exiled
           forever.
-    - rid: 3602687371046289610
+    - rid: 3602687376923820306
       type: {class: SetActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Value: 0
-    - rid: 3602687371046289611
+    - rid: 3602687376923820307
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687371046289612
+    - rid: 3602687376923820308
       type: {class: SetActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Value: 0
-    - rid: 3602687371046289613
+    - rid: 3602687376923820309
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687371046289614
+    - rid: 3602687376923820310
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 3
-    - rid: 3602687371046289615
+    - rid: 3602687376923820311
       type: {class: DoomLootEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Mill: 2
-    - rid: 3602687371046289616
+    - rid: 3602687376923820312
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

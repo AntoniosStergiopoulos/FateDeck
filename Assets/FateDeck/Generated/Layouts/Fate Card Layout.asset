@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Fate Card Layout
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Layout.CardLayout
   _id:
-    _value: 4fa63d381ee54d7a9dda254bbe89d22a
+    _value: ed0ae82a6cd14e88b130de1d7fc186f7
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   DesignSize: {x: 640, y: 900}
   BackgroundColor: {r: 0.09, g: 0.08, b: 0.07, a: 1}
   BackLayout: {fileID: 0}
   Elements:
-  - rid: 3602687371046289639
-  - rid: 3602687371046289640
-  - rid: 3602687371046289641
+  - rid: 3602687376923820561
+  - rid: 3602687376923820562
+  - rid: 3602687376923820563
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289639
+    - rid: 3602687376923820561
       type: {class: NameLayoutElement, ns: AStergio.OmniCard.Runtime.Cards.Layout, asm: AStergio.OmniCard.Runtime}
       data:
         Rect:
@@ -45,7 +45,7 @@ MonoBehaviour:
           RichText: 1
           Font: {fileID: 0}
         StyleAsset: {fileID: 0}
-    - rid: 3602687371046289640
+    - rid: 3602687376923820562
       type: {class: FieldLayoutElement, ns: AStergio.OmniCard.Runtime.Cards.Layout, asm: AStergio.OmniCard.Runtime}
       data:
         Rect:
@@ -77,7 +77,7 @@ MonoBehaviour:
           RichText: 1
           Font: {fileID: 0}
         StyleAsset: {fileID: 0}
-    - rid: 3602687371046289641
+    - rid: 3602687376923820563
       type: {class: FieldLayoutElement, ns: AStergio.OmniCard.Runtime.Cards.Layout, asm: AStergio.OmniCard.Runtime}
       data:
         Rect:

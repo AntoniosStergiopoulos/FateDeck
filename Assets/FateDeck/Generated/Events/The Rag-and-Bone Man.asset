@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Rag-and-Bone Man
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: 283984baaf064266adb6cfc521bf7595
+  Intro: A cart of things the House repossessed. "Any old luck! Any old luck! Trade
+    us a card, get a key for the honest doors."
+  Options:
+  - Label: 'Trade (exile 1 from discard): gain a Key'
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238905
+    - rid: 3602687376965238906
+    ResultText: Your card joins the cart. A key finds your palm.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Nothing today
+    GoldCost: 0
+    Effects: []
+    ResultText: The cart squeaks on.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238905
+      type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1
+    - rid: 3602687376965238906
+      type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Kind: 1
+        Count: 1

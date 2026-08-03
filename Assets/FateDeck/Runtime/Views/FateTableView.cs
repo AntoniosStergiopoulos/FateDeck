@@ -32,6 +32,7 @@ namespace FateDeck.Runtime.Views
         private VisualElement _promptHost;
         private VisualElement _overlayHost;
         private VisualElement _bannerHost;
+        private VisualElement _fxHost;
         private VisualElement _tableauBar;
         private VisualElement _leftColumn;
         private VisualElement _rightColumn;
@@ -80,6 +81,7 @@ namespace FateDeck.Runtime.Views
 
         private void OnDestroy()
         {
+            UiFx.Clear();
             if (_run != null)
             {
                 _run.Changed -= OnRunChanged;
@@ -149,6 +151,15 @@ namespace FateDeck.Runtime.Views
             _bannerHost.pickingMode = PickingMode.Ignore;
             _root.Add(_bannerHost);
 
+            _fxHost = new VisualElement();
+            _fxHost.style.position = Position.Absolute;
+            _fxHost.style.left = 0;
+            _fxHost.style.right = 0;
+            _fxHost.style.top = 0;
+            _fxHost.style.bottom = 0;
+            _fxHost.pickingMode = PickingMode.Ignore;
+            _root.Add(_fxHost);
+
             _overlayHost = new VisualElement();
             _overlayHost.style.position = Position.Absolute;
             _overlayHost.style.left = 0;
@@ -195,6 +206,10 @@ namespace FateDeck.Runtime.Views
             _barkLabel.style.unityFontStyleAndWeight = FontStyle.Italic;
             _barkLabel.style.whiteSpace = WhiteSpace.NoWrap;
             bar.Add(_barkLabel);
+
+            Button help = FateUi.MakeButton("? RULES", ShowHelpOverlay, FateUi.BoneDim, 12);
+            help.style.marginLeft = 10;
+            bar.Add(help);
             return bar;
         }
 
@@ -220,23 +235,35 @@ namespace FateDeck.Runtime.Views
                 {
                     if (!_run.TryContinueRun())
                     {
-                        StartNewRun();
+                        ShowHeroSelect();
                     }
                 }, FateUi.Verdigris, 17));
-                menu.Add(FateUi.MakeButton("NEW RUN", StartNewRun, FateUi.GoldLeaf, 17));
+                menu.Add(FateUi.MakeButton("NEW RUN", ShowHeroSelect, FateUi.GoldLeaf, 17));
             }
             else
             {
-                menu.Add(FateUi.MakeButton("SIT DOWN AT THE TABLE", StartNewRun, FateUi.GoldLeaf, 17));
+                menu.Add(FateUi.MakeButton("SIT DOWN AT THE TABLE", ShowHeroSelect, FateUi.GoldLeaf, 17));
             }
 
             _screenHost.Add(menu);
+            UiFx.FadeSlideIn(menu, -20f, 0.4f);
         }
 
-        private void StartNewRun()
+        private void ShowHeroSelect()
+        {
+            if (_catalog.Heroes.Count <= 1)
+            {
+                StartNewRun(_catalog.Heroes.Count > 0 ? _catalog.Heroes[0] : null);
+                return;
+            }
+
+            BuildHeroSelectScreen();
+        }
+
+        private void StartNewRun(AStergio.OmniCard.Runtime.Cards.Data.CardDefinition hero)
         {
             FateRunSave.Delete();
-            _run.StartNewRun(null, _seed);
+            _run.StartNewRun(hero, _seed);
         }
 
         // ---------------------------------------------------------------- session wiring
@@ -272,8 +299,13 @@ namespace FateDeck.Runtime.Views
             session.Events.Subscribe<PlayerTurnStartedEvent>(OnPlayerTurnStarted);
             session.Events.Subscribe<PlayerDiedEvent>(OnPlayerDiedView);
             session.Events.Subscribe<ScryEvent>(OnScry);
+            session.Events.Subscribe<MantleTakenEvent>(OnMantleTaken);
+            session.Events.Subscribe<MantleSpilledEvent>(OnMantleSpilled);
+            session.Events.Subscribe<KeysChangedEvent>(OnKeysChanged);
             session.ChoiceHandler = OnZoneChoice;
 
+            UiFx.Clear();
+            _fxHost.Clear();
             _overlayHost.Clear();
             RefreshAll();
         }
@@ -282,6 +314,7 @@ namespace FateDeck.Runtime.Views
 
         private void Update()
         {
+            UiFx.Update(Time.deltaTime);
             if (Session == null)
             {
                 return;
@@ -516,6 +549,11 @@ namespace FateDeck.Runtime.Views
             _log.Append(delta >= 0 ? $"+{delta}g (now {gold.NewValue}g)." : $"{delta}g (now {gold.NewValue}g).",
                 FateUi.GoldLeaf);
             RefreshHud();
+            UiFx.Pulse(_statusChips, 1.1f, 0.28f);
+            if (delta > 0)
+            {
+                SpawnFloater($"+{delta}g", FateUi.GoldLeaf, 0f, 12, 20);
+            }
         }
 
         private void OnReshuffle(ReshuffleEvent reshuffle)
@@ -589,10 +627,12 @@ namespace FateDeck.Runtime.Views
             {
                 _log.Append($"{damaged.Enemy.DisplayName} takes {damaged.Dealt:0.#} damage{blocked} — "
                     + $"{damaged.RemainingHp:0} HP left.", FateUi.Ember);
+                SpawnFloater($"-{damaged.Dealt:0.#}", FateUi.Ember, EnemyFloaterOffset(damaged.Enemy), 26);
             }
             else if (damaged.Absorbed > 0)
             {
                 _log.Append($"{damaged.Enemy.DisplayName}'s Block absorbs everything{blocked}.", FateUi.BoneDim);
+                SpawnFloater("BLOCKED", FateUi.Verdigris, EnemyFloaterOffset(damaged.Enemy), 30);
             }
 
             MarkScreenDirty();
@@ -606,6 +646,82 @@ namespace FateDeck.Runtime.Views
                     ? $"{attacker} hits for {hit.Incoming:0.#} — {blocked}you mill {hit.Milled}."
                     : $"{attacker} hits for {hit.Incoming:0.#} — {blocked}nothing gets through.",
                 hit.Milled > 0 ? FateUi.Blood : FateUi.Verdigris, bold: hit.Milled > 0);
+
+            if (hit.Milled > 0)
+            {
+                SpawnFloater($"-{hit.Milled} card{(hit.Milled == 1 ? "" : "s")}", FateUi.Blood, 0f, 62, 24);
+                UiFx.Shake(_tableauBar, 8f, 0.45f);
+            }
+            else
+            {
+                SpawnFloater("HELD", FateUi.Verdigris, 0f, 62, 20);
+            }
+        }
+
+        private void OnMantleTaken(MantleTakenEvent taken)
+        {
+            _log.Append($"CONFISCATED — {taken.Count}x {taken.Force.name} vanish into the Mantle. "
+                + "Heavy hits (6+) shake cards loose; the rest return when it dies.",
+                FateUi.Violet, bold: true);
+            ShowBanner($"CONFISCATED: {taken.Count}x {taken.Force.name.ToUpperInvariant()}", FateUi.Violet);
+            RefreshTableau();
+        }
+
+        private void OnMantleSpilled(MantleSpilledEvent spilled)
+        {
+            _log.Append($"A heavy blow shakes {spilled.Card.DisplayName} loose from the Mantle — "
+                + "it returns to your discard.", FateUi.Verdigris, bold: true);
+            SpawnFloater($"+{spilled.Card.DisplayName} freed", FateUi.Verdigris, 0f, 34, 20);
+            RefreshTableau();
+        }
+
+        private void OnKeysChanged(KeysChangedEvent keys)
+        {
+            int delta = keys.NewValue - keys.OldValue;
+            _log.Append(delta > 0
+                    ? $"+{delta} Key{(delta == 1 ? "" : "s")} (now {keys.NewValue})."
+                    : $"A Key turns. {keys.NewValue} left.",
+                FateUi.Verdigris);
+            RefreshHud();
+        }
+
+        /// <summary>Horizontal floater offset for an enemy, matching the centered enemy row.</summary>
+        private float EnemyFloaterOffset(CardInstance enemy)
+        {
+            var combat = Session?.Combat;
+            if (combat == null)
+            {
+                return 0f;
+            }
+
+            var cards = combat.Enemies.Cards;
+            int index = 0;
+            int count = cards.Count > 0 ? cards.Count : 1;
+            for (int i = 0; i < cards.Count; i++)
+            {
+                if (cards[i] == enemy)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            return (index - (count - 1) * 0.5f) * 232f;
+        }
+
+        /// <summary>Spawns a floating feedback label at a horizontal offset from screen center.</summary>
+        private void SpawnFloater(string text, Color color, float offsetX, float topPercent, float size = 26)
+        {
+            Label floater = FateUi.Text(text, size, color);
+            floater.style.unityFontStyleAndWeight = FontStyle.Bold;
+            floater.style.position = Position.Absolute;
+            floater.style.left = 0;
+            floater.style.right = 0;
+            floater.style.top = Length.Percent(topPercent);
+            floater.style.unityTextAlign = TextAnchor.MiddleCenter;
+            floater.pickingMode = PickingMode.Ignore;
+            _fxHost.Add(floater);
+            UiFx.FloatAway(floater, offsetX, -48f, 0.95f);
         }
 
         private void OnEnemyDied(EnemyDiedEvent died)
@@ -682,6 +798,8 @@ namespace FateDeck.Runtime.Views
             label.style.unityFontStyleAndWeight = FontStyle.Bold;
             banner.Add(label);
             _bannerHost.Add(banner);
+            UiFx.FadeSlideIn(banner, -18f, 0.22f);
+            UiFx.Pop(label, 0.8f, 0.24f);
             _bannerTimer = 1.05f;
         }
     }

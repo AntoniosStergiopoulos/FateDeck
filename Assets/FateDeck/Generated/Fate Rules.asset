@@ -32,3 +32,4 @@ MonoBehaviour:
   DoomCleansePrice: 20
   TrackSteps: 9
   DoorsPerStep: 3
+  MantleSpillDamage: 6

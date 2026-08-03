@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631173185392099449d5edbfb99c6d94, type: 3}
+  m_Name: Serpent+
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
+  _id:
+    _value: 0b4d8f9600f74990bd266fdd71941d99
+  Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
+  _values:
+  - rid: 3602687376923820545
+  - rid: 3602687376923820546
+  Variants: []
+  _creationDateTicks: 639213946068398026
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376923820545
+      type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
+        Value: {fileID: 11400000, guid: 586dc03f7ab2aa14fb7225734e9e62c5, type: 2}
+    - rid: 3602687376923820546
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: 'Venom: your Strike also Weakens the target 2; enemy actions -1 Force
+          and the venom turns on the attacker (Weak 2).'

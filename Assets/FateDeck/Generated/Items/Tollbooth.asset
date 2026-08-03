@@ -13,54 +13,71 @@ MonoBehaviour:
   m_Name: Tollbooth
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 82a9fa3f4ed74b04bf364b27f44ede2d
+    _value: 451ba64b3e3b4f0e8c7f4c7f94431e9e
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687371046289686
-  - rid: 3602687371046289687
-  - rid: 3602687371046289688
-  - rid: 3602687371046289689
+  - rid: 3602687376923820670
+  - rid: 3602687376923820671
+  - rid: 3602687376923820672
+  - rid: 3602687376923820673
   Variants: []
-  _creationDateTicks: 639213720367681319
+  _creationDateTicks: 639213946089196816
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687371046289686
+    - rid: 3602687376923820670
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Fortune flips grant +2 additional gold.
-    - rid: 3602687371046289687
+    - rid: 3602687376923820671
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687371046289688
+    - rid: 3602687376923820672
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687371046289690
-    - rid: 3602687371046289689
+        - rid: 3602687376923820674
+        - rid: 3602687376923820675
+    - rid: 3602687376923820673
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687371046289690
+    - rid: 3602687376923820674
       type: {class: OnFateFlipTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687371046289691
+        - rid: 3602687376923820676
         AnyContext: 1
         Context: 0
         ForceFilter: {fileID: 11400000, guid: aea6d0b066f86d34bae7b403de17c40b, type: 2}
         Owner: 0
         IncludePocketPlays: 1
-    - rid: 3602687371046289691
+    - rid: 3602687376923820675
+      type: {class: OnFateFlipTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
+      data:
+        Condition:
+          rid: -2
+        Effects:
+        - rid: 3602687376923820677
+        AnyContext: 1
+        Context: 0
+        ForceFilter: {fileID: 11400000, guid: 80033507d61aa704e91e9f94494b1b32, type: 2}
+        Owner: 0
+        IncludePocketPlays: 1
+    - rid: 3602687376923820676
+      type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Amount: 2
+    - rid: 3602687376923820677
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 2

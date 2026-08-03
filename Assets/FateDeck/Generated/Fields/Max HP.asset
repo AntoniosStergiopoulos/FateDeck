@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Max HP
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 107ffb92940c426484b4e5abf54f744d
+    _value: 515971e752b04b8f80535f73b0af7ccf
   Kind:
-    rid: 3602687371046289420
+    rid: 3602687376923820105
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289420
+    - rid: 3602687376923820105
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

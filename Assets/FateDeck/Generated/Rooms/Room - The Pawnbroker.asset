@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3804d92343cd0140b24b5e9132d96af, type: 3}
+  m_Name: Room - The Pawnbroker
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
+  _id:
+    _value: e6463aa81dff44ebb490df0bb83cc484
+  Blurb: Three brass balls glint over a dark slot.
+  Event: {fileID: 11400000, guid: d392a1eed342f2a4b9839a84c214c00c, type: 2}

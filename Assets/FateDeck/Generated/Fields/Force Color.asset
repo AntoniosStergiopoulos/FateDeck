@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Force Color
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 3c1d8f938b3745d2b45e51c88e4c7026
+    _value: 66788b90de18429e8408c8f6d26cc469
   Kind:
-    rid: 3602687371046289417
+    rid: 3602687376923820102
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289417
+    - rid: 3602687376923820102
       type: {class: ColorFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

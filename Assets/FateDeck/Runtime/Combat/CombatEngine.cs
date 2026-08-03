@@ -381,10 +381,30 @@ namespace FateDeck.Runtime.Combat
             double hp = enemy.Fields.GetNumber(_session.Catalog.HpField) - amount;
             enemy.Fields.SetNumber(_session.Catalog.HpField, Math.Max(0, hp));
             _session.Events.Publish(new EnemyDamagedEvent(enemy, amount, absorbed, Math.Max(0, hp)));
+            SpillMantle(enemy, amount);
             if (hp <= 0)
             {
                 Kill(enemy);
             }
+        }
+
+        /// <summary>
+        /// A heavy single hit on a Mantle-holder shakes one confiscated card loose.
+        /// Only action-driven damage counts - burn ticks (no current action) never spill.
+        /// </summary>
+        private void SpillMantle(CardInstance enemy, double amount)
+        {
+            double spillAt = _session.Rules.MantleSpillDamage;
+            if (spillAt <= 0 || amount < spillAt || Mantle.Count == 0
+                || _session.CurrentAction == null
+                || enemy.Fields.GetNumber(_session.Catalog.MantleBonusPerField) <= 0)
+            {
+                return;
+            }
+
+            CardInstance loose = Mantle.RemoveTop();
+            _session.Deck.ToDiscard(loose);
+            _session.Events.Publish(new MantleSpilledEvent(loose));
         }
 
         private void Kill(CardInstance enemy)

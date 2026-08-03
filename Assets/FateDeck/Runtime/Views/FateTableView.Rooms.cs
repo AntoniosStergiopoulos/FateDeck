@@ -1,5 +1,7 @@
 using AStergio.OmniCard.Runtime.Cards.Data;
 using AStergio.OmniCard.Runtime.Cards.Fields.Core;
+using AStergio.OmniCard.Runtime.Cards.Game.Decks;
+using AStergio.OmniCard.Runtime.Cards.MetaData;
 using FateDeck.Runtime.Core;
 using FateDeck.Runtime.Run;
 using UnityEngine;
@@ -36,6 +38,95 @@ namespace FateDeck.Runtime.Views
             RefreshHud();
         }
 
+        // ---------------------------------------------------------------- hero select
+
+        private void BuildHeroSelectScreen()
+        {
+            _screenHost.Clear();
+            _promptHost.Clear();
+
+            var stage = FateUi.Column();
+            stage.style.flexGrow = 1;
+            stage.style.alignItems = Align.Center;
+            stage.style.justifyContent = Justify.Center;
+            _screenHost.Add(stage);
+
+            stage.Add(FateUi.Heading("CHOOSE WHO SITS DOWN", 30, FateUi.Bone));
+            Label hint = FateUi.Text("Each player is a different shape of luck: a deck, a passive, a pocket.",
+                14, FateUi.BoneDim);
+            hint.style.marginBottom = 16;
+            stage.Add(hint);
+
+            var row = new VisualElement();
+            row.style.flexDirection = FlexDirection.Row;
+            row.style.flexWrap = Wrap.Wrap;
+            row.style.justifyContent = Justify.Center;
+            stage.Add(row);
+
+            foreach (CardDefinition hero in _catalog.Heroes)
+            {
+                if (hero != null)
+                {
+                    row.Add(BuildHeroCard(hero));
+                }
+            }
+
+            UiFx.FadeSlideIn(stage, -16f, 0.32f);
+        }
+
+        private VisualElement BuildHeroCard(CardDefinition hero)
+        {
+            VisualElement panel = FateUi.MakePanel();
+            panel.style.width = 252;
+            panel.style.marginLeft = 8;
+            panel.style.marginRight = 8;
+            panel.style.marginBottom = 10;
+            panel.style.justifyContent = Justify.SpaceBetween;
+
+            Label name = FateUi.Text(hero.name, 17, FateUi.GoldLeaf);
+            name.style.unityFontStyleAndWeight = FontStyle.Bold;
+            panel.Add(name);
+
+            string passive = hero.GetText(_catalog.DescriptionField);
+            if (!string.IsNullOrEmpty(passive))
+            {
+                Label passiveLabel = FateUi.Text(passive, 13, FateUi.Bone);
+                passiveLabel.style.marginTop = 4;
+                panel.Add(passiveLabel);
+            }
+
+            double slots = hero.GetNumber(_catalog.PocketSlotsField);
+            panel.Add(FateUi.Text($"Pocket slots: {slots:0}", 12, FateUi.BoneDim));
+
+            var deckList = FateUi.Column(0);
+            deckList.style.marginTop = 6;
+            deckList.style.marginBottom = 8;
+            panel.Add(deckList);
+            if (hero.GetObject(_catalog.StartingDeckField) is DeckDefinition deck)
+            {
+                int total = 0;
+                foreach (DeckEntry entry in deck.Cards)
+                {
+                    if (entry?.Card == null)
+                    {
+                        continue;
+                    }
+
+                    total += entry.Count;
+                    var force = entry.Card.GetObject(_catalog.ForceField) as MetadataEntry;
+                    Color color = CardElementBuilder.ForceColor(_catalog, force);
+                    Label line = FateUi.Text($"{entry.Count}x {entry.Card.name}", 12, color);
+                    line.style.unityFontStyleAndWeight = FontStyle.Bold;
+                    deckList.Add(line);
+                }
+
+                deckList.Insert(0, FateUi.Text($"Starting deck — {total} cards:", 12, FateUi.BoneDim));
+            }
+
+            panel.Add(FateUi.MakeButton("DEAL ME IN", () => StartNewRun(hero), FateUi.GoldLeaf, 15));
+            return panel;
+        }
+
         private VisualElement CenterStage(string heading = null, Color? headingColor = null)
         {
             var stage = FateUi.Column();
@@ -57,6 +148,18 @@ namespace FateDeck.Runtime.Views
 
         private void BuildDoorsScreen()
         {
+            // Unspent wound picks resolve now (oldest first) so the granted heal is never lost.
+            if (_woundPicksRemaining > 0 && Session.Deck.Wound.Count > 0)
+            {
+                int healed = Session.Deck.HealWounds(_woundPicksRemaining);
+                if (healed > 0)
+                {
+                    _log.Append($"Unclaimed mending resolves on its own: {healed} wound"
+                        + $"{(healed == 1 ? "" : "s")} return to your deck.", FateUi.Verdigris);
+                }
+            }
+
+            _woundPicksRemaining = 0;
             VisualElement stage = CenterStage($"STEP {_run.Step} — PICK A DOOR");
             Label hint = FateUi.Text("Doors show their contents up front. Unpicked doors vanish.", 14, FateUi.BoneDim);
             hint.style.marginBottom = 14;
@@ -496,7 +599,7 @@ namespace FateDeck.Runtime.Views
             ledger.Add(FateUi.Text($"Reshuffles paid: {session.Deck.ReshuffleCount} · "
                 + $"{session.Deck.Exile.Count} cards exiled · {session.Gold}g left on the table.", 14, FateUi.BoneDim));
 
-            stage.Add(FateUi.MakeButton("THE DECK RE-FORMS", StartNewRun, FateUi.Ember, 17));
+            stage.Add(FateUi.MakeButton("THE DECK RE-FORMS", ShowHeroSelect, FateUi.Ember, 17));
         }
 
         private System.Collections.Generic.IEnumerable<string> ForceNames(FateAction action)
@@ -516,7 +619,7 @@ namespace FateDeck.Runtime.Views
             stage.Add(FateUi.Text(
                 $"{session.TotalFlipsThisRun} flips · {session.DoomFlipsThisRun} Doom · {session.Gold}g banked · "
                 + $"{session.Deck.Draw.Count + session.Deck.Discard.Count} cards of soul recovered.", 14, FateUi.Bone));
-            stage.Add(FateUi.MakeButton("PLAY AGAIN", StartNewRun, FateUi.GoldLeaf, 17));
+            stage.Add(FateUi.MakeButton("PLAY AGAIN", ShowHeroSelect, FateUi.GoldLeaf, 17));
         }
     }
 }

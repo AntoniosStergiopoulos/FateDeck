@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: The Beggar of Odds
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: adfb9057b1074044a86427242a59d199
+    _value: 1658f774c3d14146bc8a39fe7be71d04
   Intro: A beggar sits cross-legged on a pile of losing tickets. "Ten gold," he says,
     "and I eat one of your Dooms. Market rate. No tricks."
   Options:
   - Label: Pay him
     GoldCost: 10
     Effects:
-    - rid: 3602687371046289834
+    - rid: 3602687376965238845
     ResultText: He swallows the Doom whole. It does not come back.
     FlipsFate: 0
     RitualOutcomes: []
@@ -37,7 +37,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289834
+    - rid: 3602687376965238845
       type: {class: ExileForceFromDrawEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Force: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}

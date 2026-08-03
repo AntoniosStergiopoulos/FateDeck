@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c03dae9770d154682b5b6468f2eb23, type: 3}
+  m_Name: Room - Paper Golem
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
+  _id:
+    _value: e6ff160d0b3f4026991a626973ba6dec
+  Blurb: Ten thousand unpaid invoices, folded into a fist.
+  Encounter: {fileID: 11400000, guid: 27f3a0f9bb8da9e4581b53f56cb9711c, type: 2}
+  IsElite: 0
+  RiggedTopForce: {fileID: 0}
+  CharmDropChance: 0.2

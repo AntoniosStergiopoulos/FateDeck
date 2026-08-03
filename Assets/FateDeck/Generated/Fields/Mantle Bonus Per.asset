@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Mantle Bonus Per
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: cd579b5577df4e879c678121bf67518c
+    _value: 15bffa54c27b4080bf6ebae6f01de4ac
   Kind:
-    rid: 3602687371046289429
+    rid: 3602687376923820114
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289429
+    - rid: 3602687376923820114
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

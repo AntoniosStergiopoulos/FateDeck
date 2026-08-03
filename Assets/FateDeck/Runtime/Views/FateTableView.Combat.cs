@@ -32,14 +32,16 @@ namespace FateDeck.Runtime.Views
             if (combat.Mantle.Count > 0)
             {
                 Label mantle = FateUi.Text(
-                    $"THE MANTLE holds {combat.Mantle.Count} of your cards (+1 Force to its attacks per 3)",
-                    14, FateUi.Ember);
+                    $"THE MANTLE holds {combat.Mantle.Count} of your cards (+1 Force to its attacks per 3). "
+                    + $"A single hit of {session.Rules.MantleSpillDamage:0}+ shakes one loose; the rest return on its death.",
+                    13, FateUi.Ember);
                 mantle.style.unityTextAlign = TextAnchor.MiddleCenter;
                 screen.Add(mantle);
             }
 
             var enemyRow = new VisualElement();
             enemyRow.style.flexDirection = FlexDirection.Row;
+            enemyRow.style.flexWrap = Wrap.Wrap;
             enemyRow.style.justifyContent = Justify.Center;
             enemyRow.style.alignItems = Align.FlexStart;
             enemyRow.style.flexGrow = 1;
@@ -183,6 +185,13 @@ namespace FateDeck.Runtime.Views
                 case FateResolutionPhase.AwaitDoubleDrawChoice:
                     BuildDoubleDrawPrompt(session);
                     return;
+            }
+
+            // Pending wound picks survive every screen rebuild until spent.
+            if (_woundPicksRemaining > 0 && session.Deck.Wound.Count > 0)
+            {
+                PromptPanel($"Mend {_woundPicksRemaining} wound{(_woundPicksRemaining == 1 ? "" : "s")} — "
+                    + "click the highlighted cards in the Wound Row below.", FateUi.Verdigris);
             }
 
             if (_run.Screen == RunScreen.Combat && session.Combat != null)

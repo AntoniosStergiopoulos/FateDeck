@@ -24,6 +24,14 @@ namespace FateDeck.Runtime.Core
         /// <summary>The action currently moving through the fate pipeline, or null.</summary>
         FateAction CurrentAction { get; }
 
+        /// <summary>The force whose law most recently resolved - what a Mirror flip repeats.</summary>
+        AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry LastFlippedForce { get; }
+
+        /// <summary>Keys open locked chests without gambling on Flame.</summary>
+        int Keys { get; }
+
+        void AddKeys(int delta);
+
         int Gold { get; }
 
         void AddGold(int delta);

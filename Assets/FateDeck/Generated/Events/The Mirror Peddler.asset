@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Mirror Peddler
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: f3f6b9f4bbb34994bf4c92dfb1ba773d
+  Intro: A cart of mirrors that reflect cards instead of faces. "Mirrors repeat whatever
+    fate came before them," the peddler grins. "Pair one with your best law."
+  Options:
+  - Label: 'The set (10g): 1 Mirror and 1 Wisp'
+    GoldCost: 10
+    Effects:
+    - rid: 3602687376965238889
+    - rid: 3602687376965238890
+    ResultText: Silver and lantern-light slide into your deck.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: 'Trade a memory (mill 1): 1 Mirror'
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238891
+    - rid: 3602687376965238892
+    ResultText: The mirror takes its price off the top of you.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Avert your eyes
+    GoldCost: 0
+    Effects: []
+    ResultText: The cart rolls on.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238889
+      type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Card: {fileID: 11400000, guid: a6440d4acf1bcb946b138af6e06b3732, type: 2}
+        Zone: 0
+        RandomPosition: 1
+        Count: 1
+    - rid: 3602687376965238890
+      type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Card: {fileID: 11400000, guid: bda0a4dc64017d0498b3d94d7cfaf26a, type: 2}
+        Zone: 0
+        RandomPosition: 1
+        Count: 1
+    - rid: 3602687376965238891
+      type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1
+    - rid: 3602687376965238892
+      type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Card: {fileID: 11400000, guid: a6440d4acf1bcb946b138af6e06b3732, type: 2}
+        Zone: 0
+        RandomPosition: 1
+        Count: 1

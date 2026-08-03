@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Tinder Hound
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: d2b69280d1bb4dbe9fee10f4264b9d9c
+    _value: aadb18a16a0844aab2c6f7d9eecc8043
   Blurb: A hound of matchsticks. It gets angrier the longer it lives.
   Encounter: {fileID: 11400000, guid: ea9bb56ea1926364db62c1f979928fbd, type: 2}
   IsElite: 0

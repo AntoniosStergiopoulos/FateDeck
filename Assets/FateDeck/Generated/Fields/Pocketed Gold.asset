@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Pocketed Gold
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 6d5328fdc6c9445695d78dab16b82664
+    _value: f053721eadd54d86a6413005abc24514
   Kind:
-    rid: 3602687371046289428
+    rid: 3602687376923820113
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289428
+    - rid: 3602687376923820113
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 1

@@ -17,11 +17,13 @@ namespace FateDeck.Runtime.Run
         public const int MiniShopWeight = 5;
 
         /// <summary>
-        /// Deals doors for a step. <paramref name="eliteRoom"/> is injected once in the 5-7 window
-        /// when it has not been offered yet; <paramref name="forcedRoom"/> pins a scripted door.
+        /// Deals doors for a step. One room from <paramref name="elitePool"/> is injected once in
+        /// the 5-7 window when no elite has been offered; <paramref name="forcedRoom"/> pins a
+        /// scripted door.
         /// </summary>
-        public static List<RoomDefinition> Deal(IReadOnlyList<RoomDefinition> pool, FightRoomDefinition eliteRoom,
-            int step, int doorCount, Random rng, ref bool eliteOffered, RoomDefinition forcedRoom = null)
+        public static List<RoomDefinition> Deal(IReadOnlyList<RoomDefinition> pool,
+            IReadOnlyList<FightRoomDefinition> elitePool, int step, int doorCount, Random rng,
+            ref bool eliteOffered, RoomDefinition forcedRoom = null)
         {
             var doors = new List<RoomDefinition>();
             if (forcedRoom != null)
@@ -29,10 +31,11 @@ namespace FateDeck.Runtime.Run
                 doors.Add(forcedRoom);
             }
 
-            bool includeElite = eliteRoom != null && !eliteOffered && ShouldOfferElite(step, rng);
+            bool includeElite = elitePool != null && elitePool.Count > 0 && !eliteOffered
+                && ShouldOfferElite(step, rng);
             if (includeElite && doors.Count < doorCount)
             {
-                doors.Add(eliteRoom);
+                doors.Add(elitePool[rng.Next(elitePool.Count)]);
                 eliteOffered = true;
             }
 

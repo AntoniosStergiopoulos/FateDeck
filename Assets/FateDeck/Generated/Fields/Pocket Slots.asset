@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Pocket Slots
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 6676e1c0966644ab9e5f83d276f9d217
+    _value: df5a54c7e7714e318bb901510338175f
   Kind:
-    rid: 3602687371046289436
+    rid: 3602687376923820121
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289436
+    - rid: 3602687376923820121
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

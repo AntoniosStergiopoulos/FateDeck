@@ -13,12 +13,19 @@ flip from one visible, countable, sculptable deck.
 
 ## What's in the slice
 
-The complete fate engine — all 7 forces (+4 upgraded tiers) with data-driven per-context laws,
-flip/mill/wound/heal, the Pocket (bank & replace), the reshuffle Doom tax, doom laundering,
-Echo/Void, Burn/Weak, the Odds Panel with exact fractions — plus a playable Biome 1: 9-step
-track with weighted doors, 5 enemies, the Toll Collector elite, THE COLLECTOR boss (Confiscate
-and the Mantle), chests, shrines, 3 events, rest & shops, 6 charms, 6 relics, The Gambler,
-between-room run saves, and the Honest-Ledger death screen.
+The complete fate engine — 22 forces with data-driven per-context laws (the original 7 families
+plus Tempest, Serpent, Glass, Gloom, Key, Mirror, Anchor, Rust and Wisp), flip/mill/wound/heal,
+the Pocket (bank & replace), the reshuffle Doom tax, doom laundering, Echo/Void, Burn/Weak, and
+the Odds Panel with exact fractions. Biome 1 is a 9-step track with weighted doors, 16 enemies,
+3 elites (Toll Collector, Underwriter, Notary), THE COLLECTOR boss (capped Confiscate, the
+Mantle, and spill-on-heavy-hit counterplay), chests, shrines, 14 events, rest & shops, 18
+charms, 18 relics, 5 playable heroes with distinct decks and passives (Gambler, Stoker,
+Actuary, Debtor, Sexton) behind a hero-select screen, between-room run saves, and the
+Honest-Ledger death screen.
+
+Upgrading an existing project: run `Tools → Fate Deck → Rebuild Content From Scratch` once
+(regenerates every asset, including the expanded hero decks), then `Create Game Scene` to
+relink the table.
 
 ## Layout
 

@@ -25,5 +25,8 @@ namespace FateDeck.Runtime.Core
         [Min(0)] public int DoomCleansePrice = 20;
         [Min(1)] public int TrackSteps = 9;
         [Min(1)] public int DoorsPerStep = 3;
+
+        [Tooltip("A single Strike hit of at least this much shakes one card loose from a Mantle.")]
+        [Min(0)] public double MantleSpillDamage = 6;
     }
 }

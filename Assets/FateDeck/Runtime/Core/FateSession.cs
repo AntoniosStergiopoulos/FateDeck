@@ -99,12 +99,30 @@ namespace FateDeck.Runtime.Core
 
         public FateAction LastFatalAction { get; private set; }
 
+        /// <summary>The force whose law most recently resolved - what a Mirror flip repeats.</summary>
+        public MetadataEntry LastFlippedForce { get; private set; }
+
+        /// <summary>The pending +Force bonus the next declared player action will consume.</summary>
+        public double NextPlayerActionBonus => _nextPlayerActionBonus;
+
         internal void RestoreRunState(int gold, int keys, int doomFlips, int totalFlips)
         {
             Gold = Math.Max(0, gold);
             Keys = Math.Max(0, keys);
             DoomFlipsThisRun = Math.Max(0, doomFlips);
             TotalFlipsThisRun = Math.Max(0, totalFlips);
+        }
+
+        /// <summary>Restores charge-like state a save captured (pocket upgrades, draw-2, bonuses).</summary>
+        internal void RestoreCharges(int pocketSlots, int doubleDrawCharges, double nextActionBonus)
+        {
+            if (pocketSlots > 0)
+            {
+                PocketSlots = pocketSlots;
+            }
+
+            DoubleDrawCharges = Math.Max(0, doubleDrawCharges);
+            _nextPlayerActionBonus = Math.Max(0, nextActionBonus);
         }
 
         public void Log(string message)
@@ -238,7 +256,12 @@ namespace FateDeck.Runtime.Core
 
         public void AddKeys(int delta)
         {
+            int old = Keys;
             Keys = Math.Max(0, Keys + delta);
+            if (Keys != old)
+            {
+                Events.Publish(new KeysChangedEvent(old, Keys));
+            }
         }
 
         /// <summary>
@@ -442,7 +465,7 @@ namespace FateDeck.Runtime.Core
             action.ReplacedByPocket = true;
             Events.Publish(new PocketPlayedEvent(pocketCard, action));
             ApplyLaw(pocketCard, fromPocket: true);
-            Deck.ToDiscard(pocketCard);
+            DiscardFlipped(pocketCard);
             FinishFlipsOrContinue();
             return true;
         }
@@ -463,7 +486,7 @@ namespace FateDeck.Runtime.Core
                 FateAction dead = CurrentAction;
                 foreach (CardInstance flipped in _flippedThisAction)
                 {
-                    Deck.ToDiscard(flipped);
+                    DiscardFlipped(flipped);
                 }
 
                 _flippedThisAction.Clear();
@@ -504,7 +527,7 @@ namespace FateDeck.Runtime.Core
             }
 
             AlternateCard = null;
-            Deck.ToDiscard(rejected);
+            DiscardFlipped(rejected);
             AfterReveal();
         }
 
@@ -575,12 +598,14 @@ namespace FateDeck.Runtime.Core
 
             if (force == null || action.Negated)
             {
+                LastFlippedForce = force ?? LastFlippedForce;
                 return;
             }
 
             CardFieldDefinition lawField = Catalog.LawFieldFor(action.Context);
             IReadOnlyList<CardEffect> law = force.GetEffects(lawField);
             ResolveEffectList(fateCard, law);
+            LastFlippedForce = force;
         }
 
         private void FinishFlipsOrContinue()
@@ -611,7 +636,7 @@ namespace FateDeck.Runtime.Core
             ApplyWeak(action);
             foreach (CardInstance flipped in _flippedThisAction)
             {
-                Deck.ToDiscard(flipped);
+                DiscardFlipped(flipped);
             }
 
             _flippedThisAction.Clear();
@@ -715,6 +740,24 @@ namespace FateDeck.Runtime.Core
             if (PlayerRetaliateBurn > 0 && action.SourceEnemy != null)
             {
                 AddStatus(action.SourceEnemy, StatusKind.Burn, PlayerRetaliateBurn);
+            }
+        }
+
+        /// <summary>
+        /// Retires a card that just resolved its law. Glass-style forces shatter - they exile
+        /// themselves instead of returning to the discard pile.
+        /// </summary>
+        private void DiscardFlipped(CardInstance card)
+        {
+            MetadataEntry force = Catalog.ForceOf(card);
+            if (force != null && Catalog.ExileAfterFlipField != null
+                && force.GetBoolean(Catalog.ExileAfterFlipField))
+            {
+                Deck.ExileLoose(card);
+            }
+            else
+            {
+                Deck.ToDiscard(card);
             }
         }
 

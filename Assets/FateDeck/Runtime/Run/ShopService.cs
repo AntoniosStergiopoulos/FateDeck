@@ -80,12 +80,12 @@ namespace FateDeck.Runtime.Run
                 }
             }
 
-            int cardCount = miniShop ? 2 : 3;
-            MetadataEntry[] basics = { catalog.Iron, catalog.Flame, catalog.Decay, catalog.Fortune };
-            for (int i = 0; i < cardCount; i++)
+            int cardCount = miniShop ? 2 : 4;
+            List<(MetadataEntry force, int price)> forcePool = BuildForcePool(catalog);
+            for (int i = 0; i < cardCount && forcePool.Count > 0; i++)
             {
-                MetadataEntry force = basics[rng.Next(basics.Length)];
-                bool upgraded = rng.Next(4) == 0;
+                (MetadataEntry force, int price) = forcePool[rng.Next(forcePool.Count)];
+                bool upgraded = rng.Next(4) == 0 && catalog.PlusVersionOf(force) != null;
                 MetadataEntry stocked = upgraded ? catalog.PlusVersionOf(force) : force;
                 CardDefinition card = catalog.FateCardFor(stocked ?? force);
                 if (card != null)
@@ -94,7 +94,7 @@ namespace FateDeck.Runtime.Run
                     {
                         Kind = ShopItemKind.FateCard,
                         Card = card,
-                        Price = upgraded ? 20 : 12
+                        Price = upgraded ? price + 8 : price
                     });
                 }
             }
@@ -105,6 +105,34 @@ namespace FateDeck.Runtime.Run
                 Stock.Add(new ShopItem { Kind = ShopItemKind.Tonic, Price = _session.Rules.TonicPrice });
                 Stock.Add(new ShopItem { Kind = ShopItemKind.Surgery, Price = SurgeryPrice() });
             }
+        }
+
+        /// <summary>Every purchasable force with its base sticker price. Nulls are skipped.</summary>
+        private static List<(MetadataEntry, int)> BuildForcePool(FateContentCatalog catalog)
+        {
+            var pool = new List<(MetadataEntry, int)>();
+            void Add(MetadataEntry force, int price)
+            {
+                if (force != null)
+                {
+                    pool.Add((force, price));
+                }
+            }
+
+            Add(catalog.Iron, 12);
+            Add(catalog.Flame, 12);
+            Add(catalog.Decay, 8);
+            Add(catalog.Fortune, 12);
+            Add(catalog.Tempest, 14);
+            Add(catalog.Serpent, 13);
+            Add(catalog.Glass, 10);
+            Add(catalog.Gloom, 9);
+            Add(catalog.Key, 10);
+            Add(catalog.Mirror, 14);
+            Add(catalog.Anchor, 10);
+            Add(catalog.Rust, 11);
+            Add(catalog.Wisp, 11);
+            return pool;
         }
 
         public int SurgeryPrice()

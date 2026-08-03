@@ -19,6 +19,7 @@ namespace FateDeck.Editor
             public CardFieldDefinition CannotPocket;
             public CardFieldDefinition CannotStack;
             public CardFieldDefinition ExileWhenMilled;
+            public CardFieldDefinition ExileAfterFlip;
             public CardFieldDefinition ForceColor;
             public CardFieldDefinition ForceGlyph;
             public CardFieldDefinition Hp;
@@ -76,6 +77,7 @@ namespace FateDeck.Editor
                 CannotPocket = Field("Cannot Pocket", new BooleanFieldKind()),
                 CannotStack = Field("Cannot Stack", new BooleanFieldKind()),
                 ExileWhenMilled = Field("Exile When Milled", new BooleanFieldKind()),
+                ExileAfterFlip = Field("Exile After Flip", new BooleanFieldKind()),
                 ForceColor = Field("Force Color", new ColorFieldKind()),
                 ForceGlyph = Field("Force Glyph", new TextFieldKind()),
                 Hp = Field("HP", new NumberFieldKind { MutableAtRuntime = true }),
@@ -99,53 +101,82 @@ namespace FateDeck.Editor
                 StartingDeck = Field("Starting Deck", new ObjectFieldKind())
             };
 
-            fields.ForceKind = GetOrCreate<AStergio.OmniCard.Runtime.Cards.MetaData.MetadataKind>("Force Kind", kind =>
-            {
-                kind.EntryFields.AddRange(new[]
-                {
-                    fields.LawOffense, fields.LawDefense, fields.LawEnemy, fields.LawLoot, fields.LawRitual,
-                    fields.CannotPocket, fields.CannotStack, fields.ExileWhenMilled,
-                    fields.ForceColor, fields.ForceGlyph, fields.Description
-                });
-            });
+            fields.ForceKind = GetOrCreate<AStergio.OmniCard.Runtime.Cards.MetaData.MetadataKind>("Force Kind", null);
+            EnsureKindFields(fields.ForceKind,
+                fields.LawOffense, fields.LawDefense, fields.LawEnemy, fields.LawLoot, fields.LawRitual,
+                fields.CannotPocket, fields.CannotStack, fields.ExileWhenMilled, fields.ExileAfterFlip,
+                fields.ForceColor, fields.ForceGlyph, fields.Description);
 
             fields.Force = Field("Force", new ReferenceFieldKind { Kind = fields.ForceKind });
 
-            fields.FateCardSchema = GetOrCreate<CardSchema>("Fate Card Schema", schema =>
-            {
-                schema.Fields.AddRange(new[] { fields.Force, fields.Description });
-            });
+            fields.FateCardSchema = GetOrCreate<CardSchema>("Fate Card Schema", null);
+            EnsureSchemaFields(fields.FateCardSchema, fields.Force, fields.Description);
 
-            fields.EnemySchema = GetOrCreate<CardSchema>("Enemy Schema", schema =>
-            {
-                schema.Fields.AddRange(new[]
-                {
-                    fields.Hp, fields.MaxHp, fields.Bounty, fields.Pattern, fields.PatternIndex,
-                    fields.ForceBonus, fields.Block, fields.Burn, fields.Weak, fields.PocketedGold,
-                    fields.MantleBonusPer, fields.ActionsPerRound, fields.Gimmick, fields.Description,
-                    fields.Triggers
-                });
-            });
+            fields.EnemySchema = GetOrCreate<CardSchema>("Enemy Schema", null);
+            EnsureSchemaFields(fields.EnemySchema,
+                fields.Hp, fields.MaxHp, fields.Bounty, fields.Pattern, fields.PatternIndex,
+                fields.ForceBonus, fields.Block, fields.Burn, fields.Weak, fields.PocketedGold,
+                fields.MantleBonusPer, fields.ActionsPerRound, fields.Gimmick, fields.Description,
+                fields.Triggers);
 
-            fields.RelicSchema = GetOrCreate<CardSchema>("Relic Schema", schema =>
-            {
-                schema.Fields.AddRange(new[] { fields.Description, fields.Effects, fields.Triggers, fields.Price });
-            });
+            fields.RelicSchema = GetOrCreate<CardSchema>("Relic Schema", null);
+            EnsureSchemaFields(fields.RelicSchema,
+                fields.Description, fields.Effects, fields.Triggers, fields.Price);
 
-            fields.CharmSchema = GetOrCreate<CardSchema>("Charm Schema", schema =>
-            {
-                schema.Fields.AddRange(new[] { fields.Description, fields.Effects, fields.MainAction, fields.Price });
-            });
+            fields.CharmSchema = GetOrCreate<CardSchema>("Charm Schema", null);
+            EnsureSchemaFields(fields.CharmSchema,
+                fields.Description, fields.Effects, fields.MainAction, fields.Price);
 
-            fields.HeroSchema = GetOrCreate<CardSchema>("Hero Schema", schema =>
-            {
-                schema.Fields.AddRange(new[]
-                {
-                    fields.Description, fields.PocketSlots, fields.StartingDeck, fields.Triggers
-                });
-            });
+            fields.HeroSchema = GetOrCreate<CardSchema>("Hero Schema", null);
+            EnsureSchemaFields(fields.HeroSchema,
+                fields.Description, fields.PocketSlots, fields.StartingDeck, fields.Triggers);
 
             return fields;
+        }
+
+        /// <summary>
+        /// Adds any missing fields to a schema so re-running the generator upgrades old
+        /// projects in place (cards re-sync against the widened schema afterwards).
+        /// </summary>
+        private static void EnsureSchemaFields(CardSchema schema, params CardFieldDefinition[] required)
+        {
+            bool changed = false;
+            foreach (CardFieldDefinition field in required)
+            {
+                if (field != null && !schema.Fields.Contains(field))
+                {
+                    schema.Fields.Add(field);
+                    changed = true;
+                }
+            }
+
+            if (changed)
+            {
+                UnityEditor.EditorUtility.SetDirty(schema);
+            }
+        }
+
+        /// <summary>
+        /// Adds any missing fields to an existing metadata kind so re-running the generator
+        /// upgrades old projects in place (entries re-sync their values afterwards).
+        /// </summary>
+        private static void EnsureKindFields(AStergio.OmniCard.Runtime.Cards.MetaData.MetadataKind kind,
+            params CardFieldDefinition[] required)
+        {
+            bool changed = false;
+            foreach (CardFieldDefinition field in required)
+            {
+                if (field != null && !kind.EntryFields.Contains(field))
+                {
+                    kind.EntryFields.Add(field);
+                    changed = true;
+                }
+            }
+
+            if (changed)
+            {
+                UnityEditor.EditorUtility.SetDirty(kind);
+            }
         }
 
         private static Zones CreateZones()

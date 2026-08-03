@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Cardsharp Rat
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 278b658a91614638a622592f0c693b82
+    _value: ef9f36704a6d421597891288451bed78
   Blurb: Something small is shuffling cards in the dark. Your cards.
   Encounter: {fileID: 11400000, guid: a7ec7abebc159fe48a6cef3c5c20fcef, type: 2}
   IsElite: 0

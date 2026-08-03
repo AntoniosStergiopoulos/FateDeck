@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slain
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 26c02ab51cc7451195c889b4d13e85a7
+    _value: ad1ce6c000bf4b0bb8000ac9465400db
   Description: 
   Scope: 0
   Visibility: 0

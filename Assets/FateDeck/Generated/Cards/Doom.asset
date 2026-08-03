@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Doom
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 4cd6107c221b4c1583c08f368334bcc8
+    _value: 853e2b1fa2fb444b9a3cc848b7d53fce
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687371046289637
-  - rid: 3602687371046289638
+  - rid: 3602687376923820537
+  - rid: 3602687376923820538
   Variants: []
-  _creationDateTicks: 639213720356519550
+  _creationDateTicks: 639213946066500729
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289637
+    - rid: 3602687376923820537
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
-    - rid: 3602687371046289638
+    - rid: 3602687376923820538
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

@@ -35,6 +35,7 @@ namespace FateDeck.Runtime.Views
             panel.style.maxWidth = 900;
             FateUi.Pad(panel, 16);
             dimmer.Add(panel);
+            UiFx.Pop(panel, 0.86f, 0.2f);
 
             Label heading = FateUi.Text(title, 18, FateUi.GoldLeaf);
             heading.style.unityFontStyleAndWeight = FontStyle.Bold;
@@ -205,6 +206,106 @@ namespace FateDeck.Runtime.Views
                 _log.Append("You memorize the top of your deck.", FateUi.BoneDim);
                 CloseOverlay();
             }, FateUi.BoneDim, 15));
+        }
+
+        // ---------------------------------------------------------------- rules & glossary
+
+        private void ShowHelpOverlay()
+        {
+            if (IsOverlayOpen)
+            {
+                return;
+            }
+
+            VisualElement panel = OpenOverlay("HOW THE TABLE WORKS");
+            var scroll = new ScrollView(ScrollViewMode.Vertical);
+            scroll.style.maxHeight = 520;
+            scroll.style.maxWidth = 840;
+            panel.Add(scroll);
+
+            void Rule(string title, string body)
+            {
+                Label heading = FateUi.Text(title, 14, FateUi.GoldLeaf);
+                heading.style.unityFontStyleAndWeight = FontStyle.Bold;
+                heading.style.marginTop = 6;
+                scroll.Add(heading);
+                scroll.Add(FateUi.Text(body, 13, FateUi.Bone));
+            }
+
+            Rule("THE DECK IS EVERYTHING",
+                "Your deck is your health, your luck and your build. Damage mills cards off the top "
+                + "into the Wound Row. If you must flip or mill and both draw and discard are empty, you die.");
+            Rule("FLIPS",
+                "Every uncertain action flips the top card. The force's law for that context applies - "
+                + "the same Iron that pumps your Strike pumps an enemy's. The Odds Panel on the left "
+                + "always shows the exact odds before you commit.");
+            Rule("THE POCKET",
+                "When your own action flips, you may SLEEVE the revealed card into your Pocket instead: "
+                + "the action resolves at base value and the card is saved. Later, during any pre-flip "
+                + "window (yours or the enemy's), play a pocketed card to REPLACE that flip entirely.");
+            Rule("THE RESHUFFLE TAX",
+                "When the draw pile empties, the discard shuffles back - and the House adds Doom. "
+                + "Every reshuffle is a payday for the House, so plan around the clock.");
+            Rule("WOUNDS & HEALING",
+                "Wounded cards are not lost - they wait in the Wound Row. Healing returns chosen wounds "
+                + "to your deck: healing is a build decision. Milled Doom is exiled forever - the one "
+                + "silver lining of taking hits (doom laundering).");
+            Rule("YOUR HERO'S PASSIVE",
+                "The hero panel (top-left) shows your passive and its live charges - the Gambler's "
+                + "Opening Hand, for example, grants a Draw-2 charge at each combat start. Charms and "
+                + "relics like the Loaded Coin or Bone Dice grant more charges.");
+            Rule("STATUSES",
+                "Burn N: mill/lose N at round end, then it ticks down. Weak: -2 Force on the next "
+                + "action, per stack. Block soaks damage until your next turn.");
+            Rule("THE COLLECTOR",
+                "The boss appraises up to 3 copies of your most-numerous draw-pile force into its "
+                + "Mantle (+1 Force to its attacks per 3 held). Hits of 6+ shake a card loose; killing "
+                + "it returns everything. It cannot see your discard, pocket or wounds.");
+
+            Label glossaryTitle = FateUi.Text("THE FORCES", 15, FateUi.GoldLeaf);
+            glossaryTitle.style.unityFontStyleAndWeight = FontStyle.Bold;
+            glossaryTitle.style.marginTop = 10;
+            scroll.Add(glossaryTitle);
+
+            foreach (MetadataEntry force in AllKnownForces())
+            {
+                var line = new VisualElement();
+                line.style.flexDirection = FlexDirection.Row;
+                line.style.marginBottom = 3;
+                Color color = ForceColor(force);
+                Label name = FateUi.Text($"{force.GetText(_catalog.ForceGlyphField)}  {force.name}", 13, color);
+                name.style.width = 110;
+                name.style.unityFontStyleAndWeight = FontStyle.Bold;
+                name.style.flexShrink = 0;
+                line.Add(name);
+                Label text = FateUi.Text(force.GetText(_catalog.DescriptionField), 12, FateUi.BoneDim);
+                text.style.flexShrink = 1;
+                line.Add(text);
+                scroll.Add(line);
+            }
+
+            panel.Add(FateUi.MakeButton("BACK TO THE TABLE", CloseOverlay, FateUi.BoneDim, 14));
+        }
+
+        private IEnumerable<MetadataEntry> AllKnownForces()
+        {
+            MetadataEntry[] forces =
+            {
+                _catalog.Iron, _catalog.IronPlus, _catalog.Flame, _catalog.FlamePlus,
+                _catalog.Decay, _catalog.DecayPlus, _catalog.Fortune, _catalog.FortunePlus,
+                _catalog.Echo, _catalog.Void, _catalog.Doom,
+                _catalog.Tempest, _catalog.TempestPlus, _catalog.Serpent, _catalog.SerpentPlus,
+                _catalog.Glass, _catalog.Gloom, _catalog.Key, _catalog.Mirror,
+                _catalog.Anchor, _catalog.Rust, _catalog.Wisp
+            };
+
+            foreach (MetadataEntry force in forces)
+            {
+                if (force != null)
+                {
+                    yield return force;
+                }
+            }
         }
 
         // ---------------------------------------------------------------- session choice requests

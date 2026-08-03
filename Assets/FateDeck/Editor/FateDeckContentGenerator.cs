@@ -33,6 +33,24 @@ namespace FateDeck.Editor
             Debug.Log("[FateDeck] Content ready. Next: Tools/Fate Deck/Create Game Scene, then press Play.");
         }
 
+        [MenuItem("Tools/Fate Deck/Rebuild Content From Scratch", false, 20)]
+        public static void RebuildFresh()
+        {
+            if (!EditorUtility.DisplayDialog("Rebuild Fate Deck content",
+                    "Deletes Assets/FateDeck/Generated (including any manual edits to generated assets) "
+                    + "and regenerates everything - heroes, forces, enemies, rooms, items. "
+                    + "The run save is deleted too. Continue?", "Rebuild", "Cancel"))
+            {
+                return;
+            }
+
+            FateDeck.Runtime.Run.FateRunSave.Delete();
+            AssetDatabase.DeleteAsset(Root);
+            AssetDatabase.Refresh();
+            Create();
+            Debug.Log("[FateDeck] Content rebuilt from scratch. Re-run Create Game Scene to relink the table.");
+        }
+
         [MenuItem("Tools/Fate Deck/Delete Run Save", false, 40)]
         public static void DeleteSave()
         {
@@ -49,11 +67,11 @@ namespace FateDeck.Editor
             Zones zones = CreateZones();
             Layouts layouts = CreateLayouts(fields);
             Items items = CreateItems(fields, forces);
-            CardDefinition gambler = CreateHeroes(fields, forces, fateCards);
+            List<CardDefinition> heroes = CreateHeroes(fields, forces, fateCards);
             Rooms rooms = CreateRooms(fields, forces, fateCards, items);
 
             FateContentCatalog catalog = GetOrCreate<FateContentCatalog>("Fate Content Catalog", null);
-            FillCatalog(catalog, rules, fields, forces, fateCards, zones, layouts, items, gambler, rooms);
+            FillCatalog(catalog, rules, fields, forces, fateCards, zones, layouts, items, heroes, rooms);
             catalog.Panel = CreatePanelSettings();
             EditorUtility.SetDirty(catalog);
             AssetDatabase.SaveAssets();
@@ -130,12 +148,16 @@ namespace FateDeck.Editor
         private static CardDefinition Card(CardSchema schema, string name, Action<CardDefinition> initialize,
             string subfolder = "Cards")
         {
-            return GetOrCreate<CardDefinition>(name, card =>
+            CardDefinition card = GetOrCreate<CardDefinition>(name, created =>
             {
-                card.Schema = schema;
-                card.SyncValuesWithSchema();
-                initialize?.Invoke(card);
+                created.Schema = schema;
+                created.SyncValuesWithSchema();
+                initialize?.Invoke(created);
             }, subfolder);
+
+            card.SyncValuesWithSchema();
+            EditorUtility.SetDirty(card);
+            return card;
         }
 
         private static void SetNumber(ICardFieldOwner owner, CardFieldDefinition field, double value)

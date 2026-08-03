@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06908475bdf0468fa7a3e1259f1984a3, type: 3}
+  m_Name: Key
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
+  _id:
+    _value: ea2b4fdc019f4d80aa623d7e12f594c0
+  Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
+  _values:
+  - rid: 3602687376923820427
+  - rid: 3602687376923820428
+  - rid: 3602687376923820429
+  - rid: 3602687376923820430
+  - rid: 3602687376923820431
+  - rid: 3602687376923820432
+  - rid: 3602687376923820433
+  - rid: 3602687376923820434
+  - rid: 3602687376923820435
+  - rid: 3602687376923820436
+  - rid: 3602687376923820437
+  - rid: 3602687376923820438
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376923820427
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
+        Effects:
+        - rid: 3602687376923820439
+    - rid: 3602687376923820428
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
+        Effects:
+        - rid: 3602687376923820440
+    - rid: 3602687376923820429
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
+        Effects:
+        - rid: 3602687376923820441
+    - rid: 3602687376923820430
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
+        Effects:
+        - rid: 3602687376923820442
+    - rid: 3602687376923820431
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
+        Effects:
+        - rid: 3602687376923820443
+    - rid: 3602687376923820432
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
+        Value: 0
+    - rid: 3602687376923820433
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
+        Value: 0
+    - rid: 3602687376923820434
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
+        Value: 0
+    - rid: 3602687376923820435
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
+        Value: 0
+    - rid: 3602687376923820436
+      type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
+        Value: {r: 0.76, g: 0.6, b: 0.34, a: 1}
+    - rid: 3602687376923820437
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
+        Value: K
+    - rid: 3602687376923820438
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: 'Brass teeth: +1 Force on your actions, -1 on enemy actions; loot
+          and ritual flips mint a Key (opens locked chests).'
+    - rid: 3602687376923820439
+      type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data:
+        Delta: 1
+    - rid: 3602687376923820440
+      type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data:
+        Delta: 1
+    - rid: 3602687376923820441
+      type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data:
+        Delta: -1
+    - rid: 3602687376923820442
+      type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1
+    - rid: 3602687376923820443
+      type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1

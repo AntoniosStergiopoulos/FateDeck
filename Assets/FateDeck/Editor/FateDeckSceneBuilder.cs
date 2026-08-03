@@ -34,7 +34,15 @@ namespace FateDeck.Editor
             if (existing != null)
             {
                 EnsureDocument(existing.gameObject, catalog);
-                Debug.Log("[FateDeck] A Fate Table already exists in the scene.");
+                var existingSerialized = new SerializedObject(existing);
+                SerializedProperty catalogProperty = existingSerialized.FindProperty("_catalog");
+                if (catalogProperty.objectReferenceValue == null)
+                {
+                    catalogProperty.objectReferenceValue = catalog;
+                    existingSerialized.ApplyModifiedPropertiesWithoutUndo();
+                }
+
+                Debug.Log("[FateDeck] A Fate Table already exists in the scene; references refreshed.");
                 Selection.activeGameObject = existing.gameObject;
                 return;
             }

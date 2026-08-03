@@ -26,6 +26,8 @@ namespace FateDeck.Runtime.Run
             public int Gold;
             public int Keys;
             public int PocketSlots;
+            public int DoubleDrawCharges;
+            public double NextActionBonus;
             public string HeroId;
             public bool EliteOffered;
             public bool ForgeOffered;
@@ -90,6 +92,8 @@ namespace FateDeck.Runtime.Run
                 Gold = session.Gold,
                 Keys = session.Keys,
                 PocketSlots = session.PocketSlots,
+                DoubleDrawCharges = session.DoubleDrawCharges,
+                NextActionBonus = session.NextPlayerActionBonus,
                 HeroId = session.Hero?.Definition.Id.Value,
                 EliteOffered = run.EliteOffered,
                 ForgeOffered = run.ForgeOffered,

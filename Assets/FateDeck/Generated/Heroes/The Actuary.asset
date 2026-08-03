@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631173185392099449d5edbfb99c6d94, type: 3}
+  m_Name: The Actuary
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
+  _id:
+    _value: 07afe294804742d8b243a92187dcec79
+  Schema: {fileID: 11400000, guid: c5844690b8dd13a4ab010d735d5fcf81, type: 2}
+  _values:
+  - rid: 3602687376923820795
+  - rid: 3602687376923820796
+  - rid: 3602687376923820797
+  - rid: 3602687376923820798
+  Variants: []
+  _creationDateTicks: 639213946100998068
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3602687376923820795
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: Full Audit - every combat starts with Scry 3 (reorder). Pocket holds
+          3.
+    - rid: 3602687376923820796
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}
+        Value: 3
+    - rid: 3602687376923820797
+      type: {class: ObjectFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: ad0a7b5acd9fff2479d7205008adc3b3, type: 2}
+        Value: {fileID: 11400000, guid: dbe05dfa4d6609c40a5a41ca57540cc6, type: 2}
+    - rid: 3602687376923820798
+      type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
+        Triggers:
+        - rid: 3602687376923820799
+    - rid: 3602687376923820799
+      type: {class: OnCombatStartTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
+      data:
+        Condition:
+          rid: -2
+        Effects:
+        - rid: 3602687376923820800
+    - rid: 3602687376923820800
+      type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 3
+        AllowReorder: 1

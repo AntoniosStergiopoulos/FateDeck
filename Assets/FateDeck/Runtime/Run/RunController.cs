@@ -93,7 +93,8 @@ namespace FateDeck.Runtime.Run
             Biome = 1;
             EliteOffered = false;
             ForgeOffered = false;
-            Session.Bark("\"Fifteen cards. That is what you are worth today. Play them well.\"");
+            int worth = Session.Deck.Draw.Count;
+            Session.Bark($"\"{worth} cards. That is what you are worth today. Play them well.\"");
             NextStep();
         }
 
@@ -133,6 +134,7 @@ namespace FateDeck.Runtime.Run
             Session.Deck.ExtraTaxNextReshuffle = data.ExtraTaxNextReshuffle;
             Session.Deck.RestoreReshuffleCount(data.ReshuffleCount);
             Session.RestoreRunState(data.Gold, data.Keys, data.DoomFlips, data.TotalFlips);
+            Session.RestoreCharges(data.PocketSlots, data.DoubleDrawCharges, data.NextActionBonus);
 
             Biome = data.Biome;
             EliteOffered = data.EliteOffered;
@@ -241,8 +243,7 @@ namespace FateDeck.Runtime.Run
                 ForgeOffered = true;
             }
 
-            FightRoomDefinition elite = _catalog.Biome1Elite;
-            Doors.AddRange(DoorDealer.Deal(_catalog.Biome1Rooms, elite, Step,
+            Doors.AddRange(DoorDealer.Deal(_catalog.Biome1Rooms, _catalog.ElitePool(), Step,
                 _catalog.Rules.DoorsPerStep, Session.Rng, ref eliteOffered, forced));
             EliteOffered = eliteOffered;
             Screen = RunScreen.Doors;

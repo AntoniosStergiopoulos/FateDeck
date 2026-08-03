@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 8eac9a6b040c4c449c9a651384f96aab
+    _value: ab1021d27f1c4b4ea550bd84b4217c41
   Kind:
-    rid: 3602687371046289437
+    rid: 3602687376923820122
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289437
+    - rid: 3602687376923820122
       type: {class: ObjectFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

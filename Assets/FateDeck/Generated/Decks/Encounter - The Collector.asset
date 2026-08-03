@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - The Collector
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 11f43884d59d4dffbe9fe6f73f599a0a
+    _value: 767e98800e134eb585201f75da5c2157
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 8b3fdcbb4f9818f47abb62800a00d2d4, type: 2}

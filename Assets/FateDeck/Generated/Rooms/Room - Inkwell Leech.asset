@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c03dae9770d154682b5b6468f2eb23, type: 3}
+  m_Name: Room - Inkwell Leech
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
+  _id:
+    _value: c799bdedba7b4e3a92d5641e15b1f93f
+  Blurb: It drinks as fast as you cut. Burst it down.
+  Encounter: {fileID: 11400000, guid: 39e480d3ae9adef43b8f7cc84c22060f, type: 2}
+  IsElite: 0
+  RiggedTopForce: {fileID: 0}
+  CharmDropChance: 0.2

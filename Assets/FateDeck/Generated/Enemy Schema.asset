@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Schema
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardSchema
   _id:
-    _value: 8e6fa440db1f408198e638dfbe7723ac
+    _value: 7d289879720045f09f877e698f6b2368
   Fields:
   - {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
   - {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}

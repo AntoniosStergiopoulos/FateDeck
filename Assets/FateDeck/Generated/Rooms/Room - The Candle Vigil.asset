@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3804d92343cd0140b24b5e9132d96af, type: 3}
+  m_Name: Room - The Candle Vigil
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
+  _id:
+    _value: c91f56ec264f41b98ee47594c89062a5
+  Blurb: A hundred small flames breathe in unison.
+  Event: {fileID: 11400000, guid: 5836cc4db108bcf4495001d9109bfe36, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Relics
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 62d4c29c9160415db6cd4dd3f5e228f7
+    _value: 03867f1ddc9a4397b91bb965bd50de1a
   Description: 
   Scope: 0
   Visibility: 0

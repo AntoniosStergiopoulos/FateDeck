@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Doom Auction
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: f085c5abf47a450cb68155d7e93f2dd4
+  Intro: 'A lectern, a gavel, a crowd of empty coats. "Lot 44: two certificates of
+    DOOM. The House will PAY the taker fifteen gold. Do I hear a fool?"'
+  Options:
+  - Label: Take the lot (+15g, +2 Doom)
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238887
+    - rid: 3602687376965238888
+    ResultText: The coats applaud silently. The gold is real. So is the Doom.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Keep your name off the books
+    GoldCost: 0
+    Effects: []
+    ResultText: The gavel falls on someone else's fate.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238887
+      type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Amount: 15
+    - rid: 3602687376965238888
+      type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
+        Zone: 0
+        RandomPosition: 1
+        Count: 2

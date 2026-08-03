@@ -248,4 +248,41 @@ namespace FateDeck.Runtime.Core
         public FateResolutionPhase Phase { get; }
         public FateAction Action { get; }
     }
+
+    /// <summary>A heavy hit shook a confiscated card loose from the Collector's Mantle.</summary>
+    public sealed class MantleSpilledEvent : IGameEvent
+    {
+        public MantleSpilledEvent(CardInstance card)
+        {
+            Card = card;
+        }
+
+        public CardInstance Card { get; }
+    }
+
+    /// <summary>Cards were taken into an enemy's Mantle (the Collector's Confiscate).</summary>
+    public sealed class MantleTakenEvent : IGameEvent
+    {
+        public MantleTakenEvent(AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry force, int count)
+        {
+            Force = force;
+            Count = count;
+        }
+
+        public AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry Force { get; }
+        public int Count { get; }
+    }
+
+    /// <summary>The player's key count changed.</summary>
+    public sealed class KeysChangedEvent : IGameEvent
+    {
+        public KeysChangedEvent(int oldValue, int newValue)
+        {
+            OldValue = oldValue;
+            NewValue = newValue;
+        }
+
+        public int OldValue { get; }
+        public int NewValue { get; }
+    }
 }

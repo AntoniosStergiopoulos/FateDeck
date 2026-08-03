@@ -8,15 +8,19 @@ using FateDeck.Runtime.Core;
 namespace FateDeck.Runtime.Effects.Enemies
 {
     /// <summary>
-    /// The Collector's signature: removes every draw-pile copy of your most-numerous force
-    /// into its visible Mantle. It only reads the draw pile - discard, pocket and wounds are safe.
+    /// The Collector's signature: removes draw-pile copies of your most-numerous force
+    /// into its visible Mantle, at most <see cref="MaxTaken"/> per appraisal. It only reads
+    /// the draw pile - discard, pocket and wounds are safe - and heavy hits shake cards loose.
     /// </summary>
     [Serializable]
     public class ConfiscateEffect : FateEffect
     {
+        public int MaxTaken = 3;
+
         public override string GetName() => "Confiscate";
 
-        public override string GetDescription() => "confiscates all copies of your most-numerous force";
+        public override string GetDescription() =>
+            $"confiscates up to {MaxTaken} copies of your most-numerous force";
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {
@@ -48,6 +52,10 @@ namespace FateDeck.Runtime.Effects.Enemies
                 if (session.Catalog.ForceOf(card) == richest)
                 {
                     taken.Add(card);
+                    if (MaxTaken > 0 && taken.Count >= MaxTaken)
+                    {
+                        break;
+                    }
                 }
             }
 
@@ -59,7 +67,8 @@ namespace FateDeck.Runtime.Effects.Enemies
 
             if (taken.Count > 0)
             {
-                session.Bark($"\"{richest.name}. Confiscated. {taken.Count} pieces, into the Mantle.\"");
+                session.Events.Publish(new MantleTakenEvent(richest, taken.Count));
+                session.Bark($"\"{richest.name}. Appraised. {taken.Count} pieces, into the Mantle.\"");
             }
         }
     }

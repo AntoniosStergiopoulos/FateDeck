@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using AStergio.OmniCard.Runtime.Cards.Effects.Base;
 using AStergio.OmniCard.Runtime.Cards.Instances;
 using FateDeck.Runtime.Core;
+using FateDeck.Runtime.Effects.Enemies;
+using FateDeck.Runtime.Effects.Gameplay;
 using FateDeck.Runtime.Run;
 using NUnit.Framework;
 
@@ -163,9 +166,10 @@ namespace FateDeck.Tests
 
             bool offered = false;
             var rng = new System.Random(3);
+            var elites = new List<FightRoomDefinition> { elite };
             for (int step = 5; step <= 7 && !offered; step++)
             {
-                List<RoomDefinition> doors = DoorDealer.Deal(pool, elite, step, 3, rng, ref offered);
+                List<RoomDefinition> doors = DoorDealer.Deal(pool, elites, step, 3, rng, ref offered);
                 if (step == 7)
                 {
                     Assert.IsTrue(doors.Contains(elite));
@@ -186,6 +190,85 @@ namespace FateDeck.Tests
             Assert.AreEqual(goldBefore + 5, _session.Gold);
             Assert.IsTrue(combat.Victory);
             Assert.AreEqual(0, combat.Enemies.Count);
+        }
+
+        [Test]
+        public void GlassShattersToExileAfterItsFlip()
+        {
+            var glass = new CardInstance(_content.GlassCard);
+            _session.Deck.Draw.Add(glass);
+
+            FateAction resolved = null;
+            _session.Events.Subscribe<ActionResolvedEvent>(e => resolved = e.Action);
+            _session.BeginAction(new FateAction(FateActionKind.Ritual, "Rite", 0, true));
+            _session.ContinueFlip();
+
+            Assert.AreEqual(FateResolutionPhase.Idle, _session.Phase,
+                "rituals resolve immediately - no banking window");
+            Assert.AreEqual(4, resolved.Force);
+            Assert.IsTrue(_session.Deck.Exile.Contains(glass), "Glass shatters into Exile, not discard");
+            Assert.IsFalse(_session.Deck.Discard.Contains(glass));
+        }
+
+        [Test]
+        public void MirrorRepeatsThePreviousLaw()
+        {
+            _session.Deck.MoveForceToTop(_content.Catalog.Iron);
+            _session.BeginAction(new FateAction(FateActionKind.Ritual, "First", 0, true));
+            _session.ContinueFlip();
+            Assert.AreEqual(_content.Catalog.Iron, _session.LastFlippedForce);
+
+            _session.Deck.Draw.Add(new CardInstance(_content.MirrorCard));
+            FateAction resolved = null;
+            _session.Events.Subscribe<ActionResolvedEvent>(e => resolved = e.Action);
+            _session.BeginAction(new FateAction(FateActionKind.Ritual, "Second", 0, true));
+            _session.ContinueFlip();
+
+            Assert.AreEqual(2, resolved.Force, "Mirror repeats Iron's +2 law");
+        }
+
+        [Test]
+        public void TempestCleavesTheOtherEnemy()
+        {
+            var combat = _session.StartCombat(_content.PairRoom);
+            CardInstance target = combat.Enemies.Cards[0];
+            CardInstance other = combat.Enemies.Cards[1];
+            _session.Deck.Draw.Add(new CardInstance(_content.TempestCard));
+
+            combat.PlayerStrike(target);
+            _session.ContinueFlip();
+            _session.DeclineBank();
+
+            Assert.AreEqual(5, target.Fields.GetNumber(_content.Catalog.HpField), "8 - Strike 3");
+            Assert.AreEqual(6, other.Fields.GetNumber(_content.Catalog.HpField), "8 - arc 2");
+        }
+
+        [Test]
+        public void ConfiscateCapsAtThreeAndHeavyHitsSpill()
+        {
+            var combat = _session.StartCombat(_content.CollectorRoom);
+            CardInstance boss = combat.Enemies.Cards[0];
+            int drawBefore = _session.Deck.Draw.Count;
+
+            new ConfiscateEffect { MaxTaken = 3 }.Resolve(new EffectContext(boss, _session));
+            Assert.AreEqual(3, combat.Mantle.Count, "Confiscate is capped");
+            Assert.AreEqual(drawBefore - 3, _session.Deck.Draw.Count);
+
+            // A declared no-flip strike of 7 lands as action-driven damage - burn ticks never spill.
+            _session.BeginAction(new FateAction(FateActionKind.Strike, "Heave", 7, false)
+            {
+                TargetEnemy = boss
+            });
+            Assert.AreEqual(2, combat.Mantle.Count, "a 6+ action hit shakes one card loose");
+            Assert.AreEqual(1, _session.Deck.Discard.Count);
+            Assert.AreEqual(18, boss.Fields.GetNumber(_content.Catalog.HpField));
+        }
+
+        [Test]
+        public void GainKeyEffectMintsKeys()
+        {
+            new GainKeyEffect { Count = 2 }.Resolve(new EffectContext(_session.Hero, _session));
+            Assert.AreEqual(2, _session.Keys);
         }
     }
 }

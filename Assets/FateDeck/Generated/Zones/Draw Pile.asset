@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Draw Pile
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 80713253c7ce47088e20a9e832e3dab9
+    _value: 9703aaf110f746efbc2d18faf4220e48
   Description: 
   Scope: 0
   Visibility: 2

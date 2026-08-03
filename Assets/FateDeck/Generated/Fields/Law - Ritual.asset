@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Law - Ritual
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: b812bf8e99804a98a76873081a5d0c3d
+    _value: dd20429760284415915bf1f1ee90fc56
   Kind:
-    rid: 3602687371046289413
+    rid: 3602687376923820097
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289413
+    - rid: 3602687376923820097
       type: {class: EffectListFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

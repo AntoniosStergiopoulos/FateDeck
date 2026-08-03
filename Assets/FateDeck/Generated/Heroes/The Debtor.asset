@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631173185392099449d5edbfb99c6d94, type: 3}
+  m_Name: The Debtor
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
+  _id:
+    _value: cc129d4e7890469ca745252dc9c3abdf
+  Schema: {fileID: 11400000, guid: c5844690b8dd13a4ab010d735d5fcf81, type: 2}
+  _values:
+  - rid: 3602687376923820801
+  - rid: 3602687376923820802
+  - rid: 3602687376923820803
+  - rid: 3602687376923820804
+  Variants: []
+  _creationDateTicks: 639213946101949901
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3602687376923820801
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: Interest - whenever Doom surfaces, the House pays you 3g. Starts 2
+          Doom deep.
+    - rid: 3602687376923820802
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}
+        Value: 2
+    - rid: 3602687376923820803
+      type: {class: ObjectFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: ad0a7b5acd9fff2479d7205008adc3b3, type: 2}
+        Value: {fileID: 11400000, guid: 15edb3d02b8ffb14881a1d25d2311ab9, type: 2}
+    - rid: 3602687376923820804
+      type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
+        Triggers:
+        - rid: 3602687376923820805
+    - rid: 3602687376923820805
+      type: {class: OnFateFlipTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
+      data:
+        Condition:
+          rid: -2
+        Effects:
+        - rid: 3602687376923820806
+        AnyContext: 1
+        Context: 0
+        ForceFilter: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+        Owner: 0
+        IncludePocketPlays: 1
+    - rid: 3602687376923820806
+      type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Amount: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Exile Pile
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: b232d170e3e44d15ad9b0185e2aaedec
+    _value: ba23ce7e9ea4405a98993d5fd60ab338
   Description: 
   Scope: 0
   Visibility: 0

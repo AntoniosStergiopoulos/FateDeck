@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - Locked Chest
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ChestRoomDefinition
   _id:
-    _value: b74660c69fe94cb2bc54d3d1231d5043
+    _value: 5cd1811796494f34998599ab42a93fc5
   Blurb: A locked chest, heavier. A Key opens it politely; Flame opens it rudely.
   Locked: 1

@@ -33,6 +33,7 @@ namespace FateDeck.Runtime.Core
         public CardFieldDefinition CannotPocketField;
         public CardFieldDefinition CannotStackField;
         public CardFieldDefinition ExileWhenMilledField;
+        public CardFieldDefinition ExileAfterFlipField;
         public CardFieldDefinition ForceColorField;
         public CardFieldDefinition ForceGlyphField;
 
@@ -77,6 +78,19 @@ namespace FateDeck.Runtime.Core
         public MetadataEntry Void;
         public MetadataEntry Doom;
 
+        [Header("Expansion forces")]
+        public MetadataEntry Tempest;
+        public MetadataEntry TempestPlus;
+        public MetadataEntry Serpent;
+        public MetadataEntry SerpentPlus;
+        public MetadataEntry Glass;
+        public MetadataEntry Gloom;
+        public MetadataEntry Key;
+        public MetadataEntry Mirror;
+        public MetadataEntry Anchor;
+        public MetadataEntry Rust;
+        public MetadataEntry Wisp;
+
         [Header("Schemas")]
         public CardSchema FateCardSchema;
         public CardSchema EnemySchema;
@@ -118,8 +132,22 @@ namespace FateDeck.Runtime.Core
         public List<RoomDefinition> Biome1Rooms = new List<RoomDefinition>();
         public FightRoomDefinition Biome1Opening;
         public FightRoomDefinition Biome1Elite;
+        public List<FightRoomDefinition> Biome1Elites = new List<FightRoomDefinition>();
         public BossRoomDefinition Biome1Boss;
         public ShrineRoomDefinition ForgeShrine;
+
+        /// <summary>Every elite this biome can offer; falls back to the single legacy field.</summary>
+        public IReadOnlyList<FightRoomDefinition> ElitePool()
+        {
+            if (Biome1Elites != null && Biome1Elites.Count > 0)
+            {
+                return Biome1Elites;
+            }
+
+            return Biome1Elite != null
+                ? new List<FightRoomDefinition> { Biome1Elite }
+                : new List<FightRoomDefinition>();
+        }
 
         /// <summary>Finds the fate card definition whose Force reference is the given entry.</summary>
         public CardDefinition FateCardFor(MetadataEntry force)
@@ -147,19 +175,22 @@ namespace FateDeck.Runtime.Core
             return card.Definition.GetObject(ForceField) as MetadataEntry;
         }
 
-        /// <summary>The + tier of a basic force, or null (Echo, Void and Doom cannot upgrade).</summary>
+        /// <summary>The + tier of an upgradeable force, or null (Echo, Void, Doom and one-offs cannot).</summary>
         public MetadataEntry PlusVersionOf(MetadataEntry force)
         {
             if (force == Iron) return IronPlus;
             if (force == Flame) return FlamePlus;
             if (force == Decay) return DecayPlus;
             if (force == Fortune) return FortunePlus;
+            if (force == Tempest) return TempestPlus;
+            if (force == Serpent) return SerpentPlus;
             return null;
         }
 
+        /// <summary>True when the force has an upgraded tier a Rest's Sharpen can reach.</summary>
         public bool IsBasicForce(MetadataEntry force)
         {
-            return force == Iron || force == Flame || force == Decay || force == Fortune;
+            return force != null && PlusVersionOf(force) != null;
         }
 
         public CardFieldDefinition LawFieldFor(LawContext context)

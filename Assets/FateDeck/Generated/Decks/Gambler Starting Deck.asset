@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Gambler Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: c9f5743ff96142c090ace67bd4c6ce73
+    _value: e364c2d4b0bf4d488e4a8789a2aed8c6
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}
-    Count: 10
+    Count: 9
   - Card: {fileID: 11400000, guid: 8f2a71056e296624f86d0b531118a8db, type: 2}
-    Count: 4
+    Count: 3
+  - Card: {fileID: 11400000, guid: 92a968c5968886e48b808ca6e25c493c, type: 2}
+    Count: 1
+  - Card: {fileID: 11400000, guid: a5bb3e4f3fb6c6a409696a185cd8eef6, type: 2}
+    Count: 1
   - Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
     Count: 1

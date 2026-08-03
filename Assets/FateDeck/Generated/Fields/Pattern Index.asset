@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Pattern Index
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: df2968d97384449c98c78b72858c3160
+    _value: b586010322f7450bb08d4ef04ef7afec
   Kind:
-    rid: 3602687371046289423
+    rid: 3602687376923820108
   references:
     version: 2
     RefIds:
-    - rid: 3602687371046289423
+    - rid: 3602687376923820108
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 1

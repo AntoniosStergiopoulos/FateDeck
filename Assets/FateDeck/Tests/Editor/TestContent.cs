@@ -21,9 +21,15 @@ namespace FateDeck.Tests
         public CardDefinition IronCard;
         public CardDefinition FortuneCard;
         public CardDefinition DoomCard;
+        public CardDefinition GlassCard;
+        public CardDefinition MirrorCard;
+        public CardDefinition TempestCard;
         public CardDefinition Enemy;
+        public CardDefinition Collector;
         public CardDefinition Hero;
         public FateDeck.Runtime.Run.FightRoomDefinition FightRoom;
+        public FateDeck.Runtime.Run.FightRoomDefinition PairRoom;
+        public FateDeck.Runtime.Run.FightRoomDefinition CollectorRoom;
         public readonly List<Object> Owned = new List<Object>();
 
         public static TestContent Create()
@@ -44,6 +50,7 @@ namespace FateDeck.Tests
             catalog.CannotPocketField = content.Field("Cannot Pocket", new BooleanFieldKind());
             catalog.CannotStackField = content.Field("Cannot Stack", new BooleanFieldKind());
             catalog.ExileWhenMilledField = content.Field("Exile When Milled", new BooleanFieldKind());
+            catalog.ExileAfterFlipField = content.Field("Exile After Flip", new BooleanFieldKind());
             catalog.ForceColorField = content.Field("Force Color", new ColorFieldKind());
             catalog.ForceGlyphField = content.Field("Force Glyph", new TextFieldKind());
             catalog.DescriptionField = content.Field("Description", new TextFieldKind());
@@ -53,8 +60,8 @@ namespace FateDeck.Tests
             {
                 catalog.LawOffenseField, catalog.LawDefenseField, catalog.LawEnemyField,
                 catalog.LawLootField, catalog.LawRitualField, catalog.CannotPocketField,
-                catalog.CannotStackField, catalog.ExileWhenMilledField, catalog.ForceColorField,
-                catalog.ForceGlyphField, catalog.DescriptionField
+                catalog.CannotStackField, catalog.ExileWhenMilledField, catalog.ExileAfterFlipField,
+                catalog.ForceColorField, catalog.ForceGlyphField, catalog.DescriptionField
             });
             catalog.ForceKind = forceKind;
 
@@ -63,6 +70,10 @@ namespace FateDeck.Tests
             catalog.Doom = content.DoomForce(forceKind, catalog);
             catalog.Echo = content.Force(forceKind, catalog, "Echo", new EchoFlipEffect());
             catalog.Void = content.Force(forceKind, catalog, "Void", new NegateActionEffect());
+            catalog.Glass = content.Force(forceKind, catalog, "Glass", new ModifyActionForceEffect { Delta = 4 });
+            ((BooleanFieldValue)catalog.Glass.GetValue(catalog.ExileAfterFlipField)).Value = true;
+            catalog.Mirror = content.Force(forceKind, catalog, "Mirror", new CopyLastForceEffect());
+            catalog.Tempest = content.Force(forceKind, catalog, "Tempest", new CleaveDamageEffect { Amount = 2 });
 
             catalog.ForceField = content.Field("Force", new ReferenceFieldKind { Kind = forceKind });
             var fateSchema = content.New<CardSchema>("Fate Schema");
@@ -72,9 +83,15 @@ namespace FateDeck.Tests
             content.IronCard = content.FateCard(fateSchema, catalog, "Iron", catalog.Iron);
             content.FortuneCard = content.FateCard(fateSchema, catalog, "Fortune", catalog.Fortune);
             content.DoomCard = content.FateCard(fateSchema, catalog, "Doom", catalog.Doom);
+            content.GlassCard = content.FateCard(fateSchema, catalog, "Glass", catalog.Glass);
+            content.MirrorCard = content.FateCard(fateSchema, catalog, "Mirror", catalog.Mirror);
+            content.TempestCard = content.FateCard(fateSchema, catalog, "Tempest", catalog.Tempest);
             catalog.FateCards.Add(content.IronCard);
             catalog.FateCards.Add(content.FortuneCard);
             catalog.FateCards.Add(content.DoomCard);
+            catalog.FateCards.Add(content.GlassCard);
+            catalog.FateCards.Add(content.MirrorCard);
+            catalog.FateCards.Add(content.TempestCard);
 
             catalog.HpField = content.Field("HP", new NumberFieldKind());
             catalog.MaxHpField = content.Field("Max HP", new NumberFieldKind());
@@ -148,6 +165,26 @@ namespace FateDeck.Tests
             var encounter = content.New<DeckDefinition>("Encounter");
             encounter.Cards.Add(new DeckEntry { Card = content.Enemy, Count = 1 });
             content.FightRoom.Encounter = encounter;
+
+            content.PairRoom = content.New<FateDeck.Runtime.Run.FightRoomDefinition>("Pair Fight");
+            var pairEncounter = content.New<DeckDefinition>("Pair Encounter");
+            pairEncounter.Cards.Add(new DeckEntry { Card = content.Enemy, Count = 2 });
+            content.PairRoom.Encounter = pairEncounter;
+
+            content.Collector = content.New<CardDefinition>("Collector");
+            content.Collector.Schema = enemySchema;
+            content.Collector.SyncValuesWithSchema();
+            ((NumberFieldValue)content.Collector.GetValue(catalog.HpField)).Value = 25;
+            ((NumberFieldValue)content.Collector.GetValue(catalog.MaxHpField)).Value = 25;
+            ((NumberFieldValue)content.Collector.GetValue(catalog.BountyField)).Value = 10;
+            ((NumberFieldValue)content.Collector.GetValue(catalog.MantleBonusPerField)).Value = 3;
+            ((EnemyPatternFieldValue)content.Collector.GetValue(catalog.PatternField)).Steps.Add(
+                new EnemyActionSpec { Name = "Attack", Kind = EnemyActionKind.Attack, Force = 4, FlipsFate = true });
+
+            content.CollectorRoom = content.New<FateDeck.Runtime.Run.FightRoomDefinition>("Collector Fight");
+            var bossEncounter = content.New<DeckDefinition>("Collector Encounter");
+            bossEncounter.Cards.Add(new DeckEntry { Card = content.Collector, Count = 1 });
+            content.CollectorRoom.Encounter = bossEncounter;
 
             return content;
         }

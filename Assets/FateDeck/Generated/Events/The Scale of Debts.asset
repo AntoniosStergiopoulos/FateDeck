@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Scale of Debts
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: d01deedd19b7475fa74703e2f50e7677
+  Intro: A brass scale the size of a door. One pan holds a feather. The other waits
+    for your worst card.
+  Options:
+  - Label: 'Confess (mill 1): exile 1 Doom from your draw pile'
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238903
+    - rid: 3602687376965238904
+    ResultText: The scale tips. Something red and heavy is carried away.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Deny everything
+    GoldCost: 0
+    Effects: []
+    ResultText: The feather doesn't move. It knows.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238903
+      type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1
+    - rid: 3602687376965238904
+      type: {class: ExileForceFromDrawEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Force: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+        Count: 1

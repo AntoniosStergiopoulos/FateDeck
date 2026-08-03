@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Toll Collector
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: fcb69c9d5bf646b1a53eca66749de0a8
+    _value: 2e2b8e756f084109ad341c92682fc2ca
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: d38dc56001deca74aa5f21ec126101f8, type: 2}

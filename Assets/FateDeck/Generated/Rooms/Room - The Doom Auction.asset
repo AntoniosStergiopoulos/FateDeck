@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3804d92343cd0140b24b5e9132d96af, type: 3}
+  m_Name: Room - The Doom Auction
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
+  _id:
+    _value: 9ff791d683234efcb4596453c0dba873
+  Blurb: A gavel echoes in an empty hall.
+  Event: {fileID: 11400000, guid: bff9e61bb8ee78c4db9cf2fb5e20c117, type: 2}

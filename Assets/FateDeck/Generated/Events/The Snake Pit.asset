@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Snake Pit
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: 6a8adade823042cc8546e12c9d8c8831
+  Intro: A dry fountain full of gently seething rope. One strand lifts its head and
+    looks at your deck with professional interest.
+  Options:
+  - Label: 'Reach in (free): 2 Serpent, but it bites (mill 1)'
+    GoldCost: 0
+    Effects:
+    - rid: 3602687376965238879
+    - rid: 3602687376965238880
+    ResultText: Venom joins your fate. So does a toothmark.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: 'Charm it (8g): 1 Serpent, no bite'
+    GoldCost: 8
+    Effects:
+    - rid: 3602687376965238881
+    ResultText: It slides into your deck like it always lived there.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Back away slowly
+    GoldCost: 0
+    Effects: []
+    ResultText: The rope settles.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687376965238879
+      type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Card: {fileID: 11400000, guid: 00eb5b3c5203b294b9381de80dc1d2d2, type: 2}
+        Zone: 0
+        RandomPosition: 1
+        Count: 2
+    - rid: 3602687376965238880
+      type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1
+    - rid: 3602687376965238881
+      type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Card: {fileID: 11400000, guid: 00eb5b3c5203b294b9381de80dc1d2d2, type: 2}
+        Zone: 0
+        RandomPosition: 1
+        Count: 1

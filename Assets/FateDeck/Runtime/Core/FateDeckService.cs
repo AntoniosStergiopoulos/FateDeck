@@ -241,6 +241,18 @@ namespace FateDeck.Runtime.Core
             return true;
         }
 
+        /// <summary>Exiles a card that is currently in no zone (a flipped Glass card shattering).</summary>
+        public void ExileLoose(CardInstance card)
+        {
+            if (card == null)
+            {
+                return;
+            }
+
+            Exile.Add(card);
+            _game.Events.Publish(new CardExiledEvent(card));
+        }
+
         /// <summary>Puts a known card from the discard pile on top of the draw pile. Doom cannot be stacked.</summary>
         public bool StackOnTop(CardInstance card)
         {
