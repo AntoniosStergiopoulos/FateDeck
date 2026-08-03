@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06908475bdf0468fa7a3e1259f1984a3, type: 3}
+  m_Name: Void
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
+  _id:
+    _value: eee09346057b4b99b69ff5c46d5d6075
+  Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
+  _values:
+  - rid: 3602687371046289551
+  - rid: 3602687371046289552
+  - rid: 3602687371046289553
+  - rid: 3602687371046289554
+  - rid: 3602687371046289555
+  - rid: 3602687371046289556
+  - rid: 3602687371046289557
+  - rid: 3602687371046289558
+  - rid: 3602687371046289559
+  - rid: 3602687371046289560
+  - rid: 3602687371046289561
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687371046289551
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
+        Effects:
+        - rid: 3602687371046289562
+    - rid: 3602687371046289552
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
+        Effects:
+        - rid: 3602687371046289563
+    - rid: 3602687371046289553
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
+        Effects:
+        - rid: 3602687371046289564
+    - rid: 3602687371046289554
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
+        Effects:
+        - rid: 3602687371046289565
+    - rid: 3602687371046289555
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
+        Effects:
+        - rid: 3602687371046289566
+    - rid: 3602687371046289556
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
+        Value: 0
+    - rid: 3602687371046289557
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
+        Value: 0
+    - rid: 3602687371046289558
+      type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
+        Value: 0
+    - rid: 3602687371046289559
+      type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
+        Value: {r: 0.82, g: 0.82, b: 0.86, a: 1}
+    - rid: 3602687371046289560
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
+        Value: O
+    - rid: 3602687371046289561
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: The action resolves at Force 0 with no effects; no other laws trigger.
+    - rid: 3602687371046289562
+      type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data: 
+    - rid: 3602687371046289563
+      type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data: 
+    - rid: 3602687371046289564
+      type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data: 
+    - rid: 3602687371046289565
+      type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data: 
+    - rid: 3602687371046289566
+      type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
+      data: 

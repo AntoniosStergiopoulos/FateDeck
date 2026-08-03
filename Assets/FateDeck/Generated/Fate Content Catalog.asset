@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a4657c7cf18624ab171bdd3f86359b, type: 3}
+  m_Name: Fate Content Catalog
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Core.FateContentCatalog
+  Rules: {fileID: 11400000, guid: 605c418d60cd87746bb9dc679d339a7f, type: 2}
+  ForceField: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
+  DescriptionField: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+  ColorField: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
+  GlyphField: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
+  LawOffenseField: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
+  LawDefenseField: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
+  LawEnemyField: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
+  LawLootField: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
+  LawRitualField: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
+  CannotPocketField: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
+  CannotStackField: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
+  ExileWhenMilledField: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
+  ForceColorField: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
+  ForceGlyphField: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
+  HpField: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
+  MaxHpField: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
+  BountyField: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
+  PatternField: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
+  PatternIndexField: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
+  ForceBonusField: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
+  BlockField: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
+  GimmickField: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
+  BurnField: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
+  WeakField: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
+  PocketedGoldField: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
+  MantleBonusPerField: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
+  ActionsPerRoundField: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
+  EffectsField: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
+  TriggersField: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
+  PriceField: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
+  MainActionField: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
+  PocketSlotsField: {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}
+  StartingDeckField: {fileID: 11400000, guid: ad0a7b5acd9fff2479d7205008adc3b3, type: 2}
+  ForceKind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
+  Iron: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
+  IronPlus: {fileID: 11400000, guid: 8b2b673095bd7a24098dc01b9ebedceb, type: 2}
+  Flame: {fileID: 11400000, guid: db6a6c29ae0e45948b59992cb5e7f969, type: 2}
+  FlamePlus: {fileID: 11400000, guid: b360d1657d70238488946864f0b64a4c, type: 2}
+  Decay: {fileID: 11400000, guid: 3e59cea685a6561459b670e17978c5fc, type: 2}
+  DecayPlus: {fileID: 11400000, guid: 7aae98cfd27b4054db0d4fbb9775e1b1, type: 2}
+  Fortune: {fileID: 11400000, guid: aea6d0b066f86d34bae7b403de17c40b, type: 2}
+  FortunePlus: {fileID: 11400000, guid: 80033507d61aa704e91e9f94494b1b32, type: 2}
+  Echo: {fileID: 11400000, guid: 96b672feb50046845ab3541624c206b3, type: 2}
+  Void: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
+  Doom: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+  FateCardSchema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
+  EnemySchema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
+  RelicSchema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
+  CharmSchema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
+  HeroSchema: {fileID: 11400000, guid: c5844690b8dd13a4ab010d735d5fcf81, type: 2}
+  FateCards:
+  - {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}
+  - {fileID: 11400000, guid: f582918f36556704686585d6722984c9, type: 2}
+  - {fileID: 11400000, guid: 92a968c5968886e48b808ca6e25c493c, type: 2}
+  - {fileID: 11400000, guid: 0f4c052dba9138249b8fdf17766d228e, type: 2}
+  - {fileID: 11400000, guid: 38311eb9baf29984b963dba4e8913854, type: 2}
+  - {fileID: 11400000, guid: f0338c6e722afd849869b3135a87472e, type: 2}
+  - {fileID: 11400000, guid: 8f2a71056e296624f86d0b531118a8db, type: 2}
+  - {fileID: 11400000, guid: a0d47b959d86f0d4dadd66395e940cbd, type: 2}
+  - {fileID: 11400000, guid: a5bb3e4f3fb6c6a409696a185cd8eef6, type: 2}
+  - {fileID: 11400000, guid: da21d08d9bd77534ba2c5625c7abe564, type: 2}
+  - {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
+  DrawPile: {fileID: 11400000, guid: 47f0342b175bf29449786ad0c7d7005c, type: 2}
+  DiscardPile: {fileID: 11400000, guid: 70a706eb61e9ae241896f5b8146df153, type: 2}
+  WoundRow: {fileID: 11400000, guid: 6d0c82b050ecdb04a87a5daba568846a, type: 2}
+  Pocket: {fileID: 11400000, guid: bf2173c722373284686359ae7dd87f57, type: 2}
+  ExilePile: {fileID: 11400000, guid: 24ae54cdd3ed704488f750fe3d896a58, type: 2}
+  Enemies: {fileID: 11400000, guid: 9218702ee6b35c1499c6096342b232d8, type: 2}
+  Slain: {fileID: 11400000, guid: dc3cd3e2c74b8814f95b3f9d4b8d98c7, type: 2}
+  Relics: {fileID: 11400000, guid: 890350a4bc0bac04fa277282d14f99c0, type: 2}
+  Charms: {fileID: 11400000, guid: 0bf6772d795cefd43949b3301b37da47, type: 2}
+  Mantle: {fileID: 11400000, guid: 245187778b687504691020b2a3aeff1b, type: 2}
+  FateCardLayout: {fileID: 11400000, guid: c882f1ccb63272e42b153ec972c6829e, type: 2}
+  EnemyLayout: {fileID: 11400000, guid: 99875749e5ba0194a8b56567be97a4fb, type: 2}
+  ItemLayout: {fileID: 11400000, guid: 01120b2d55f73da418cf5919cff9c8c6, type: 2}
+  Panel: {fileID: 11400000, guid: 04c7d211d2b516d4aad01d5c31c0694f, type: 2}
+  Heroes:
+  - {fileID: 11400000, guid: 77517b371a4d9bb458781d258c38ea51, type: 2}
+  CharmPool:
+  - {fileID: 11400000, guid: 5bc8c0ca16cd74145b4a8b17abca67a6, type: 2}
+  - {fileID: 11400000, guid: 8340d62d553a2c44d890dbf17980f46f, type: 2}
+  - {fileID: 11400000, guid: e89ab8413f63ed44f9893bf125c0694e, type: 2}
+  - {fileID: 11400000, guid: f090225969a749249a827fea564e4429, type: 2}
+  - {fileID: 11400000, guid: 600b0f55192334f46822f70abc18db1a, type: 2}
+  - {fileID: 11400000, guid: 6c252af1bb117ea4ca2b1519d2bcbf80, type: 2}
+  RelicPool:
+  - {fileID: 11400000, guid: d662c1951a555444ba4575ed981ae8de, type: 2}
+  - {fileID: 11400000, guid: f31a837f4e4a45c468d2a043c640436e, type: 2}
+  - {fileID: 11400000, guid: 47490e75028e38b4fb56ef3fa9fe3886, type: 2}
+  - {fileID: 11400000, guid: acb1d369b8081534598f2d7e1743b67b, type: 2}
+  - {fileID: 11400000, guid: 77caf835553751e4793cfdbddd9ade2a, type: 2}
+  - {fileID: 11400000, guid: ad2df7bf925bb2448b1c7896cffc2c98, type: 2}
+  Biome1Rooms:
+  - {fileID: 11400000, guid: 38307bceb5e5a344aa8163cf8aae99b8, type: 2}
+  - {fileID: 11400000, guid: 5eb40f863340faf4db4e86d4403caa0b, type: 2}
+  - {fileID: 11400000, guid: aa5fb50c4fb0e424ba3923d6eb322bcf, type: 2}
+  - {fileID: 11400000, guid: b54447c124d095b42bd79eabff91034d, type: 2}
+  - {fileID: 11400000, guid: 0a792ca40ddb3204d9a80b25fa44df5d, type: 2}
+  - {fileID: 11400000, guid: a3a65d536911c0d479e3581acd4abb71, type: 2}
+  - {fileID: 11400000, guid: ce32b439a8c1cdd41bfa6e91f0c0df44, type: 2}
+  - {fileID: 11400000, guid: 3af2034b798508b48b63d7dcaacfc067, type: 2}
+  - {fileID: 11400000, guid: 19aa6f34f5dba2d49b983041dd65824f, type: 2}
+  - {fileID: 11400000, guid: 42fa2ed7be727864aaaf35f3855b798d, type: 2}
+  - {fileID: 11400000, guid: 7a18f4ec27ec2634b9f1e687742d0024, type: 2}
+  - {fileID: 11400000, guid: 08b4bcbcf51fe2945a8888a7ce4808e8, type: 2}
+  - {fileID: 11400000, guid: e5d1b0cd219818f4ea6df1d87faa2b6d, type: 2}
+  Biome1Opening: {fileID: 11400000, guid: b206095b77dc98049b54333d19e84683, type: 2}
+  Biome1Elite: {fileID: 11400000, guid: 458e9582085bce144866b87ae45be31c, type: 2}
+  Biome1Boss: {fileID: 11400000, guid: eb3f7a50b44e7d04392db94b82177a59, type: 2}
+  ForgeShrine: {fileID: 11400000, guid: 2ba090c867c2f7746aade1da09bb7363, type: 2}

@@ -1,0 +1,25 @@
+{
+    "name": "FateDeck.Tests.Editor",
+    "rootNamespace": "FateDeck.Tests",
+    "references": [
+        "FateDeck.Runtime",
+        "AStergio.OmniCard.Runtime",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

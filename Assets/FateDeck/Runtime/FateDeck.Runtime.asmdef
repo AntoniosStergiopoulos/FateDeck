@@ -1,0 +1,17 @@
+{
+    "name": "FateDeck.Runtime",
+    "rootNamespace": "FateDeck.Runtime",
+    "references": [
+        "AStergio.OmniCard.Runtime",
+        "AStergio.OmniCard.Runtime.Views.UIToolkit"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5aaff807a900074ab3c130bcb7c447d, type: 3}
+  m_Name: Room - THE COLLECTOR
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.BossRoomDefinition
+  _id:
+    _value: 07e9dabca8ce44b9ba9de8b2eeb8eb69
+  Blurb: The vault at the bottom of the mailroom. It reads only your draw pile -
+    what sits in your discard, pocket and wounds is invisible to it.
+  Encounter: {fileID: 11400000, guid: b9eca85960dfeec4fbf601c6a08185e6, type: 2}
+  IsElite: 0
+  RiggedTopForce: {fileID: 0}
+  CharmDropChance: 0.2

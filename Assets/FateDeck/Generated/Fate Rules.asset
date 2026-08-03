@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb688fbe7ad4d24384af9efee7ca21c, type: 3}
+  m_Name: Fate Rules
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Core.FateRulesDefinition
+  StrikeBaseForce: 3
+  GuardBaseForce: 2
+  FleeMill: 1
+  PocketSlots: 2
+  ReshuffleTax: 1
+  EchoMaxFlipsPerAction: 3
+  MaxCharms: 3
+  StartingGold: 10
+  ChestBaseGold: 8
+  LockedChestBaseGold: 14
+  KeyPrice: 6
+  DoomExileShrinePrice: 15
+  SurgeryBasePrice: 25
+  SurgeryPriceStep: 10
+  TonicPrice: 15
+  TonicHeal: 3
+  RestHeal: 5
+  DoomCleansePrice: 20
+  TrackSteps: 9
+  DoorsPerStep: 3

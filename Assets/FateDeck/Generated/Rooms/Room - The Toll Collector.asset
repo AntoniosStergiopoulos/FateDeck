@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c03dae9770d154682b5b6468f2eb23, type: 3}
+  m_Name: Room - The Toll Collector
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
+  _id:
+    _value: 0f69a466ce214c92ab0928f7eec926fc
+  Blurb: The Toll Collector waits with an open ledger. Its tithe cannot be blocked.
+    Decline the door and its relic is gone forever.
+  Encounter: {fileID: 11400000, guid: 945af7c9fc68d0e4994574f4c0ea3094, type: 2}
+  IsElite: 1
+  RiggedTopForce: {fileID: 0}
+  CharmDropChance: 0.2

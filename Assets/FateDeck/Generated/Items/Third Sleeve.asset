@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631173185392099449d5edbfb99c6d94, type: 3}
+  m_Name: Third Sleeve
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
+  _id:
+    _value: 66ccdedc7dcc4609905f143976a17d98
+  Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
+  _values:
+  - rid: 3602687371046289692
+  - rid: 3602687371046289693
+  - rid: 3602687371046289694
+  - rid: 3602687371046289695
+  Variants: []
+  _creationDateTicks: 639213720368161027
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687371046289692
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: +1 Pocket slot.
+    - rid: 3602687371046289693
+      type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
+        Effects:
+        - rid: 3602687371046289696
+    - rid: 3602687371046289694
+      type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
+        Triggers: []
+    - rid: 3602687371046289695
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
+        Value: 0
+    - rid: 3602687371046289696
+      type: {class: AddPocketSlotEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Delta: 1

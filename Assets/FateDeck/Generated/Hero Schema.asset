@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb15c0a4c4d1fb8428c92ce6535931ca, type: 3}
+  m_Name: Hero Schema
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardSchema
+  _id:
+    _value: 4c787e3850e54dad9342969eabcef51f
+  Fields:
+  - {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+  - {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}
+  - {fileID: 11400000, guid: ad0a7b5acd9fff2479d7205008adc3b3, type: 2}
+  - {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}

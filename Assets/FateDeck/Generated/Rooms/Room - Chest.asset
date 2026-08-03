@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c531e6e2a7646ae46a1a401f591e7135, type: 3}
+  m_Name: Room - Chest
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ChestRoomDefinition
+  _id:
+    _value: 13fd5127c7b14436a2db3d883a98b308
+  Blurb: A chest, unlatched. Every chest is a knowing bet against your own composition.
+  Locked: 0

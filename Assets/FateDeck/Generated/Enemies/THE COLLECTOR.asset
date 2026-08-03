@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631173185392099449d5edbfb99c6d94, type: 3}
+  m_Name: THE COLLECTOR
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
+  _id:
+    _value: c4350cada26948faa140d5c82b0738f1
+  Schema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
+  _values:
+  - rid: 3602687371046289814
+  - rid: 3602687371046289815
+  - rid: 3602687371046289816
+  - rid: 3602687371046289817
+  - rid: 3602687371046289818
+  - rid: 3602687371046289819
+  - rid: 3602687371046289820
+  - rid: 3602687371046289821
+  - rid: 3602687371046289822
+  - rid: 3602687371046289823
+  - rid: 3602687371046289824
+  - rid: 3602687371046289825
+  - rid: 3602687371046289826
+  - rid: 3602687371046289827
+  - rid: 3602687371046289828
+  Variants: []
+  _creationDateTicks: 639213720375435116
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3602687371046289814
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
+        Value: 30
+    - rid: 3602687371046289815
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
+        Value: 30
+    - rid: 3602687371046289816
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
+        Value: 25
+    - rid: 3602687371046289817
+      type: {class: EnemyPatternFieldValue, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
+        Steps:
+        - Name: Attack
+          Kind: 0
+          Force: 4
+          FlipsFate: 1
+          Effects: []
+        - Name: Attack
+          Kind: 0
+          Force: 4
+          FlipsFate: 1
+          Effects: []
+        - Name: Appraise
+          Kind: 2
+          Force: 0
+          FlipsFate: 0
+          Effects:
+          - rid: 3602687371046289829
+    - rid: 3602687371046289818
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
+        Value: 0
+    - rid: 3602687371046289819
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
+        Value: 0
+    - rid: 3602687371046289820
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
+        Value: 0
+    - rid: 3602687371046289821
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
+        Value: 0
+    - rid: 3602687371046289822
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
+        Value: 0
+    - rid: 3602687371046289823
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
+        Value: 0
+    - rid: 3602687371046289824
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
+        Value: 3
+    - rid: 3602687371046289825
+      type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
+        Value: 1
+    - rid: 3602687371046289826
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
+        Value: 'Confiscate: it holds all copies of your most-numerous force in its
+          Mantle; its attacks gain +1 Force per 3 cards held. Only the draw pile
+          is read.'
+    - rid: 3602687371046289827
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: A vast pale hand in a sleeve of ledgers. It doesn't want you dead;
+          it wants your assets.
+    - rid: 3602687371046289828
+      type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
+        Triggers:
+        - rid: 3602687371046289830
+        - rid: 3602687371046289831
+    - rid: 3602687371046289829
+      type: {class: ConfiscateEffect, ns: FateDeck.Runtime.Effects.Enemies, asm: FateDeck.Runtime}
+      data: 
+    - rid: 3602687371046289830
+      type: {class: OnCombatStartTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
+      data:
+        Condition:
+          rid: -2
+        Effects:
+        - rid: 3602687371046289832
+    - rid: 3602687371046289831
+      type: {class: OnEnemyDeathTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
+      data:
+        Condition:
+          rid: -2
+        Effects:
+        - rid: 3602687371046289833
+        SelfOnly: 1
+    - rid: 3602687371046289832
+      type: {class: ConfiscateEffect, ns: FateDeck.Runtime.Effects.Enemies, asm: FateDeck.Runtime}
+      data: 
+    - rid: 3602687371046289833
+      type: {class: ReturnMantleEffect, ns: FateDeck.Runtime.Effects.Enemies, asm: FateDeck.Runtime}
+      data: 

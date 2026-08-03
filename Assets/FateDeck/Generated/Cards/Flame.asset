@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631173185392099449d5edbfb99c6d94, type: 3}
+  m_Name: Flame
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
+  _id:
+    _value: 246c6b26387e43a8b95e948d5ec782be
+  Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
+  _values:
+  - rid: 3602687371046289621
+  - rid: 3602687371046289622
+  Variants: []
+  _creationDateTicks: 639213720352815191
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687371046289621
+      type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
+        Value: {fileID: 11400000, guid: db6a6c29ae0e45948b59992cb5e7f969, type: 2}
+    - rid: 3602687371046289622
+      type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
+      data:
+        Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
+        Value: The action's target suffers 2 Burn.

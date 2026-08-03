@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c03dae9770d154682b5b6468f2eb23, type: 3}
+  m_Name: Room - Opening Imp
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
+  _id:
+    _value: ceb13e5763054976b551e8b2a39ffcd6
+  Blurb: A single Tinder Imp guards the mailroom door. The Dealer has stacked your
+    first card - Iron waits on top.
+  Encounter: {fileID: 11400000, guid: b95c97c26d43dca40ae04f37a5e2eafd, type: 2}
+  IsElite: 0
+  RiggedTopForce: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
+  CharmDropChance: 0.2

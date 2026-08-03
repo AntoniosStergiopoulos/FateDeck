@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63808eb9c40d49c4998619dcd442cdc1, type: 3}
+  m_Name: Force Glyph
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
+  _id:
+    _value: 6a0f7c5b97424b84850277574d0a58a4
+  Kind:
+    rid: 3602687371046289418
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687371046289418
+      type: {class: TextFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
+      data:
+        MutableAtRuntime: 0
+        MultiLine: 0
+        Keywords:
+          KeywordsField: {fileID: 0}
+          Bold: 1
+          UseColor: 0
+          Color: {r: 0.85, g: 0.65, b: 0.13, a: 1}
+          ReminderField: {fileID: 0}
+          ItalicReminder: 1
