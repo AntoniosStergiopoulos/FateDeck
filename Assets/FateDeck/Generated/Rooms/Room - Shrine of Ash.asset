@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - Shrine of Ash
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ShrineRoomDefinition
   _id:
-    _value: b1c45e3bc41c4f8b902284376a1547f1
+    _value: 5dde88a2b84b49d2895c02114e8edb0e
   Blurb: Exile one card from your fate, free. Doom clings - it costs gold to burn.
   Kind: 0

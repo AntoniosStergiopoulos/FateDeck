@@ -13,117 +13,117 @@ MonoBehaviour:
   m_Name: Gloom
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: 32aaee93e1a147aa9e05264c0a7a862f
+    _value: 07fcbe99252747d08c5ea10670c0e552
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687376923820408
-  - rid: 3602687376923820409
-  - rid: 3602687376923820410
-  - rid: 3602687376923820411
-  - rid: 3602687376923820412
-  - rid: 3602687376923820413
-  - rid: 3602687376923820414
-  - rid: 3602687376923820415
-  - rid: 3602687376923820416
-  - rid: 3602687376923820417
-  - rid: 3602687376923820418
-  - rid: 3602687376923820419
+  - rid: 3602687396913349231
+  - rid: 3602687396913349232
+  - rid: 3602687396913349233
+  - rid: 3602687396913349234
+  - rid: 3602687396913349235
+  - rid: 3602687396913349236
+  - rid: 3602687396913349237
+  - rid: 3602687396913349238
+  - rid: 3602687396913349239
+  - rid: 3602687396913349240
+  - rid: 3602687396913349241
+  - rid: 3602687396913349242
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820408
+    - rid: 3602687396913349231
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687376923820420
-        - rid: 3602687376923820421
-    - rid: 3602687376923820409
+        - rid: 3602687396913349243
+        - rid: 3602687396913349244
+    - rid: 3602687396913349232
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687376923820422
-    - rid: 3602687376923820410
+        - rid: 3602687396913349245
+    - rid: 3602687396913349233
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687376923820423
-    - rid: 3602687376923820411
+        - rid: 3602687396913349246
+    - rid: 3602687396913349234
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687376923820424
-        - rid: 3602687376923820425
-    - rid: 3602687376923820412
+        - rid: 3602687396913349247
+        - rid: 3602687396913349248
+    - rid: 3602687396913349235
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687376923820426
-    - rid: 3602687376923820413
+        - rid: 3602687396913349249
+    - rid: 3602687396913349236
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687376923820414
+    - rid: 3602687396913349237
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687376923820415
+    - rid: 3602687396913349238
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687376923820416
+    - rid: 3602687396913349239
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687376923820417
+    - rid: 3602687396913349240
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.52, g: 0.44, b: 0.6, a: 1}
-    - rid: 3602687376923820418
+    - rid: 3602687396913349241
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: N
-    - rid: 3602687376923820419
+    - rid: 3602687396913349242
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: 'Mending dark: your actions -1 Force but a wound card returns to your
           deck; enemy actions feed on it (+1 Force).'
-    - rid: 3602687376923820420
+    - rid: 3602687396913349243
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: -1
-    - rid: 3602687376923820421
+    - rid: 3602687396913349244
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687376923820422
+    - rid: 3602687396913349245
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687376923820423
+    - rid: 3602687396913349246
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 1
-    - rid: 3602687376923820424
+    - rid: 3602687396913349247
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: -2
-    - rid: 3602687376923820425
+    - rid: 3602687396913349248
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687376923820426
+    - rid: 3602687396913349249
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

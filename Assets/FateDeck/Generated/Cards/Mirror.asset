@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Mirror
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 01d5b3705b92486ab5588898597892c7
+    _value: a44e54750fc4477694b15780c1af1fcd
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687376923820553
-  - rid: 3602687376923820554
+  - rid: 3602687396913349377
+  - rid: 3602687396913349378
   Variants: []
-  _creationDateTicks: 639213946070304998
+  _creationDateTicks: 639214724704717995
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820553
+    - rid: 3602687396913349377
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: bede990ed398007468271708ce547909, type: 2}
-    - rid: 3602687376923820554
+    - rid: 3602687396913349378
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

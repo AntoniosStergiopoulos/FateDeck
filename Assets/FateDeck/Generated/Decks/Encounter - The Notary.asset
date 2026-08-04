@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - The Notary
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 14fb52bf1cbf4015b244a6972a30b0c1
+    _value: bf6b0e560a294bea8633740ad20178be
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 98013c6112a90854097e6da017811945, type: 2}

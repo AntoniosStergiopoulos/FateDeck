@@ -44,6 +44,9 @@ namespace FateDeck.Runtime.Run
 
         public FateSession Session { get; private set; }
 
+        /// <summary>The seed this run started from - stable across saves, shown for replays.</summary>
+        public int OriginalSeed { get; private set; }
+
         public int Biome { get; private set; } = 1;
 
         public int Step { get; private set; }
@@ -84,6 +87,7 @@ namespace FateDeck.Runtime.Run
         {
             Session?.Dispose();
             Session = new FateSession(_catalog, seed);
+            OriginalSeed = Session.Seed;
             Session.Events.Subscribe<PlayerDiedEvent>(OnPlayerDied);
             Session.Events.Subscribe<ActionResolvedEvent>(OnActionResolved);
             Session.Events.Subscribe<CombatEndedEvent>(OnCombatEnded);
@@ -139,10 +143,93 @@ namespace FateDeck.Runtime.Run
             Biome = data.Biome;
             EliteOffered = data.EliteOffered;
             ForgeOffered = data.ForgeOffered;
-            Step = data.Step - 1;
+            OriginalSeed = data.OriginalSeed != 0 ? data.OriginalSeed : Session.Seed;
             Session.Bark("\"Back for the rest of yourself? The table kept your seat warm.\"");
+
+            if (RestoreDoors(data.Step, data.DoorIds))
+            {
+                return true;
+            }
+
+            Step = data.Step - 1;
             NextStep();
             return true;
+        }
+
+        /// <summary>
+        /// Puts the exact saved doors back on the table instead of re-dealing them - loading
+        /// must never reroll your choices. False when any id no longer resolves (e.g. after a
+        /// content rebuild), in which case the caller falls back to a fresh deal.
+        /// </summary>
+        public bool RestoreDoors(int step, IReadOnlyList<string> doorIds)
+        {
+            if (doorIds == null || doorIds.Count == 0)
+            {
+                return false;
+            }
+
+            var restored = new List<RoomDefinition>();
+            foreach (string id in doorIds)
+            {
+                RoomDefinition room = ResolveRoom(id);
+                if (room == null)
+                {
+                    return false;
+                }
+
+                restored.Add(room);
+            }
+
+            Step = step;
+            CurrentRoom = null;
+            ChestOpened = false;
+            LastEventResult = null;
+            Doors.Clear();
+            Doors.AddRange(restored);
+            Screen = RunScreen.Doors;
+            RaiseChanged();
+            return true;
+        }
+
+        private RoomDefinition ResolveRoom(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return null;
+            }
+
+            foreach (RoomDefinition room in _catalog.Biome1Rooms)
+            {
+                if (room != null && room.Id.Value == id)
+                {
+                    return room;
+                }
+            }
+
+            foreach (FightRoomDefinition elite in _catalog.ElitePool())
+            {
+                if (elite != null && elite.Id.Value == id)
+                {
+                    return elite;
+                }
+            }
+
+            if (_catalog.Biome1Opening != null && _catalog.Biome1Opening.Id.Value == id)
+            {
+                return _catalog.Biome1Opening;
+            }
+
+            if (_catalog.ForgeShrine != null && _catalog.ForgeShrine.Id.Value == id)
+            {
+                return _catalog.ForgeShrine;
+            }
+
+            if (_catalog.Biome1Boss != null && _catalog.Biome1Boss.Id.Value == id)
+            {
+                return _catalog.Biome1Boss;
+            }
+
+            return null;
         }
 
         private CardDefinition ResolveCard(string id)
@@ -617,12 +704,13 @@ namespace FateDeck.Runtime.Run
             }
 
             EventOption option = ActiveEvent.Options[index];
-            if (Session.Gold < option.GoldCost)
+            if (Session.Gold < option.GoldCost || Session.Keys < option.KeyCost)
             {
                 return;
             }
 
             Session.AddGold(-option.GoldCost);
+            Session.AddKeys(-option.KeyCost);
             if (Session.Hero != null)
             {
                 Session.ResolveEffectList(Session.Hero, option.Effects);

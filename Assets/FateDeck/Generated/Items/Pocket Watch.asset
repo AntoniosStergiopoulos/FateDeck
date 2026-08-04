@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Pocket Watch
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 6ff6825b72f7455da37fe1e61e9e9c3e
+    _value: 2beb7e8d3b1a4fee8e4abfdc2876d20a
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687376923820622
-  - rid: 3602687376923820623
-  - rid: 3602687376923820624
-  - rid: 3602687376923820625
+  - rid: 3602687396913349446
+  - rid: 3602687396913349447
+  - rid: 3602687396913349448
+  - rid: 3602687396913349449
   Variants: []
-  _creationDateTicks: 639213946084765969
+  _creationDateTicks: 639214724720213231
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820622
+    - rid: 3602687396913349446
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: +1 Pocket slot for the rest of the run.
-    - rid: 3602687376923820623
+    - rid: 3602687396913349447
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687376923820626
-    - rid: 3602687376923820624
+        - rid: 3602687396913349450
+    - rid: 3602687396913349448
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687376923820625
+    - rid: 3602687396913349449
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687376923820626
+    - rid: 3602687396913349450
       type: {class: AddPocketSlotEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 1

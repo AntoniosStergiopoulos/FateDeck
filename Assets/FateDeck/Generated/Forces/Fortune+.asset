@@ -13,106 +13,106 @@ MonoBehaviour:
   m_Name: Fortune+
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: 97fe6e8e657e48488d114731e1aab959
+    _value: 88ed98a75c074a2c9b1acf2046b1b3eb
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687376923820209
-  - rid: 3602687376923820210
-  - rid: 3602687376923820211
-  - rid: 3602687376923820212
-  - rid: 3602687376923820213
-  - rid: 3602687376923820214
-  - rid: 3602687376923820215
-  - rid: 3602687376923820216
-  - rid: 3602687376923820217
-  - rid: 3602687376923820218
-  - rid: 3602687376923820219
-  - rid: 3602687376923820220
+  - rid: 3602687396913349032
+  - rid: 3602687396913349033
+  - rid: 3602687396913349034
+  - rid: 3602687396913349035
+  - rid: 3602687396913349036
+  - rid: 3602687396913349037
+  - rid: 3602687396913349038
+  - rid: 3602687396913349039
+  - rid: 3602687396913349040
+  - rid: 3602687396913349041
+  - rid: 3602687396913349042
+  - rid: 3602687396913349043
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820209
+    - rid: 3602687396913349032
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687376923820221
-    - rid: 3602687376923820210
+        - rid: 3602687396913349044
+    - rid: 3602687396913349033
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687376923820222
-    - rid: 3602687376923820211
+        - rid: 3602687396913349045
+    - rid: 3602687396913349034
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687376923820223
-    - rid: 3602687376923820212
+        - rid: 3602687396913349046
+    - rid: 3602687396913349035
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687376923820224
-    - rid: 3602687376923820213
+        - rid: 3602687396913349047
+    - rid: 3602687396913349036
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687376923820225
-    - rid: 3602687376923820214
+        - rid: 3602687396913349048
+    - rid: 3602687396913349037
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687376923820215
+    - rid: 3602687396913349038
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687376923820216
+    - rid: 3602687396913349039
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687376923820217
+    - rid: 3602687396913349040
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687376923820218
+    - rid: 3602687396913349041
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.91, g: 0.76, b: 0.25, a: 1}
-    - rid: 3602687376923820219
+    - rid: 3602687396913349042
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: $+
-    - rid: 3602687376923820220
+    - rid: 3602687396913349043
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: The action's owner banks 5 gold; Force +0.
-    - rid: 3602687376923820221
+    - rid: 3602687396913349044
       type: {class: BankGoldEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687376923820222
+    - rid: 3602687396913349045
       type: {class: BankGoldEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687376923820223
+    - rid: 3602687396913349046
       type: {class: BankGoldEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687376923820224
+    - rid: 3602687396913349047
       type: {class: BankGoldEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687376923820225
+    - rid: 3602687396913349048
       type: {class: BankGoldEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 5

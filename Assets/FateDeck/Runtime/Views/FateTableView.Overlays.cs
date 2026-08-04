@@ -334,6 +334,12 @@ namespace FateDeck.Runtime.Views
                     ShowZonePick(Session.Deck.Discard, "Put a card on top of your deck",
                         card => Session.Deck.StackOnTop(card));
                     return true;
+
+                case ZoneChoiceKind.UpgradeFromDraw:
+                    ShowZonePick(Session.Deck.Draw, "Choose a card to sharpen to its + tier",
+                        card => Session.UpgradeFateCard(card),
+                        card => _catalog.IsBasicForce(_catalog.ForceOf(card)));
+                    return true;
             }
 
             return false;

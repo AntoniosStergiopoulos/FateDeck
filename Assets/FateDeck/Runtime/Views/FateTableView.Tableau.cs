@@ -49,7 +49,17 @@ namespace FateDeck.Runtime.Views
         private VisualElement BuildDrawSection(FateSession session)
         {
             var row = FateUi.Row(0);
-            row.Add(CardElementBuilder.DeckTile(session.Deck.Draw.Count, 72, ShowPileOverlay));
+            VisualElement deck = CardElementBuilder.DeckTile(session.Deck.Draw.Count, 72, ShowPileOverlay);
+            FateTip.Bind(deck, () =>
+            {
+                FateSession current = Session;
+                int tax = Mathf.Max(0, current.Rules.ReshuffleTax + current.Deck.TaxModifier
+                    + current.Deck.ExtraTaxNextReshuffle);
+                return "<b>YOUR DECK = YOUR LIFE</b>\nEvery flip and every point of damage comes off "
+                    + "the top. When it empties, the discard shuffles back in and the House adds "
+                    + $"{tax} Doom (the reshuffle tax).\n\nClick to inspect the composition.";
+            });
+            row.Add(deck);
             var caption = FateUi.Column(0);
             caption.style.justifyContent = Justify.FlexEnd;
             Label reshuffles = FateUi.Text($"reshuffles {session.Deck.ReshuffleCount}", 11, FateUi.BoneDim);
@@ -123,14 +133,20 @@ namespace FateDeck.Runtime.Views
 
         private VisualElement BuildPocketSection(FateSession session)
         {
+            var holder = FateUi.Column(0);
             var row = FateUi.Row(0);
+            holder.Add(row);
             bool playable = session.Phase == FateResolutionPhase.AwaitPreFlip;
             foreach (CardInstance pocketed in session.Deck.Pocket.Cards)
             {
                 CardInstance captured = pocketed;
                 VisualElement tile = CardElementBuilder.ForceTile(_catalog, captured, 66,
                     playable ? () => OnPocketClicked(captured) : (System.Action)null,
-                    playable ? "PLAY" : null);
+                    playable ? "PLAY" : null,
+                    playable
+                        ? "PLAY NOW: replaces the pending flip with this card. No card leaves your deck."
+                        : "Pocketed. During any pre-flip window (the pause before a card is flipped - "
+                          + "yours or an enemy's) click it to REPLACE that flip entirely.");
                 if (playable)
                 {
                     FateUi.SetBorder(tile, FateUi.GoldLeaf, 2, 6);
@@ -141,10 +157,23 @@ namespace FateDeck.Runtime.Views
 
             for (int i = session.Deck.Pocket.Count; i < session.PocketSlots; i++)
             {
-                row.Add(EmptySlot(66, "slot"));
+                VisualElement slot = EmptySlot(66, "sleeve");
+                FateTip.Bind(slot,
+                    "An empty Pocket slot. When one of YOUR actions flips a card, choose SLEEVE IT "
+                    + "to bank the card here instead of applying its law.");
+                row.Add(slot);
             }
 
-            return row;
+            Label caption = FateUi.Text(
+                playable && session.Deck.Pocket.Count > 0
+                    ? "click a card to replace this flip!"
+                    : session.Deck.Pocket.Count > 0
+                        ? "plays during pre-flip windows"
+                        : "SLEEVE IT banks cards here",
+                10, playable && session.Deck.Pocket.Count > 0 ? FateUi.GoldLeaf : FateUi.BoneDim);
+            caption.style.marginTop = 2;
+            holder.Add(caption);
+            return holder;
         }
 
         private VisualElement BuildCharmSection(FateSession session)
@@ -174,6 +203,12 @@ namespace FateDeck.Runtime.Views
                 Label use = FateUi.Text("click to use", 10, FateUi.BoneDim);
                 tile.Add(use);
                 FateUi.MakeClickable(tile, () => OnCharmClicked(captured));
+                bool isMain = captured.Definition.GetBoolean(_catalog.MainActionField);
+                FateTip.Bind(tile, $"<b>{captured.DisplayName}</b> (charm - one use)\n"
+                    + captured.Definition.GetText(_catalog.DescriptionField)
+                    + (isMain
+                        ? "\n\nCosts your Main Action for the turn."
+                        : "\n\nFree - does not cost your Main Action."));
                 row.Add(tile);
             }
 
@@ -256,19 +291,32 @@ namespace FateDeck.Runtime.Views
 
             if (session.DoubleDrawCharges > 0)
             {
-                chips.Add(FateUi.Chip($"Draw-2 ready x{session.DoubleDrawCharges}", FateUi.Verdigris, 11));
+                VisualElement drawChip = FateUi.Chip($"Draw-2 ready x{session.DoubleDrawCharges}",
+                    FateUi.Verdigris, 11);
+                FateTip.Bind(drawChip,
+                    "Your next flip reveals TWO cards and you choose which law applies. "
+                    + "The other goes to your discard.");
+                chips.Add(drawChip);
             }
 
             if (session.NextPlayerActionBonus > 0)
             {
-                chips.Add(FateUi.Chip($"Next action +{session.NextPlayerActionBonus:0.#}", FateUi.GoldLeaf, 11));
+                VisualElement bonusChip = FateUi.Chip($"Next action +{session.NextPlayerActionBonus:0.#}",
+                    FateUi.GoldLeaf, 11);
+                FateTip.Bind(bonusChip, "Bonus Force consumed by the next action you declare.");
+                chips.Add(bonusChip);
             }
 
             if (session.Deck.ExtraTaxNextReshuffle != 0)
             {
                 int extra = session.Deck.ExtraTaxNextReshuffle;
-                chips.Add(FateUi.Chip(extra > 0 ? $"Next reshuffle +{extra} Doom" : $"Next reshuffle {extra} Doom",
-                    extra > 0 ? FateUi.Blood : FateUi.Verdigris, 11));
+                VisualElement taxChip = FateUi.Chip(
+                    extra > 0 ? $"Next reshuffle +{extra} Doom" : $"Next reshuffle {extra} Doom",
+                    extra > 0 ? FateUi.Blood : FateUi.Verdigris, 11);
+                FateTip.Bind(taxChip, extra > 0
+                    ? "A curse: the next time your discard shuffles back in, the House adds this much EXTRA Doom."
+                    : "A blessing: the next reshuffle adds this much LESS Doom.");
+                chips.Add(taxChip);
             }
 
             if (chips.childCount > 0)
@@ -291,6 +339,7 @@ namespace FateDeck.Runtime.Views
             row.style.flexDirection = FlexDirection.Row;
             row.style.alignItems = Align.Center;
             row.style.marginBottom = 2;
+            FateTip.Bind(row, CardElementBuilder.ForceTipText(_catalog, force));
 
             Color color = ForceColor(force);
             var swatch = new VisualElement();

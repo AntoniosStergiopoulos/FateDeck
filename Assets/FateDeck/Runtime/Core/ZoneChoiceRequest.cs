@@ -9,7 +9,10 @@ namespace FateDeck.Runtime.Core
         ExileFromDiscard,
 
         /// <summary>Pick a discard-pile card to stack on top of the draw pile.</summary>
-        StackFromDiscard
+        StackFromDiscard,
+
+        /// <summary>Pick an upgradeable draw-pile card to sharpen to its + tier.</summary>
+        UpgradeFromDraw
     }
 
     /// <summary>An interactive pick the view resolves by calling back into the session's deck verbs.</summary>

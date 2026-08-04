@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Card Sharp
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: eea8b8571bb041018d0f7b137d3039e8
+    _value: cbcfe77f072c43efb21ad9f6ee35cf1e
   Blurb: A shuffling sound, too fast to be honest.
   Event: {fileID: 11400000, guid: a5de6855c21e9a14cacc7de0a2081252, type: 2}

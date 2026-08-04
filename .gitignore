@@ -35,3 +35,5 @@ ExportedObj/
 
 .DS_Store
 Thumbs.db
+# Cowork delivery staging (safe to delete)
+_to_delete/

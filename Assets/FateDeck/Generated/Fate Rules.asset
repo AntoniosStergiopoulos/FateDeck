@@ -19,7 +19,7 @@ MonoBehaviour:
   ReshuffleTax: 1
   EchoMaxFlipsPerAction: 3
   MaxCharms: 3
-  StartingGold: 10
+  StartingGold: 12
   ChestBaseGold: 8
   LockedChestBaseGold: 14
   KeyPrice: 6
@@ -27,9 +27,9 @@ MonoBehaviour:
   SurgeryBasePrice: 25
   SurgeryPriceStep: 10
   TonicPrice: 15
-  TonicHeal: 3
+  TonicHeal: 4
   RestHeal: 5
   DoomCleansePrice: 20
   TrackSteps: 9
   DoorsPerStep: 3
-  MantleSpillDamage: 6
+  MantleSpillDamage: 5

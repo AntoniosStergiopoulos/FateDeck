@@ -136,13 +136,14 @@ namespace FateDeck.Editor
                 });
 
             forces.Key = ForceEntry(fields, "Key", "K", new Color(0.76f, 0.60f, 0.34f),
-                "Brass teeth: +1 Force on your actions, -1 on enemy actions; loot and ritual "
-                + "flips mint a Key (opens locked chests).",
+                "Brass teeth: +1 Force on your actions, -1 on enemy actions; loot flips pay +1 "
+                + "and mint a Key, rituals mint a Key (Keys open locked chests).",
                 set =>
                 {
                     set.Offense.Add(new ModifyActionForceEffect { Delta = 1 });
                     set.Defense.Add(new ModifyActionForceEffect { Delta = 1 });
                     set.Enemy.Add(new ModifyActionForceEffect { Delta = -1 });
+                    set.Loot.Add(new ModifyActionForceEffect { Delta = 1 });
                     set.Loot.Add(new GainKeyEffect { Count = 1 });
                     set.Ritual.Add(new GainKeyEffect { Count = 1 });
                 });
@@ -296,7 +297,7 @@ namespace FateDeck.Editor
                 EffectsOf(created, fields.LawOffense).Add(new MillPlayerEffect { Count = 1 });
                 EffectsOf(created, fields.LawDefense).Add(new SetActionForceEffect { Value = 0 });
                 EffectsOf(created, fields.LawDefense).Add(new MillPlayerEffect { Count = 1 });
-                EffectsOf(created, fields.LawEnemy).Add(new ModifyActionForceEffect { Delta = 3 });
+                EffectsOf(created, fields.LawEnemy).Add(new ModifyActionForceEffect { Delta = 2 });
                 EffectsOf(created, fields.LawLoot).Add(new DoomLootEffect { Mill = 2 });
                 EffectsOf(created, fields.LawRitual).Add(new MillPlayerEffect { Count = 1 });
             }, "Forces");

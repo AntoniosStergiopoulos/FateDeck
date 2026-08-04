@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51efea5be5914e849ae68d1b000bf533, type: 3}
+  m_Name: Encounter - Adder and Tick
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
+  _id:
+    _value: 20c2550423bd4fe189644a8302ce7e33
+  RuleSet: {fileID: 0}
+  Cards:
+  - Card: {fileID: 11400000, guid: dfc6e75f52c6788438d4861c407cbded, type: 2}
+    Count: 1
+  - Card: {fileID: 11400000, guid: 182eea3f86f023642a4bfb89ad139850, type: 2}
+    Count: 1

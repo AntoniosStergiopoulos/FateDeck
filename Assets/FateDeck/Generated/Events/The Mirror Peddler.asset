@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: The Mirror Peddler
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: f3f6b9f4bbb34994bf4c92dfb1ba773d
+    _value: e9f57556aa5545c2a522bae666476638
   Intro: A cart of mirrors that reflect cards instead of faces. "Mirrors repeat whatever
     fate came before them," the peddler grins. "Pair one with your best law."
   Options:
   - Label: 'The set (10g): 1 Mirror and 1 Wisp'
     GoldCost: 10
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238889
-    - rid: 3602687376965238890
+    - rid: 3602687397376295427
+    - rid: 3602687397376295428
     ResultText: Silver and lantern-light slide into your deck.
     FlipsFate: 0
     RitualOutcomes: []
@@ -29,9 +30,10 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: 'Trade a memory (mill 1): 1 Mirror'
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238891
-    - rid: 3602687376965238892
+    - rid: 3602687397376295429
+    - rid: 3602687397376295430
     ResultText: The mirror takes its price off the top of you.
     FlipsFate: 0
     RitualOutcomes: []
@@ -39,6 +41,7 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Avert your eyes
     GoldCost: 0
+    KeyCost: 0
     Effects: []
     ResultText: The cart rolls on.
     FlipsFate: 0
@@ -48,25 +51,25 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687376965238889
+    - rid: 3602687397376295427
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: a6440d4acf1bcb946b138af6e06b3732, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687376965238890
+    - rid: 3602687397376295428
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: bda0a4dc64017d0498b3d94d7cfaf26a, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687376965238891
+    - rid: 3602687397376295429
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687376965238892
+    - rid: 3602687397376295430
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: a6440d4acf1bcb946b138af6e06b3732, type: 2}

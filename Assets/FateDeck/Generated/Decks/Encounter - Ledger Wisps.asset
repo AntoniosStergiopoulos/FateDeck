@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Ledger Wisps
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 0421d31069904743942852758734ff61
+    _value: 399681186bec4aff9ac329d2b29216e6
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 9becf9b9f0edeee40b2742c52b477d2e, type: 2}

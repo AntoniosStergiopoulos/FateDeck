@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Doom Auction
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 9ff791d683234efcb4596453c0dba873
+    _value: a1c261ada512433fbc5d1a7512764f95
   Blurb: A gavel echoes in an empty hall.
   Event: {fileID: 11400000, guid: bff9e61bb8ee78c4db9cf2fb5e20c117, type: 2}

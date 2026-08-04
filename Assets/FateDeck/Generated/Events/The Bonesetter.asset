@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: The Bonesetter
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 5647272e0a98494d9e0711cd5e703a0f
+    _value: 785fda919d604206bb76dcce41b532be
   Intro: A folding chair, a bag of splints, hands like old rope. "Wounds, is it?
     Sit. The House breaks; I set."
   Options:
   - Label: 'Full setting (5g): heal 3 wounds'
     GoldCost: 5
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238893
+    - rid: 3602687397376295431
     ResultText: Three cards crack back into place.
     FlipsFate: 0
     RitualOutcomes: []
@@ -28,8 +29,9 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: 'Quick look (free): heal 1 wound'
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238894
+    - rid: 3602687397376295432
     ResultText: '"That one was just dislocated."'
     FlipsFate: 0
     RitualOutcomes: []
@@ -37,6 +39,7 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Walk it off
     GoldCost: 0
+    KeyCost: 0
     Effects: []
     ResultText: '"They all say that."'
     FlipsFate: 0
@@ -46,11 +49,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687376965238893
+    - rid: 3602687397376295431
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 3
-    - rid: 3602687376965238894
+    - rid: 3602687397376295432
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

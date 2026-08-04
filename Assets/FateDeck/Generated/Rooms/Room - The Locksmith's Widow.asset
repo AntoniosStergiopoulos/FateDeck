@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Locksmith's Widow
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: d56ecaaa7bb343aa9f07b47417d3b395
+    _value: 5314212268c44bd9804d98a79713b5b9
   Blurb: Somewhere, keys click like knitting.
   Event: {fileID: 11400000, guid: 856adb83b6e01c54cbe79d229b73cfc6, type: 2}

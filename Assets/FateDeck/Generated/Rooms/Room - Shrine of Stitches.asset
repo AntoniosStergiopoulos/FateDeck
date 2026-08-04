@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - Shrine of Stitches
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ShrineRoomDefinition
   _id:
-    _value: cd9265a484f84d339a6af059aa3609a3
+    _value: 28771d5ef51f4c4a9fb2f0d02861aa7d
   Blurb: Four wounds, stitched back into the deck of you.
   Kind: 2

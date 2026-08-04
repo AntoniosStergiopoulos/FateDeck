@@ -19,6 +19,7 @@ namespace FateDeck.Tests
     {
         public FateContentCatalog Catalog;
         public CardDefinition IronCard;
+        public CardDefinition IronPlusCard;
         public CardDefinition FortuneCard;
         public CardDefinition DoomCard;
         public CardDefinition GlassCard;
@@ -66,6 +67,7 @@ namespace FateDeck.Tests
             catalog.ForceKind = forceKind;
 
             catalog.Iron = content.Force(forceKind, catalog, "Iron", new ModifyActionForceEffect { Delta = 2 });
+            catalog.IronPlus = content.Force(forceKind, catalog, "Iron+", new ModifyActionForceEffect { Delta = 3 });
             catalog.Fortune = content.Force(forceKind, catalog, "Fortune", new BankGoldEffect { Amount = 3 });
             catalog.Doom = content.DoomForce(forceKind, catalog);
             catalog.Echo = content.Force(forceKind, catalog, "Echo", new EchoFlipEffect());
@@ -81,6 +83,8 @@ namespace FateDeck.Tests
             catalog.FateCardSchema = fateSchema;
 
             content.IronCard = content.FateCard(fateSchema, catalog, "Iron", catalog.Iron);
+            content.IronPlusCard = content.FateCard(fateSchema, catalog, "Iron+", catalog.IronPlus);
+            catalog.FateCards.Add(content.IronPlusCard);
             content.FortuneCard = content.FateCard(fateSchema, catalog, "Fortune", catalog.Fortune);
             content.DoomCard = content.FateCard(fateSchema, catalog, "Doom", catalog.Doom);
             content.GlassCard = content.FateCard(fateSchema, catalog, "Glass", catalog.Glass);

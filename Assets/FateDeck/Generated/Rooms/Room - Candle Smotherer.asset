@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Room - Candle Smotherer
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: b249bb2443064b0390cef06e6f42ebfe
+    _value: 9f3a0b803cf844239ee81961ec59ab6f
   Blurb: Two damp fingers the size of oars. Block means little here.
   Encounter: {fileID: 11400000, guid: 18c72d936e61860408399f0bd4f9bfbd, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}
-  CharmDropChance: 0.2
+  CharmDropChance: 0.25

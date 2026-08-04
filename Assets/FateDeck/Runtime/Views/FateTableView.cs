@@ -60,7 +60,13 @@ namespace FateDeck.Runtime.Views
         {
             if (_catalog == null)
             {
-                Debug.LogError("[FateDeck] Fate Table has no content catalog. Run Tools/Fate Deck/Create Game Content first.");
+                _catalog = FindCatalogInEditor();
+            }
+
+            if (_catalog == null)
+            {
+                Debug.LogError("[FateDeck] Fate Table has no content catalog. Run Tools/Fate Deck/"
+                    + "Create Game Content, then Create Game Scene (it relinks this table).");
                 enabled = false;
                 return;
             }
@@ -79,9 +85,32 @@ namespace FateDeck.Runtime.Views
             ShowBootMenu();
         }
 
+        /// <summary>
+        /// Editor self-heal: a content rebuild deletes and recreates the catalog asset, which
+        /// breaks the scene's serialized reference. In the editor we can find it again by path.
+        /// </summary>
+        private static FateContentCatalog FindCatalogInEditor()
+        {
+#if UNITY_EDITOR
+            var catalog = UnityEditor.AssetDatabase.LoadAssetAtPath<FateContentCatalog>(
+                "Assets/FateDeck/Generated/Fate Content Catalog.asset");
+            if (catalog != null)
+            {
+                Debug.Log("[FateDeck] Catalog reference was stale (a rebuild changes asset ids) - "
+                    + "auto-relinked for this play session. Run Tools/Fate Deck/Create Game Scene "
+                    + "once to persist the link.");
+            }
+
+            return catalog;
+#else
+            return null;
+#endif
+        }
+
         private void OnDestroy()
         {
             UiFx.Clear();
+            FateTip.Clear();
             if (_run != null)
             {
                 _run.Changed -= OnRunChanged;
@@ -171,6 +200,16 @@ namespace FateDeck.Runtime.Views
             // what blocks the background (children pick independently of their parent).
             _overlayHost.pickingMode = PickingMode.Ignore;
             _root.Add(_overlayHost);
+
+            var tipHost = new VisualElement();
+            tipHost.style.position = Position.Absolute;
+            tipHost.style.left = 0;
+            tipHost.style.right = 0;
+            tipHost.style.top = 0;
+            tipHost.style.bottom = 0;
+            tipHost.pickingMode = PickingMode.Ignore;
+            _root.Add(tipHost);
+            FateTip.Install(_root, tipHost);
         }
 
         private VisualElement BuildTopBar()
@@ -251,19 +290,48 @@ namespace FateDeck.Runtime.Views
 
         private void ShowHeroSelect()
         {
-            if (_catalog.Heroes.Count <= 1)
+            if (_catalog.Heroes.Count == 0)
             {
-                StartNewRun(_catalog.Heroes.Count > 0 ? _catalog.Heroes[0] : null);
+                StartNewRun(null, 0);
                 return;
             }
 
             BuildHeroSelectScreen();
         }
 
-        private void StartNewRun(AStergio.OmniCard.Runtime.Cards.Data.CardDefinition hero)
+        private void StartNewRun(AStergio.OmniCard.Runtime.Cards.Data.CardDefinition hero, int seed)
         {
             FateRunSave.Delete();
-            _run.StartNewRun(hero, _seed);
+            _run.StartNewRun(hero, seed != 0 ? seed : _seed);
+        }
+
+        /// <summary>
+        /// Turns the seed box's text into a seed: empty means random, a number is used as-is,
+        /// and any other text hashes deterministically (so "banana" is a valid seed).
+        /// </summary>
+        private static int ParseSeedInput(string raw)
+        {
+            if (string.IsNullOrWhiteSpace(raw))
+            {
+                return 0;
+            }
+
+            raw = raw.Trim();
+            if (int.TryParse(raw, out int numeric))
+            {
+                return numeric;
+            }
+
+            unchecked
+            {
+                int hash = (int)2166136261;
+                foreach (char character in raw)
+                {
+                    hash = (hash ^ character) * 16777619;
+                }
+
+                return hash == 0 ? 1 : hash;
+            }
         }
 
         // ---------------------------------------------------------------- session wiring
@@ -278,6 +346,8 @@ namespace FateDeck.Runtime.Views
 
             _log.Clear();
             _log.Divider("a new hand is dealt");
+            _log.Append($"Table seed: {_run.OriginalSeed} — enter it on the hero screen to replay this exact run.",
+                FateUi.BoneDim);
 
             session.Events.Subscribe<DealerBarkEvent>(OnBark);
             session.Events.Subscribe<FateFlipEvent>(OnFlip);
@@ -315,6 +385,7 @@ namespace FateDeck.Runtime.Views
         private void Update()
         {
             UiFx.Update(Time.deltaTime);
+            FateTip.Update(Time.deltaTime);
             if (Session == null)
             {
                 return;
@@ -358,7 +429,9 @@ namespace FateDeck.Runtime.Views
             if (session.Phase == FateResolutionPhase.AwaitPreFlip
                 && session.CurrentAction?.SourceEnemy != null)
             {
-                if (_preFlipWindowSeconds > 0f)
+                // With pocket cards in hand the window WAITS for an explicit choice - playing
+                // a card or LET IT FLIP. Empty-handed, the window closes itself.
+                if (session.Deck.Pocket.Count == 0 && _preFlipWindowSeconds > 0f)
                 {
                     _windowTimer += Time.deltaTime;
                     if (_windowTimer >= _preFlipWindowSeconds)
@@ -422,31 +495,45 @@ namespace FateDeck.Runtime.Views
             _runInfoLabel.text = $"Biome {_run.Biome} · Step {Mathf.Max(1, _run.Step)}/{session.Rules.TrackSteps}";
 
             _statusChips.Clear();
-            _statusChips.Add(FateUi.Chip($"Gold {session.Gold}g", FateUi.GoldLeaf, 13));
+            AddHudChip($"Gold {session.Gold}g", FateUi.GoldLeaf,
+                "Gold buys cards, relics, charms and services. Enemies that bank gold pay it "
+                + "back as extra bounty when they die.");
             if (session.Keys > 0)
             {
-                _statusChips.Add(FateUi.Chip($"Keys {session.Keys}", FateUi.Verdigris, 13));
+                AddHudChip($"Keys {session.Keys}", FateUi.Verdigris,
+                    "A Key opens a locked chest politely - no flip, no Flame gamble.");
             }
 
             if (session.PlayerBlock > 0)
             {
-                _statusChips.Add(FateUi.Chip($"Block {session.PlayerBlock:0}", FateUi.Verdigris, 13));
+                AddHudChip($"Block {session.PlayerBlock:0}", FateUi.Verdigris,
+                    "Block soaks incoming damage. It resets at the start of your next turn.");
             }
 
             if (session.PlayerRetaliateBurn > 0)
             {
-                _statusChips.Add(FateUi.Chip($"Retaliate {session.PlayerRetaliateBurn}", FateUi.Ember, 13));
+                AddHudChip($"Retaliate {session.PlayerRetaliateBurn}", FateUi.Ember,
+                    "Any enemy that hits you before your next turn suffers this much Burn.");
             }
 
             if (session.PlayerBurn > 0)
             {
-                _statusChips.Add(FateUi.Chip($"Burn {session.PlayerBurn}", FateUi.Ember, 13));
+                AddHudChip($"Burn {session.PlayerBurn}", FateUi.Ember,
+                    "You are alight: at round end you mill this many cards, then Burn ticks down by 1.");
             }
 
             if (session.PlayerWeak > 0)
             {
-                _statusChips.Add(FateUi.Chip($"Weak {session.PlayerWeak}", FateUi.Violet, 13));
+                AddHudChip($"Weak {session.PlayerWeak}", FateUi.Violet,
+                    "Your next actions resolve at -2 Force, one stack spent per action.");
             }
+        }
+
+        private void AddHudChip(string text, Color color, string tip)
+        {
+            VisualElement chip = FateUi.Chip(text, color, 13);
+            FateTip.Bind(chip, tip);
+            _statusChips.Add(chip);
         }
 
         private Color ForceColor(MetadataEntry force)
@@ -583,7 +670,8 @@ namespace FateDeck.Runtime.Views
 
         private void OnPocketBanked(PocketBankedEvent banked)
         {
-            _log.Append($"You sleeve {banked.Card.DisplayName} into the Pocket — the action resolves at base value.",
+            _log.Append($"You sleeve {banked.Card.DisplayName} into the Pocket — the action resolves at base value. "
+                + "Play it later during ANY pre-flip window (yours or an enemy's) to replace that flip.",
                 FateUi.Verdigris, bold: true);
             RefreshTableau();
         }

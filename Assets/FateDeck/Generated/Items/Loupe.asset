@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Loupe
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 384f0624470a4203b0b590bcbbe94f06
+    _value: 228eaedb1cf84e45b51200c5c8c39cf8
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687376923820571
-  - rid: 3602687376923820572
-  - rid: 3602687376923820573
-  - rid: 3602687376923820574
+  - rid: 3602687396913349395
+  - rid: 3602687396913349396
+  - rid: 3602687396913349397
+  - rid: 3602687396913349398
   Variants: []
-  _creationDateTicks: 639213946079886391
+  _creationDateTicks: 639214724714651746
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820571
+    - rid: 3602687396913349395
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Scry 3 and reorder the top of your deck.
-    - rid: 3602687376923820572
+    - rid: 3602687396913349396
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687376923820575
-    - rid: 3602687376923820573
+        - rid: 3602687396913349399
+    - rid: 3602687396913349397
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687376923820574
+    - rid: 3602687396913349398
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687376923820575
+    - rid: 3602687396913349399
       type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Imp and Scrapling
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 1f057eb3e3f84be18b0be53e2ea16af7
+    _value: e7c9af77f72a4dc5a2ba40ed4617b21e
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: f681265c804dd3e48857e6249d37abb4, type: 2}

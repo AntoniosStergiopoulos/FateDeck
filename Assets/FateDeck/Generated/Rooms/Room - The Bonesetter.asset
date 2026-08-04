@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Bonesetter
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 1003c1a21f4a4babb62974f94010f37f
+    _value: 008eac50cd524052a0ac49724c01e94c
   Blurb: A folding chair waits under a lone bulb.
   Event: {fileID: 11400000, guid: 240d57791655df64c9741109734836d2, type: 2}

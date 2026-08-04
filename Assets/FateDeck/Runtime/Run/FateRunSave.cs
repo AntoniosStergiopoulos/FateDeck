@@ -21,6 +21,7 @@ namespace FateDeck.Runtime.Run
         public class SaveData
         {
             public int ResumeSeed;
+            public int OriginalSeed;
             public int Step;
             public int Biome;
             public int Gold;
@@ -43,6 +44,9 @@ namespace FateDeck.Runtime.Run
             public List<CardInstanceState> ExilePile = new List<CardInstanceState>();
             public List<string> RelicIds = new List<string>();
             public List<string> CharmIds = new List<string>();
+
+            /// <summary>The dealt doors, by stable room id - restored verbatim on resume.</summary>
+            public List<string> DoorIds = new List<string>();
         }
 
         public static string SavePath => Path.Combine(Application.persistentDataPath, "fatedeck-run.json");
@@ -87,6 +91,7 @@ namespace FateDeck.Runtime.Run
             var data = new SaveData
             {
                 ResumeSeed = session.Rng.Next(1, int.MaxValue),
+                OriginalSeed = run.OriginalSeed,
                 Step = run.Step,
                 Biome = run.Biome,
                 Gold = session.Gold,
@@ -118,6 +123,14 @@ namespace FateDeck.Runtime.Run
             foreach (CardInstance charm in session.CharmZone.Cards)
             {
                 data.CharmIds.Add(charm.Definition.Id.Value);
+            }
+
+            foreach (RoomDefinition door in run.Doors)
+            {
+                if (door != null)
+                {
+                    data.DoorIds.Add(door.Id.Value);
+                }
             }
 
             return data;

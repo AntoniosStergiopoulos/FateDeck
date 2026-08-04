@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Force Kind
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataKind
   _id:
-    _value: 46a15e148fae45099c0dbe0e61a87a8f
+    _value: f61999795bcd4d4e91b47d7ca7a9b42d
   EntryFields:
   - {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
   - {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}

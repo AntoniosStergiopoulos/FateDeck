@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Room - Gilded Beetle
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 85c4c6b85bfd4b0d895f4707a31e62ff
+    _value: 225f1ce057dd463cb2230b9bd232eb86
   Blurb: Slow, armored, and worth a small fortune. A knowing bet.
   Encounter: {fileID: 11400000, guid: 369a9b3df82d14546b8156452b2670d2, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}
-  CharmDropChance: 0.2
+  CharmDropChance: 0.25

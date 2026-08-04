@@ -36,6 +36,12 @@ namespace FateDeck.Editor
             CardDefinition beetle = GildedBeetle(fields);
             CardDefinition golem = PaperGolem(fields);
             CardDefinition smotherer = CandleSmotherer(fields);
+            CardDefinition twin = BellowsTwin(fields);
+            CardDefinition adder = CoilAdder(fields);
+            CardDefinition wight = ChandelierWight(fields);
+            CardDefinition tick = VaultTick(fields);
+            CardDefinition grudge = GrudgeCandle(fields);
+            CardDefinition mason = MarrowMason(fields);
             CardDefinition toll = TollCollector(fields);
             CardDefinition underwriter = TheUnderwriter(fields);
             CardDefinition notary = TheNotary(fields);
@@ -81,6 +87,20 @@ namespace FateDeck.Editor
                 "Two damp fingers the size of oars. Block means little here.");
             AddFight(rooms, "Room - Doll and Wisp", Deck("Encounter - Doll and Wisp", (doll, 1), (wisp, 1)),
                 "A doll that shatters and a page that audits.");
+            AddFight(rooms, "Room - Bellows Twins", Deck("Encounter - Bellows Twins", (twin, 2)),
+                "Two of them, off-beat: one puffs while the other blasts.");
+            AddFight(rooms, "Room - Coil Adder", Deck("Encounter - Coil Adder", (adder, 1)),
+                "Something soft-scaled softens its meals first.");
+            AddFight(rooms, "Room - Chandelier Wight", Deck("Encounter - Chandelier Wight", (wight, 1)),
+                "A hundred candles with a grudge. Bring something for the Burn.");
+            AddFight(rooms, "Room - Vault Ticks", Deck("Encounter - Vault Ticks", (tick, 2)),
+                "They want your purse, not your deck. Kill them to claw it all back.");
+            AddFight(rooms, "Room - Grudge Candle", Deck("Encounter - Grudge Candle", (grudge, 1)),
+                "It burns hotter every cycle. Race it.");
+            AddFight(rooms, "Room - Marrow Mason", Deck("Encounter - Marrow Mason", (mason, 1)),
+                "A wall that hits back. Rust and big single hits crack it.");
+            AddFight(rooms, "Room - Adder and Tick", Deck("Encounter - Adder and Tick", (adder, 1), (tick, 1)),
+                "Venom for your arm, fingers for your purse.");
 
             rooms.Elites.Add(GetOrCreate<FightRoomDefinition>("Room - The Toll Collector", room =>
             {
@@ -515,6 +535,118 @@ namespace FateDeck.Editor
                 });
             }, "Events");
             AddEventRoom(rooms, "The Scale of Debts", scale, "Brass groans under the weight of nothing.");
+
+            EventDefinition monk = GetOrCreate<EventDefinition>("The Whetstone Monk", ev =>
+            {
+                ev.Intro = "A monk kneels over a whetstone the size of a millwheel, sharpening nothing. "
+                    + "\"Bring me a law,\" he says, \"and I will give it an edge.\"";
+                ev.Options.Add(new EventOption
+                {
+                    Label = "Offer a card (free): upgrade it to its + tier",
+                    ResultText = "Sparks the color of your fate. The card comes back keener.",
+                    Effects = { new ZoneChoiceEffect { Kind = ZoneChoiceKind.UpgradeFromDraw, Count = 1 } }
+                });
+                ev.Options.Add(new EventOption
+                {
+                    Label = "Bow and pass",
+                    ResultText = "The wheel keeps turning, sharpening patience."
+                });
+            }, "Events");
+            AddEventRoom(rooms, "The Whetstone Monk", monk, "A grinding wheel sings one clean note.");
+
+            EventDefinition chained = GetOrCreate<EventDefinition>("The Chained Chest", ev =>
+            {
+                ev.Intro = "A chest wound in chains, each link stamped PROPERTY OF THE HOUSE. "
+                    + "The lock is honest. The contents are not the House's to keep.";
+                ev.Options.Add(new EventOption
+                {
+                    Label = "Turn a Key: take everything",
+                    KeyCost = 1,
+                    ResultText = "The chains applaud as they fall. 18g and a spare key inside.",
+                    Effects =
+                    {
+                        new GainGoldEffect { Amount = 18 },
+                        new GainKeyEffect { Count = 1 }
+                    }
+                });
+                var pry = new EventOption
+                {
+                    Label = "Pry at it (free flip)",
+                    FlipsFate = true,
+                    ResultText = "The chains hold. The House smiles somewhere."
+                };
+                pry.RitualOutcomes.Add(Outcome(forces.Iron, "Iron against iron - the lock gives! 12g.",
+                    false, new GainGoldEffect { Amount = 12 }));
+                pry.RitualOutcomes.Add(Outcome(forces.IronPlus, "The chains snap like bread. 15g.",
+                    false, new GainGoldEffect { Amount = 15 }));
+                pry.RitualOutcomes.Add(Outcome(forces.Flame, "The chains glow, soften, drip. 14g, warm.",
+                    false, new GainGoldEffect { Amount = 14 }));
+                pry.RitualOutcomes.Add(Outcome(forces.Key, "The Key force IS a key. 16g, smugly.",
+                    false, new GainGoldEffect { Amount = 16 }));
+                pry.RitualOutcomes.Add(Outcome(forces.Doom, "The chains bite back.", true,
+                    new MillPlayerEffect { Count = 2 }));
+                pry.RitualOutcomes.Add(Outcome(forces.Void, "The lock swallows its own keyhole.", true));
+                ev.Options.Add(pry);
+                ev.Options.Add(new EventOption { Label = "Leave it chained", ResultText = "Some property stays repossessed." });
+            }, "Events");
+            AddEventRoom(rooms, "The Chained Chest", chained, "Chains rattle around something generous.");
+
+            EventDefinition dicePriest = GetOrCreate<EventDefinition>("The Dice Priest", ev =>
+            {
+                ev.Intro = "A priest of the Odds shakes a cup of dice carved from reshuffled decks. "
+                    + "\"One free blessing,\" she says, \"denomination decided by your own fate.\"";
+                var blessing = new EventOption
+                {
+                    Label = "Receive the blessing (free flip)",
+                    FlipsFate = true,
+                    ResultText = "The dice come up blank. She shrugs."
+                };
+                blessing.RitualOutcomes.Add(Outcome(forces.Fortune, "\"The Lady smiles!\" Two Draw-2 charges.",
+                    false, new DoubleDrawNextEffect { Charges = 2 }));
+                blessing.RitualOutcomes.Add(Outcome(forces.FortunePlus, "\"The Lady BEAMS!\" Two Draw-2 charges and 5g.",
+                    false, new DoubleDrawNextEffect { Charges = 2 }, new GainGoldEffect { Amount = 5 }));
+                blessing.RitualOutcomes.Add(Outcome(forces.Iron, "\"Strength, then.\" +3 Force to your next action.",
+                    false, new NextActionBonusEffect { Delta = 3 }));
+                blessing.RitualOutcomes.Add(Outcome(forces.IronPlus, "\"STRENGTH.\" +4 Force to your next action.",
+                    false, new NextActionBonusEffect { Delta = 4 }));
+                blessing.RitualOutcomes.Add(Outcome(forces.Echo, "\"Twice-blessed.\" One Draw-2 charge and Scry 2.",
+                    false, new DoubleDrawNextEffect { Charges = 1 }, new ScryEffect { Count = 2, AllowReorder = true }));
+                blessing.RitualOutcomes.Add(Outcome(forces.Wisp, "\"Sight, then.\" Scry 3, reorder.",
+                    false, new ScryEffect { Count = 3, AllowReorder = true }));
+                blessing.RitualOutcomes.Add(Outcome(forces.Gloom, "\"Mending, then.\" Heal 2 wounds.",
+                    false, new HealWoundsEffect { Count = 2 }));
+                blessing.RitualOutcomes.Add(Outcome(forces.Doom, "The dice come up skulls. All of them.", true,
+                    new MillPlayerEffect { Count = 1 }));
+                blessing.RitualOutcomes.Add(Outcome(forces.Void, "The cup is empty. It was always empty.", true));
+                ev.Options.Add(blessing);
+                ev.Options.Add(new EventOption { Label = "Keep your own odds", ResultText = "She rattles on." });
+            }, "Events");
+            AddEventRoom(rooms, "The Dice Priest", dicePriest, "Dice rattle in a cup somewhere close.");
+
+            EventDefinition moltingPit = GetOrCreate<EventDefinition>("The Molting Pit", ev =>
+            {
+                ev.Intro = "A pit of shed skins - old decks, old luck, old selves. Things left here "
+                    + "stay left. The pit hums, patient.";
+                ev.Options.Add(new EventOption
+                {
+                    Label = "Shed (free): exile 1 card from your discard",
+                    ResultText = "The old law slides off you. The pit sighs contentedly.",
+                    Effects = { new ZoneChoiceEffect { Kind = ZoneChoiceKind.ExileFromDiscard, Count = 1 } }
+                });
+                ev.Options.Add(new EventOption
+                {
+                    Label = "Deep molt (8g): exile 1 and heal 1 wound",
+                    GoldCost = 8,
+                    ResultText = "Something old leaves; something torn knits.",
+                    Effects =
+                    {
+                        new ZoneChoiceEffect { Kind = ZoneChoiceKind.ExileFromDiscard, Count = 1 },
+                        new HealWoundsEffect { Count = 1 }
+                    }
+                });
+                ev.Options.Add(new EventOption { Label = "Stay in your skin", ResultText = "The pit hums on." });
+            }, "Events");
+            AddEventRoom(rooms, "The Molting Pit", moltingPit, "Something in the dark is shedding.");
 
             EventDefinition ragman = GetOrCreate<EventDefinition>("The Rag-and-Bone Man", ev =>
             {

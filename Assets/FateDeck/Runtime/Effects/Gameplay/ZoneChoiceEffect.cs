@@ -23,6 +23,7 @@ namespace FateDeck.Runtime.Effects.Gameplay
             {
                 case ZoneChoiceKind.ExileFromDiscard: return $"exile {Count} card from your discard pile";
                 case ZoneChoiceKind.StackFromDiscard: return "put a discard-pile card on top of your deck";
+                case ZoneChoiceKind.UpgradeFromDraw: return "upgrade 1 card to its + tier";
                 default: return $"heal {Count}";
             }
         }
@@ -36,6 +37,16 @@ namespace FateDeck.Runtime.Effects.Gameplay
 
             for (int i = 0; i < Count; i++)
             {
+                if (Kind == ZoneChoiceKind.UpgradeFromDraw)
+                {
+                    if (session is FateSession upgrader && !UpgradeFirst(upgrader))
+                    {
+                        return;
+                    }
+
+                    continue;
+                }
+
                 CardInstance first = session.Deck.Discard.Count > 0 ? session.Deck.Discard.Cards[0] : null;
                 if (first == null)
                 {
@@ -55,6 +66,19 @@ namespace FateDeck.Runtime.Effects.Gameplay
                     session.Deck.HealWounds(1);
                 }
             }
+        }
+
+        private static bool UpgradeFirst(FateSession session)
+        {
+            foreach (CardInstance card in session.Deck.Draw.Cards)
+            {
+                if (session.Catalog.IsBasicForce(session.Catalog.ForceOf(card)))
+                {
+                    return session.UpgradeFateCard(card);
+                }
+            }
+
+            return false;
         }
     }
 }

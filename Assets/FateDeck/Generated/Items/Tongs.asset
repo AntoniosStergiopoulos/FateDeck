@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Tongs
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 164246ddd53a47808c1f5a5442f38d66
+    _value: fd2fae827e8d4952b01515d176bff57b
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687376923820576
-  - rid: 3602687376923820577
-  - rid: 3602687376923820578
-  - rid: 3602687376923820579
+  - rid: 3602687396913349400
+  - rid: 3602687396913349401
+  - rid: 3602687396913349402
+  - rid: 3602687396913349403
   Variants: []
-  _creationDateTicks: 639213946080381897
+  _creationDateTicks: 639214724715117829
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820576
+    - rid: 3602687396913349400
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Exile 1 card from your discard pile.
-    - rid: 3602687376923820577
+    - rid: 3602687396913349401
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687376923820580
-    - rid: 3602687376923820578
+        - rid: 3602687396913349404
+    - rid: 3602687396913349402
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687376923820579
+    - rid: 3602687396913349403
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687376923820580
+    - rid: 3602687396913349404
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 1

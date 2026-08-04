@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: The Card Sharp
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 2d78fd19143c4620ace396decfe1ad19
+    _value: 3a422b968bae48c7809dd399912bbbdf
   Intro: A gaunt figure fans a deck that looks suspiciously like yours. "Two cards,
     any suit, free of charge. I'll just slip in a little something of mine."
   Options:
   - Label: Take 2 Iron (he slips in 1 Doom)
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238865
-    - rid: 3602687376965238866
+    - rid: 3602687397376295403
+    - rid: 3602687397376295404
     ResultText: Two Iron join your fate - and something colder slides in with them.
     FlipsFate: 0
     RitualOutcomes: []
@@ -29,9 +30,10 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Take 2 Flame (he slips in 1 Doom)
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238867
-    - rid: 3602687376965238868
+    - rid: 3602687397376295405
+    - rid: 3602687397376295406
     ResultText: Two Flame join your fate - and something colder slides in with them.
     FlipsFate: 0
     RitualOutcomes: []
@@ -39,9 +41,10 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Take 2 Fortune (he slips in 1 Doom)
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238869
-    - rid: 3602687376965238870
+    - rid: 3602687397376295407
+    - rid: 3602687397376295408
     ResultText: Two Fortune join your fate - and something colder slides in with
       them.
     FlipsFate: 0
@@ -50,6 +53,7 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Walk away
     GoldCost: 0
+    KeyCost: 0
     Effects: []
     ResultText: '"Pity. The house always slips one in eventually."'
     FlipsFate: 0
@@ -59,42 +63,42 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687376965238865
+    - rid: 3602687397376295403
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687376965238866
+    - rid: 3602687397376295404
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687376965238867
+    - rid: 3602687397376295405
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 92a968c5968886e48b808ca6e25c493c, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687376965238868
+    - rid: 3602687397376295406
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687376965238869
+    - rid: 3602687397376295407
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 8f2a71056e296624f86d0b531118a8db, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687376965238870
+    - rid: 3602687397376295408
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}

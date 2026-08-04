@@ -81,6 +81,31 @@ namespace FateDeck.Editor
                     EffectsOf(card, fields.Effects).Add(new NextActionBonusEffect { Delta = 2 });
                     EffectsOf(card, fields.Effects).Add(new ScryEffect { Count = 1, AllowReorder = false });
                 }));
+
+            items.Charms.Add(Charm(fields, "Second Sleeve",
+                "Put any card from your discard pile on top of your deck (rig your own flip).", false,
+                card => EffectsOf(card, fields.Effects).Add(
+                    new ZoneChoiceEffect { Kind = ZoneChoiceKind.StackFromDiscard, Count = 1 })));
+            items.Charms.Add(Charm(fields, "Lantern Oil", "Scry 4 and reorder.", false,
+                card => EffectsOf(card, fields.Effects).Add(new ScryEffect { Count = 4, AllowReorder = true })));
+            items.Charms.Add(Charm(fields, "Moth Powder", "Every enemy suffers Weak 2.", false,
+                card => EffectsOf(card, fields.Effects).Add(new ApplyStatusEffect
+                {
+                    Status = StatusKind.Weak,
+                    Stacks = 2,
+                    Target = StatusTarget.AllEnemies
+                })));
+            items.Charms.Add(Charm(fields, "Tempest Jar", "Deal 2 damage to ALL enemies. Costs your Main Action.",
+                true, card => EffectsOf(card, fields.Effects).Add(
+                    new DealDamageEffect { Amount = 2, AllEnemies = true })));
+            items.Charms.Add(Charm(fields, "Anchor Chain", "Gain 4 Block.", false,
+                card => EffectsOf(card, fields.Effects).Add(new GainBlockEffect { Amount = 4 })));
+            items.Charms.Add(Charm(fields, "Grave Coin", "Gain 4 gold and a Key.", false,
+                card =>
+                {
+                    EffectsOf(card, fields.Effects).Add(new GainGoldEffect { Amount = 4 });
+                    EffectsOf(card, fields.Effects).Add(new GainKeyEffect { Count = 1 });
+                }));
         }
 
         private static void CreateRelics(Fields fields, Forces forces, Items items)
@@ -201,6 +226,50 @@ namespace FateDeck.Editor
                     OnFlip(card, fields, forces.FlamePlus, ActionOwnerFilter.Player,
                         new DealDamageEffect { Amount = 1 });
                 }));
+
+            items.Relics.Add(Relic(fields, "Iron Crown",
+                "Every combat opens with +2 Force on your first action.", card =>
+            {
+                var trigger = new OnCombatStartTrigger();
+                trigger.Effects.Add(new NextActionBonusEffect { Delta = 2 });
+                TriggersOf(card, fields.Triggers).Add(trigger);
+            }));
+            items.Relics.Add(Relic(fields, "Grinning Molar", "Every card milled off you grants 1 Block.", card =>
+            {
+                var trigger = new OnMillTrigger();
+                trigger.Effects.Add(new GainBlockEffect { Amount = 1 });
+                TriggersOf(card, fields.Triggers).Add(trigger);
+            }));
+            items.Relics.Add(Relic(fields, "Storm Anchor",
+                "Every reshuffle charges your next action with +3 Force.", card =>
+            {
+                var trigger = new OnReshuffleTrigger();
+                trigger.Effects.Add(new NextActionBonusEffect { Delta = 3 });
+                TriggersOf(card, fields.Triggers).Add(trigger);
+            }));
+            items.Relics.Add(Relic(fields, "Serpent Ring",
+                "From round 2 on, your target suffers Weak 1 at each of your turn starts.", card =>
+            {
+                var trigger = new OnPlayerTurnStartTrigger { SkipFirstRound = true };
+                trigger.Effects.Add(new ApplyStatusEffect
+                {
+                    Status = StatusKind.Weak,
+                    Stacks = 1,
+                    Target = StatusTarget.SelectedEnemy
+                });
+                TriggersOf(card, fields.Triggers).Add(trigger);
+            }));
+            items.Relics.Add(Relic(fields, "Wisp Lantern", "Every combat starts with Scry 2 (reorder).", card =>
+            {
+                var trigger = new OnCombatStartTrigger();
+                trigger.Effects.Add(new ScryEffect { Count = 2, AllowReorder = true });
+                TriggersOf(card, fields.Triggers).Add(trigger);
+            }));
+            items.Relics.Add(Relic(fields, "Pity of the House",
+                "Whenever Doom surfaces, the House grants you 3 Block.", card =>
+            {
+                OnFlip(card, fields, forces.Doom, ActionOwnerFilter.Any, new GainBlockEffect { Amount = 3 });
+            }));
         }
 
         private static void OnFlip(CardDefinition card, Fields fields,

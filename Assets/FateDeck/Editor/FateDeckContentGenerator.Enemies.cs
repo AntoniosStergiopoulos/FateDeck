@@ -230,6 +230,81 @@ namespace FateDeck.Editor
             });
         }
 
+        private static CardDefinition BellowsTwin(Fields fields)
+        {
+            return Enemy(fields, "Bellows Twin", 4, 4,
+                "Comes in pairs; alternates puffing up and striking.", card =>
+            {
+                SetText(card, fields.Description, "One squeezes, one blows.");
+                PatternOf(card, fields.Pattern).Add(Brace("Puff", 2));
+                PatternOf(card, fields.Pattern).Add(Attack("Blast", 3));
+            });
+        }
+
+        private static CardDefinition CoilAdder(Fields fields)
+        {
+            return Enemy(fields, "Coil Adder", 7, 6,
+                "Venom: Weakens you before its big bite.", card =>
+            {
+                SetText(card, fields.Description, "It softens the meal first.");
+                PatternOf(card, fields.Pattern).Add(Special("Venom", false,
+                    new ApplyStatusEffect { Status = FateDeck.Runtime.Core.StatusKind.Weak, Stacks = 1,
+                        Target = StatusTarget.Player }));
+                PatternOf(card, fields.Pattern).Add(Attack("Bite", 4));
+            });
+        }
+
+        private static CardDefinition ChandelierWight(Fields fields)
+        {
+            return Enemy(fields, "Chandelier Wight", 9, 8,
+                "Kindle 2: sets you badly alight, then swings low.", card =>
+            {
+                SetText(card, fields.Description, "A hundred candles with a grudge.");
+                PatternOf(card, fields.Pattern).Add(Special("Kindle", false,
+                    new ApplyStatusEffect { Status = FateDeck.Runtime.Core.StatusKind.Burn, Stacks = 2,
+                        Target = StatusTarget.Player }));
+                PatternOf(card, fields.Pattern).Add(Attack("Swing", 2));
+            });
+        }
+
+        private static CardDefinition VaultTick(Fields fields)
+        {
+            return Enemy(fields, "Vault Tick", 5, 3,
+                "Pickpocket: steals 2g a turn - kill it to get everything back.", card =>
+            {
+                SetText(card, fields.Description, "It burrows into purses, not flesh.");
+                SetNumber(card, fields.ActionsPerRound, 2);
+                PatternOf(card, fields.Pattern).Add(Attack("Nip", 1));
+                PatternOf(card, fields.Pattern).Add(Special("Pickpocket", false,
+                    new TitheEffect { Mill = 0, GoldPocketed = 0, GoldStolen = 2 }));
+            });
+        }
+
+        private static CardDefinition GrudgeCandle(Fields fields)
+        {
+            return Enemy(fields, "Grudge Candle", 8, 7,
+                "Each cycle it burns hotter: +1 Force and 1 Burn on you.", card =>
+            {
+                SetText(card, fields.Description, "It remembers every draft that ever wronged it.");
+                PatternOf(card, fields.Pattern).Add(Attack("Attack", 2));
+                PatternOf(card, fields.Pattern).Add(Special("Seethe", false,
+                    new HowlEffect { Delta = 1 },
+                    new ApplyStatusEffect { Status = FateDeck.Runtime.Core.StatusKind.Burn, Stacks = 1,
+                        Target = StatusTarget.Player }));
+            });
+        }
+
+        private static CardDefinition MarrowMason(Fields fields)
+        {
+            return Enemy(fields, "Marrow Mason", 11, 9,
+                "Builds a wall of Block, then demolishes with it.", card =>
+            {
+                SetText(card, fields.Description, "It builds with what it takes out of you.");
+                PatternOf(card, fields.Pattern).Add(Brace("Mortar", 4));
+                PatternOf(card, fields.Pattern).Add(Attack("Demolish", 4));
+            });
+        }
+
         private static CardDefinition TheUnderwriter(Fields fields)
         {
             return Enemy(fields, "The Underwriter", 18, 12,
@@ -260,9 +335,9 @@ namespace FateDeck.Editor
 
         private static CardDefinition TheCollector(Fields fields)
         {
-            return Enemy(fields, "THE COLLECTOR", 32, 25,
+            return Enemy(fields, "THE COLLECTOR", 30, 25,
                 "Confiscate: it appraises up to 3 copies of your most-numerous force into its Mantle; "
-                + "attacks gain +1 Force per 3 held. Hits of 6+ shake a card loose. Only the draw "
+                + "attacks gain +1 Force per 3 held. Hits of 5+ shake a card loose. Only the draw "
                 + "pile is read - discard, pocket and wounds are invisible to it.", card =>
             {
                 SetText(card, fields.Description,

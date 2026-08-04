@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51efea5be5914e849ae68d1b000bf533, type: 3}
+  m_Name: Encounter - Coil Adder
+  m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
+  _id:
+    _value: 042b6b2f7b1e4d1aa9bdaf169e99483f
+  RuleSet: {fileID: 0}
+  Cards:
+  - Card: {fileID: 11400000, guid: dfc6e75f52c6788438d4861c407cbded, type: 2}
+    Count: 1

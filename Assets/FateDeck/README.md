@@ -16,12 +16,16 @@ flip from one visible, countable, sculptable deck.
 The complete fate engine — 22 forces with data-driven per-context laws (the original 7 families
 plus Tempest, Serpent, Glass, Gloom, Key, Mirror, Anchor, Rust and Wisp), flip/mill/wound/heal,
 the Pocket (bank & replace), the reshuffle Doom tax, doom laundering, Echo/Void, Burn/Weak, and
-the Odds Panel with exact fractions. Biome 1 is a 9-step track with weighted doors, 16 enemies,
+the Odds Panel with exact fractions. Biome 1 is a 9-step track with weighted doors, 22 enemies,
 3 elites (Toll Collector, Underwriter, Notary), THE COLLECTOR boss (capped Confiscate, the
-Mantle, and spill-on-heavy-hit counterplay), chests, shrines, 14 events, rest & shops, 18
-charms, 18 relics, 5 playable heroes with distinct decks and passives (Gambler, Stoker,
-Actuary, Debtor, Sexton) behind a hero-select screen, between-room run saves, and the
-Honest-Ledger death screen.
+Mantle, and spill-on-heavy-hit counterplay), chests, shrines, 18 events, rest & shops, 24
+charms, 24 relics, 5 playable heroes with distinct decks and passives behind a hero-select
+screen, between-room run saves, and the Honest-Ledger death screen.
+
+The UI teaches itself: hover anything — force tiles, status chips, buttons, odds rows, enemy
+intents, shop items — for a runtime tooltip explaining the rule behind it. Shop and reward rows
+carry CARD / RELIC / CHARM / SERVICE badges, and the pre-flip window pauses whenever you hold
+Pocket cards so interrupts are an explicit choice, playable straight from the prompt.
 
 Upgrading an existing project: run `Tools → Fate Deck → Rebuild Content From Scratch` once
 (regenerates every asset, including the expanded hero decks), then `Create Game Scene` to

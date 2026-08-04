@@ -13,72 +13,72 @@ MonoBehaviour:
   m_Name: Tinderbox
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: a3589a99cbbd4063a9225130ea647b7e
+    _value: 08ff4cf4d73b4a82863fba6d853f6d52
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687376923820773
-  - rid: 3602687376923820774
-  - rid: 3602687376923820775
-  - rid: 3602687376923820776
+  - rid: 3602687396913349628
+  - rid: 3602687396913349629
+  - rid: 3602687396913349630
+  - rid: 3602687396913349631
   Variants: []
-  _creationDateTicks: 639213946097152523
+  _creationDateTicks: 639214724735330323
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687376923820773
+    - rid: 3602687396913349628
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Your Flame flips also deal 1 damage to the target.
-    - rid: 3602687376923820774
+    - rid: 3602687396913349629
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687376923820775
+    - rid: 3602687396913349630
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687376923820777
-        - rid: 3602687376923820778
-    - rid: 3602687376923820776
+        - rid: 3602687397376294912
+        - rid: 3602687397376294913
+    - rid: 3602687396913349631
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687376923820777
+    - rid: 3602687397376294912
       type: {class: OnFateFlipTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687376923820779
+        - rid: 3602687397376294914
         AnyContext: 1
         Context: 0
         ForceFilter: {fileID: 11400000, guid: db6a6c29ae0e45948b59992cb5e7f969, type: 2}
         Owner: 1
         IncludePocketPlays: 1
-    - rid: 3602687376923820778
+    - rid: 3602687397376294913
       type: {class: OnFateFlipTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687376923820780
+        - rid: 3602687397376294915
         AnyContext: 1
         Context: 0
         ForceFilter: {fileID: 11400000, guid: b360d1657d70238488946864f0b64a4c, type: 2}
         Owner: 1
         IncludePocketPlays: 1
-    - rid: 3602687376923820779
+    - rid: 3602687397376294914
       type: {class: DealDamageEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 1
         AllEnemies: 0
-    - rid: 3602687376923820780
+    - rid: 3602687397376294915
       type: {class: DealDamageEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 1

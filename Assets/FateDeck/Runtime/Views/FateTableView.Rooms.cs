@@ -54,8 +54,28 @@ namespace FateDeck.Runtime.Views
             stage.Add(FateUi.Heading("CHOOSE WHO SITS DOWN", 30, FateUi.Bone));
             Label hint = FateUi.Text("Each player is a different shape of luck: a deck, a passive, a pocket.",
                 14, FateUi.BoneDim);
-            hint.style.marginBottom = 16;
+            hint.style.marginBottom = 10;
             stage.Add(hint);
+
+            var seedRow = new VisualElement();
+            seedRow.style.flexDirection = FlexDirection.Row;
+            seedRow.style.alignItems = Align.Center;
+            seedRow.style.marginBottom = 14;
+            Label seedLabel = FateUi.Text("SEED", 12, FateUi.GoldLeaf);
+            seedLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+            seedLabel.style.marginRight = 6;
+            seedRow.Add(seedLabel);
+            var seedField = new TextField();
+            seedField.style.width = 180;
+            seedField.value = string.Empty;
+            seedRow.Add(seedField);
+            Label seedHint = FateUi.Text("  optional — same seed, same run. Words work too.", 11, FateUi.BoneDim);
+            seedRow.Add(seedHint);
+            FateTip.Bind(seedRow,
+                "Type a number (or any word) to play a deterministic table: the same seed deals "
+                + "the same doors, enemies, chests and flips every time. Leave empty for a random "
+                + "run. The current run's seed is printed in the event log and on the end screens.");
+            stage.Add(seedRow);
 
             var row = new VisualElement();
             row.style.flexDirection = FlexDirection.Row;
@@ -67,14 +87,14 @@ namespace FateDeck.Runtime.Views
             {
                 if (hero != null)
                 {
-                    row.Add(BuildHeroCard(hero));
+                    row.Add(BuildHeroCard(hero, seedField));
                 }
             }
 
             UiFx.FadeSlideIn(stage, -16f, 0.32f);
         }
 
-        private VisualElement BuildHeroCard(CardDefinition hero)
+        private VisualElement BuildHeroCard(CardDefinition hero, TextField seedField)
         {
             VisualElement panel = FateUi.MakePanel();
             panel.style.width = 252;
@@ -123,7 +143,8 @@ namespace FateDeck.Runtime.Views
                 deckList.Insert(0, FateUi.Text($"Starting deck — {total} cards:", 12, FateUi.BoneDim));
             }
 
-            panel.Add(FateUi.MakeButton("DEAL ME IN", () => StartNewRun(hero), FateUi.GoldLeaf, 15));
+            panel.Add(FateUi.MakeButton("DEAL ME IN",
+                () => StartNewRun(hero, ParseSeedInput(seedField.value)), FateUi.GoldLeaf, 15));
             return panel;
         }
 
@@ -374,11 +395,23 @@ namespace FateDeck.Runtime.Views
                 EventOption option = active.Options[i];
                 int index = i;
                 string cost = option.GoldCost > 0 ? $"  ({option.GoldCost}g)" : string.Empty;
-                bool affordable = Session.Gold >= option.GoldCost;
+                if (option.KeyCost > 0)
+                {
+                    cost += $"  ({option.KeyCost} Key{(option.KeyCost == 1 ? "" : "s")})";
+                }
+
+                bool affordable = Session.Gold >= option.GoldCost && Session.Keys >= option.KeyCost;
                 Button button = FateUi.MakeButton($"{option.Label}{cost}",
                     () => _run.TakeEventOption(index),
                     affordable ? FateUi.GoldLeaf : FateUi.BoneDim, 14, affordable);
                 button.style.width = 480;
+                if (!affordable)
+                {
+                    FateTip.Bind(button, option.KeyCost > Session.Keys
+                        ? "You need a Key for this."
+                        : "Not enough gold.");
+                }
+
                 stage.Add(button);
             }
 
@@ -460,60 +493,144 @@ namespace FateDeck.Runtime.Views
             motto.style.marginBottom = 10;
             stage.Add(motto);
 
-            var list = FateUi.Column(2);
-            list.style.width = 560;
+            var list = FateUi.Column(0);
+            list.style.width = 660;
             stage.Add(list);
 
             foreach (ShopItem item in shop.Stock)
             {
-                if (item.Sold)
-                {
-                    Label sold = FateUi.Text($"{item.Label()}  — sold", 13, FateUi.BoneDim);
-                    sold.style.marginBottom = 4;
-                    list.Add(sold);
-                    continue;
-                }
-
-                ShopItem captured = item;
-                string description = captured.Card != null
-                    ? captured.Card.GetText(_catalog.DescriptionField)
-                    : null;
-                string label = string.IsNullOrEmpty(description)
-                    ? captured.Label()
-                    : $"{captured.Label()} — {description}";
-
-                if (captured.Kind == ShopItemKind.Surgery)
-                {
-                    Button surgery = FateUi.MakeButton(label,
-                        () => ShowZonePick(Session.Deck.Draw, "Choose a card for surgery (exile)",
-                            card => shop.BuySurgery(Session.Deck.Draw, card)),
-                        Session.Gold >= captured.Price ? FateUi.Ember : FateUi.BoneDim, 13,
-                        Session.Gold >= captured.Price);
-                    surgery.style.width = 560;
-                    list.Add(surgery);
-                    continue;
-                }
-
-                bool affordable = Session.Gold >= captured.Price;
-                Button buy = FateUi.MakeButton(label, () =>
-                {
-                    if (shop.Buy(captured))
-                    {
-                        _log.Append($"Bought: {captured.Label()}", FateUi.GoldLeaf, bold: true);
-                    }
-                    else
-                    {
-                        _log.Append($"Can't buy {captured.Label()} right now.", FateUi.BoneDim);
-                    }
-
-                    RefreshTableau();
-                    MarkScreenDirty();
-                }, affordable ? FateUi.GoldLeaf : FateUi.BoneDim, 13, affordable);
-                buy.style.width = 560;
-                list.Add(buy);
+                list.Add(ShopRow(shop, item));
             }
 
             stage.Add(FateUi.MakeButton("LEAVE", () => _run.CompleteRoom(), FateUi.BoneDim, 15));
+        }
+
+        /// <summary>A labeled chip that says what KIND of thing a purchasable is.</summary>
+        private VisualElement KindBadge(string text, Color color, string tip)
+        {
+            VisualElement chip = FateUi.Chip(text, color, 11);
+            chip.style.marginRight = 8;
+            chip.style.flexShrink = 0;
+            FateTip.Bind(chip, tip);
+            return chip;
+        }
+
+        private VisualElement ShopRow(ShopService shop, ShopItem item)
+        {
+            VisualElement row = FateUi.MakePanel();
+            row.style.flexDirection = FlexDirection.Row;
+            row.style.alignItems = Align.Center;
+            row.style.marginBottom = 5;
+            if (item.Sold)
+            {
+                row.style.opacity = 0.45f;
+            }
+
+            string name;
+            string description;
+            switch (item.Kind)
+            {
+                case ShopItemKind.FateCard:
+                {
+                    var force = item.Card != null
+                        ? item.Card.GetObject(_catalog.ForceField) as AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
+                        : null;
+                    Color color = CardElementBuilder.ForceColor(_catalog, force);
+                    row.Add(KindBadge("CARD", color,
+                        "A fate card. It joins your DISCARD pile and enters your luck at the next reshuffle."));
+                    name = item.Card != null ? item.Card.name : "Card";
+                    description = (item.Card != null ? item.Card.GetText(_catalog.DescriptionField) : null)
+                        + "  (joins your discard pile)";
+                    break;
+                }
+
+                case ShopItemKind.Relic:
+                    row.Add(KindBadge("RELIC", FateUi.GoldLeaf,
+                        "A relic: a permanent law, always active for the rest of the run."));
+                    name = item.Card != null ? item.Card.name : "Relic";
+                    description = item.Card != null ? item.Card.GetText(_catalog.DescriptionField) : null;
+                    break;
+
+                case ShopItemKind.Charm:
+                    row.Add(KindBadge("CHARM", FateUi.Violet,
+                        "A charm: a one-shot consumable. It sits in your tableau - click it there to "
+                        + "use it. Free unless it costs your Main Action."));
+                    name = item.Card != null ? item.Card.name : "Charm";
+                    description = item.Card != null ? item.Card.GetText(_catalog.DescriptionField) : null;
+                    break;
+
+                case ShopItemKind.Key:
+                    row.Add(KindBadge("SERVICE", FateUi.Verdigris, "Takes effect immediately."));
+                    name = "Key";
+                    description = "Opens one locked chest politely — no flip, no Flame gamble.";
+                    break;
+
+                case ShopItemKind.Tonic:
+                    row.Add(KindBadge("SERVICE", FateUi.Verdigris, "Takes effect immediately."));
+                    name = "Tonic";
+                    description = $"Heal {Session.Rules.TonicHeal}: choose wound cards to return to your deck.";
+                    break;
+
+                default:
+                    row.Add(KindBadge("SERVICE", FateUi.Verdigris, "Takes effect immediately."));
+                    name = "Surgery";
+                    description = "Exile any card from your draw pile. The price rises with each surgery; "
+                        + "Doom costs double.";
+                    break;
+            }
+
+            var mid = FateUi.Column(0);
+            mid.style.flexGrow = 1;
+            mid.style.flexShrink = 1;
+            Label nameLabel = FateUi.Text(name, 14, FateUi.Bone);
+            nameLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+            mid.Add(nameLabel);
+            if (!string.IsNullOrEmpty(description))
+            {
+                mid.Add(FateUi.Text(description, 12, FateUi.BoneDim));
+            }
+
+            row.Add(mid);
+
+            if (item.Sold)
+            {
+                Label sold = FateUi.Text("SOLD", 13, FateUi.BoneDim);
+                sold.style.unityFontStyleAndWeight = FontStyle.Bold;
+                row.Add(sold);
+                return row;
+            }
+
+            ShopItem captured = item;
+            bool affordable = Session.Gold >= captured.Price;
+            Button buy = FateUi.MakeButton($"BUY {captured.Price}g", () =>
+            {
+                if (captured.Kind == ShopItemKind.Surgery)
+                {
+                    ShowZonePick(Session.Deck.Draw, "Choose a card for surgery (exile forever)",
+                        card => shop.BuySurgery(Session.Deck.Draw, card));
+                    return;
+                }
+
+                if (shop.Buy(captured))
+                {
+                    _log.Append($"Bought: {captured.Label()}", FateUi.GoldLeaf, bold: true);
+                }
+                else
+                {
+                    _log.Append($"Can't buy {captured.Label()} right now.", FateUi.BoneDim);
+                }
+
+                RefreshTableau();
+                MarkScreenDirty();
+            }, affordable ? FateUi.GoldLeaf : FateUi.BoneDim, 13, affordable);
+            buy.style.flexShrink = 0;
+            if (!affordable)
+            {
+                FateTip.Bind(buy, "Not enough gold.");
+            }
+
+            row.Add(buy);
+            return row;
         }
 
         // ---------------------------------------------------------------- rewards
@@ -526,21 +643,40 @@ namespace FateDeck.Runtime.Views
             {
                 stage.Add(FateUi.Text("Choose one relic — a permanent law for the rest of the run:",
                     15, FateUi.Bone));
-                var list = FateUi.Column(4);
+                var list = FateUi.Column(0);
                 list.style.marginTop = 8;
+                list.style.width = 660;
                 stage.Add(list);
                 for (int i = 0; i < _run.RelicChoices.Count; i++)
                 {
                     CardDefinition relic = _run.RelicChoices[i];
                     int index = i;
                     string rules = relic.GetText(_catalog.DescriptionField);
-                    Button pick = FateUi.MakeButton($"{relic.name} — {rules}", () =>
+
+                    VisualElement row = FateUi.MakePanel();
+                    row.style.flexDirection = FlexDirection.Row;
+                    row.style.alignItems = Align.Center;
+                    row.style.marginBottom = 5;
+                    row.Add(KindBadge("RELIC", FateUi.GoldLeaf,
+                        "A relic: a permanent law, always active for the rest of the run."));
+
+                    var mid = FateUi.Column(0);
+                    mid.style.flexGrow = 1;
+                    mid.style.flexShrink = 1;
+                    Label nameLabel = FateUi.Text(relic.name, 14, FateUi.GoldLeaf);
+                    nameLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+                    mid.Add(nameLabel);
+                    mid.Add(FateUi.Text(rules, 12, FateUi.BoneDim));
+                    row.Add(mid);
+
+                    Button pick = FateUi.MakeButton("TAKE", () =>
                     {
                         _log.Append($"Relic taken: {relic.name} — {rules}", FateUi.GoldLeaf, bold: true);
                         _run.PickRelic(index);
                     }, FateUi.GoldLeaf, 14);
-                    pick.style.width = 640;
-                    list.Add(pick);
+                    pick.style.flexShrink = 0;
+                    row.Add(pick);
+                    list.Add(row);
                 }
 
                 return;
@@ -549,8 +685,23 @@ namespace FateDeck.Runtime.Views
             if (_run.CharmReward != null)
             {
                 string rules = _run.CharmReward.GetText(_catalog.DescriptionField);
-                stage.Add(FateUi.Text($"A charm falls from the wreckage: {_run.CharmReward.name}", 15, FateUi.Bone));
-                stage.Add(FateUi.Text(rules, 13, FateUi.BoneDim));
+                VisualElement row = FateUi.MakePanel();
+                row.style.flexDirection = FlexDirection.Row;
+                row.style.alignItems = Align.Center;
+                row.style.width = 620;
+                row.Add(KindBadge("CHARM", FateUi.Violet,
+                    "A charm: a one-shot consumable. It sits in your tableau - click it there to use it."));
+                var mid = FateUi.Column(0);
+                mid.style.flexGrow = 1;
+                mid.style.flexShrink = 1;
+                Label nameLabel = FateUi.Text(_run.CharmReward.name, 14, FateUi.Bone);
+                nameLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+                mid.Add(nameLabel);
+                mid.Add(FateUi.Text(rules, 12, FateUi.BoneDim));
+                row.Add(mid);
+                stage.Add(FateUi.Text("A charm falls from the wreckage:", 15, FateUi.Bone));
+                stage.Add(row);
+
                 var buttons = new VisualElement();
                 buttons.style.flexDirection = FlexDirection.Row;
                 buttons.style.marginTop = 8;
@@ -598,6 +749,8 @@ namespace FateDeck.Runtime.Views
                 14, FateUi.Bone));
             ledger.Add(FateUi.Text($"Reshuffles paid: {session.Deck.ReshuffleCount} · "
                 + $"{session.Deck.Exile.Count} cards exiled · {session.Gold}g left on the table.", 14, FateUi.BoneDim));
+            ledger.Add(FateUi.Text($"Table seed: {_run.OriginalSeed} — enter it on the hero screen "
+                + "to face this exact run again.", 13, FateUi.BoneDim));
 
             stage.Add(FateUi.MakeButton("THE DECK RE-FORMS", ShowHeroSelect, FateUi.Ember, 17));
         }
@@ -619,6 +772,7 @@ namespace FateDeck.Runtime.Views
             stage.Add(FateUi.Text(
                 $"{session.TotalFlipsThisRun} flips · {session.DoomFlipsThisRun} Doom · {session.Gold}g banked · "
                 + $"{session.Deck.Draw.Count + session.Deck.Discard.Count} cards of soul recovered.", 14, FateUi.Bone));
+            stage.Add(FateUi.Text($"Table seed: {_run.OriginalSeed}", 13, FateUi.BoneDim));
             stage.Add(FateUi.MakeButton("PLAY AGAIN", ShowHeroSelect, FateUi.GoldLeaf, 17));
         }
     }

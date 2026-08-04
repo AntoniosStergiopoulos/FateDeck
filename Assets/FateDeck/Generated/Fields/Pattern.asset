@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: e6ecc498df6e461eb5556163ebf7ea00
+    _value: 70e463a9958a40b098462c4cd1d69743
   Kind:
-    rid: 3602687376923820107
+    rid: 3602687396913348930
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820107
+    - rid: 3602687396913348930
       type: {class: EnemyPatternFieldKind, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
       data:
         MutableAtRuntime: 0

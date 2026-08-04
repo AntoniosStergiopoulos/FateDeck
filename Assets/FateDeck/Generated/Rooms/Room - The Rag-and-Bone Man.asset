@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Rag-and-Bone Man
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: f35a88d9ed7a4e2c8e468383b72e846e
+    _value: 9193ecf6885d48438ad625b8915e85dd
   Blurb: 'A wheel squeaks: any old luck, any old luck.'
   Event: {fileID: 11400000, guid: c9af6389b49dab743b38beb1b0e3c3b4, type: 2}

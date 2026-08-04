@@ -30,18 +30,8 @@ namespace FateDeck.Editor
             camera.clearFlags = CameraClearFlags.SolidColor;
             camera.backgroundColor = new Color(0.071f, 0.063f, 0.055f);
 
-            var existing = Object.FindFirstObjectByType<FateTableView>();
-            if (existing != null)
+            if (RelinkExistingTable(catalog, out FateTableView existing))
             {
-                EnsureDocument(existing.gameObject, catalog);
-                var existingSerialized = new SerializedObject(existing);
-                SerializedProperty catalogProperty = existingSerialized.FindProperty("_catalog");
-                if (catalogProperty.objectReferenceValue == null)
-                {
-                    catalogProperty.objectReferenceValue = catalog;
-                    existingSerialized.ApplyModifiedPropertiesWithoutUndo();
-                }
-
                 Debug.Log("[FateDeck] A Fate Table already exists in the scene; references refreshed.");
                 Selection.activeGameObject = existing.gameObject;
                 return;
@@ -56,6 +46,32 @@ namespace FateDeck.Editor
             Undo.RegisterCreatedObjectUndo(tableObject, "Create Fate Table");
             Selection.activeGameObject = tableObject;
             Debug.Log("[FateDeck] Table ready. Press Play - the Dealer is waiting.");
+        }
+
+        /// <summary>
+        /// Repairs the scene's existing Fate Table after a content rebuild: reassigns the
+        /// catalog when the old asset was deleted and re-wires the UIDocument + PanelSettings.
+        /// False when the scene has no table yet.
+        /// </summary>
+        public static bool RelinkExistingTable(FateContentCatalog catalog, out FateTableView existing)
+        {
+            existing = Object.FindFirstObjectByType<FateTableView>();
+            if (existing == null)
+            {
+                return false;
+            }
+
+            EnsureDocument(existing.gameObject, catalog);
+            var serialized = new SerializedObject(existing);
+            SerializedProperty catalogProperty = serialized.FindProperty("_catalog");
+            if (catalogProperty.objectReferenceValue == null)
+            {
+                catalogProperty.objectReferenceValue = catalog;
+                serialized.ApplyModifiedPropertiesWithoutUndo();
+                EditorUtility.SetDirty(existing);
+            }
+
+            return true;
         }
 
         /// <summary>The UI Toolkit document that hosts the whole table UI (added by RequireComponent,

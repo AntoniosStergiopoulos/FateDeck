@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Snake Pit
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 09384a3608ec432ba5dec970046f430d
+    _value: 7dddc69819b641769101421d5606fd5b
   Blurb: A dry fountain seethes softly.
   Event: {fileID: 11400000, guid: 1ac41bde85927cf4eba01a49795903c4, type: 2}

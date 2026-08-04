@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: The Storm Door
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: d228d4a56952487d9d68ccd6d7833881
+    _value: bfabfa165fc54a2a8f44018aa65e3d0f
   Intro: A door stands open onto a hallway of weather. Lightning arcs politely around
     the frame. The storm wants into your deck.
   Options:
   - Label: 'Walk through (free): 1 Tempest and 1 Doom'
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238876
-    - rid: 3602687376965238877
+    - rid: 3602687397376295414
+    - rid: 3602687397376295415
     ResultText: Thunder files itself between your cards. So does the fine print.
     FlipsFate: 0
     RitualOutcomes: []
@@ -29,8 +30,9 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: 'Bribe the wind (10g): 1 Tempest, clean'
     GoldCost: 10
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238878
+    - rid: 3602687397376295416
     ResultText: The storm pockets your coin and behaves.
     FlipsFate: 0
     RitualOutcomes: []
@@ -38,6 +40,7 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Close the door
     GoldCost: 0
+    KeyCost: 0
     Effects: []
     ResultText: The weather sighs.
     FlipsFate: 0
@@ -47,21 +50,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687376965238876
+    - rid: 3602687397376295414
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: fccd8d5f4aea61c4ca969324cff2e782, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687376965238877
+    - rid: 3602687397376295415
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687376965238878
+    - rid: 3602687397376295416
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: fccd8d5f4aea61c4ca969324cff2e782, type: 2}

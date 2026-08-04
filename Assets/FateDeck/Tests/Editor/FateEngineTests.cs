@@ -270,5 +270,70 @@ namespace FateDeck.Tests
             new GainKeyEffect { Count = 2 }.Resolve(new EffectContext(_session.Hero, _session));
             Assert.AreEqual(2, _session.Keys);
         }
+
+        [Test]
+        public void UpgradeFromDrawFallbackSharpensTheFirstBasic()
+        {
+            new ZoneChoiceEffect { Kind = ZoneChoiceKind.UpgradeFromDraw, Count = 1 }
+                .Resolve(new EffectContext(_session.Hero, _session));
+
+            Assert.AreEqual(1, _session.Deck.CountForceIn(_session.Deck.Draw, _content.Catalog.IronPlus));
+            Assert.AreEqual(4, _session.Deck.CountForceIn(_session.Deck.Draw, _content.Catalog.Iron));
+        }
+
+        [Test]
+        public void SavedDoorsRestoreExactlyAndSeedsAreDeterministic()
+        {
+            _content.Catalog.Biome1Rooms.Add(_content.FightRoom);
+            _content.Catalog.Biome1Rooms.Add(_content.PairRoom);
+
+            var first = new RunController(_content.Catalog);
+            first.StartNewRun(_content.Hero, 7);
+            Assert.AreEqual(RunScreen.Doors, first.Screen);
+            Assert.Greater(first.Doors.Count, 0);
+            Assert.AreEqual(7, first.OriginalSeed);
+
+            var second = new RunController(_content.Catalog);
+            second.StartNewRun(_content.Hero, 7);
+            Assert.AreEqual(first.Doors.Count, second.Doors.Count, "same seed, same deal");
+            for (int i = 0; i < first.Doors.Count; i++)
+            {
+                Assert.AreSame(first.Doors[i], second.Doors[i], "same seed, same doors in order");
+            }
+
+            FateRunSave.SaveData data = FateRunSave.Capture(first);
+            Assert.AreEqual(first.Doors.Count, data.DoorIds.Count);
+            Assert.AreEqual(7, data.OriginalSeed);
+
+            var resumed = new RunController(_content.Catalog);
+            resumed.StartNewRun(_content.Hero, 12345);
+            Assert.IsTrue(resumed.RestoreDoors(data.Step, data.DoorIds));
+            Assert.AreEqual(data.Step, resumed.Step);
+            Assert.AreEqual(first.Doors.Count, resumed.Doors.Count);
+            for (int i = 0; i < first.Doors.Count; i++)
+            {
+                Assert.AreSame(first.Doors[i], resumed.Doors[i], "loading must never reroll the doors");
+            }
+
+            first.Session.Dispose();
+            second.Session.Dispose();
+            resumed.Session.Dispose();
+        }
+
+        [Test]
+        public void TitheStealsGoldIntoTheEnemyPocketAndBountyReturnsIt()
+        {
+            var combat = _session.StartCombat(_content.FightRoom);
+            CardInstance enemy = combat.Enemies.Cards[0];
+            int before = _session.Gold;
+
+            new TitheEffect { Mill = 0, GoldPocketed = 0, GoldStolen = 2 }
+                .Resolve(new EffectContext(enemy, _session));
+            Assert.AreEqual(before - 2, _session.Gold);
+            Assert.AreEqual(2, enemy.Fields.GetNumber(_content.Catalog.PocketedGoldField));
+
+            combat.DamageEnemy(enemy, 99);
+            Assert.AreEqual(before - 2 + 5 + 2, _session.Gold, "bounty 5 plus the 2 stolen gold");
+        }
     }
 }

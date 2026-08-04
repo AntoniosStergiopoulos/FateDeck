@@ -13,106 +13,106 @@ MonoBehaviour:
   m_Name: Flame
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: 72a57b8df5134c01a7758f40f6a47106
+    _value: 27e689c588cb4a058d38e2363f1aa036
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687376923820260
-  - rid: 3602687376923820261
-  - rid: 3602687376923820262
-  - rid: 3602687376923820263
-  - rid: 3602687376923820264
-  - rid: 3602687376923820265
-  - rid: 3602687376923820266
-  - rid: 3602687376923820267
-  - rid: 3602687376923820268
-  - rid: 3602687376923820269
-  - rid: 3602687376923820270
-  - rid: 3602687376923820271
+  - rid: 3602687396913349083
+  - rid: 3602687396913349084
+  - rid: 3602687396913349085
+  - rid: 3602687396913349086
+  - rid: 3602687396913349087
+  - rid: 3602687396913349088
+  - rid: 3602687396913349089
+  - rid: 3602687396913349090
+  - rid: 3602687396913349091
+  - rid: 3602687396913349092
+  - rid: 3602687396913349093
+  - rid: 3602687396913349094
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820260
+    - rid: 3602687396913349083
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687376923820272
-    - rid: 3602687376923820261
+        - rid: 3602687396913349095
+    - rid: 3602687396913349084
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687376923820273
-    - rid: 3602687376923820262
+        - rid: 3602687396913349096
+    - rid: 3602687396913349085
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687376923820274
-    - rid: 3602687376923820263
+        - rid: 3602687396913349097
+    - rid: 3602687396913349086
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687376923820275
-    - rid: 3602687376923820264
+        - rid: 3602687396913349098
+    - rid: 3602687396913349087
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687376923820276
-    - rid: 3602687376923820265
+        - rid: 3602687396913349099
+    - rid: 3602687396913349088
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687376923820266
+    - rid: 3602687396913349089
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687376923820267
+    - rid: 3602687396913349090
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687376923820268
+    - rid: 3602687396913349091
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687376923820269
+    - rid: 3602687396913349092
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.89, g: 0.35, b: 0.13, a: 1}
-    - rid: 3602687376923820270
+    - rid: 3602687396913349093
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: F
-    - rid: 3602687376923820271
+    - rid: 3602687396913349094
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: The action's target suffers 2 Burn.
-    - rid: 3602687376923820272
+    - rid: 3602687396913349095
       type: {class: BurnActionVictimEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Stacks: 2
-    - rid: 3602687376923820273
+    - rid: 3602687396913349096
       type: {class: GuardRetaliateBurnEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Stacks: 2
-    - rid: 3602687376923820274
+    - rid: 3602687396913349097
       type: {class: BurnActionVictimEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Stacks: 2
-    - rid: 3602687376923820275
+    - rid: 3602687396913349098
       type: {class: FlameLootEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         GoldBurned: 3
-    - rid: 3602687376923820276
+    - rid: 3602687396913349099
       type: {class: BurnActionVictimEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Stacks: 2

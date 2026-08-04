@@ -34,6 +34,9 @@ namespace FateDeck.Runtime.Run
         [Min(0)]
         public int GoldCost;
 
+        [Min(0)]
+        public int KeyCost;
+
         [SerializeReference]
         public List<CardEffect> Effects = new List<CardEffect>();
 

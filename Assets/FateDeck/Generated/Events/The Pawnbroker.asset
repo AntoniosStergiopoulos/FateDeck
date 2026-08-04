@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: The Pawnbroker
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 4f951b31ccac41f088010fe13a03a343
+    _value: dd23cb6d2a204f26a881cd12d3f68bc4
   Intro: Three brass balls hang over a hole in the wall. "Cards ARE money," rasps
     the hole. "I give fair rates for luck you aren't using."
   Options:
   - Label: Pawn a card (exile 1 from your discard, +8g)
     GoldCost: 0
+    KeyCost: 0
     Effects:
-    - rid: 3602687376965238871
-    - rid: 3602687376965238872
+    - rid: 3602687397376295409
+    - rid: 3602687397376295410
     ResultText: The card vanishes into the hole. Coins roll out.
     FlipsFate: 0
     RitualOutcomes: []
@@ -29,6 +30,7 @@ MonoBehaviour:
     ClosesEvent: 1
   - Label: Keep your luck
     GoldCost: 0
+    KeyCost: 0
     Effects: []
     ResultText: '"Sentiment. It''s why the House always wins."'
     FlipsFate: 0
@@ -38,11 +40,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687376965238871
+    - rid: 3602687397376295409
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 8
-    - rid: 3602687376965238872
+    - rid: 3602687397376295410
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 1

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Law - Enemy Action
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 6d68fde8b4e44622b986fff5826ebd04
+    _value: 64643e9cf55d464e9a87d4d631fa99f4
   Kind:
-    rid: 3602687376923820095
+    rid: 3602687396913348918
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820095
+    - rid: 3602687396913348918
       type: {class: EffectListFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

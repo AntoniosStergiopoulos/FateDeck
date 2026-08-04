@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Cardsharp Rat
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: cd2af6f491c0463c906bba2af758edc4
+    _value: 6b59fb216de74ca5b9d763c90eb34427
   Schema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
   _values:
-  - rid: 3602687376923820843
-  - rid: 3602687376923820844
-  - rid: 3602687376923820845
-  - rid: 3602687376923820846
-  - rid: 3602687376923820847
-  - rid: 3602687376923820848
-  - rid: 3602687376923820849
-  - rid: 3602687376923820850
-  - rid: 3602687376923820851
-  - rid: 3602687376923820852
-  - rid: 3602687376923820853
-  - rid: 3602687376923820854
-  - rid: 3602687376923820855
-  - rid: 3602687376923820856
-  - rid: 3602687376923820857
+  - rid: 3602687397376295014
+  - rid: 3602687397376295015
+  - rid: 3602687397376295016
+  - rid: 3602687397376295017
+  - rid: 3602687397376295018
+  - rid: 3602687397376295019
+  - rid: 3602687397376295020
+  - rid: 3602687397376295021
+  - rid: 3602687397376295022
+  - rid: 3602687397376295023
+  - rid: 3602687397376295024
+  - rid: 3602687397376295025
+  - rid: 3602687397376295026
+  - rid: 3602687397376295027
+  - rid: 3602687397376295028
   Variants: []
-  _creationDateTicks: 639213946104810359
+  _creationDateTicks: 639214724745976785
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820843
+    - rid: 3602687397376295014
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
         Value: 5
-    - rid: 3602687376923820844
+    - rid: 3602687397376295015
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
         Value: 5
-    - rid: 3602687376923820845
+    - rid: 3602687397376295016
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
         Value: 5
-    - rid: 3602687376923820846
+    - rid: 3602687397376295017
       type: {class: EnemyPatternFieldValue, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
       data:
         Field: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
@@ -61,69 +61,69 @@ MonoBehaviour:
           Force: 0
           FlipsFate: 0
           Effects:
-          - rid: 3602687376923820858
+          - rid: 3602687397376295029
         - Name: Attack
           Kind: 0
           Force: 3
           FlipsFate: 1
           Effects: []
-    - rid: 3602687376923820847
+    - rid: 3602687397376295018
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
         Value: 0
-    - rid: 3602687376923820848
+    - rid: 3602687397376295019
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
         Value: 0
-    - rid: 3602687376923820849
+    - rid: 3602687397376295020
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
         Value: 0
-    - rid: 3602687376923820850
+    - rid: 3602687397376295021
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
         Value: 0
-    - rid: 3602687376923820851
+    - rid: 3602687397376295022
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
         Value: 0
-    - rid: 3602687376923820852
+    - rid: 3602687397376295023
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
         Value: 0
-    - rid: 3602687376923820853
+    - rid: 3602687397376295024
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
         Value: 0
-    - rid: 3602687376923820854
+    - rid: 3602687397376295025
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
         Value: 1
-    - rid: 3602687376923820855
+    - rid: 3602687397376295026
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
         Value: 'Rig: its paws reorder your top two cards - the worse one surfaces
           first.'
-    - rid: 3602687376923820856
+    - rid: 3602687397376295027
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Order is attackable. Scry and Pocket are the answers.
-    - rid: 3602687376923820857
+    - rid: 3602687397376295028
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers: []
-    - rid: 3602687376923820858
+    - rid: 3602687397376295029
       type: {class: RigTopEffect, ns: FateDeck.Runtime.Effects.Enemies, asm: FateDeck.Runtime}
       data:
         PeekCount: 2

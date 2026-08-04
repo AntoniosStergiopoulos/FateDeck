@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Discard Pile
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 2e32dcf1ff7b4ff9a1749d724bf70894
+    _value: 9391a2ef94ab442eaf5d0f3c4b1b44df
   Description: 
   Scope: 0
   Visibility: 0

@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Fortune+
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: e07d955f8f844e2ea70b419e05b066bb
+    _value: bb88ee5790284a01b7f6a30296793d4d
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687376923820531
-  - rid: 3602687376923820532
+  - rid: 3602687396913349355
+  - rid: 3602687396913349356
   Variants: []
-  _creationDateTicks: 639213946065086944
+  _creationDateTicks: 639214724699370157
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820531
+    - rid: 3602687396913349355
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 80033507d61aa704e91e9f94494b1b32, type: 2}
-    - rid: 3602687376923820532
+    - rid: 3602687396913349356
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

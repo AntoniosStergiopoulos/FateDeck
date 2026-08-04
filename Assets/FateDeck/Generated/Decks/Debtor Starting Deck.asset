@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Debtor Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 0f40cddbcf9e499d924cf757e00ab60f
+    _value: 64b7d5a3578245fa8c523edc90b1135d
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}

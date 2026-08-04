@@ -14,7 +14,7 @@ namespace FateDeck.Runtime.Run
         public MetadataEntry RiggedTopForce;
 
         [Range(0f, 1f)]
-        public float CharmDropChance = 0.2f;
+        public float CharmDropChance = 0.25f;
 
         public virtual bool IsBoss => false;
 

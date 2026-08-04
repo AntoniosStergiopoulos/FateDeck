@@ -45,12 +45,47 @@ namespace FateDeck.Runtime.Views
             return holder;
         }
 
+        /// <summary>The hover text for a force: name, law summary, and any special flags.</summary>
+        public static string ForceTipText(FateContentCatalog catalog, MetadataEntry force, string extra = null)
+        {
+            if (force == null)
+            {
+                return extra;
+            }
+
+            var text = new System.Text.StringBuilder();
+            text.Append("<b>").Append(force.name.ToUpperInvariant()).Append("</b>");
+            string law = force.GetText(catalog.DescriptionField);
+            if (!string.IsNullOrEmpty(law))
+            {
+                text.Append("\n").Append(law);
+            }
+
+            if (force.GetBoolean(catalog.CannotPocketField))
+            {
+                text.Append("\nCannot be pocketed.");
+            }
+
+            if (catalog.ExileAfterFlipField != null && force.GetBoolean(catalog.ExileAfterFlipField))
+            {
+                text.Append("\nShatters (exiled) after any flip.");
+            }
+
+            if (!string.IsNullOrEmpty(extra))
+            {
+                text.Append("\n\n").Append(extra);
+            }
+
+            return text.ToString();
+        }
+
         /// <summary>
         /// A compact, readable tile for one fate card: force glyph, name, and force color.
-        /// Piles, pockets and wound rows use these instead of shrunken card faces.
+        /// Piles, pockets and wound rows use these instead of shrunken card faces. Every tile
+        /// carries a hover tooltip with the force's full law.
         /// </summary>
         public static VisualElement ForceTile(FateContentCatalog catalog, CardInstance card,
-            float width = 74, Action onClick = null, string footnote = null)
+            float width = 74, Action onClick = null, string footnote = null, string extraTip = null)
         {
             MetadataEntry force = catalog.ForceOf(card);
             Color color = ForceColor(catalog, force);
@@ -89,6 +124,7 @@ namespace FateDeck.Runtime.Views
                 FateUi.MakeClickable(tile, onClick);
             }
 
+            FateTip.Bind(tile, ForceTipText(catalog, force, extraTip));
             return tile;
         }
 

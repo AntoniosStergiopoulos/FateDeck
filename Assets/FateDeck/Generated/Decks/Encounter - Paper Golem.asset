@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Paper Golem
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 61291240f2ac4c6a81b8f42fb331631a
+    _value: 5fa8a0e7039643d18e9dcead54a29f22
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 5b5f7d3e8583f4d41a6f6c37aed7739d, type: 2}

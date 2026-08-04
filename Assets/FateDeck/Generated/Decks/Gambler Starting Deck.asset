@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gambler Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: e364c2d4b0bf4d488e4a8789a2aed8c6
+    _value: 5582e2f35bd847489f89885dba32e0b9
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}

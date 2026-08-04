@@ -13,106 +13,106 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: 46c2d1631d684d18b6f65d2a5d498452
+    _value: a70bbabaa9d44bfe91363e292717a0bc
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687376923820124
-  - rid: 3602687376923820125
-  - rid: 3602687376923820126
-  - rid: 3602687376923820127
-  - rid: 3602687376923820128
-  - rid: 3602687376923820129
-  - rid: 3602687376923820130
-  - rid: 3602687376923820131
-  - rid: 3602687376923820132
-  - rid: 3602687376923820133
-  - rid: 3602687376923820134
-  - rid: 3602687376923820135
+  - rid: 3602687396913348947
+  - rid: 3602687396913348948
+  - rid: 3602687396913348949
+  - rid: 3602687396913348950
+  - rid: 3602687396913348951
+  - rid: 3602687396913348952
+  - rid: 3602687396913348953
+  - rid: 3602687396913348954
+  - rid: 3602687396913348955
+  - rid: 3602687396913348956
+  - rid: 3602687396913348957
+  - rid: 3602687396913348958
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820124
+    - rid: 3602687396913348947
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687376923820136
-    - rid: 3602687376923820125
+        - rid: 3602687396913348959
+    - rid: 3602687396913348948
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687376923820137
-    - rid: 3602687376923820126
+        - rid: 3602687396913348960
+    - rid: 3602687396913348949
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687376923820138
-    - rid: 3602687376923820127
+        - rid: 3602687396913348961
+    - rid: 3602687396913348950
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687376923820139
-    - rid: 3602687376923820128
+        - rid: 3602687396913348962
+    - rid: 3602687396913348951
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687376923820140
-    - rid: 3602687376923820129
+        - rid: 3602687396913348963
+    - rid: 3602687396913348952
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687376923820130
+    - rid: 3602687396913348953
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687376923820131
+    - rid: 3602687396913348954
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687376923820132
+    - rid: 3602687396913348955
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687376923820133
+    - rid: 3602687396913348956
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.62, g: 0.66, b: 0.72, a: 1}
-    - rid: 3602687376923820134
+    - rid: 3602687396913348957
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: I
-    - rid: 3602687376923820135
+    - rid: 3602687396913348958
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: The action's Force +2.
-    - rid: 3602687376923820136
+    - rid: 3602687396913348959
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2
-    - rid: 3602687376923820137
+    - rid: 3602687396913348960
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2
-    - rid: 3602687376923820138
+    - rid: 3602687396913348961
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2
-    - rid: 3602687376923820139
+    - rid: 3602687396913348962
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2
-    - rid: 3602687376923820140
+    - rid: 3602687396913348963
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2

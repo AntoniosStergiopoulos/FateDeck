@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Exile When Milled
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: a6422fc00597460da5d6d045601742d1
+    _value: 8b56470ac72c49cdbfa35bdf11265f25
   Kind:
-    rid: 3602687376923820100
+    rid: 3602687396913348923
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820100
+    - rid: 3602687396913348923
       type: {class: BooleanFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

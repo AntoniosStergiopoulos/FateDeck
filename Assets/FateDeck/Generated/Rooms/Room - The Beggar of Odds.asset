@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Beggar of Odds
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: abbe0819afa640b993922a85897cd0d5
+    _value: 8ea344712548463993e7aff8db91c4f3
   Blurb: Someone is muttering about market rates.
   Event: {fileID: 11400000, guid: 9c0bce94ca2c3224a8cd045e82412d72, type: 2}

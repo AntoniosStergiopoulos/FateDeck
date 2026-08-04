@@ -15,17 +15,43 @@ namespace FateDeck.Runtime.Effects.Enemies
         public int Mill = 1;
         public int GoldPocketed = 1;
 
+        /// <summary>Gold taken from the PLAYER and pocketed - recovered as bounty on kill.</summary>
+        public int GoldStolen;
+
         public override string GetName() => "Tithe";
 
-        public override string GetDescription() => $"mills your top card (ignores Block); it pockets {GoldPocketed}g";
+        public override string GetDescription()
+        {
+            if (GoldStolen > 0)
+            {
+                return $"steals {GoldStolen}g from you (recoverable as bounty)";
+            }
+
+            return $"mills your top card (ignores Block); it pockets {GoldPocketed}g";
+        }
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {
             session.MillPlayer(Mill);
             CardInstance enemy = session.CurrentAction?.SourceEnemy ?? context.Source;
-            if (enemy != null && GoldPocketed > 0)
+            if (enemy == null)
+            {
+                return;
+            }
+
+            if (GoldPocketed > 0)
             {
                 enemy.Fields.ModifyNumber(session.Catalog.PocketedGoldField, GoldPocketed);
+            }
+
+            if (GoldStolen > 0)
+            {
+                int taken = Math.Min(session.Gold, GoldStolen);
+                if (taken > 0)
+                {
+                    session.AddGold(-taken);
+                    enemy.Fields.ModifyNumber(session.Catalog.PocketedGoldField, taken);
+                }
             }
         }
     }

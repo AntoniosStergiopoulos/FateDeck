@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Price
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 60053b354f604aed8b981228941b8683
+    _value: 51544955f143465a820776a340216f62
   Kind:
-    rid: 3602687376923820119
+    rid: 3602687396913348942
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820119
+    - rid: 3602687396913348942
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

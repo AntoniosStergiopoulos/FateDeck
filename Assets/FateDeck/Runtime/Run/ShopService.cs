@@ -76,7 +76,7 @@ namespace FateDeck.Runtime.Run
                 if (relicPool.Count > 0)
                 {
                     CardDefinition relic = relicPool[rng.Next(relicPool.Count)];
-                    Stock.Add(new ShopItem { Kind = ShopItemKind.Relic, Card = relic, Price = 45 + rng.Next(21) });
+                    Stock.Add(new ShopItem { Kind = ShopItemKind.Relic, Card = relic, Price = 40 + rng.Next(16) });
                 }
             }
 

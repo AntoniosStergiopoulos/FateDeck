@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Room - The Pawnbroker
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: e6463aa81dff44ebb490df0bb83cc484
+    _value: adcbdc6a854642778ea0998e27084095
   Blurb: Three brass balls glint over a dark slot.
   Event: {fileID: 11400000, guid: d392a1eed342f2a4b9839a84c214c00c, type: 2}

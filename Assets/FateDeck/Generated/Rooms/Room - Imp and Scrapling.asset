@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Room - Imp and Scrapling
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 38f4aefebd784e61ae8d77cc9cf8c8d2
+    _value: 7bfeb34f18da4fa2928b27e1084faff7
   Blurb: 'A creditor''s escort: one imp, one scrapling.'
   Encounter: {fileID: 11400000, guid: 03d6076a2d3df0c46b7edeab80fe9e2a, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}
-  CharmDropChance: 0.2
+  CharmDropChance: 0.25

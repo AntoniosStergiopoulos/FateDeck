@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Whetstone Monk
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: 09788bc99d7e428f8c0fa3834d97a68c
+  Intro: A monk kneels over a whetstone the size of a millwheel, sharpening nothing.
+    "Bring me a law," he says, "and I will give it an edge."
+  Options:
+  - Label: 'Offer a card (free): upgrade it to its + tier'
+    GoldCost: 0
+    KeyCost: 0
+    Effects:
+    - rid: 3602687397376295443
+    ResultText: Sparks the color of your fate. The card comes back keener.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Bow and pass
+    GoldCost: 0
+    KeyCost: 0
+    Effects: []
+    ResultText: The wheel keeps turning, sharpening patience.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687397376295443
+      type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Kind: 3
+        Count: 1

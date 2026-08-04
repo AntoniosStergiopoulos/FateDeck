@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54154882d25b3d24ca06a2081ee24550, type: 3}
+  m_Name: The Molting Pit
+  m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
+  _id:
+    _value: 2e4b33d552bd4b76a60ffb8b321f2432
+  Intro: A pit of shed skins - old decks, old luck, old selves. Things left here
+    stay left. The pit hums, patient.
+  Options:
+  - Label: 'Shed (free): exile 1 card from your discard'
+    GoldCost: 0
+    KeyCost: 0
+    Effects:
+    - rid: 3602687397376295461
+    ResultText: The old law slides off you. The pit sighs contentedly.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: 'Deep molt (8g): exile 1 and heal 1 wound'
+    GoldCost: 8
+    KeyCost: 0
+    Effects:
+    - rid: 3602687397376295462
+    - rid: 3602687397376295463
+    ResultText: Something old leaves; something torn knits.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  - Label: Stay in your skin
+    GoldCost: 0
+    KeyCost: 0
+    Effects: []
+    ResultText: The pit hums on.
+    FlipsFate: 0
+    RitualOutcomes: []
+    Repeatable: 0
+    ClosesEvent: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3602687397376295461
+      type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Kind: 1
+        Count: 1
+    - rid: 3602687397376295462
+      type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Kind: 1
+        Count: 1
+    - rid: 3602687397376295463
+      type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
+      data:
+        Count: 1

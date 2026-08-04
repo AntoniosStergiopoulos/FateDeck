@@ -47,8 +47,13 @@ namespace FateDeck.Editor
             FateDeck.Runtime.Run.FateRunSave.Delete();
             AssetDatabase.DeleteAsset(Root);
             AssetDatabase.Refresh();
-            Create();
-            Debug.Log("[FateDeck] Content rebuilt from scratch. Re-run Create Game Scene to relink the table.");
+            FateContentCatalog catalog = CreateAssets();
+            Selection.activeObject = catalog;
+
+            bool relinked = FateDeckSceneBuilder.RelinkExistingTable(catalog, out _);
+            Debug.Log(relinked
+                ? "[FateDeck] Content rebuilt and the scene's Fate Table was relinked. Press Play."
+                : "[FateDeck] Content rebuilt. Run Tools/Fate Deck/Create Game Scene next.");
         }
 
         [MenuItem("Tools/Fate Deck/Delete Run Save", false, 40)]

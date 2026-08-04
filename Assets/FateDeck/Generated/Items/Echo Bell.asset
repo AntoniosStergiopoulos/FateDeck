@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Echo Bell
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 0a2d026fe5244db39464ac3bf7f4e404
+    _value: 58919310271b4170b48e8ac5d3974072
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687376923820658
-  - rid: 3602687376923820659
-  - rid: 3602687376923820660
-  - rid: 3602687376923820661
+  - rid: 3602687396913349482
+  - rid: 3602687396913349483
+  - rid: 3602687396913349484
+  - rid: 3602687396913349485
   Variants: []
-  _creationDateTicks: 639213946088186296
+  _creationDateTicks: 639214724723618007
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820658
+    - rid: 3602687396913349482
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: +2 Force to your next action; Scry 1.
-    - rid: 3602687376923820659
+    - rid: 3602687396913349483
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687376923820662
-        - rid: 3602687376923820663
-    - rid: 3602687376923820660
+        - rid: 3602687396913349486
+        - rid: 3602687396913349487
+    - rid: 3602687396913349484
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687376923820661
+    - rid: 3602687396913349485
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687376923820662
+    - rid: 3602687396913349486
       type: {class: NextActionBonusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 2
-    - rid: 3602687376923820663
+    - rid: 3602687396913349487
       type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

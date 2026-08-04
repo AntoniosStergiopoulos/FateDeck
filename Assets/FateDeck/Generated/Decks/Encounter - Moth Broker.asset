@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Moth Broker
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: c1f816c462104e6e84b6d3e8d40153e1
+    _value: c1f0897cb53846a6a51fdc5c831dce45
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 86e8f7b5afaf7d643bde1040a318b7dc, type: 2}

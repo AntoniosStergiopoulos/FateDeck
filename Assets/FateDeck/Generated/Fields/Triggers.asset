@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Triggers
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 98523747ea0645e9aa911bca815c6d50
+    _value: 4c1a384a6e0545c88ebc147157ca6bd6
   Kind:
-    rid: 3602687376923820118
+    rid: 3602687396913348941
   references:
     version: 2
     RefIds:
-    - rid: 3602687376923820118
+    - rid: 3602687396913348941
       type: {class: TriggerListFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0
