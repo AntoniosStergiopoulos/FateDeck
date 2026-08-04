@@ -33,3 +33,8 @@ MonoBehaviour:
   TrackSteps: 9
   DoorsPerStep: 3
   MantleSpillDamage: 5
+  OutnumberedGuardDamage: 2
+  SquadPursePerExtraEnemy: 2
+  GritPerDebtFlip: 1
+  GritSpendCost: 3
+  GritMax: 6

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Bellows Twins
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 04cd4ecbdfa341c489ae2395ddd83cfe
+    _value: fc7fd60221374f158eda2c78490d8929
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: ce1b4be5a2bec99439ad196a2101afbd, type: 2}

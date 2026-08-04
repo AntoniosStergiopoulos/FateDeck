@@ -321,6 +321,78 @@ namespace FateDeck.Tests
         }
 
         [Test]
+        public void VoidRefundsTheMainActionOncePerCombat()
+        {
+            var combat = _session.StartCombat(_content.FightRoom);
+            CardInstance enemy = combat.Enemies.Cards[0];
+
+            _session.Deck.Draw.Add(new CardInstance(_content.VoidCard));
+            combat.PlayerStrike(enemy);
+            _session.ContinueFlip();
+            _session.DeclineBank();
+            Assert.IsFalse(combat.MainActionTaken, "the first Void refunds the Main Action");
+            Assert.AreEqual(8, enemy.Fields.GetNumber(_content.Catalog.HpField), "the strike fizzled");
+
+            _session.Deck.Draw.Add(new CardInstance(_content.VoidCard));
+            combat.PlayerStrike(enemy);
+            _session.ContinueFlip();
+            _session.DeclineBank();
+            Assert.IsTrue(combat.MainActionTaken, "the second Void gets no refund");
+        }
+
+        [Test]
+        public void OutnumberedGuardAlsoStrikesTheTarget()
+        {
+            var combat = _session.StartCombat(_content.PairRoom);
+            CardInstance target = combat.Enemies.Cards[0];
+            _session.Deck.MoveForceToTop(_content.Catalog.Iron);
+
+            combat.PlayerGuard();
+            _session.ContinueFlip();
+            _session.DeclineBank();
+
+            Assert.AreEqual(4, _session.PlayerBlock, "base 2 + Iron 2");
+            Assert.AreEqual(6, target.Fields.GetNumber(_content.Catalog.HpField),
+                "outnumbered Guard hits the target for 2");
+        }
+
+        [Test]
+        public void DebtBanksGritAndGritSpends()
+        {
+            _session.Deck.MoveForceToTop(_content.Catalog.Doom);
+            _session.BeginAction(new FateAction(FateActionKind.Ritual, "Rite", 0, true));
+            _session.ContinueFlip();
+            Assert.AreEqual(1, _session.Grit, "a surfaced Debt banks 1 Grit");
+
+            _session.RestoreGrit(3);
+            Assert.IsTrue(_session.SpendGrit(GritSpend.Momentum));
+            Assert.AreEqual(0, _session.Grit);
+            Assert.AreEqual(2, _session.NextPlayerActionBonus);
+
+            _session.RestoreGrit(3);
+            Assert.IsFalse(_session.SpendGrit(GritSpend.Mend), "nothing in Escrow to mend");
+        }
+
+        [Test]
+        public void DepthGateKeepsHeavyRoomsOutOfEarlySteps()
+        {
+            var heavy = UnityEngine.ScriptableObject.CreateInstance<FightRoomDefinition>();
+            heavy.Encounter = _content.FightRoom.Encounter;
+            heavy.MinStep = 5;
+            _content.Owned.Add(heavy);
+            var pool = new List<RoomDefinition> { _content.FightRoom, heavy };
+
+            var rng = new System.Random(11);
+            bool offered = false;
+            for (int attempt = 0; attempt < 20; attempt++)
+            {
+                List<RoomDefinition> doors = DoorDealer.Deal(pool, null, step: 2, doorCount: 2,
+                    rng, ref offered);
+                Assert.IsFalse(doors.Contains(heavy), "MinStep 5 rooms never appear on step 2");
+            }
+        }
+
+        [Test]
         public void TitheStealsGoldIntoTheEnemyPocketAndBountyReturnsIt()
         {
             var combat = _session.StartCombat(_content.FightRoom);

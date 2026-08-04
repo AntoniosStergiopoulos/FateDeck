@@ -27,7 +27,7 @@ namespace FateDeck.Runtime.Effects.Laws
                 action.Force = 0;
             }
 
-            session.MillPlayer(Mill);
+            session.MillPlayer(Mill, "the trapped chest");
         }
     }
 }

@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: The Toll Collector
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 3622cf4a1f0941a6ae251fc876c75c77
+    _value: cbb19d620ece4e728b3978c25274acc2
   Schema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
   _values:
-  - rid: 3602687397376295314
-  - rid: 3602687397376295315
-  - rid: 3602687397376295316
-  - rid: 3602687397376295317
-  - rid: 3602687397376295318
-  - rid: 3602687397376295319
-  - rid: 3602687397376295320
-  - rid: 3602687397376295321
-  - rid: 3602687397376295322
-  - rid: 3602687397376295323
-  - rid: 3602687397376295324
-  - rid: 3602687397376295325
-  - rid: 3602687397376295326
-  - rid: 3602687397376295327
-  - rid: 3602687397376295328
+  - rid: 3602687399754203814
+  - rid: 3602687399754203815
+  - rid: 3602687399754203816
+  - rid: 3602687399754203817
+  - rid: 3602687399754203818
+  - rid: 3602687399754203819
+  - rid: 3602687399754203820
+  - rid: 3602687399754203821
+  - rid: 3602687399754203822
+  - rid: 3602687399754203823
+  - rid: 3602687399754203824
+  - rid: 3602687399754203825
+  - rid: 3602687399754203826
+  - rid: 3602687399754203827
+  - rid: 3602687399754203828
   Variants: []
-  _creationDateTicks: 639214724755211488
+  _creationDateTicks: 639214815512252828
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295314
+    - rid: 3602687399754203814
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
         Value: 16
-    - rid: 3602687397376295315
+    - rid: 3602687399754203815
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
         Value: 16
-    - rid: 3602687397376295316
+    - rid: 3602687399754203816
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
         Value: 10
-    - rid: 3602687397376295317
+    - rid: 3602687399754203817
       type: {class: EnemyPatternFieldValue, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
       data:
         Field: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
@@ -71,63 +71,63 @@ MonoBehaviour:
           Force: 0
           FlipsFate: 0
           Effects:
-          - rid: 3602687397376295329
-    - rid: 3602687397376295318
+          - rid: 3602687399754203829
+    - rid: 3602687399754203818
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
         Value: 0
-    - rid: 3602687397376295319
+    - rid: 3602687399754203819
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
         Value: 0
-    - rid: 3602687397376295320
+    - rid: 3602687399754203820
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
         Value: 0
-    - rid: 3602687397376295321
+    - rid: 3602687399754203821
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
         Value: 0
-    - rid: 3602687397376295322
+    - rid: 3602687399754203822
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
         Value: 0
-    - rid: 3602687397376295323
+    - rid: 3602687399754203823
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
         Value: 0
-    - rid: 3602687397376295324
+    - rid: 3602687399754203824
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
         Value: 0
-    - rid: 3602687397376295325
+    - rid: 3602687399754203825
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
         Value: 1
-    - rid: 3602687397376295326
+    - rid: 3602687399754203826
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
         Value: 'Tithe: mills your top card, bypassing Block, and it pockets the toll.'
-    - rid: 3602687397376295327
+    - rid: 3602687399754203827
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Some damage can't be blocked - only raced.
-    - rid: 3602687397376295328
+    - rid: 3602687399754203828
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers: []
-    - rid: 3602687397376295329
+    - rid: 3602687399754203829
       type: {class: TitheEffect, ns: FateDeck.Runtime.Effects.Enemies, asm: FateDeck.Runtime}
       data:
         Mill: 1

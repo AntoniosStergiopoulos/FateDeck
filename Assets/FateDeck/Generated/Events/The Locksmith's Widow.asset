@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Locksmith's Widow
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 53da9e00d5a04a128a3394a613611a5d
+    _value: b734acba2aa74494992b1e80957ffd14
   Intro: She polishes keys that no longer have doors. "He made every lock down here,"
     she says. "I sell what opens them."
   Options:
@@ -21,7 +21,7 @@ MonoBehaviour:
     GoldCost: 6
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295420
+    - rid: 3602687399754203920
     ResultText: Two brass teeth, still warm from the polishing cloth.
     FlipsFate: 0
     RitualOutcomes: []
@@ -37,22 +37,22 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
       ResultText: '"Sturdy. Like him." She gifts you a Key.'
       Effects:
-      - rid: 3602687397376295421
+      - rid: 3602687399754203921
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: aea6d0b066f86d34bae7b403de17c40b, type: 2}
       ResultText: '"Lucky hands." Two Keys, free.'
       Effects:
-      - rid: 3602687397376295422
+      - rid: 3602687399754203922
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 95d40b2e4f1510641b796a4fc25b9c97, type: 2}
       ResultText: '"One of his!" She weeps, and arms you: 2 Keys.'
       Effects:
-      - rid: 3602687397376295423
+      - rid: 3602687399754203923
       ClosesEvent: 0
-    - Force: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+    - Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
       ResultText: '"Oh. Oh no. Go. GO."'
       Effects:
-      - rid: 3602687397376295424
+      - rid: 3602687399754203924
       ClosesEvent: 1
     - Force: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
       ResultText: '"The wards are silent." She closes the case.'
@@ -72,23 +72,24 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295420
+    - rid: 3602687399754203920
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2
-    - rid: 3602687397376295421
+    - rid: 3602687399754203921
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687397376295422
+    - rid: 3602687399754203922
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2
-    - rid: 3602687397376295423
+    - rid: 3602687399754203923
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2
-    - rid: 3602687397376295424
+    - rid: 3602687399754203924
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
+        Reason: 

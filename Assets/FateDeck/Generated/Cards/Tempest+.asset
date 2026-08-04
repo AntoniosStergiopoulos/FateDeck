@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Tempest+
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 549c3d8e306045edb6de82ae364b1f4b
+    _value: 2761a1f325d8465b8bb832ea6f4777a1
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687396913349365
-  - rid: 3602687396913349366
+  - rid: 3602687399754203145
+  - rid: 3602687399754203146
   Variants: []
-  _creationDateTicks: 639214724701790941
+  _creationDateTicks: 639214815446054030
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349365
+    - rid: 3602687399754203145
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 97b461dba6ad82c468a91e05d07ba582, type: 2}
-    - rid: 3602687396913349366
+    - rid: 3602687399754203146
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

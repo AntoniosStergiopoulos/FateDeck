@@ -139,6 +139,7 @@ namespace FateDeck.Runtime.Run
             Session.Deck.RestoreReshuffleCount(data.ReshuffleCount);
             Session.RestoreRunState(data.Gold, data.Keys, data.DoomFlips, data.TotalFlips);
             Session.RestoreCharges(data.PocketSlots, data.DoubleDrawCharges, data.NextActionBonus);
+            Session.RestoreGrit(data.Grit);
 
             Biome = data.Biome;
             EliteOffered = data.EliteOffered;
@@ -485,6 +486,14 @@ namespace FateDeck.Runtime.Run
             if (room.CharmDropChance > 0 && Session.Rng.NextDouble() < room.CharmDropChance)
             {
                 CharmReward = RollCharm();
+            }
+
+            int extras = combat.EnemiesSpawned - 1;
+            int squadPurse = extras > 0 ? extras * _catalog.Rules.SquadPursePerExtraEnemy : 0;
+            if (squadPurse > 0)
+            {
+                Session.AddGold(squadPurse);
+                Session.Bark($"\"Squad rates. {squadPurse}g hazard pay.\"");
             }
 
             Session.EndCombat();

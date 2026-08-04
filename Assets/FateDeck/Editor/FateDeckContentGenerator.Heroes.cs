@@ -24,7 +24,7 @@ namespace FateDeck.Editor
                 pocketSlots: 2,
                 Deck("Gambler Starting Deck",
                     (CardOf("Iron"), 9), (CardOf("Fortune"), 3), (CardOf("Flame"), 1),
-                    (CardOf("Echo"), 1), (CardOf("Doom"), 1)),
+                    (CardOf("Echo"), 1), (CardOf("Debt"), 1)),
                 hero =>
                 {
                     var opening = new OnCombatStartTrigger();
@@ -37,7 +37,7 @@ namespace FateDeck.Editor
                 pocketSlots: 2,
                 Deck("Stoker Starting Deck",
                     (CardOf("Iron"), 7), (CardOf("Flame"), 4), (CardOf("Fortune"), 2),
-                    (CardOf("Echo"), 1), (CardOf("Doom"), 1)),
+                    (CardOf("Echo"), 1), (CardOf("Debt"), 1)),
                 hero =>
                 {
                     var stoked = new OnFateFlipTrigger
@@ -62,7 +62,7 @@ namespace FateDeck.Editor
                 pocketSlots: 3,
                 Deck("Actuary Starting Deck",
                     (CardOf("Iron"), 6), (CardOf("Fortune"), 3), (CardOf("Decay"), 3),
-                    (CardOf("Wisp"), 2), (CardOf("Doom"), 1)),
+                    (CardOf("Wisp"), 2), (CardOf("Debt"), 1)),
                 hero =>
                 {
                     var audit = new OnCombatStartTrigger();
@@ -71,11 +71,11 @@ namespace FateDeck.Editor
                 }));
 
             heroes.Add(Hero(fields, "The Debtor",
-                "Interest - whenever Doom surfaces, the House pays you 3g. Starts 2 Doom deep.",
+                "Compound Interest - whenever Debt surfaces, the House pays you 3g. Starts 2 Debt deep.",
                 pocketSlots: 2,
                 Deck("Debtor Starting Deck",
                     (CardOf("Iron"), 9), (CardOf("Fortune"), 3), (CardOf("Echo"), 1),
-                    (CardOf("Doom"), 2)),
+                    (CardOf("Debt"), 2)),
                 hero =>
                 {
                     var interest = new OnFateFlipTrigger { ForceFilter = forces.Doom };
@@ -88,7 +88,7 @@ namespace FateDeck.Editor
                 pocketSlots: 2,
                 Deck("Sexton Starting Deck",
                     (CardOf("Iron"), 8), (CardOf("Gloom"), 2), (CardOf("Fortune"), 2),
-                    (CardOf("Anchor"), 2), (CardOf("Doom"), 1)),
+                    (CardOf("Anchor"), 2), (CardOf("Debt"), 1)),
                 hero =>
                 {
                     var gravework = new OnRoomEndTrigger();

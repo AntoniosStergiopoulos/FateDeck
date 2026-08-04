@@ -13,51 +13,51 @@ MonoBehaviour:
   m_Name: Grinning Molar
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 7b36f90aee5140c19b69946642e84f7d
+    _value: 6e56819377f24b9982556d10c9f9ce4f
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687397376294922
-  - rid: 3602687397376294923
-  - rid: 3602687397376294924
-  - rid: 3602687397376294925
+  - rid: 3602687399754203422
+  - rid: 3602687399754203423
+  - rid: 3602687399754203424
+  - rid: 3602687399754203425
   Variants: []
-  _creationDateTicks: 639214724736311049
+  _creationDateTicks: 639214815488883494
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687397376294922
+    - rid: 3602687399754203422
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Every card milled off you grants 1 Block.
-    - rid: 3602687397376294923
+    - rid: 3602687399754203423
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687397376294924
+    - rid: 3602687399754203424
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687397376294926
-    - rid: 3602687397376294925
+        - rid: 3602687399754203426
+    - rid: 3602687399754203425
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687397376294926
+    - rid: 3602687399754203426
       type: {class: OnMillTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687397376294927
+        - rid: 3602687399754203427
         ForceFilter: {fileID: 0}
         OnlyWhenExiled: 0
-    - rid: 3602687397376294927
+    - rid: 3602687399754203427
       type: {class: GainBlockEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 1

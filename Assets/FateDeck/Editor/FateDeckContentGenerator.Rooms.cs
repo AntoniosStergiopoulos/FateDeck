@@ -68,40 +68,39 @@ namespace FateDeck.Editor
             AddFight(rooms, "Room - Dust Usurer", Deck("Encounter - Dust Usurer", (usurer, 1)),
                 "A minor creditor. Its skim cannot be blocked.");
             AddFight(rooms, "Room - Chandler Grubs", Deck("Encounter - Chandler Grubs", (grub, 2)),
-                "Two grubs wind up in alternation. Guard the slams.");
+                "Two grubs wind up in alternation. Guard the slams.", minStep: 2);
             AddFight(rooms, "Room - Inkwell Leech", Deck("Encounter - Inkwell Leech", (leech, 1)),
-                "It drinks as fast as you cut. Burst it down.");
+                "It drinks as fast as you cut. Burst it down.", minStep: 2);
             AddFight(rooms, "Room - Porcelain Dolls", Deck("Encounter - Porcelain Dolls", (doll, 2)),
-                "Two dolls. Each one shatters into your deck when it dies.");
+                "Two dolls. Each one shatters into your deck when it dies.", minStep: 3);
             AddFight(rooms, "Room - Ledger Wisps", Deck("Encounter - Ledger Wisps", (wisp, 2)),
-                "Flying pages that audit your top cards and burn your clock.");
+                "Flying pages that audit your top cards and burn your clock.", minStep: 2);
             AddFight(rooms, "Room - Match Sergeant", Deck("Encounter - Match Sergeant", (sergeant, 1)),
-                "It sets you alight and hides behind regulation Block.");
+                "It sets you alight and hides behind regulation Block.", minStep: 3);
             AddFight(rooms, "Room - Moth Broker", Deck("Encounter - Moth Broker", (moth, 1), (imp, 1)),
-                "A broker and its imp. The dust makes you swing soft.");
+                "A broker and its imp. The dust makes you swing soft.", minStep: 3);
             AddFight(rooms, "Room - Gilded Beetle", Deck("Encounter - Gilded Beetle", (beetle, 1)),
-                "Slow, armored, and worth a small fortune. A knowing bet.");
+                "Slow, armored, and worth a small fortune. A knowing bet.", minStep: 4);
             AddFight(rooms, "Room - Paper Golem", Deck("Encounter - Paper Golem", (golem, 1)),
-                "Ten thousand unpaid invoices, folded into a fist.");
+                "Ten thousand unpaid invoices, folded into a fist.", minStep: 5);
             AddFight(rooms, "Room - Candle Smotherer", Deck("Encounter - Candle Smotherer", (smotherer, 1)),
-                "Two damp fingers the size of oars. Block means little here.");
+                "Two damp fingers the size of oars. Block means little here.", minStep: 5);
             AddFight(rooms, "Room - Doll and Wisp", Deck("Encounter - Doll and Wisp", (doll, 1), (wisp, 1)),
-                "A doll that shatters and a page that audits.");
+                "A doll that shatters and a page that audits.", minStep: 3);
             AddFight(rooms, "Room - Bellows Twins", Deck("Encounter - Bellows Twins", (twin, 2)),
                 "Two of them, off-beat: one puffs while the other blasts.");
             AddFight(rooms, "Room - Coil Adder", Deck("Encounter - Coil Adder", (adder, 1)),
                 "Something soft-scaled softens its meals first.");
             AddFight(rooms, "Room - Chandelier Wight", Deck("Encounter - Chandelier Wight", (wight, 1)),
-                "A hundred candles with a grudge. Bring something for the Burn.");
+                "A hundred candles with a grudge. Bring something for the Burn.", minStep: 4);
             AddFight(rooms, "Room - Vault Ticks", Deck("Encounter - Vault Ticks", (tick, 2)),
                 "They want your purse, not your deck. Kill them to claw it all back.");
             AddFight(rooms, "Room - Grudge Candle", Deck("Encounter - Grudge Candle", (grudge, 1)),
-                "It burns hotter every cycle. Race it.");
+                "It burns hotter every cycle. Race it.", minStep: 3);
             AddFight(rooms, "Room - Marrow Mason", Deck("Encounter - Marrow Mason", (mason, 1)),
-                "A wall that hits back. Rust and big single hits crack it.");
+                "A wall that hits back. Rust and big single hits crack it.", minStep: 5);
             AddFight(rooms, "Room - Adder and Tick", Deck("Encounter - Adder and Tick", (adder, 1), (tick, 1)),
-                "Venom for your arm, fingers for your purse.");
-
+                "Venom for your arm, fingers for your purse.", minStep: 4);
             rooms.Elites.Add(GetOrCreate<FightRoomDefinition>("Room - The Toll Collector", room =>
             {
                 room.Encounter = Deck("Encounter - Toll Collector", (toll, 1));
@@ -144,7 +143,7 @@ namespace FateDeck.Editor
             rooms.Pool.Add(GetOrCreate<ShrineRoomDefinition>("Room - Shrine of Ash", room =>
             {
                 room.Kind = ShrineKind.Ash;
-                room.Blurb = "Exile one card from your fate, free. Doom clings - it costs gold to burn.";
+                room.Blurb = "Exile one card from your fate, free. Debt clings - it costs gold to burn.";
             }, "Rooms"));
             rooms.Pool.Add(GetOrCreate<ShrineRoomDefinition>("Room - Shrine of Stitches", room =>
             {
@@ -169,12 +168,14 @@ namespace FateDeck.Editor
         }
 
         private static void AddFight(Rooms rooms, string name,
-            AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition encounter, string blurb)
+            AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition encounter, string blurb,
+            int minStep = 0)
         {
             rooms.Pool.Add(GetOrCreate<FightRoomDefinition>(name, room =>
             {
                 room.Encounter = encounter;
                 room.Blurb = blurb;
+                room.MinStep = minStep;
             }, "Rooms"));
         }
 
@@ -194,18 +195,18 @@ namespace FateDeck.Editor
             EventDefinition beggar = GetOrCreate<EventDefinition>("The Beggar of Odds", ev =>
             {
                 ev.Intro = "A beggar sits cross-legged on a pile of losing tickets. \"Ten gold,\" he says, "
-                    + "\"and I eat one of your Dooms. Market rate. No tricks.\"";
+                    + "\"and I eat one of your Debts. Market rate. No tricks.\"";
                 ev.Options.Add(new EventOption
                 {
                     Label = "Pay him",
                     GoldCost = 10,
-                    ResultText = "He swallows the Doom whole. It does not come back.",
+                    ResultText = "He swallows the Debt whole. It does not come back.",
                     Effects = { new ExileForceFromDrawEffect { Force = forces.Doom, Count = 1 } }
                 });
                 ev.Options.Add(new EventOption
                 {
                     Label = "Refuse",
-                    ResultText = "\"Suit yourself. Doom keeps its own books.\""
+                    ResultText = "\"Suit yourself. Debt keeps its own books.\""
                 });
             }, "Events");
             AddEventRoom(rooms, "The Beggar of Odds", beggar, "Someone is muttering about market rates.");
@@ -319,12 +320,12 @@ namespace FateDeck.Editor
                 });
                 ev.Options.Add(new EventOption
                 {
-                    Label = "Free sample (he slips in 1 Doom)",
+                    Label = "Free sample (he slips in 1 Debt)",
                     ResultText = "One shard, one splinter of something colder.",
                     Effects =
                     {
                         new AddFateCardEffect { Card = CardOf("Glass"), Zone = FateDeckZone.DrawPile, Count = 1 },
-                        new AddFateCardEffect { Card = CardOf("Doom"), Zone = FateDeckZone.DrawPile, Count = 1 }
+                        new AddFateCardEffect { Card = CardOf("Debt"), Zone = FateDeckZone.DrawPile, Count = 1 }
                     }
                 });
                 ev.Options.Add(new EventOption { Label = "Decline", ResultText = "The coat tinkles away." });
@@ -337,12 +338,12 @@ namespace FateDeck.Editor
                     + "The storm wants into your deck.";
                 ev.Options.Add(new EventOption
                 {
-                    Label = "Walk through (free): 1 Tempest and 1 Doom",
+                    Label = "Walk through (free): 1 Tempest and 1 Debt",
                     ResultText = "Thunder files itself between your cards. So does the fine print.",
                     Effects =
                     {
                         new AddFateCardEffect { Card = CardOf("Tempest"), Zone = FateDeckZone.DrawPile, Count = 1 },
-                        new AddFateCardEffect { Card = CardOf("Doom"), Zone = FateDeckZone.DrawPile, Count = 1 }
+                        new AddFateCardEffect { Card = CardOf("Debt"), Zone = FateDeckZone.DrawPile, Count = 1 }
                     }
                 });
                 ev.Options.Add(new EventOption
@@ -412,18 +413,18 @@ namespace FateDeck.Editor
             }, "Events");
             AddEventRoom(rooms, "The Locksmith's Widow", widow, "Somewhere, keys click like knitting.");
 
-            EventDefinition auction = GetOrCreate<EventDefinition>("The Doom Auction", ev =>
+            EventDefinition auction = GetOrCreate<EventDefinition>("The Debt Auction", ev =>
             {
                 ev.Intro = "A lectern, a gavel, a crowd of empty coats. \"Lot 44: two certificates of DOOM. "
                     + "The House will PAY the taker fifteen gold. Do I hear a fool?\"";
                 ev.Options.Add(new EventOption
                 {
-                    Label = "Take the lot (+15g, +2 Doom)",
-                    ResultText = "The coats applaud silently. The gold is real. So is the Doom.",
+                    Label = "Take the lot (+15g, +2 Debt)",
+                    ResultText = "The coats applaud silently. The gold is real. So is the Debt.",
                     Effects =
                     {
                         new GainGoldEffect { Amount = 15 },
-                        new AddFateCardEffect { Card = CardOf("Doom"), Zone = FateDeckZone.DrawPile, Count = 2 }
+                        new AddFateCardEffect { Card = CardOf("Debt"), Zone = FateDeckZone.DrawPile, Count = 2 }
                     }
                 });
                 ev.Options.Add(new EventOption
@@ -432,7 +433,7 @@ namespace FateDeck.Editor
                     ResultText = "The gavel falls on someone else's fate."
                 });
             }, "Events");
-            AddEventRoom(rooms, "The Doom Auction", auction, "A gavel echoes in an empty hall.");
+            AddEventRoom(rooms, "The Debt Auction", auction, "A gavel echoes in an empty hall.");
 
             EventDefinition peddler = GetOrCreate<EventDefinition>("The Mirror Peddler", ev =>
             {
@@ -520,7 +521,7 @@ namespace FateDeck.Editor
                     + "for your worst card.";
                 ev.Options.Add(new EventOption
                 {
-                    Label = "Confess (mill 1): exile 1 Doom from your draw pile",
+                    Label = "Confess (mill 1): exile 1 Debt from your draw pile",
                     ResultText = "The scale tips. Something red and heavy is carried away.",
                     Effects =
                     {
@@ -679,10 +680,10 @@ namespace FateDeck.Editor
             string forceName)
         {
             CardDefinition gift = FindFateCard(fateCards, forceName);
-            CardDefinition doom = FindFateCard(fateCards, "Doom");
+            CardDefinition doom = FindFateCard(fateCards, "Debt");
             return new EventOption
             {
-                Label = $"Take 2 {forceName} (he slips in 1 Doom)",
+                Label = $"Take 2 {forceName} (he slips in 1 Debt)",
                 ResultText = $"Two {forceName} join your fate - and something colder slides in with them.",
                 Effects =
                 {

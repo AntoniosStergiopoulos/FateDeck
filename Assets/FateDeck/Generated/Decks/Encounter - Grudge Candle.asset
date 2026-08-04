@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Grudge Candle
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 90545d37722e43bf94a992a674e80aaa
+    _value: 60628f2c2733470fa2a20198d1ac9d56
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: aa244f174c299c84c89206ef711bf34d, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Wishing Well
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 2c3f28ba88434ecabf499c2021dca0d6
+    _value: b5d5a118ef4942628f9fdf45c1148821
   Intro: A well of still, black water. Coins glitter at the bottom - other people's
     wishes. Five gold buys a flip of your own fate.
   Options:
@@ -27,32 +27,32 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
       ResultText: The well rings like an anvil. 15g surfaces.
       Effects:
-      - rid: 3602687397376295384
+      - rid: 3602687399754203884
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 8b2b673095bd7a24098dc01b9ebedceb, type: 2}
       ResultText: The well rings twice. 18g surfaces.
       Effects:
-      - rid: 3602687397376295385
+      - rid: 3602687399754203885
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: db6a6c29ae0e45948b59992cb5e7f969, type: 2}
       ResultText: Steam hisses off the water. 12g, slightly warm.
       Effects:
-      - rid: 3602687397376295386
+      - rid: 3602687399754203886
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: b360d1657d70238488946864f0b64a4c, type: 2}
       ResultText: Steam hisses. 12g, quite warm.
       Effects:
-      - rid: 3602687397376295387
+      - rid: 3602687399754203887
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: aea6d0b066f86d34bae7b403de17c40b, type: 2}
       ResultText: The water turns gold for a heartbeat. 25g!
       Effects:
-      - rid: 3602687397376295388
+      - rid: 3602687399754203888
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 80033507d61aa704e91e9f94494b1b32, type: 2}
       ResultText: The water turns solid gold. 27g!
       Effects:
-      - rid: 3602687397376295389
+      - rid: 3602687399754203889
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 3e59cea685a6561459b670e17978c5fc, type: 2}
       ResultText: The coin rots before it lands. Nothing.
@@ -65,71 +65,71 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: 96b672feb50046845ab3541624c206b3, type: 2}
       ResultText: The well echoes - both wishes pay. 10g.
       Effects:
-      - rid: 3602687397376295390
+      - rid: 3602687399754203890
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
       ResultText: The water goes glass-still. The well is closed.
       Effects: []
       ClosesEvent: 1
-    - Force: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+    - Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
       ResultText: The well bites.
       Effects:
-      - rid: 3602687397376295391
+      - rid: 3602687399754203891
       ClosesEvent: 1
     - Force: {fileID: 11400000, guid: 5beee04a9ced1654093b94fcd64f4960, type: 2}
       ResultText: Thunder under water. 14g surfaces, crackling.
       Effects:
-      - rid: 3602687397376295392
+      - rid: 3602687399754203892
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 97b461dba6ad82c468a91e05d07ba582, type: 2}
       ResultText: A storm in a bucket. 16g surfaces.
       Effects:
-      - rid: 3602687397376295393
+      - rid: 3602687399754203893
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: bd84f1f853c97334f9baee658430330d, type: 2}
       ResultText: Something scaled nudges 8g to the surface.
       Effects:
-      - rid: 3602687397376295394
+      - rid: 3602687399754203894
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 586dc03f7ab2aa14fb7225734e9e62c5, type: 2}
       ResultText: Something large and scaled donates 10g.
       Effects:
-      - rid: 3602687397376295395
+      - rid: 3602687399754203895
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: d291a432e73b53e44872c2856ea81e91, type: 2}
       ResultText: 'The shard sings as it sinks: 20g of applause.'
       Effects:
-      - rid: 3602687397376295396
+      - rid: 3602687399754203896
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 7c2e376943398b5458653cbc41678e04, type: 2}
       ResultText: The dark water knits one of your wounds shut.
       Effects:
-      - rid: 3602687397376295397
+      - rid: 3602687399754203897
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 95d40b2e4f1510641b796a4fc25b9c97, type: 2}
       ResultText: A key floats up, politely.
       Effects:
-      - rid: 3602687397376295398
+      - rid: 3602687399754203898
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: bede990ed398007468271708ce547909, type: 2}
       ResultText: The well reflects your last wish. 10g.
       Effects:
-      - rid: 3602687397376295399
+      - rid: 3602687399754203899
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: cd1a6fb9add101043bdb9f233683592f, type: 2}
       ResultText: 'The coin sinks straight down. The well approves: 6g.'
       Effects:
-      - rid: 3602687397376295400
+      - rid: 3602687399754203900
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 2b51f101e412a2549a2f182793ceafc4, type: 2}
       ResultText: Rust blooms across the water. 5g, slightly orange.
       Effects:
-      - rid: 3602687397376295401
+      - rid: 3602687399754203901
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 76fff45ed69ab2a418ef76713ed4b83a, type: 2}
       ResultText: A light darts below and returns with 7g.
       Effects:
-      - rid: 3602687397376295402
+      - rid: 3602687399754203902
       ClosesEvent: 0
     Repeatable: 1
     ClosesEvent: 0
@@ -145,79 +145,80 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295384
+    - rid: 3602687399754203884
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 15
-    - rid: 3602687397376295385
+    - rid: 3602687399754203885
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 18
-    - rid: 3602687397376295386
+    - rid: 3602687399754203886
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 12
-    - rid: 3602687397376295387
+    - rid: 3602687399754203887
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 12
-    - rid: 3602687397376295388
+    - rid: 3602687399754203888
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 25
-    - rid: 3602687397376295389
+    - rid: 3602687399754203889
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 27
-    - rid: 3602687397376295390
+    - rid: 3602687399754203890
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 10
-    - rid: 3602687397376295391
+    - rid: 3602687399754203891
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2
-    - rid: 3602687397376295392
+        Reason: 
+    - rid: 3602687399754203892
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 14
-    - rid: 3602687397376295393
+    - rid: 3602687399754203893
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 16
-    - rid: 3602687397376295394
+    - rid: 3602687399754203894
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 8
-    - rid: 3602687397376295395
+    - rid: 3602687399754203895
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 10
-    - rid: 3602687397376295396
+    - rid: 3602687399754203896
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 20
-    - rid: 3602687397376295397
+    - rid: 3602687399754203897
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687397376295398
+    - rid: 3602687399754203898
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687397376295399
+    - rid: 3602687399754203899
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 10
-    - rid: 3602687397376295400
+    - rid: 3602687399754203900
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 6
-    - rid: 3602687397376295401
+    - rid: 3602687399754203901
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687397376295402
+    - rid: 3602687399754203902
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 7

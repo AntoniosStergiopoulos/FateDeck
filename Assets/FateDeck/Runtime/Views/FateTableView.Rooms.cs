@@ -34,7 +34,7 @@ namespace FateDeck.Runtime.Views
             }
 
             BuildPromptArea();
-            RefreshLeftColumn(Session);
+            RefreshTableau();
             RefreshHud();
         }
 
@@ -212,12 +212,68 @@ namespace FateDeck.Runtime.Views
                 blurb.style.flexGrow = 1;
                 door.Add(blurb);
 
+                string stakes = DoorStakes(room);
+                if (!string.IsNullOrEmpty(stakes))
+                {
+                    Label stakesLabel = FateUi.Text(stakes, 12, FateUi.GoldLeaf);
+                    stakesLabel.style.marginBottom = 8;
+                    FateTip.Bind(stakesLabel,
+                        "Every door states its stakes up front. Purse = bounty gold for winning; "
+                        + "extra enemies pay a squad bonus on top.");
+                    door.Add(stakesLabel);
+                }
+
                 door.Add(FateUi.MakeButton("ENTER", () =>
                 {
                     _log.Append($"You take the door: {room.DoorLabel()}", FateUi.Bone, bold: true);
                     _run.ChooseDoor(index);
                 }, FateUi.GoldLeaf, 15));
                 row.Add(door);
+            }
+        }
+
+        /// <summary>The advertised stakes line for a door - visible risk, visible pay.</summary>
+        private string DoorStakes(RoomDefinition room)
+        {
+            switch (room)
+            {
+                case FightRoomDefinition fight when fight.Encounter != null:
+                {
+                    int purse = 0;
+                    int enemies = 0;
+                    foreach (DeckEntry entry in fight.Encounter.Cards)
+                    {
+                        if (entry?.Card == null)
+                        {
+                            continue;
+                        }
+
+                        purse += (int)(entry.Card.GetNumber(_catalog.BountyField) * entry.Count);
+                        enemies += entry.Count;
+                    }
+
+                    if (enemies > 1)
+                    {
+                        purse += (enemies - 1) * Session.Rules.SquadPursePerExtraEnemy;
+                    }
+
+                    string charm = fight.CharmDropChance > 0
+                        ? $" · charm {fight.CharmDropChance:P0}"
+                        : string.Empty;
+                    string relic = fight.IsElite ? " · RELIC choice" : string.Empty;
+                    return $"Purse: {purse}g{charm}{relic}";
+                }
+
+                case ChestRoomDefinition chest:
+                {
+                    double baseGold = chest.Locked
+                        ? Session.Rules.LockedChestBaseGold
+                        : Session.Rules.ChestBaseGold;
+                    return $"Base haul: {baseGold:0}g{(chest.Locked ? " (locked)" : "")}";
+                }
+
+                default:
+                    return null;
             }
         }
 
@@ -286,7 +342,7 @@ namespace FateDeck.Runtime.Views
                     if (_run.ShrineExilesRemaining > 0)
                     {
                         stage.Add(FateUi.Text(
-                            $"Exile 1 card, free. Doom clings — it costs {Session.Rules.DoomExileShrinePrice}g here.",
+                            $"Exile 1 card, free. Debt clings — it costs {Session.Rules.DoomExileShrinePrice}g to burn.",
                             14, FateUi.Bone));
                         var buttons = new VisualElement();
                         buttons.style.flexDirection = FlexDirection.Row;
@@ -329,7 +385,7 @@ namespace FateDeck.Runtime.Views
                     {
                         stage.Add(FateUi.Text(
                             $"Return up to {_run.ShrineHealsRemaining} wounds — click the highlighted cards "
-                            + "in the Wound Row below.", 14, FateUi.Bone));
+                            + "in Escrow below.", 14, FateUi.Bone));
                         _woundPicksRemaining = _run.ShrineHealsRemaining;
                         RefreshTableau();
                     }
@@ -451,7 +507,7 @@ namespace FateDeck.Runtime.Views
                 options.Add(sharpen);
 
                 Button cleanse = FateUi.MakeButton(
-                    $"CLEANSE — exile 1 card (Doom costs {Session.Rules.DoomCleansePrice}g)",
+                    $"CLEANSE — exile 1 card (Debt costs {Session.Rules.DoomCleansePrice}g)",
                     () => ShowZonePick(Session.Deck.Draw, "Choose a card to exile",
                         card => _run.RestCleanse(Session.Deck.Draw, card)), FateUi.Ember, 15);
                 cleanse.style.width = 520;
@@ -575,7 +631,7 @@ namespace FateDeck.Runtime.Views
                     row.Add(KindBadge("SERVICE", FateUi.Verdigris, "Takes effect immediately."));
                     name = "Surgery";
                     description = "Exile any card from your draw pile. The price rises with each surgery; "
-                        + "Doom costs double.";
+                        + "Debt costs double.";
                     break;
             }
 
@@ -745,7 +801,7 @@ namespace FateDeck.Runtime.Views
                 ? (double)session.DoomFlipsThisRun / session.TotalFlipsThisRun * 100.0
                 : 0.0;
             ledger.Add(FateUi.Text(
-                $"Doom surfaced {session.DoomFlipsThisRun} times in {session.TotalFlipsThisRun} flips ({doomRate:0.#}%).",
+                $"Debt surfaced {session.DoomFlipsThisRun} times in {session.TotalFlipsThisRun} flips ({doomRate:0.#}%).",
                 14, FateUi.Bone));
             ledger.Add(FateUi.Text($"Reshuffles paid: {session.Deck.ReshuffleCount} · "
                 + $"{session.Deck.Exile.Count} cards exiled · {session.Gold}g left on the table.", 14, FateUi.BoneDim));
@@ -770,7 +826,7 @@ namespace FateDeck.Runtime.Views
             stage.Add(FateUi.Text("Biome 1 falls. The Mire and the Vault are still being dealt in.",
                 15, FateUi.BoneDim));
             stage.Add(FateUi.Text(
-                $"{session.TotalFlipsThisRun} flips · {session.DoomFlipsThisRun} Doom · {session.Gold}g banked · "
+                $"{session.TotalFlipsThisRun} flips · {session.DoomFlipsThisRun} Debt · {session.Gold}g banked · "
                 + $"{session.Deck.Draw.Count + session.Deck.Discard.Count} cards of soul recovered.", 14, FateUi.Bone));
             stage.Add(FateUi.Text($"Table seed: {_run.OriginalSeed}", 13, FateUi.BoneDim));
             stage.Add(FateUi.MakeButton("PLAY AGAIN", ShowHeroSelect, FateUi.GoldLeaf, 17));

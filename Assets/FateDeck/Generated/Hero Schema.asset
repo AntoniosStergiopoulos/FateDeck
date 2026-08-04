@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hero Schema
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardSchema
   _id:
-    _value: 007e66d5d8b34510b33441dffd20d8b4
+    _value: e11c1f0596b14cf3bbb77f0ad0b9adc3
   Fields:
   - {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
   - {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}

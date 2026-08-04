@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Room - THE COLLECTOR
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.BossRoomDefinition
   _id:
-    _value: 70fce3753c8b4062bdcf1055e4a3074c
+    _value: ad346cc74417412fb443a85056a8d480
   Blurb: The vault at the bottom of the mailroom. It appraises only your draw pile
     - spread your forces, or keep your favorites in discard, pocket and wounds.
+  MinStep: 0
   Encounter: {fileID: 11400000, guid: b9eca85960dfeec4fbf601c6a08185e6, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}

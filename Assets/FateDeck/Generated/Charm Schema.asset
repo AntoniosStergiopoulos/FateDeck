@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Charm Schema
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardSchema
   _id:
-    _value: 34d067c838dc4c208041d8f797fbfbfb
+    _value: f3030f9c523a4fdc8b1df7be41956144
   Fields:
   - {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
   - {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}

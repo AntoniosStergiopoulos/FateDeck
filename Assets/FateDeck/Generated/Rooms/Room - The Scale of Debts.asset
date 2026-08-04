@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Scale of Debts
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 072b10dbc3b6493f8fcf94ba471ab485
+    _value: 86f8c5e627de49408ce2609b374be3d9
   Blurb: Brass groans under the weight of nothing.
+  MinStep: 0
   Event: {fileID: 11400000, guid: 417f3b1d2b438364f927fb6c1121ad0e, type: 2}

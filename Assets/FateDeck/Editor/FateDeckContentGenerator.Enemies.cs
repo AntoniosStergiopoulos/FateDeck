@@ -308,7 +308,7 @@ namespace FateDeck.Editor
         private static CardDefinition TheUnderwriter(Fields fields)
         {
             return Enemy(fields, "The Underwriter", 18, 12,
-                "Premium: the next reshuffle adds +1 extra Doom. It taxes your clock itself.", card =>
+                "Premium: the next reshuffle adds +1 extra Debt. It re-prices your Interest itself.", card =>
             {
                 SetText(card, fields.Description, "Elite. It doesn't hurt you; it re-prices you.");
                 PatternOf(card, fields.Pattern).Add(Attack("Attack", 4));

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Effects
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 40be12d7ce7c48dcaf57b40ee20592d6
+    _value: a10f07d5a41649a2b78a48977e8e176f
   Kind:
-    rid: 3602687396913348940
+    rid: 3602687397376295520
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348940
+    - rid: 3602687397376295520
       type: {class: EffectListFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

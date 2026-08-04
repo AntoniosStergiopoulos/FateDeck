@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Marrow Mason
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 39fc164f643945fd9901e81bf6003eb4
+    _value: c52f3a8b00434e57acf3e50b2444f2ab
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 04e1808e9ef18e94ebaa3a468dd958a5, type: 2}

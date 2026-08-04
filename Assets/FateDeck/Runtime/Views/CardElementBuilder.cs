@@ -45,7 +45,10 @@ namespace FateDeck.Runtime.Views
             return holder;
         }
 
-        /// <summary>The hover text for a force: name, law summary, and any special flags.</summary>
+        /// <summary>
+        /// The hover text for a force: flavor, then the exact per-context laws in second person,
+        /// generated from the same data the engine executes.
+        /// </summary>
         public static string ForceTipText(FateContentCatalog catalog, MetadataEntry force, string extra = null)
         {
             if (force == null)
@@ -55,11 +58,22 @@ namespace FateDeck.Runtime.Views
 
             var text = new System.Text.StringBuilder();
             text.Append("<b>").Append(force.name.ToUpperInvariant()).Append("</b>");
-            string law = force.GetText(catalog.DescriptionField);
-            if (!string.IsNullOrEmpty(law))
+            string flavor = force.GetText(catalog.DescriptionField);
+            if (!string.IsNullOrEmpty(flavor))
             {
-                text.Append("\n").Append(law);
+                text.Append("\n").Append(flavor);
             }
+
+            text.Append("\n\n<b>Your Strike:</b> ")
+                .Append(OddsCalculator.DescribeLaw(force, catalog.LawOffenseField, LawContext.PlayerOffense));
+            text.Append("\n<b>Your Guard:</b> ")
+                .Append(OddsCalculator.DescribeLaw(force, catalog.LawDefenseField, LawContext.PlayerDefense));
+            text.Append("\n<b>Enemy actions:</b> ")
+                .Append(OddsCalculator.DescribeLaw(force, catalog.LawEnemyField, LawContext.EnemyAction));
+            text.Append("\n<b>Loot:</b> ")
+                .Append(OddsCalculator.DescribeLaw(force, catalog.LawLootField, LawContext.Loot));
+            text.Append("\n<b>Ritual:</b> ")
+                .Append(OddsCalculator.DescribeLaw(force, catalog.LawRitualField, LawContext.Ritual));
 
             if (force.GetBoolean(catalog.CannotPocketField))
             {

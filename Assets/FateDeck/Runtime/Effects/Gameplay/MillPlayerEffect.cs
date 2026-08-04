@@ -10,17 +10,20 @@ namespace FateDeck.Runtime.Effects.Gameplay
     {
         public int Count = 1;
 
+        /// <summary>Named cause shown in the loss ledger ("the Debt", "the well").</summary>
+        public string Reason;
+
         public override string GetName() => "Mill Player";
 
         public override string GetDescription() => $"mill {Count}";
 
-        public string PreviewNote => $"mill {Count}";
+        public string PreviewNote => $"you mill {Count}";
 
         public double PreviewForce(double force) => force;
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {
-            session.MillPlayer(Count);
+            session.MillPlayer(Count, string.IsNullOrEmpty(Reason) ? "the law" : Reason);
         }
     }
 }

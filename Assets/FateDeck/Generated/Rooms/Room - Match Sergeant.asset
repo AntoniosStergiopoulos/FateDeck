@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Room - Match Sergeant
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 89db304cb66f4d3fa129f60bf05d9b91
+    _value: fafb73aca024438695a15ab1a0bb6fe7
   Blurb: It sets you alight and hides behind regulation Block.
+  MinStep: 3
   Encounter: {fileID: 11400000, guid: 1c2c63960a03451408b7e626beb4d0fb, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}

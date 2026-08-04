@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Scab Ritual
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: e5c8ce3a553d4152848c5e3d50eb97f2
+    _value: 2c4dd179df3441018bf871888da4195f
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687396913349544
-  - rid: 3602687396913349545
-  - rid: 3602687396913349546
-  - rid: 3602687396913349547
+  - rid: 3602687399754203324
+  - rid: 3602687399754203325
+  - rid: 3602687399754203326
+  - rid: 3602687399754203327
   Variants: []
-  _creationDateTicks: 639214724729082399
+  _creationDateTicks: 639214815479952880
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687396913349544
+    - rid: 3602687399754203324
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: At room end, return 1 wound card to the draw pile.
-    - rid: 3602687396913349545
+    - rid: 3602687399754203325
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687396913349546
+    - rid: 3602687399754203326
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687396913349548
-    - rid: 3602687396913349547
+        - rid: 3602687399754203328
+    - rid: 3602687399754203327
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687396913349548
+    - rid: 3602687399754203328
       type: {class: OnRoomEndTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687396913349549
-    - rid: 3602687396913349549
+        - rid: 3602687399754203329
+    - rid: 3602687399754203329
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

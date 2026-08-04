@@ -87,8 +87,58 @@ namespace FateDeck.Runtime.Views
 
             if (total == 0)
             {
-                panel.Add(FateUi.Text("Empty — the next flip reshuffles the discard (and pays the tax).",
-                    14, FateUi.BoneDim));
+                panel.Add(FateUi.Text("Empty — the next flip shuffles the discard back and the House "
+                    + "charges Interest.", 14, FateUi.BoneDim));
+            }
+
+            panel.Add(FateUi.MakeButton("CLOSE", CloseOverlay, FateUi.BoneDim, 14));
+        }
+
+        // ---------------------------------------------------------------- generic pile inspector
+
+        /// <summary>Read-only inspector for any fate pile (discard, escrow, exile).</summary>
+        private void ShowZoneOverlay(CardZone zone, string title, bool showOrder)
+        {
+            if (IsOverlayOpen)
+            {
+                return;
+            }
+
+            VisualElement panel = OpenOverlay(title);
+            if (zone.Count == 0)
+            {
+                panel.Add(FateUi.Text("Nothing here.", 14, FateUi.BoneDim));
+                panel.Add(FateUi.MakeButton("CLOSE", CloseOverlay, FateUi.BoneDim, 14));
+                return;
+            }
+
+            var scroll = new ScrollView(ScrollViewMode.Vertical);
+            scroll.style.maxHeight = 430;
+            panel.Add(scroll);
+
+            var grid = new VisualElement();
+            grid.style.flexDirection = FlexDirection.Row;
+            grid.style.flexWrap = Wrap.Wrap;
+            grid.style.maxWidth = 840;
+            scroll.Add(grid);
+
+            if (showOrder)
+            {
+                for (int i = zone.Count - 1; i >= 0; i--)
+                {
+                    var slot = FateUi.Column(0);
+                    slot.style.alignItems = Align.Center;
+                    slot.Add(FateUi.Text(i == zone.Count - 1 ? "newest" : $"#{zone.Count - i}", 10, FateUi.BoneDim));
+                    slot.Add(CardElementBuilder.ForceTile(_catalog, zone.Cards[i], 56));
+                    grid.Add(slot);
+                }
+            }
+            else
+            {
+                foreach (CardInstance card in zone.Cards)
+                {
+                    grid.Add(CardElementBuilder.ForceTile(_catalog, card, 56));
+                }
             }
 
             panel.Add(FateUi.MakeButton("CLOSE", CloseOverlay, FateUi.BoneDim, 14));
@@ -232,35 +282,50 @@ namespace FateDeck.Runtime.Views
                 scroll.Add(FateUi.Text(body, 13, FateUi.Bone));
             }
 
-            Rule("THE DECK IS EVERYTHING",
-                "Your deck is your health, your luck and your build. Damage mills cards off the top "
-                + "into the Wound Row. If you must flip or mill and both draw and discard are empty, you die.");
-            Rule("FLIPS",
-                "Every uncertain action flips the top card. The force's law for that context applies - "
-                + "the same Iron that pumps your Strike pumps an enemy's. The Odds Panel on the left "
-                + "always shows the exact odds before you commit.");
+            Rule("YOU OWE THE HOUSE",
+                "You died owing Fate. The House collateralized your soul into this deck - it is your "
+                + "health, your luck and your build in one stack. Damage tears cards off the top into "
+                + "ESCROW. If you must flip or mill and both draw and discard are empty, the House "
+                + "forecloses: you die.");
+            Rule("EVERY FLIP IS YOURS",
+                "There is ONE deck at this table - yours. When an enemy attacks, it flips YOUR top "
+                + "card and that card's Enemy-Action law applies (written from your point of view: "
+                + "hover any force to read exactly what it does on each side). The Odds Panel on the "
+                + "left prices every flip before you commit. No surprise math, ever.");
             Rule("THE POCKET",
-                "When your own action flips, you may SLEEVE the revealed card into your Pocket instead: "
-                + "the action resolves at base value and the card is saved. Later, during any pre-flip "
-                + "window (yours or the enemy's), play a pocketed card to REPLACE that flip entirely.");
-            Rule("THE RESHUFFLE TAX",
-                "When the draw pile empties, the discard shuffles back - and the House adds Doom. "
-                + "Every reshuffle is a payday for the House, so plan around the clock.");
-            Rule("WOUNDS & HEALING",
-                "Wounded cards are not lost - they wait in the Wound Row. Healing returns chosen wounds "
-                + "to your deck: healing is a build decision. Milled Doom is exiled forever - the one "
-                + "silver lining of taking hits (doom laundering).");
-            Rule("YOUR HERO'S PASSIVE",
-                "The hero panel (top-left) shows your passive and its live charges - the Gambler's "
-                + "Opening Hand, for example, grants a Draw-2 charge at each combat start. Charms and "
-                + "relics like the Loaded Coin or Bone Dice grant more charges.");
+                "When one of YOUR actions flips, you may POCKET IT: bank the card, and the action "
+                + "resolves at base value. Later, during any pre-flip window (yours or an enemy's), "
+                + "play a pocketed card to REPLACE that flip entirely. HONOR IT applies the law now.");
+            Rule("INTEREST",
+                "When the draw pile empties, the discard shuffles back in - and the House charges "
+                + "Interest: +1 Debt card. The draw pile shows exactly when it's due. Thin, fast "
+                + "decks cycle more and pay more; healing out of Escrow slows the clock.");
+            Rule("DEBT & GRIT",
+                "Debt is the House's lien: your actions collapse, enemy blows land +2 heavier. It "
+                + "cannot be pocketed. But milled Debt burns off the books forever, and every Debt "
+                + "that SURFACES banks you 1 Grit - at 3, spend it (hero panel) on Scry 2, +2 Force, "
+                + "or a free mend. The House's insults harden you.");
+            Rule("ESCROW & HEALING",
+                "Escrowed cards are not lost - healing returns the ones YOU choose to your deck. "
+                + "Which card you take back is a build decision: every heal is also a probability edit.");
+            Rule("COMBAT",
+                "One Main Action per turn: STRIKE or GUARD (both flip), plus free charms and pocket "
+                + "plays. Outnumbered (2+ enemies): your Guard also strikes your target for 2. A "
+                + "voided action refunds your Main Action once per fight. Fleeing costs a card and "
+                + "the room's purse.");
             Rule("STATUSES",
-                "Burn N: mill/lose N at round end, then it ticks down. Weak: -2 Force on the next "
-                + "action, per stack. Block soaks damage until your next turn.");
+                "Burn N: at round end the burning side loses N (you mill; enemies take damage), then "
+                + "it ticks down 1. Weak: the next actions resolve at -2 Force, one stack per action. "
+                + "Block soaks damage until the owner's next turn.");
             Rule("THE COLLECTOR",
                 "The boss appraises up to 3 copies of your most-numerous draw-pile force into its "
-                + "Mantle (+1 Force to its attacks per 3 held). Hits of 6+ shake a card loose; killing "
-                + "it returns everything. It cannot see your discard, pocket or wounds.");
+                + "Mantle (+1 Force to its attacks per 3 held). Hits of 5+ shake a card loose; killing "
+                + "it returns everything. It cannot see your discard, pocket or escrow.");
+            Rule("YOUR CONTROL KIT",
+                "Nine verbs bend fate: POCKET a reveal · PLAY a pocketed card into any pre-flip "
+                + "window · SCRY and reorder · STACK a known card on top (Second Sleeve) · DRAW-2 "
+                + "and choose · SCULPT the composition (every purchase, exile and heal is a "
+                + "probability edit) · TARGET who pays · spend GRIT · and FLEE when the math is bad.");
 
             Label glossaryTitle = FateUi.Text("THE FORCES", 15, FateUi.GoldLeaf);
             glossaryTitle.style.unityFontStyleAndWeight = FontStyle.Bold;

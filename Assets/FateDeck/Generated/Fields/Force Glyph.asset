@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Force Glyph
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 8c35e7cefeda485eae70ee72354b071a
+    _value: b286fce58dc64ca0816f6832574cd796
   Kind:
-    rid: 3602687396913348926
+    rid: 3602687397376295506
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348926
+    - rid: 3602687397376295506
       type: {class: TextFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

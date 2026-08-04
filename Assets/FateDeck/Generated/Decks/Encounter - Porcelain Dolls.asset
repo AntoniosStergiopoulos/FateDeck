@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Porcelain Dolls
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 8fd7bd65bd2847839223bc7ee43bb72f
+    _value: 69f5aa9eb7cc4a5b9a31ef73395ebb00
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 8f9866e470bb02e45af070d53c701b14, type: 2}

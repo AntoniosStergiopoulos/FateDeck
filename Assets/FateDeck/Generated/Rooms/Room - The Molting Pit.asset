@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Molting Pit
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: c4d4a90157e34dd591573361344811d0
+    _value: 5c95ad37d2e642cba8755c92deec4d5f
   Blurb: Something in the dark is shedding.
+  MinStep: 0
   Event: {fileID: 11400000, guid: 25d595e8c6516674db1ad499940f160e, type: 2}

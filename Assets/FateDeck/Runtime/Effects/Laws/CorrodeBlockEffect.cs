@@ -10,7 +10,7 @@ namespace FateDeck.Runtime.Effects.Laws
     /// damage lands; on an enemy action your own Block rusts.
     /// </summary>
     [Serializable]
-    public class CorrodeBlockEffect : FateEffect, IActionLawPreview
+    public class CorrodeBlockEffect : FateEffect, IActionLawPreview, IContextDescribed
     {
         public double Amount = 2;
 
@@ -21,6 +21,13 @@ namespace FateDeck.Runtime.Effects.Laws
         public string PreviewNote => $"corrode {Amount:0.##} Block";
 
         public double PreviewForce(double force) => force;
+
+        public string DescribeFor(LawContext context)
+        {
+            return context == LawContext.EnemyAction
+                ? $"{Amount:0.#} of YOUR Block flakes away"
+                : $"strips {Amount:0.#} Block off your target";
+        }
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {

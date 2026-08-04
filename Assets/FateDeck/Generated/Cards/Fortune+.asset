@@ -13,23 +13,24 @@ MonoBehaviour:
   m_Name: Fortune+
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: bb88ee5790284a01b7f6a30296793d4d
+    _value: 68bab1731bfd431f99c0d03d2bb88ef6
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687396913349355
-  - rid: 3602687396913349356
+  - rid: 3602687397376295935
+  - rid: 3602687399754203136
   Variants: []
-  _creationDateTicks: 639214724699370157
+  _creationDateTicks: 639214815442912017
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349355
+    - rid: 3602687397376295935
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 80033507d61aa704e91e9f94494b1b32, type: 2}
-    - rid: 3602687396913349356
+    - rid: 3602687399754203136
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
-        Value: The action's owner banks 5 gold; Force +0.
+        Value: A cooked ledger. You bank 5g; a creditor pockets only 3g (bounty on
+          kill).

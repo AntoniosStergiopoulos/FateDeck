@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Glass Salesman
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 258c6d6f80ca4bd1b313726596c32816
+    _value: cebeba2dab2d4fa9aaba7ac0f6d45ec0
   Intro: A coat of a thousand shards. "Glass, friend. +4 Force, once - then it shatters
     beautifully. Nothing this bright is meant to last."
   Options:
@@ -21,18 +21,18 @@ MonoBehaviour:
     GoldCost: 12
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295411
+    - rid: 3602687399754203911
     ResultText: Two bright shards slide into your fate.
     FlipsFate: 0
     RitualOutcomes: []
     Repeatable: 0
     ClosesEvent: 1
-  - Label: Free sample (he slips in 1 Doom)
+  - Label: Free sample (he slips in 1 Debt)
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295412
-    - rid: 3602687397376295413
+    - rid: 3602687399754203912
+    - rid: 3602687399754203913
     ResultText: One shard, one splinter of something colder.
     FlipsFate: 0
     RitualOutcomes: []
@@ -50,24 +50,24 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295411
+    - rid: 3602687399754203911
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 2fa61bcb0e8d3654ba2c53781f1048b1, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687397376295412
+    - rid: 3602687399754203912
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 2fa61bcb0e8d3654ba2c53781f1048b1, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687397376295413
+    - rid: 3602687399754203913
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
-        Card: {fileID: 11400000, guid: b9cb69ec5dfa6364ea205a15c209c7e7, type: 2}
+        Card: {fileID: 11400000, guid: 21d0bcfa3988711439f8a21d52b77b04, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1

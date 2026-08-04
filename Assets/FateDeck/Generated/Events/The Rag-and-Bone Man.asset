@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Rag-and-Bone Man
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 682b290d5e6e41db81669d8a476b9f7c
+    _value: 739be6e9ac1747d698a5f34ecb5fee03
   Intro: A cart of things the House repossessed. "Any old luck! Any old luck! Trade
     us a card, get a key for the honest doors."
   Options:
@@ -21,8 +21,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295464
-    - rid: 3602687397376295465
+    - rid: 3602687399754203964
+    - rid: 3602687399754203965
     ResultText: Your card joins the cart. A key finds your palm.
     FlipsFate: 0
     RitualOutcomes: []
@@ -40,11 +40,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295464
+    - rid: 3602687399754203964
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687397376295465
+    - rid: 3602687399754203965
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 1

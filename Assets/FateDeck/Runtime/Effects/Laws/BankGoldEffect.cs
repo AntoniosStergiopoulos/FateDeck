@@ -9,7 +9,7 @@ namespace FateDeck.Runtime.Effects.Laws
     /// recovered as bounty when it dies.
     /// </summary>
     [Serializable]
-    public class BankGoldEffect : FateEffect, IActionLawPreview
+    public class BankGoldEffect : FateEffect, IActionLawPreview, IContextDescribed
     {
         public int Amount = 3;
 
@@ -20,6 +20,13 @@ namespace FateDeck.Runtime.Effects.Laws
         public string PreviewNote => $"+{Amount}g";
 
         public double PreviewForce(double force) => force;
+
+        public string DescribeFor(LawContext context)
+        {
+            return context == LawContext.EnemyAction
+                ? $"the enemy pockets {Amount}g (paid back as bounty when it dies)"
+                : $"YOU bank {Amount}g";
+        }
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {

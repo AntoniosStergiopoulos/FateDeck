@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Room - Opening Imp
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 0be5121b331144ee841f927800c1ee1e
+    _value: d2e8a9f4f2a1404788e6a1ead651b030
   Blurb: A single Tinder Imp guards the mailroom door. The Dealer has stacked your
     first card - Iron waits on top.
+  MinStep: 0
   Encounter: {fileID: 11400000, guid: b95c97c26d43dca40ae04f37a5e2eafd, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}

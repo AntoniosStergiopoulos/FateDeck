@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Weak
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: a290c267c86c4ad8854f70a8e8b1570c
+    _value: 7b366f230e0b42b6982cfc0ed281c909
   Kind:
-    rid: 3602687396913348935
+    rid: 3602687397376295515
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348935
+    - rid: 3602687397376295515
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 1

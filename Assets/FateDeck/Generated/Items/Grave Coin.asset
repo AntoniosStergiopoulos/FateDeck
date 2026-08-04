@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Grave Coin
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 7cfe101f06df49eeb146a6a897e1b68f
+    _value: 49b2856eb26541cf9f71230285ab9051
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687396913349513
-  - rid: 3602687396913349514
-  - rid: 3602687396913349515
-  - rid: 3602687396913349516
+  - rid: 3602687399754203293
+  - rid: 3602687399754203294
+  - rid: 3602687399754203295
+  - rid: 3602687399754203296
   Variants: []
-  _creationDateTicks: 639214724726731948
+  _creationDateTicks: 639214815476611949
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349513
+    - rid: 3602687399754203293
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Gain 4 gold and a Key.
-    - rid: 3602687396913349514
+    - rid: 3602687399754203294
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687396913349517
-        - rid: 3602687396913349518
-    - rid: 3602687396913349515
+        - rid: 3602687399754203297
+        - rid: 3602687399754203298
+    - rid: 3602687399754203295
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687396913349516
+    - rid: 3602687399754203296
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687396913349517
+    - rid: 3602687399754203297
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 4
-    - rid: 3602687396913349518
+    - rid: 3602687399754203298
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

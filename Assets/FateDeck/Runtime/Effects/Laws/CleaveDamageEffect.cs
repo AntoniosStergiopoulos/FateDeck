@@ -10,7 +10,7 @@ namespace FateDeck.Runtime.Effects.Laws
     /// takes damage; on an enemy action the storm bites the attacker itself.
     /// </summary>
     [Serializable]
-    public class CleaveDamageEffect : FateEffect, IActionLawPreview
+    public class CleaveDamageEffect : FateEffect, IActionLawPreview, IContextDescribed
     {
         public double Amount = 2;
 
@@ -21,6 +21,20 @@ namespace FateDeck.Runtime.Effects.Laws
         public string PreviewNote => $"arc {Amount:0.##} to others";
 
         public double PreviewForce(double force) => force;
+
+        public string DescribeFor(LawContext context)
+        {
+            switch (context)
+            {
+                case LawContext.PlayerOffense:
+                case LawContext.PlayerDefense:
+                    return $"{Amount:0.#} damage arcs to every OTHER enemy";
+                case LawContext.EnemyAction:
+                    return $"the storm bites the ATTACKER for {Amount:0.#}";
+                default:
+                    return "the storm passes overhead";
+            }
+        }
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {

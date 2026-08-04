@@ -81,6 +81,9 @@ namespace FateDeck.Runtime.Core
         /// <summary>Keys open locked chests without gambling on Flame.</summary>
         public int Keys { get; private set; }
 
+        /// <summary>The House's insults harden you: Debt flips bank Grit, spent on Grit actions.</summary>
+        public int Grit { get; private set; }
+
         public bool IsPlayerDead { get; private set; }
 
         public FateAction CurrentAction { get; private set; }
@@ -264,6 +267,68 @@ namespace FateDeck.Runtime.Core
             }
         }
 
+        private void GainGrit(int amount)
+        {
+            if (amount <= 0)
+            {
+                return;
+            }
+
+            int old = Grit;
+            Grit = Math.Min(Rules.GritMax, Grit + amount);
+            if (Grit != old)
+            {
+                Events.Publish(new GritChangedEvent(old, Grit));
+            }
+        }
+
+        /// <summary>
+        /// Spends banked Grit on one Grit action. Only between actions (Idle), and only when
+        /// the full cost is banked. Returns false when the spend is not possible right now.
+        /// </summary>
+        public bool SpendGrit(GritSpend spend)
+        {
+            int cost = Rules.GritSpendCost;
+            if (Grit < cost || Phase != FateResolutionPhase.Idle || IsPlayerDead)
+            {
+                return false;
+            }
+
+            switch (spend)
+            {
+                case GritSpend.Foresight:
+                    Scry(2, allowReorder: true);
+                    break;
+
+                case GritSpend.Momentum:
+                    AddNextPlayerActionBonus(2);
+                    break;
+
+                default:
+                    if (Deck.Wound.Count == 0)
+                    {
+                        return false;
+                    }
+
+                    if (!RequestWoundChoice(1))
+                    {
+                        Deck.HealWounds(1);
+                    }
+
+                    break;
+            }
+
+            int old = Grit;
+            Grit -= cost;
+            Events.Publish(new GritChangedEvent(old, Grit));
+            return true;
+        }
+
+        internal void RestoreGrit(int value)
+        {
+            Grit = Math.Max(0, Math.Min(Rules.GritMax, value));
+        }
+
         /// <summary>
         /// Upgrades a basic fate card in place: the instance is replaced by its + version
         /// in whatever fate zone holds it. Upgrades never change a card's force family.
@@ -378,14 +443,14 @@ namespace FateDeck.Runtime.Core
             }
         }
 
-        public void MillPlayer(int count)
+        public void MillPlayer(int count, string reason = null)
         {
             if (count <= 0 || IsPlayerDead)
             {
                 return;
             }
 
-            int milled = Deck.Mill(count);
+            int milled = Deck.Mill(count, reason);
             if (milled < count && Deck.IsOutOfCards)
             {
                 MarkPlayerDead();
@@ -587,6 +652,7 @@ namespace FateDeck.Runtime.Core
             if (force == Catalog.Doom)
             {
                 DoomFlipsThisRun++;
+                GainGrit(Rules.GritPerDebtFlip);
             }
 
             if (force != null)
@@ -646,6 +712,12 @@ namespace FateDeck.Runtime.Core
                 CommitByKind(action);
             }
 
+            if (action.RequestsMainActionRefund && !IsPlayerDead
+                && Combat != null && Combat.TryRefundMainAction())
+            {
+                action.MainActionRefunded = true;
+            }
+
             CurrentAction = null;
             SetPhase(FateResolutionPhase.Idle);
             Events.Publish(new ActionResolvedEvent(action));
@@ -687,6 +759,12 @@ namespace FateDeck.Runtime.Core
                     if (!action.Negated)
                     {
                         AddPlayerBlock(force);
+                        if (Combat != null && Combat.Enemies.Count >= 2
+                            && Rules.OutnumberedGuardDamage > 0)
+                        {
+                            Combat.DamageEnemy(Combat.SelectedOrFirstEnemy(),
+                                Rules.OutnumberedGuardDamage);
+                        }
                     }
 
                     break;
@@ -734,7 +812,8 @@ namespace FateDeck.Runtime.Core
             Events.Publish(new PlayerHitEvent(action.SourceEnemy, force, absorbed, (int)remaining));
             if (remaining > 0)
             {
-                MillPlayer((int)remaining);
+                string attacker = action.SourceEnemy != null ? action.SourceEnemy.DisplayName : "the enemy";
+                MillPlayer((int)remaining, $"{attacker}'s {action.Name}");
             }
 
             if (PlayerRetaliateBurn > 0 && action.SourceEnemy != null)

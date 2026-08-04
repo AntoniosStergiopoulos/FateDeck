@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Rust
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 150f3e51aea64df6b0b946945b519a8c
+    _value: a4fe58494e0b45fe8392c63403552a15
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687396913349381
-  - rid: 3602687396913349382
+  - rid: 3602687399754203161
+  - rid: 3602687399754203162
   Variants: []
-  _creationDateTicks: 639214724705678319
+  _creationDateTicks: 639214815451142708
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349381
+    - rid: 3602687399754203161
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 2b51f101e412a2549a2f182793ceafc4, type: 2}
-    - rid: 3602687396913349382
+    - rid: 3602687399754203162
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

@@ -142,7 +142,7 @@ namespace FateDeck.Runtime.Views
                 intentLabel.style.marginTop = 6;
                 FateTip.Bind(intentLabel, intent.FlipsFate
                     ? "Its next move. \"Flips fate\" means it flips the top card of YOUR deck and the "
-                      + "card's ENEMY-ACTION law modifies the move (Decay and Anchor drag it down, Doom "
+                      + "card's ENEMY-ACTION law modifies the move (Decay and Anchor drag it down, Debt "
                       + "feeds it). The pause right before that flip is a pre-flip window - Pocket "
                       + "cards can replace it."
                     : "Its next move. No flip - this resolves exactly as shown.");
@@ -207,7 +207,7 @@ namespace FateDeck.Runtime.Views
             if (_woundPicksRemaining > 0 && session.Deck.Wound.Count > 0)
             {
                 PromptPanel($"Mend {_woundPicksRemaining} wound{(_woundPicksRemaining == 1 ? "" : "s")} — "
-                    + "click the highlighted cards in the Wound Row below.", FateUi.Verdigris);
+                    + "click the highlighted cards in Escrow below.", FateUi.Verdigris);
             }
 
             if (_run.Screen == RunScreen.Combat && session.Combat != null)
@@ -273,14 +273,20 @@ namespace FateDeck.Runtime.Views
             FateTip.Bind(strike,
                 $"Your Main Action: attack for base {session.Rules.StrikeBaseForce:0} Force. "
                 + "A fate card flips and its OFFENSE law modifies the damage - exact odds on the left. "
-                + "You can SLEEVE the flip into your Pocket instead of applying it.");
+                + "You can POCKET the flip instead of applying it.");
             row.Add(strike);
 
-            Button guard = FateUi.MakeButton($"GUARD {session.Rules.GuardBaseForce:0}",
-                () => combat.PlayerGuard(), FateUi.Verdigris, 16);
-            FateTip.Bind(guard,
-                $"Your Main Action: gain base {session.Rules.GuardBaseForce:0} Block, modified by the "
-                + "flip's DEFENSE law. Block soaks damage until your next turn.");
+            bool outnumbered = combat.Enemies.Count >= 2 && session.Rules.OutnumberedGuardDamage > 0;
+            string guardLabel = outnumbered
+                ? $"GUARD {session.Rules.GuardBaseForce:0} +HIT {session.Rules.OutnumberedGuardDamage:0}"
+                : $"GUARD {session.Rules.GuardBaseForce:0}";
+            Button guard = FateUi.MakeButton(guardLabel, () => combat.PlayerGuard(), FateUi.Verdigris, 16);
+            FateTip.Bind(guard, outnumbered
+                ? $"Your Main Action: gain base {session.Rules.GuardBaseForce:0} Block (modified by the "
+                  + $"flip's DEFENSE law) - and because you are OUTNUMBERED, you guard with the sharp "
+                  + $"edge out: your target also takes {session.Rules.OutnumberedGuardDamage:0} damage."
+                : $"Your Main Action: gain base {session.Rules.GuardBaseForce:0} Block, modified by the "
+                  + "flip's DEFENSE law. Block soaks damage until your next turn.");
             row.Add(guard);
 
             if (combat.CanFlee)
@@ -310,6 +316,12 @@ namespace FateDeck.Runtime.Views
             VisualElement panel = PromptPanel(
                 $"{owner} {action.Name} ({action.Force:0.#}) hangs over the deck…",
                 enemyOwned ? FateUi.Ember : FateUi.GoldLeaf);
+
+            if (enemyOwned)
+            {
+                Teach("window", "\"See the pause? That's the pre-flip window. A pocketed card "
+                    + "played now replaces the flip entirely.\"");
+            }
 
             if (hasPocket)
             {
@@ -358,7 +370,7 @@ namespace FateDeck.Runtime.Views
             else
             {
                 Label window = FateUi.Text(
-                    "…the window is open, but your Pocket is empty — SLEEVE cards to gain interrupts…",
+                    "…the window is open, but your Pocket is empty — POCKET cards to gain interrupts…",
                     13, FateUi.Violet);
                 window.style.unityTextAlign = TextAnchor.MiddleCenter;
                 panel.Add(window);
@@ -372,6 +384,9 @@ namespace FateDeck.Runtime.Views
             {
                 return;
             }
+
+            Teach("bank", "\"Pocket it and the action stays plain - but a card up the sleeve "
+                + "can replace ANY flip later. Even theirs.\"");
 
             VisualElement panel = PromptPanel(null, FateUi.Verdigris);
             var row = new VisualElement();
@@ -390,25 +405,31 @@ namespace FateDeck.Runtime.Views
             title.style.unityFontStyleAndWeight = FontStyle.Bold;
             side.Add(title);
             side.Add(FateUi.Text(
-                "SLEEVE IT: bank the card in your Pocket; the action resolves at base value.\n"
-                + "LET IT RIDE: apply its law now.", 13, FateUi.BoneDim));
+                "POCKET IT: bank the card; the action resolves at base value.\n"
+                + "HONOR IT: apply its law to this action now.", 13, FateUi.BoneDim));
             var buttons = new VisualElement();
             buttons.style.flexDirection = FlexDirection.Row;
-            Button sleeve = FateUi.MakeButton("SLEEVE IT", () => session.BankRevealed(), FateUi.Verdigris, 16);
-            FateTip.Bind(sleeve,
+            Button pocket = FateUi.MakeButton("POCKET IT", () => session.BankRevealed(), FateUi.Verdigris, 16);
+            FateTip.Bind(pocket,
                 "Bank this card in your Pocket. This action resolves at BASE value (no law). "
                 + "Later, during ANY pre-flip window — yours or an enemy's — play the pocketed "
                 + "card to replace that flip entirely.");
-            buttons.Add(sleeve);
-            Button ride = FateUi.MakeButton("LET IT RIDE", () => session.DeclineBank(), FateUi.Ember, 16);
-            FateTip.Bind(ride, () =>
+            buttons.Add(pocket);
+            Button honor = FateUi.MakeButton("HONOR IT", () => session.DeclineBank(), FateUi.Ember, 16);
+            FateTip.Bind(honor, () =>
             {
                 var force = _catalog.ForceOf(Session?.RevealedCard);
-                return force != null
-                    ? $"Apply {force.name}'s law to this action now:\n{force.GetText(_catalog.DescriptionField)}"
-                    : "Apply the revealed card's law to this action now.";
+                if (force == null)
+                {
+                    return "Honor the card: its law applies to this action now.";
+                }
+
+                var lawField = _catalog.LawFieldFor(Session.CurrentAction?.Context ?? LawContext.PlayerOffense);
+                return $"Honor the card — {force.name}'s law applies to this action now:\n"
+                    + OddsCalculator.DescribeLaw(force, lawField,
+                        Session.CurrentAction?.Context ?? LawContext.PlayerOffense);
             });
-            buttons.Add(ride);
+            buttons.Add(honor);
             side.Add(buttons);
             row.Add(side);
         }
@@ -512,7 +533,7 @@ namespace FateDeck.Runtime.Views
 
             if (rows.Count == 0)
             {
-                panel.Add(FateUi.Text("deck empty — a reshuffle (and its tax) comes first", 12, FateUi.BoneDim));
+                panel.Add(FateUi.Text("deck empty — the shuffle (and its Interest) comes first", 12, FateUi.BoneDim));
             }
 
             return panel;

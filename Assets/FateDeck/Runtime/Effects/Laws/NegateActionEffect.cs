@@ -23,6 +23,10 @@ namespace FateDeck.Runtime.Effects.Laws
             {
                 action.Negated = true;
                 action.Force = 0;
+                if (action.IsPlayerAction)
+                {
+                    action.RequestsMainActionRefund = true;
+                }
             }
         }
     }

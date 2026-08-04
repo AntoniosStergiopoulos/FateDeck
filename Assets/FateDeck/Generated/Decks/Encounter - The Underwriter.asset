@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - The Underwriter
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 013fb42d7c584fe8be5e45346bca6754
+    _value: d24afc57f5b64ada819ada2b280d1598
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: c391a483680256b4e8ea4d8efaaaf169, type: 2}

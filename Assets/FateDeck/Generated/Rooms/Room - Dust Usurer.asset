@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Room - Dust Usurer
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: ba47b763affa485ca9646e6ec95f5400
+    _value: 43be5d487da34afb85a18b33d8d6f883
   Blurb: A minor creditor. Its skim cannot be blocked.
+  MinStep: 0
   Encounter: {fileID: 11400000, guid: 7245727462259284ba5e50619d5ed0ba, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}

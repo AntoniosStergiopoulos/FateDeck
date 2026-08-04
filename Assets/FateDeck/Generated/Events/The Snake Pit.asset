@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Snake Pit
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: ec6dc35460224e22bc974d20b2a97231
+    _value: d4ccc3264991428b933f08775999ac16
   Intro: A dry fountain full of gently seething rope. One strand lifts its head and
     looks at your deck with professional interest.
   Options:
@@ -21,8 +21,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295417
-    - rid: 3602687397376295418
+    - rid: 3602687399754203917
+    - rid: 3602687399754203918
     ResultText: Venom joins your fate. So does a toothmark.
     FlipsFate: 0
     RitualOutcomes: []
@@ -32,7 +32,7 @@ MonoBehaviour:
     GoldCost: 8
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295419
+    - rid: 3602687399754203919
     ResultText: It slides into your deck like it always lived there.
     FlipsFate: 0
     RitualOutcomes: []
@@ -50,18 +50,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295417
+    - rid: 3602687399754203917
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 00eb5b3c5203b294b9381de80dc1d2d2, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687397376295418
+    - rid: 3602687399754203918
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687397376295419
+        Reason: 
+    - rid: 3602687399754203919
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 00eb5b3c5203b294b9381de80dc1d2d2, type: 2}

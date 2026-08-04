@@ -10,7 +10,7 @@ namespace FateDeck.Runtime.Effects.Laws
     /// the flame turns inward and the enemy burns itself.
     /// </summary>
     [Serializable]
-    public class BurnActionVictimEffect : FateEffect, IActionLawPreview
+    public class BurnActionVictimEffect : FateEffect, IActionLawPreview, IContextDescribed
     {
         public int Stacks = 2;
 
@@ -21,6 +21,17 @@ namespace FateDeck.Runtime.Effects.Laws
         public string PreviewNote => $"Burn {Stacks}";
 
         public double PreviewForce(double force) => force;
+
+        public string DescribeFor(LawContext context)
+        {
+            switch (context)
+            {
+                case LawContext.PlayerOffense: return $"your target suffers {Stacks} Burn";
+                case LawContext.EnemyAction: return $"YOU suffer {Stacks} Burn";
+                case LawContext.PlayerDefense: return $"the victim suffers {Stacks} Burn";
+                default: return "the flame finds no one";
+            }
+        }
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {

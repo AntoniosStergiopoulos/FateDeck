@@ -20,6 +20,7 @@ namespace FateDeck.Tests
         public FateContentCatalog Catalog;
         public CardDefinition IronCard;
         public CardDefinition IronPlusCard;
+        public CardDefinition VoidCard;
         public CardDefinition FortuneCard;
         public CardDefinition DoomCard;
         public CardDefinition GlassCard;
@@ -87,6 +88,8 @@ namespace FateDeck.Tests
             catalog.FateCards.Add(content.IronPlusCard);
             content.FortuneCard = content.FateCard(fateSchema, catalog, "Fortune", catalog.Fortune);
             content.DoomCard = content.FateCard(fateSchema, catalog, "Doom", catalog.Doom);
+            content.VoidCard = content.FateCard(fateSchema, catalog, "Void", catalog.Void);
+            catalog.FateCards.Add(content.VoidCard);
             content.GlassCard = content.FateCard(fateSchema, catalog, "Glass", catalog.Glass);
             content.MirrorCard = content.FateCard(fateSchema, catalog, "Mirror", catalog.Mirror);
             content.TempestCard = content.FateCard(fateSchema, catalog, "Tempest", catalog.Tempest);

@@ -40,11 +40,14 @@ namespace FateDeck.Runtime.Views
         private VisualElement _statusChips;
         private Label _barkLabel;
         private GameLogPanel _log;
+        private readonly System.Collections.Generic.HashSet<string> _taught =
+            new System.Collections.Generic.HashSet<string>();
         private float _barkTimer;
         private float _bannerTimer;
         private float _beatTimer;
         private float _windowTimer;
         private bool _screenDirty;
+        private bool _interestWarned;
 
         public FateContentCatalog Catalog
         {
@@ -151,6 +154,7 @@ namespace FateDeck.Runtime.Views
 
             _promptHost = new VisualElement();
             _promptHost.style.minHeight = 6;
+            _promptHost.style.maxHeight = 230;
             center.Add(_promptHost);
 
             _rightColumn = new VisualElement();
@@ -168,6 +172,7 @@ namespace FateDeck.Runtime.Views
             _tableauBar.style.borderTopWidth = 1;
             _tableauBar.style.borderTopColor = FateUi.Line;
             _tableauBar.style.minHeight = 132;
+            _tableauBar.style.maxHeight = 196;
             FateUi.Pad(_tableauBar, 8);
             _root.Add(_tableauBar);
 
@@ -372,7 +377,10 @@ namespace FateDeck.Runtime.Views
             session.Events.Subscribe<MantleTakenEvent>(OnMantleTaken);
             session.Events.Subscribe<MantleSpilledEvent>(OnMantleSpilled);
             session.Events.Subscribe<KeysChangedEvent>(OnKeysChanged);
+            session.Events.Subscribe<GritChangedEvent>(OnGritChanged);
             session.ChoiceHandler = OnZoneChoice;
+            _taught.Clear();
+            _interestWarned = false;
 
             UiFx.Clear();
             _fxHost.Clear();
@@ -561,9 +569,10 @@ namespace FateDeck.Runtime.Views
             string source = flip.FromPocket ? "is played from the pocket onto" : "surfaces on";
             _log.Append($"{forceName} {source} {owner} {flip.Action.Name}.", color, bold: true);
 
-            if (force == _catalog.Doom && Session.DoomFlipsThisRun == 1)
+            if (force == _catalog.Doom)
             {
-                Session.Bark("\"That one's on the house.\"");
+                Teach("debt", "\"Debt. The House's lien on you. It surfaces when it hurts most — "
+                    + "but every insult banks you Grit.\"");
             }
 
             RefreshTableau();
@@ -577,6 +586,13 @@ namespace FateDeck.Runtime.Views
         private void OnActionResolvedView(ActionResolvedEvent resolved)
         {
             FateAction action = resolved.Action;
+            if (action.MainActionRefunded)
+            {
+                _log.Append("The Void takes nothing — not even your turn. Your Main Action is refunded.",
+                    FateUi.GoldLeaf, bold: true);
+                Teach("void", "\"A blank page. The House can't charge you for nothing — go again.\"");
+            }
+
             switch (action.Kind)
             {
                 case FateActionKind.Strike:
@@ -645,24 +661,52 @@ namespace FateDeck.Runtime.Views
 
         private void OnReshuffle(ReshuffleEvent reshuffle)
         {
-            string teeth = reshuffle.TaxAdded == 1 ? "tooth" : "teeth";
-            _log.Append($"RESHUFFLE #{reshuffle.ReshuffleCount} — the discard returns and the House adds "
-                + $"{reshuffle.TaxAdded} Doom ({reshuffle.TaxAdded} {teeth}).", FateUi.Violet, bold: true);
-            Session.Bark($"\"Shuffling up. The rake is {reshuffle.TaxAdded} {teeth}.\"");
+            _interestWarned = false;
+            _log.Append($"SHUFFLE #{reshuffle.ReshuffleCount} — your discard returns to the deck, and the "
+                + $"House charges Interest: +{reshuffle.TaxAdded} Debt.", FateUi.Violet, bold: true);
+            Teach("interest", "\"Every cycle of borrowed luck accrues Interest. Cycle slower, or pay.\"");
             RefreshTableau();
         }
 
         private void OnMilled(CardMilledEvent milled)
         {
             string name = milled.Card.DisplayName;
+            string cause = string.IsNullOrEmpty(milled.Reason) ? string.Empty : $" ({milled.Reason})";
             if (milled.Exiled)
             {
-                _log.Append($"Milled {name} burns away to Exile — Doom laundered, gone forever.",
+                _log.Append($"Milled{cause}: {name} burns off the books — Debt laundered, gone forever.",
                     FateUi.Violet, bold: true);
             }
             else
             {
-                _log.Append($"Milled: {name} is torn into the Wound Row.", FateUi.Blood);
+                _log.Append($"Milled{cause}: {name} is held in Escrow.", FateUi.Blood);
+                Teach("escrow", "\"Escrow, not the grave. Heal, and I un-tear the page.\"");
+            }
+
+            RefreshTableau();
+        }
+
+        /// <summary>The Dealer explains each mechanic exactly once per run, in character.</summary>
+        private void Teach(string key, string line)
+        {
+            if (_taught.Add(key))
+            {
+                Session.Bark(line);
+            }
+        }
+
+        private void OnGritChanged(GritChangedEvent grit)
+        {
+            int delta = grit.NewValue - grit.OldValue;
+            if (delta > 0)
+            {
+                _log.Append($"The insult hardens you: +{delta} Grit ({grit.NewValue}/{Session.Rules.GritSpendCost}).",
+                    FateUi.GoldLeaf);
+                Teach("grit", "\"Take enough Debt and you stop flinching. Grit spends like money here.\"");
+            }
+            else
+            {
+                _log.Append($"Grit spent ({grit.NewValue} left).", FateUi.GoldLeaf);
             }
 
             RefreshTableau();
@@ -670,9 +714,10 @@ namespace FateDeck.Runtime.Views
 
         private void OnPocketBanked(PocketBankedEvent banked)
         {
-            _log.Append($"You sleeve {banked.Card.DisplayName} into the Pocket — the action resolves at base value. "
+            _log.Append($"You pocket {banked.Card.DisplayName} — the action resolves at base value. "
                 + "Play it later during ANY pre-flip window (yours or an enemy's) to replace that flip.",
                 FateUi.Verdigris, bold: true);
+            Teach("pocket", "\"A card up the sleeve is the only honest insurance in this building.\"");
             RefreshTableau();
         }
 

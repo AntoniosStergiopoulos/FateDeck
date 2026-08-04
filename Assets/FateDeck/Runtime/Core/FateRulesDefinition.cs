@@ -28,5 +28,20 @@ namespace FateDeck.Runtime.Core
 
         [Tooltip("A single Strike hit of at least this much shakes one card loose from a Mantle.")]
         [Min(0)] public double MantleSpillDamage = 5;
+
+        [Tooltip("Against 2+ enemies your Guard also strikes your target for this much (0 disables).")]
+        [Min(0)] public double OutnumberedGuardDamage = 2;
+
+        [Tooltip("Extra gold per enemy beyond the first when a fight is won (the squad purse).")]
+        [Min(0)] public int SquadPursePerExtraEnemy = 2;
+
+        [Tooltip("Grit gained per Debt flip; 0 disables the Grit system.")]
+        [Min(0)] public int GritPerDebtFlip = 1;
+
+        [Tooltip("Grit cost of one spend (scry, +2 next action, or mend 1).")]
+        [Min(1)] public int GritSpendCost = 3;
+
+        [Tooltip("Maximum Grit the player can bank.")]
+        [Min(1)] public int GritMax = 6;
     }
 }

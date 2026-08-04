@@ -39,6 +39,12 @@ namespace FateDeck.Runtime.Core
         /// <summary>Set by the Void law: the action resolves at force zero with no effects.</summary>
         public bool Negated { get; set; }
 
+        /// <summary>Void on a player action asks for the Main Action back (once per combat).</summary>
+        public bool RequestsMainActionRefund { get; set; }
+
+        /// <summary>Set at commit when the Void refund was actually granted (view feedback).</summary>
+        public bool MainActionRefunded { get; set; }
+
         /// <summary>How many fate cards have been flipped for this action (Echo cap).</summary>
         public int FlipCount { get; set; }
 

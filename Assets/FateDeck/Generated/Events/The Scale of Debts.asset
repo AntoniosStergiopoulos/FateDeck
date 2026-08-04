@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: The Scale of Debts
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: aba5e6745cdf47daae53cb4545a930d7
+    _value: 1f1afe99a9f943d786fd31fd7aeaa104
   Intro: A brass scale the size of a door. One pan holds a feather. The other waits
     for your worst card.
   Options:
-  - Label: 'Confess (mill 1): exile 1 Doom from your draw pile'
+  - Label: 'Confess (mill 1): exile 1 Debt from your draw pile'
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295441
-    - rid: 3602687397376295442
+    - rid: 3602687399754203941
+    - rid: 3602687399754203942
     ResultText: The scale tips. Something red and heavy is carried away.
     FlipsFate: 0
     RitualOutcomes: []
@@ -40,12 +40,13 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295441
+    - rid: 3602687399754203941
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687397376295442
+        Reason: 
+    - rid: 3602687399754203942
       type: {class: ExileForceFromDrawEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
-        Force: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+        Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
         Count: 1

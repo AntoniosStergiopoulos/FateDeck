@@ -185,7 +185,7 @@ namespace FateDeck.Editor
             {
                 Draw = Zone("Draw Pile", ZoneVisibility.Hidden),
                 Discard = Zone("Discard Pile", ZoneVisibility.Public),
-                Wound = Zone("Wound Row", ZoneVisibility.Public),
+                Wound = Zone("Escrow", ZoneVisibility.Public),
                 Pocket = Zone("Pocket", ZoneVisibility.Public),
                 Exile = Zone("Exile Pile", ZoneVisibility.Public),
                 Enemies = Zone("Enemies", ZoneVisibility.Public),

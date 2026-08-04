@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Iron Filings
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: bda550653a534030b4c89bc0ad29f946
+    _value: f8808e85843d46eebc59106196ecda5a
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687396913349436
-  - rid: 3602687396913349437
-  - rid: 3602687396913349438
-  - rid: 3602687396913349439
+  - rid: 3602687399754203216
+  - rid: 3602687399754203217
+  - rid: 3602687399754203218
+  - rid: 3602687399754203219
   Variants: []
-  _creationDateTicks: 639214724718873799
+  _creationDateTicks: 639214815467433844
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349436
+    - rid: 3602687399754203216
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: +3 Force to your next action.
-    - rid: 3602687396913349437
+    - rid: 3602687399754203217
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687396913349440
-    - rid: 3602687396913349438
+        - rid: 3602687399754203220
+    - rid: 3602687399754203218
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687396913349439
+    - rid: 3602687399754203219
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687396913349440
+    - rid: 3602687399754203220
       type: {class: NextActionBonusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 3

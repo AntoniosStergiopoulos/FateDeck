@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Loaded Coin
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 4c2b14a016864e36afb7624b2674f7c7
+    _value: ab5e4b172bfd4c9f850e244a0c69bd62
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687396913349405
-  - rid: 3602687396913349406
-  - rid: 3602687396913349407
-  - rid: 3602687396913349408
+  - rid: 3602687399754203185
+  - rid: 3602687399754203186
+  - rid: 3602687399754203187
+  - rid: 3602687399754203188
   Variants: []
-  _creationDateTicks: 639214724715600589
+  _creationDateTicks: 639214815463791757
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349405
+    - rid: 3602687399754203185
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: 'Your next flip: draw 2, choose which applies.'
-    - rid: 3602687396913349406
+    - rid: 3602687399754203186
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687396913349409
-    - rid: 3602687396913349407
+        - rid: 3602687399754203189
+    - rid: 3602687399754203187
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687396913349408
+    - rid: 3602687399754203188
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687396913349409
+    - rid: 3602687399754203189
       type: {class: DoubleDrawNextEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Charges: 1

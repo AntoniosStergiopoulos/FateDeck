@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Wishing Well
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 5218e6b256054269ac2d54be20c321f4
+    _value: 23a6d5825596429cadc96af03811b01d
   Blurb: You hear water where no water should be.
+  MinStep: 0
   Event: {fileID: 11400000, guid: 42bf2e14bfea4f5438ed70692168deca, type: 2}

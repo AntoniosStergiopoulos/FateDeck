@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Room - Doll and Wisp
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 3a38716ca64d456ab686d6f292662e55
+    _value: cbc3c23d85a84748a1f0f71b104ef9f3
   Blurb: A doll that shatters and a page that audits.
+  MinStep: 3
   Encounter: {fileID: 11400000, guid: 5d2f79bb785f7a744ac65d9a86502980, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}

@@ -23,9 +23,20 @@ charms, 24 relics, 5 playable heroes with distinct decks and passives behind a h
 screen, between-room run saves, and the Honest-Ledger death screen.
 
 The UI teaches itself: hover anything — force tiles, status chips, buttons, odds rows, enemy
-intents, shop items — for a runtime tooltip explaining the rule behind it. Shop and reward rows
-carry CARD / RELIC / CHARM / SERVICE badges, and the pre-flip window pauses whenever you hold
-Pocket cards so interrupts are an explicit choice, playable straight from the prompt.
+intents, shop items — for a runtime tooltip explaining the rule behind it, with every law
+written per-context in second person ("YOU suffer 2 Burn"), generated from the same data the
+engine executes. Shop and reward rows carry CARD / RELIC / CHARM / SERVICE badges, the pre-flip
+window pauses whenever you hold Pocket cards (POCKET IT / HONOR IT), every loss is attributed
+by name in the ledger log, and the Dealer explains each mechanic the first time it fires.
+
+The theme, stated plainly: you died owing Fate, and the House collateralized your soul into a
+deck. Doom is **Debt**, the reshuffle tax is **Interest** (telegraphed on the draw pile before
+it's due), wounds sit in **Escrow**, and surfaced Debt banks **Grit** — spend 3 between actions
+on Scry 2, +2 Force, or a free mend. Fairness set: enemy-context laws cost ~60-70% of yours
+(Iron is +2 for you, +1 against you), Guard strikes for 2 when you're outnumbered, a voided
+action refunds your Main Action once per fight, multi-enemy rooms pay a squad purse, heavy
+rooms are depth-gated out of early steps, and every door advertises its stakes. See
+`Documentation/FateDeck-Design-Review.md` for the full reasoning.
 
 Upgrading an existing project: run `Tools → Fate Deck → Rebuild Content From Scratch` once
 (regenerates every asset, including the expanded hero decks), then `Create Game Scene` to

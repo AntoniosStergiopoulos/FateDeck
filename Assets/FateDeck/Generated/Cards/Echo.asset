@@ -13,23 +13,24 @@ MonoBehaviour:
   m_Name: Echo
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: e11ce20611af4ab58180d5960067b5d4
+    _value: 4ce50a45cf8c4f1b92fee64904d988ec
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687396913349357
-  - rid: 3602687396913349358
+  - rid: 3602687399754203137
+  - rid: 3602687399754203138
   Variants: []
-  _creationDateTicks: 639214724699868351
+  _creationDateTicks: 639214815443565306
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349357
+    - rid: 3602687399754203137
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 96b672feb50046845ab3541624c206b3, type: 2}
-    - rid: 3602687396913349358
+    - rid: 3602687399754203138
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
-        Value: Flip one additional fate card; apply both laws (max 3 per action).
+        Value: The vaults repeat everything. Flip one additional card and apply both
+          laws (at most 3 flips per action).

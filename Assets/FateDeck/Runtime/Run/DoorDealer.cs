@@ -43,7 +43,7 @@ namespace FateDeck.Runtime.Run
             while (doors.Count < doorCount && guard++ < 64)
             {
                 RoomDefinition room = PickWeighted(pool, rng);
-                if (room != null && !doors.Contains(room))
+                if (room != null && !doors.Contains(room) && room.MinStep <= step)
                 {
                     doors.Add(room);
                 }

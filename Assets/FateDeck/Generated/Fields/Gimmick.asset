@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Gimmick
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: df852361d5f34ec68270fe1a95690e07
+    _value: f6b91a716a6b4d909ca45fbf5a38adcc
   Kind:
-    rid: 3602687396913348939
+    rid: 3602687397376295519
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348939
+    - rid: 3602687397376295519
       type: {class: TextFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

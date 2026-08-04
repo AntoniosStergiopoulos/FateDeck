@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Candle Smotherer
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 004b661aea304bfebff873aa96fac051
+    _value: 1830f17043534d3bbed53167fd29b10b
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 8bc36a8cde8c17d41998cce32e00a170, type: 2}

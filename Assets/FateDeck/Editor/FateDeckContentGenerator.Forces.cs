@@ -78,22 +78,48 @@ namespace FateDeck.Editor
             var forces = new Forces();
 
             forces.Iron = ForceEntry(fields, "Iron", "I", new Color(0.62f, 0.66f, 0.72f),
-                "The action's Force +2.", Uniform(() => new ModifyActionForceEffect { Delta = 2 }));
+                "The House's standard weight. Your actions press +2 harder; turned against you "
+                + "it presses only +1 - it is YOUR iron, and it resents the creditors.",
+                Split(offense: 2, defense: 2, enemy: 1, loot: 2, ritual: 2));
             forces.IronPlus = ForceEntry(fields, "Iron+", "I+", new Color(0.75f, 0.79f, 0.85f),
-                "The action's Force +3.", Uniform(() => new ModifyActionForceEffect { Delta = 3 }));
+                "Tempered weight. Your actions +3; enemy actions only +2.",
+                Split(offense: 3, defense: 3, enemy: 2, loot: 3, ritual: 3));
             forces.Decay = ForceEntry(fields, "Decay", "D", new Color(0.26f, 0.70f, 0.55f),
-                "The action's Force -2 (min 0).", Uniform(() => new ModifyActionForceEffect { Delta = -2 }));
+                "Everything the House touches rots - every action -2 (min 0). Worthless in your "
+                + "hand, priceless when a creditor swings through it.",
+                Uniform(() => new ModifyActionForceEffect { Delta = -2 }));
             forces.DecayPlus = ForceEntry(fields, "Decay+", "D+", new Color(0.36f, 0.82f, 0.65f),
-                "The action's Force -3 (min 0).", Uniform(() => new ModifyActionForceEffect { Delta = -3 }));
+                "Deep rot: every action -3 (min 0). The finest armor is someone else's bad luck.",
+                Uniform(() => new ModifyActionForceEffect { Delta = -3 }));
             forces.Fortune = ForceEntry(fields, "Fortune", "$", new Color(0.79f, 0.64f, 0.15f),
-                "The action's owner banks 3 gold; Force +0.", Uniform(() => new BankGoldEffect { Amount = 3 }));
+                "A skimmed ledger. On your actions YOU bank 3g; on enemy actions the creditor "
+                + "pockets 2g - recovered as bounty when it dies.",
+                set =>
+                {
+                    set.Offense.Add(new BankGoldEffect { Amount = 3 });
+                    set.Defense.Add(new BankGoldEffect { Amount = 3 });
+                    set.Enemy.Add(new BankGoldEffect { Amount = 2 });
+                    set.Loot.Add(new BankGoldEffect { Amount = 3 });
+                    set.Ritual.Add(new BankGoldEffect { Amount = 3 });
+                });
             forces.FortunePlus = ForceEntry(fields, "Fortune+", "$+", new Color(0.91f, 0.76f, 0.25f),
-                "The action's owner banks 5 gold; Force +0.", Uniform(() => new BankGoldEffect { Amount = 5 }));
+                "A cooked ledger. You bank 5g; a creditor pockets only 3g (bounty on kill).",
+                set =>
+                {
+                    set.Offense.Add(new BankGoldEffect { Amount = 5 });
+                    set.Defense.Add(new BankGoldEffect { Amount = 5 });
+                    set.Enemy.Add(new BankGoldEffect { Amount = 3 });
+                    set.Loot.Add(new BankGoldEffect { Amount = 5 });
+                    set.Ritual.Add(new BankGoldEffect { Amount = 5 });
+                });
             forces.Echo = ForceEntry(fields, "Echo", "E", new Color(0.43f, 0.35f, 0.56f),
-                "Flip one additional fate card; apply both laws (max 3 per action).",
+                "The vaults repeat everything. Flip one additional card and apply both laws "
+                + "(at most 3 flips per action).",
                 Uniform(() => new EchoFlipEffect()));
             forces.Void = ForceEntry(fields, "Void", "O", new Color(0.82f, 0.82f, 0.86f),
-                "The action resolves at Force 0 with no effects; no other laws trigger.",
+                "A page the House left blank. The action resolves at Force 0 with no effects - "
+                + "but the Void takes nothing: a voided action of YOURS refunds your Main Action "
+                + "(once per fight).",
                 Uniform(() => new NegateActionEffect()));
             forces.Flame = FlameEntry(fields, "Flame", "F", new Color(0.89f, 0.35f, 0.13f), 2,
                 "The action's target suffers 2 Burn.");
@@ -209,6 +235,20 @@ namespace FateDeck.Editor
             };
         }
 
+        /// <summary>A force whose only law is a force delta, costed differently per side.</summary>
+        private static System.Action<LawSet> Split(double offense, double defense, double enemy,
+            double loot, double ritual)
+        {
+            return set =>
+            {
+                set.Offense.Add(new ModifyActionForceEffect { Delta = offense });
+                set.Defense.Add(new ModifyActionForceEffect { Delta = defense });
+                set.Enemy.Add(new ModifyActionForceEffect { Delta = enemy });
+                set.Loot.Add(new ModifyActionForceEffect { Delta = loot });
+                set.Ritual.Add(new ModifyActionForceEffect { Delta = ritual });
+            };
+        }
+
         private static System.Action<LawSet> TempestLaws(int delta, double arc)
         {
             return set =>
@@ -282,24 +322,27 @@ namespace FateDeck.Editor
 
         private static MetadataEntry DoomEntry(Fields fields)
         {
-            MetadataEntry entry = GetOrCreate<MetadataEntry>("Doom", created =>
+            MetadataEntry entry = GetOrCreate<MetadataEntry>("Debt", created =>
             {
                 created.Kind = fields.ForceKind;
                 created.SyncValuesWithKind();
                 SetText(created, fields.ForceGlyph, "X");
                 SetColor(created, fields.ForceColor, new Color(0.62f, 0.16f, 0.19f));
                 SetText(created, fields.Description,
-                    "The worst, always. Cannot be pocketed or stacked; milled Doom is exiled forever.");
+                    "The House's lien on you. The worst, always: your actions collapse to 0 and you "
+                    + "mill 1; enemy blows land +2 heavier. Cannot be pocketed or stacked. Milled "
+                    + "Debt burns off the books forever - and every Debt that surfaces hardens you: "
+                    + "+1 Grit.");
                 SetBoolean(created, fields.CannotPocket, true);
                 SetBoolean(created, fields.CannotStack, true);
                 SetBoolean(created, fields.ExileWhenMilled, true);
                 EffectsOf(created, fields.LawOffense).Add(new SetActionForceEffect { Value = 0 });
-                EffectsOf(created, fields.LawOffense).Add(new MillPlayerEffect { Count = 1 });
+                EffectsOf(created, fields.LawOffense).Add(new MillPlayerEffect { Count = 1, Reason = "the Debt" });
                 EffectsOf(created, fields.LawDefense).Add(new SetActionForceEffect { Value = 0 });
-                EffectsOf(created, fields.LawDefense).Add(new MillPlayerEffect { Count = 1 });
+                EffectsOf(created, fields.LawDefense).Add(new MillPlayerEffect { Count = 1, Reason = "the Debt" });
                 EffectsOf(created, fields.LawEnemy).Add(new ModifyActionForceEffect { Delta = 2 });
                 EffectsOf(created, fields.LawLoot).Add(new DoomLootEffect { Mill = 2 });
-                EffectsOf(created, fields.LawRitual).Add(new MillPlayerEffect { Count = 1 });
+                EffectsOf(created, fields.LawRitual).Add(new MillPlayerEffect { Count = 1, Reason = "the Debt" });
             }, "Forces");
             SyncEntry(entry);
             return entry;

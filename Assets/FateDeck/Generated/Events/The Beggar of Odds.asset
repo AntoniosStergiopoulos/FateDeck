@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: The Beggar of Odds
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: b25c309b30e842e59220b1ab8b0a6c80
+    _value: a31fdf4ab1234b27aae6d83614c97ef0
   Intro: A beggar sits cross-legged on a pile of losing tickets. "Ten gold," he says,
-    "and I eat one of your Dooms. Market rate. No tricks."
+    "and I eat one of your Debts. Market rate. No tricks."
   Options:
   - Label: Pay him
     GoldCost: 10
     KeyCost: 0
     Effects:
-    - rid: 3602687397376295383
-    ResultText: He swallows the Doom whole. It does not come back.
+    - rid: 3602687399754203883
+    ResultText: He swallows the Debt whole. It does not come back.
     FlipsFate: 0
     RitualOutcomes: []
     Repeatable: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects: []
-    ResultText: '"Suit yourself. Doom keeps its own books."'
+    ResultText: '"Suit yourself. Debt keeps its own books."'
     FlipsFate: 0
     RitualOutcomes: []
     Repeatable: 0
@@ -39,8 +39,8 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295383
+    - rid: 3602687399754203883
       type: {class: ExileForceFromDrawEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
-        Force: {fileID: 11400000, guid: d52a4e832d613db449228d57add91392, type: 2}
+        Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
         Count: 1

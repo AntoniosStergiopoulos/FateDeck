@@ -34,18 +34,22 @@ namespace FateDeck.Runtime.Core
 
     public sealed class CardMilledEvent : IGameEvent
     {
-        public CardMilledEvent(CardInstance card, MetadataEntry force, bool exiled)
+        public CardMilledEvent(CardInstance card, MetadataEntry force, bool exiled, string reason = null)
         {
             Card = card;
             Force = force;
             Exiled = exiled;
+            Reason = reason;
         }
 
         public CardInstance Card { get; }
         public MetadataEntry Force { get; }
 
-        /// <summary>True when the milled card was Doom-laundered straight to exile.</summary>
+        /// <summary>True when the milled card was Debt-laundered straight to exile.</summary>
         public bool Exiled { get; }
+
+        /// <summary>What caused this loss ("Rat's Attack", "your Burn") - losses are always named.</summary>
+        public string Reason { get; }
     }
 
     public sealed class ReshuffleEvent : IGameEvent
@@ -277,6 +281,19 @@ namespace FateDeck.Runtime.Core
     public sealed class KeysChangedEvent : IGameEvent
     {
         public KeysChangedEvent(int oldValue, int newValue)
+        {
+            OldValue = oldValue;
+            NewValue = newValue;
+        }
+
+        public int OldValue { get; }
+        public int NewValue { get; }
+    }
+
+    /// <summary>Grit changed - gained from Debt flips or spent on a Grit action.</summary>
+    public sealed class GritChangedEvent : IGameEvent
+    {
+        public GritChangedEvent(int oldValue, int newValue)
         {
             OldValue = oldValue;
             NewValue = newValue;

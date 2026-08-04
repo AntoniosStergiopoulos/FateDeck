@@ -45,7 +45,7 @@ namespace FateDeck.Editor
 
             items.Charms.Add(Charm(fields, "Chalk Stub", "Scry 2 and reorder.", false,
                 card => EffectsOf(card, fields.Effects).Add(new ScryEffect { Count = 2, AllowReorder = true })));
-            items.Charms.Add(Charm(fields, "Wax Plug", "The next reshuffle adds 1 less Doom.", false,
+            items.Charms.Add(Charm(fields, "Wax Plug", "The next reshuffle adds 1 less Debt (Interest relief).", false,
                 card => EffectsOf(card, fields.Effects).Add(
                     new ModifyReshuffleTaxEffect { Delta = -1, NextReshuffleOnly = true })));
             items.Charms.Add(Charm(fields, "Iron Filings", "+3 Force to your next action.", false,
@@ -163,7 +163,7 @@ namespace FateDeck.Editor
                 OnFlip(card, fields, forces.SerpentPlus, ActionOwnerFilter.Player,
                     new WeakenActionVictimEffect { Stacks = 1 });
             }));
-            items.Relics.Add(Relic(fields, "Doom Ledger", "Whenever Doom surfaces, the House pays you 2g.", card =>
+            items.Relics.Add(Relic(fields, "Debt Ledger", "Whenever Debt surfaces, the House pays you 2g.", card =>
             {
                 OnFlip(card, fields, forces.Doom, ActionOwnerFilter.Any, new GainGoldEffect { Amount = 2 });
             }));
@@ -266,7 +266,7 @@ namespace FateDeck.Editor
                 TriggersOf(card, fields.Triggers).Add(trigger);
             }));
             items.Relics.Add(Relic(fields, "Pity of the House",
-                "Whenever Doom surfaces, the House grants you 3 Block.", card =>
+                "Whenever Debt surfaces, the House grants you 3 Block.", card =>
             {
                 OnFlip(card, fields, forces.Doom, ActionOwnerFilter.Any, new GainBlockEffect { Amount = 3 });
             }));

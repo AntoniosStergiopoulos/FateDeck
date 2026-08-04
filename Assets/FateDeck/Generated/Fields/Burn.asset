@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Burn
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: e140779f5a7f482a97dbe3dbf955ce44
+    _value: 637bbb2351184b03a58ab09ec65a48d5
   Kind:
-    rid: 3602687396913348934
+    rid: 3602687397376295514
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348934
+    - rid: 3602687397376295514
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Room - Shrine of the Forge
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ShrineRoomDefinition
   _id:
-    _value: d2a0a6fce43d4d1e9384d6ebf02c81d6
+    _value: f15b8705e87045699dc4d347241d0f62
   Blurb: The Forge hums. It offers Flame - a law that burns whoever the action targets.
+  MinStep: 0
   Kind: 1

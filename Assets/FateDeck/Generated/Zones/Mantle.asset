@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mantle
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 0553bbf04dc5495887bcc0c309301d9a
+    _value: ec9b0b414e7945d396945bb460bbc4df
   Description: 
   Scope: 0
   Visibility: 0

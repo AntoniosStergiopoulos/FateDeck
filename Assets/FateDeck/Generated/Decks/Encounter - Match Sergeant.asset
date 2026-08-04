@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Match Sergeant
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 3e275493f3754286ad4ea051b595608a
+    _value: 0b4c9b4afb2d42cab55c95b74499b474
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 669ac74730ae8d34aabdb8d03c5aae50, type: 2}

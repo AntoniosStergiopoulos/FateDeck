@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Room - Marrow Mason
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 78b4e619594841139eec31c8481d5797
+    _value: af76179ee3684b678fb9665fa48370e1
   Blurb: A wall that hits back. Rust and big single hits crack it.
+  MinStep: 5
   Encounter: {fileID: 11400000, guid: a2e00c79ca785dd449dd80f382161622, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}

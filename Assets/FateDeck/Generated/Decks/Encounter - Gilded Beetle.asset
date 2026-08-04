@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Gilded Beetle
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: a9de4f7f91b346e0b8555269eed72a59
+    _value: ccf25ca494b34e7b87fd862462f236e0
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: c8deb95210f0ceb4fb445f5efcefe7a2, type: 2}

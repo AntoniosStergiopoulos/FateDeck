@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Iron Crown
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 3918b501617641259651178824f48eab
+    _value: 70490d2e84ee4f1faaaf977205cedc0d
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687397376294916
-  - rid: 3602687397376294917
-  - rid: 3602687397376294918
-  - rid: 3602687397376294919
+  - rid: 3602687399754203416
+  - rid: 3602687399754203417
+  - rid: 3602687399754203418
+  - rid: 3602687399754203419
   Variants: []
-  _creationDateTicks: 639214724735826083
+  _creationDateTicks: 639214815488303926
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687397376294916
+    - rid: 3602687399754203416
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Every combat opens with +2 Force on your first action.
-    - rid: 3602687397376294917
+    - rid: 3602687399754203417
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687397376294918
+    - rid: 3602687399754203418
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687397376294920
-    - rid: 3602687397376294919
+        - rid: 3602687399754203420
+    - rid: 3602687399754203419
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687397376294920
+    - rid: 3602687399754203420
       type: {class: OnCombatStartTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687397376294921
-    - rid: 3602687397376294921
+        - rid: 3602687399754203421
+    - rid: 3602687399754203421
       type: {class: NextActionBonusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 2

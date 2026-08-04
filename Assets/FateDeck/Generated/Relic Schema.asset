@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Relic Schema
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardSchema
   _id:
-    _value: 684ff1fc66084fce8a55065427f6d00b
+    _value: 952b1ebf3dc6449c9df146c31cabb294
   Fields:
   - {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
   - {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}

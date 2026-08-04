@@ -56,6 +56,9 @@ namespace FateDeck.Runtime.Combat
 
         public int DeckSizeAtStart { get; private set; }
 
+        /// <summary>How many enemies entered this fight (the squad purse counts the extras).</summary>
+        public int EnemiesSpawned { get; private set; }
+
         public CardInstance SelectedEnemy { get; set; }
 
         public bool CanTakeMainAction =>
@@ -99,6 +102,7 @@ namespace FateDeck.Runtime.Combat
                     var enemy = new CardInstance(entry.Card);
                     Enemies.Add(enemy);
                     _session.BindEnemy(enemy);
+                    EnemiesSpawned++;
                 }
             }
 
@@ -151,7 +155,7 @@ namespace FateDeck.Runtime.Combat
 
             MainActionTaken = true;
             Fled = true;
-            _session.MillPlayer(_session.Rules.FleeMill);
+            _session.MillPlayer(_session.Rules.FleeMill, "the door's toll");
             End(victory: false);
             return true;
         }
@@ -165,6 +169,20 @@ namespace FateDeck.Runtime.Combat
         public bool ClaimOnce(object key)
         {
             return key != null && _onceClaims.Add(key);
+        }
+
+        /// <summary>
+        /// The Void's mercy: a voided player action refunds the Main Action, once per combat.
+        /// </summary>
+        public bool TryRefundMainAction()
+        {
+            if (!ClaimOnce("void-refund") || Phase != CombatPhase.PlayerTurn)
+            {
+                return false;
+            }
+
+            MainActionTaken = false;
+            return true;
         }
 
         // ---------------------------------------------------------------- pump
@@ -321,7 +339,7 @@ namespace FateDeck.Runtime.Combat
             int playerBurn = _session.GetStatus(null, StatusKind.Burn);
             if (playerBurn > 0)
             {
-                _session.MillPlayer(playerBurn);
+                _session.MillPlayer(playerBurn, "your Burn");
                 _session.SetStatus(null, StatusKind.Burn, playerBurn - 1);
             }
 

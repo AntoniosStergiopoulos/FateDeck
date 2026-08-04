@@ -23,24 +23,52 @@ namespace FateDeck.Runtime.Views
 
             _tableauBar.Clear();
             _tableauBar.Add(TableauSection("DRAW PILE", BuildDrawSection(session)));
-            _tableauBar.Add(TableauSection("DISCARD", BuildDiscardSection(session)));
-            _tableauBar.Add(TableauSection($"WOUND ROW · {session.Deck.Wound.Count}", BuildWoundSection(session)));
+            _tableauBar.Add(TableauSection("DISCARD", BuildDiscardSection(session),
+                () => ShowZoneOverlay(session.Deck.Discard, "THE DISCARD — public, in order; "
+                    + "it returns to your deck at the next shuffle (plus Interest)", showOrder: true)));
+            _tableauBar.Add(TableauSection($"ESCROW · {session.Deck.Wound.Count}", BuildWoundSection(session),
+                () => ShowZoneOverlay(session.Deck.Wound, "ESCROW — cards torn off you by damage. "
+                    + "Not lost: healing returns them to your deck", showOrder: false)));
             _tableauBar.Add(TableauSection($"POCKET · {session.Deck.Pocket.Count}/{session.PocketSlots}",
                 BuildPocketSection(session)));
             _tableauBar.Add(TableauSection($"CHARMS · {session.CharmZone.Count}/{session.Rules.MaxCharms}",
                 BuildCharmSection(session)));
 
+            WarnOfInterest(session);
             RefreshLeftColumn(session);
             RefreshRelicPanel(session);
         }
 
-        private static VisualElement TableauSection(string title, VisualElement content)
+        /// <summary>Telegraphs the Interest charge before it lands - never an ambush.</summary>
+        private void WarnOfInterest(FateSession session)
+        {
+            if (_interestWarned || session.Deck.Draw.Count > 2 || session.Deck.Discard.Count == 0)
+            {
+                return;
+            }
+
+            _interestWarned = true;
+            int tax = Mathf.Max(0, session.Rules.ReshuffleTax + session.Deck.TaxModifier
+                + session.Deck.ExtraTaxNextReshuffle);
+            _log.Append($"The shuffle nears — {session.Deck.Draw.Count} card"
+                + $"{(session.Deck.Draw.Count == 1 ? "" : "s")} left. The House readies "
+                + $"{tax} Debt of Interest.", FateUi.Violet, bold: true);
+        }
+
+        private static VisualElement TableauSection(string title, VisualElement content,
+            System.Action onInspect = null)
         {
             var section = new VisualElement();
             section.style.marginRight = 18;
-            Label header = FateUi.Text(title, 12, FateUi.GoldLeaf);
+            Label header = FateUi.Text(onInspect != null ? $"{title} ▾" : title, 12, FateUi.GoldLeaf);
             header.style.unityFontStyleAndWeight = FontStyle.Bold;
             header.style.marginBottom = 4;
+            if (onInspect != null)
+            {
+                FateUi.MakeClickable(header, onInspect);
+                FateTip.Bind(header, "Click to inspect this pile.");
+            }
+
             section.Add(header);
             section.Add(content);
             return section;
@@ -55,17 +83,23 @@ namespace FateDeck.Runtime.Views
                 FateSession current = Session;
                 int tax = Mathf.Max(0, current.Rules.ReshuffleTax + current.Deck.TaxModifier
                     + current.Deck.ExtraTaxNextReshuffle);
-                return "<b>YOUR DECK = YOUR LIFE</b>\nEvery flip and every point of damage comes off "
-                    + "the top. When it empties, the discard shuffles back in and the House adds "
-                    + $"{tax} Doom (the reshuffle tax).\n\nClick to inspect the composition.";
+                return "<b>YOUR DECK = YOUR WORTH</b>\nEvery flip and every point of damage comes off "
+                    + $"the top. When it empties, the discard shuffles back in and the House charges "
+                    + $"Interest: +{tax} Debt.\n\nClick to inspect the composition.";
             });
             row.Add(deck);
             var caption = FateUi.Column(0);
             caption.style.justifyContent = Justify.FlexEnd;
-            Label reshuffles = FateUi.Text($"reshuffles {session.Deck.ReshuffleCount}", 11, FateUi.BoneDim);
+            int due = Mathf.Max(0, session.Rules.ReshuffleTax + session.Deck.TaxModifier
+                + session.Deck.ExtraTaxNextReshuffle);
+            Label interest = FateUi.Text(
+                $"interest in {session.Deck.Draw.Count}: +{due} Debt", 11,
+                session.Deck.Draw.Count <= 2 ? FateUi.Blood : FateUi.BoneDim);
+            Label paid = FateUi.Text($"shuffles paid: {session.Deck.ReshuffleCount}", 11, FateUi.BoneDim);
             Label hint = FateUi.Text("click to\ninspect", 11, FateUi.BoneDim);
             caption.Add(hint);
-            caption.Add(reshuffles);
+            caption.Add(interest);
+            caption.Add(paid);
             row.Add(caption);
             return row;
         }
@@ -157,9 +191,9 @@ namespace FateDeck.Runtime.Views
 
             for (int i = session.Deck.Pocket.Count; i < session.PocketSlots; i++)
             {
-                VisualElement slot = EmptySlot(66, "sleeve");
+                VisualElement slot = EmptySlot(66, "empty");
                 FateTip.Bind(slot,
-                    "An empty Pocket slot. When one of YOUR actions flips a card, choose SLEEVE IT "
+                    "An empty Pocket slot. When one of YOUR actions flips a card, choose POCKET IT "
                     + "to bank the card here instead of applying its law.");
                 row.Add(slot);
             }
@@ -169,7 +203,7 @@ namespace FateDeck.Runtime.Views
                     ? "click a card to replace this flip!"
                     : session.Deck.Pocket.Count > 0
                         ? "plays during pre-flip windows"
-                        : "SLEEVE IT banks cards here",
+                        : "POCKET IT banks cards here",
                 10, playable && session.Deck.Pocket.Count > 0 ? FateUi.GoldLeaf : FateUi.BoneDim);
             caption.style.marginTop = 2;
             holder.Add(caption);
@@ -179,6 +213,8 @@ namespace FateDeck.Runtime.Views
         private VisualElement BuildCharmSection(FateSession session)
         {
             var row = FateUi.Row(0);
+            row.style.flexWrap = Wrap.Wrap;
+            row.style.maxWidth = 320;
             if (session.CharmZone.Count == 0)
             {
                 row.Add(EmptySlot(60, "none"));
@@ -252,12 +288,18 @@ namespace FateDeck.Runtime.Views
 
             if (total == 0)
             {
-                composition.Add(FateUi.Text("empty — the next flip reshuffles", 12, FateUi.BoneDim));
+                composition.Add(FateUi.Text("empty — the next flip shuffles the discard back (Interest due)", 12, FateUi.BoneDim));
             }
 
             composition.Add(FateUi.Divider());
-            composition.Add(FateUi.Text(
-                $"discard {session.Deck.Discard.Count} · exile {session.Deck.Exile.Count}", 12, FateUi.BoneDim));
+            Label piles = FateUi.Text(
+                $"discard {session.Deck.Discard.Count} · exile {session.Deck.Exile.Count} (click to view)",
+                12, FateUi.BoneDim);
+            FateUi.MakeClickable(piles, () => ShowZoneOverlay(Session.Deck.Exile,
+                "THE EXILE PILE — settled forever. Laundered Debt and burned contracts rest here",
+                showOrder: false));
+            FateTip.Bind(piles, "Click to inspect the Exile pile. The discard has its own ▾ below.");
+            composition.Add(piles);
             _leftColumn.Add(composition);
 
             VisualElement odds = BuildOddsColumn(session);
@@ -311,11 +353,11 @@ namespace FateDeck.Runtime.Views
             {
                 int extra = session.Deck.ExtraTaxNextReshuffle;
                 VisualElement taxChip = FateUi.Chip(
-                    extra > 0 ? $"Next reshuffle +{extra} Doom" : $"Next reshuffle {extra} Doom",
+                    extra > 0 ? $"Next Interest +{extra} Debt" : $"Next Interest {extra} Debt",
                     extra > 0 ? FateUi.Blood : FateUi.Verdigris, 11);
                 FateTip.Bind(taxChip, extra > 0
-                    ? "A curse: the next time your discard shuffles back in, the House adds this much EXTRA Doom."
-                    : "A blessing: the next reshuffle adds this much LESS Doom.");
+                    ? "A curse: the next shuffle charges this much EXTRA Debt of Interest."
+                    : "A blessing: the next shuffle charges this much LESS Interest.");
                 chips.Add(taxChip);
             }
 
@@ -330,7 +372,60 @@ namespace FateDeck.Runtime.Views
                 panel.Add(idle);
             }
 
+            panel.Add(BuildGritRow(session));
             return panel;
+        }
+
+        /// <summary>Grit: Debt flips bank it; three buys one of three favors, between actions.</summary>
+        private VisualElement BuildGritRow(FateSession session)
+        {
+            var holder = FateUi.Column(0);
+            holder.style.marginTop = 4;
+
+            int cost = session.Rules.GritSpendCost;
+            VisualElement chip = FateUi.Chip($"GRIT {session.Grit}/{cost}",
+                session.Grit >= cost ? FateUi.GoldLeaf : FateUi.BoneDim, 11);
+            FateTip.Bind(chip,
+                "Every Debt that surfaces hardens you: +1 Grit. "
+                + $"At {cost} Grit, spend it between actions on one of the three favors below.");
+            holder.Add(chip);
+
+            if (session.Grit >= cost)
+            {
+                var row = new VisualElement();
+                row.style.flexDirection = FlexDirection.Row;
+                row.style.flexWrap = Wrap.Wrap;
+                row.style.marginTop = 2;
+
+                Button scry = FateUi.MakeButton("SCRY 2", () => SpendGrit(GritSpend.Foresight), FateUi.Verdigris, 11);
+                FateTip.Bind(scry, "Spend Grit: look at the top 2 cards of your deck and reorder them.");
+                row.Add(scry);
+
+                Button surge = FateUi.MakeButton("+2 NEXT", () => SpendGrit(GritSpend.Momentum), FateUi.Ember, 11);
+                FateTip.Bind(surge, "Spend Grit: +2 Force on the next action you declare.");
+                row.Add(surge);
+
+                Button mend = FateUi.MakeButton("MEND 1", () => SpendGrit(GritSpend.Mend), FateUi.GoldLeaf, 11);
+                FateTip.Bind(mend, "Spend Grit: return 1 escrowed card to your deck.");
+                row.Add(mend);
+
+                holder.Add(row);
+            }
+
+            return holder;
+        }
+
+        private void SpendGrit(GritSpend spend)
+        {
+            if (!Session.SpendGrit(spend))
+            {
+                _log.Append(spend == GritSpend.Mend && Session.Deck.Wound.Count == 0
+                    ? "Nothing sits in Escrow to mend."
+                    : "Grit can only be spent between actions.", FateUi.BoneDim);
+            }
+
+            RefreshTableau();
+            MarkScreenDirty();
         }
 
         private VisualElement CompositionRow(MetadataEntry force, int count, int total)

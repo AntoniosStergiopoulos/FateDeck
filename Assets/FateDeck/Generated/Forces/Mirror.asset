@@ -13,107 +13,107 @@ MonoBehaviour:
   m_Name: Mirror
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: f5101deaad324060b08a61c09ea033aa
+    _value: 0cc9b2b9f0274fe490a1e089477402b7
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687396913349268
-  - rid: 3602687396913349269
-  - rid: 3602687396913349270
-  - rid: 3602687396913349271
-  - rid: 3602687396913349272
-  - rid: 3602687396913349273
-  - rid: 3602687396913349274
-  - rid: 3602687396913349275
-  - rid: 3602687396913349276
-  - rid: 3602687396913349277
-  - rid: 3602687396913349278
-  - rid: 3602687396913349279
+  - rid: 3602687397376295848
+  - rid: 3602687397376295849
+  - rid: 3602687397376295850
+  - rid: 3602687397376295851
+  - rid: 3602687397376295852
+  - rid: 3602687397376295853
+  - rid: 3602687397376295854
+  - rid: 3602687397376295855
+  - rid: 3602687397376295856
+  - rid: 3602687397376295857
+  - rid: 3602687397376295858
+  - rid: 3602687397376295859
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913349268
+    - rid: 3602687397376295848
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687396913349280
-    - rid: 3602687396913349269
+        - rid: 3602687397376295860
+    - rid: 3602687397376295849
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687396913349281
-    - rid: 3602687396913349270
+        - rid: 3602687397376295861
+    - rid: 3602687397376295850
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687396913349282
-    - rid: 3602687396913349271
+        - rid: 3602687397376295862
+    - rid: 3602687397376295851
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687396913349283
-    - rid: 3602687396913349272
+        - rid: 3602687397376295863
+    - rid: 3602687397376295852
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687396913349284
-    - rid: 3602687396913349273
+        - rid: 3602687397376295864
+    - rid: 3602687397376295853
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687396913349274
+    - rid: 3602687397376295854
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687396913349275
+    - rid: 3602687397376295855
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687396913349276
+    - rid: 3602687397376295856
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687396913349277
+    - rid: 3602687397376295857
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.72, g: 0.76, b: 0.8, a: 1}
-    - rid: 3602687396913349278
+    - rid: 3602687397376295858
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: R
-    - rid: 3602687396913349279
+    - rid: 3602687397376295859
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Repeats the law of the force that surfaced before it (in this context).
           A Mirror with nothing to reflect polishes into +1 Force.
-    - rid: 3602687396913349280
+    - rid: 3602687397376295860
       type: {class: CopyLastForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         FallbackDelta: 1
-    - rid: 3602687396913349281
+    - rid: 3602687397376295861
       type: {class: CopyLastForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         FallbackDelta: 1
-    - rid: 3602687396913349282
+    - rid: 3602687397376295862
       type: {class: CopyLastForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         FallbackDelta: 1
-    - rid: 3602687396913349283
+    - rid: 3602687397376295863
       type: {class: CopyLastForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         FallbackDelta: 1
-    - rid: 3602687396913349284
+    - rid: 3602687397376295864
       type: {class: CopyLastForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         FallbackDelta: 1

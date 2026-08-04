@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Bounty
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 98726f0188a44a2fa24cb36d80cd599d
+    _value: 52af7527ee0e4f84b2c9d862f392ac90
   Kind:
-    rid: 3602687396913348929
+    rid: 3602687397376295509
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348929
+    - rid: 3602687397376295509
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

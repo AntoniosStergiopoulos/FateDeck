@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef3c9fc9381d41abb2f1df4a59de096f, type: 3}
-  m_Name: Wound Row
+  m_Name: Escrow
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: f03284f60dcf4cdb82b23a8a03953e40
+    _value: 22cae949b20b4f0cb753eff6d7ef11e7
   Description: 
   Scope: 0
   Visibility: 0

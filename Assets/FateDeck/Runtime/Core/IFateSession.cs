@@ -60,7 +60,7 @@ namespace FateDeck.Runtime.Core
         /// <summary>Reveals the top cards to the player (Scry); the view renders the result.</summary>
         void Scry(int count, bool allowReorder);
 
-        void MillPlayer(int count);
+        void MillPlayer(int count, string reason = null);
 
         void Bark(string line);
 

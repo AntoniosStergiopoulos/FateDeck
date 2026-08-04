@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Law - Loot
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: b34d40a6324740ebb084b5553de75c9d
+    _value: 115180a3d2b7403aab6830381efb6fd7
   Kind:
-    rid: 3602687396913348919
+    rid: 3602687397376295499
   references:
     version: 2
     RefIds:
-    - rid: 3602687396913348919
+    - rid: 3602687397376295499
       type: {class: EffectListFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

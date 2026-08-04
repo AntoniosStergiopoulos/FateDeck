@@ -9,7 +9,7 @@ namespace FateDeck.Runtime.Effects.Laws
     /// weakens; on an enemy attack the venom turns and weakens the attacker instead.
     /// </summary>
     [Serializable]
-    public class WeakenActionVictimEffect : FateEffect, IActionLawPreview
+    public class WeakenActionVictimEffect : FateEffect, IActionLawPreview, IContextDescribed
     {
         public int Stacks = 1;
 
@@ -20,6 +20,16 @@ namespace FateDeck.Runtime.Effects.Laws
         public string PreviewNote => $"Weak {Stacks}";
 
         public double PreviewForce(double force) => force;
+
+        public string DescribeFor(LawContext context)
+        {
+            switch (context)
+            {
+                case LawContext.PlayerOffense: return $"your target suffers {Stacks} Weak";
+                case LawContext.EnemyAction: return $"the venom turns: the ATTACKER suffers {Stacks} Weak";
+                default: return "the venom finds no one";
+            }
+        }
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {

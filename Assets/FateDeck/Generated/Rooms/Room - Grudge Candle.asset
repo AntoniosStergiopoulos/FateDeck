@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Room - Grudge Candle
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 1aad9d65e2a945c3ac80e41857758793
+    _value: 42bc51ab9fc7460ba25889fa48ca48d0
   Blurb: It burns hotter every cycle. Race it.
+  MinStep: 3
   Encounter: {fileID: 11400000, guid: f539c4ccef1322c4e817cc01d00f2673, type: 2}
   IsElite: 0
   RiggedTopForce: {fileID: 0}

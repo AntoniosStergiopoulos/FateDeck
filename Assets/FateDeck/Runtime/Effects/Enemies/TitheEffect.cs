@@ -32,7 +32,7 @@ namespace FateDeck.Runtime.Effects.Enemies
 
         protected override void Resolve(EffectContext context, IFateSession session)
         {
-            session.MillPlayer(Mill);
+            session.MillPlayer(Mill, "the tithe (ignores Block)");
             CardInstance enemy = session.CurrentAction?.SourceEnemy ?? context.Source;
             if (enemy == null)
             {

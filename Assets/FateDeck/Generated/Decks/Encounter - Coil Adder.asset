@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Coil Adder
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 042b6b2f7b1e4d1aa9bdaf169e99483f
+    _value: eb221996adeb4b5989e43187c3ae151e
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: dfc6e75f52c6788438d4861c407cbded, type: 2}

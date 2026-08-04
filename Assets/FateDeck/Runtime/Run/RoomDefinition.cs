@@ -12,6 +12,9 @@ namespace FateDeck.Runtime.Run
         [TextArea]
         public string Blurb;
 
+        [Tooltip("Earliest track step this room may appear on (0 = any). Depth-gates the danger curve.")]
+        public int MinStep;
+
         public abstract string DoorLabel();
     }
 }

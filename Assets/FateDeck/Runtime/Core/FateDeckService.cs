@@ -134,11 +134,11 @@ namespace FateDeck.Runtime.Core
         }
 
         /// <summary>
-        /// Mills up to <paramref name="count"/> cards (damage). Doom milled by damage is exiled
-        /// forever; everything else lands in the Wound Row. Returns how many were actually milled -
-        /// fewer than asked means the deck ran dry mid-mill.
+        /// Mills up to <paramref name="count"/> cards (damage). Debt milled by damage is exiled
+        /// forever; everything else lands in Escrow (the wound row). Returns how many were
+        /// actually milled - fewer than asked means the deck ran dry mid-mill.
         /// </summary>
-        public int Mill(int count)
+        public int Mill(int count, string reason = null)
         {
             int milled = 0;
             for (int i = 0; i < count; i++)
@@ -161,7 +161,7 @@ namespace FateDeck.Runtime.Core
                     Wound.Add(card);
                 }
 
-                _game.Events.Publish(new CardMilledEvent(card, force, exiled));
+                _game.Events.Publish(new CardMilledEvent(card, force, exiled, reason));
                 milled++;
             }
 

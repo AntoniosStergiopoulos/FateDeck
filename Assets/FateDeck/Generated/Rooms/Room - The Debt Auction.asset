@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3804d92343cd0140b24b5e9132d96af, type: 3}
-  m_Name: Room - The Doom Auction
+  m_Name: Room - The Debt Auction
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: a1c261ada512433fbc5d1a7512764f95
+    _value: f308e2e15b5743fc8aa59eaae104c267
   Blurb: A gavel echoes in an empty hall.
-  Event: {fileID: 11400000, guid: bff9e61bb8ee78c4db9cf2fb5e20c117, type: 2}
+  MinStep: 0
+  Event: {fileID: 11400000, guid: 9397ec9f70aff714a846854d0af8ad4b, type: 2}
