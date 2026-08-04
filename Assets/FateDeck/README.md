@@ -34,9 +34,23 @@ deck. Doom is **Debt**, the reshuffle tax is **Interest** (telegraphed on the dr
 it's due), wounds sit in **Escrow**, and surfaced Debt banks **Grit** — spend 3 between actions
 on Scry 2, +2 Force, or a free mend. Fairness set: enemy-context laws cost ~60-70% of yours
 (Iron is +2 for you, +1 against you), Guard strikes for 2 when you're outnumbered, a voided
-action refunds your Main Action once per fight, multi-enemy rooms pay a squad purse, heavy
-rooms are depth-gated out of early steps, and every door advertises its stakes. See
-`Documentation/FateDeck-Design-Review.md` for the full reasoning.
+action refunds your Main Action once per fight, multi-enemy rooms pay a squad purse, winning a
+fight releases one page from escrow, heavy rooms are depth-gated out of early steps, and every
+door advertises its stakes. See `Documentation/FateDeck-Design-Review.md` for the full
+reasoning.
+
+## Balance lab
+
+`Tools → Fate Deck → Run Balance Simulation (Quick/Full)` plays a baseline bot (the
+`AutoPlayer`) through hundreds of seeded runs per hero — headless, save-suppressed, a few
+seconds — and writes `Documentation/BalanceReport.md` with win rates, death-by-step
+histograms and killer attribution. The bot ignores charms and scry ordering on purpose:
+its numbers are a floor, and tuning targets the floor band (roughly 10-25% per hero).
+The current numbers are already lab-tuned: the original COLLECTOR killed 72-87% of every
+run that reached it (bot floor 0-2%); softening the compound spiral (26 HP, opening
+Confiscate 2, attacks 3/4, +1 Force per 4 held) moved the floor to 14-22%, and the same
+data drove the victory-mend rule and the Debtor's Grit interest. Method and evidence live
+in `Documentation/BalanceLab.md`.
 
 Upgrading an existing project: run `Tools → Fate Deck → Rebuild Content From Scratch` once
 (regenerates every asset, including the expanded hero decks), then `Create Game Scene` to
@@ -48,6 +62,7 @@ relink the table.
 - `Runtime/Effects|Triggers|Conditions` — the GDD's Appendix-A atoms as OmniCard subclasses
 - `Runtime/Combat` — combat engine + enemy pattern field kind
 - `Runtime/Run` — doors, rooms, events, shops, saves
+- `Runtime/Simulation` — the balance lab: AutoPlayer bot, event policy, run aggregator
 - `Runtime/Views` — the one-screen table, built entirely with runtime UI Toolkit: crisp
   screen-space text, a scrollable color-coded event log (right column) that narrates every
   flip/mill/purchase, force-colored composition + odds panels (left), the deck tableau

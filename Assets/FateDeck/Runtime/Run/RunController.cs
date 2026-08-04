@@ -29,12 +29,15 @@ namespace FateDeck.Runtime.Run
     public sealed class RunController
     {
         private readonly FateContentCatalog _catalog;
+        private readonly Action<string> _log;
         private EventOption _pendingRitual;
         private CombatEndedEvent _pendingCombatEnd;
 
-        public RunController(FateContentCatalog catalog)
+        /// <param name="log">Session log sink; null keeps Debug.Log. Simulations pass a no-op.</param>
+        public RunController(FateContentCatalog catalog, Action<string> log = null)
         {
             _catalog = catalog ?? throw new ArgumentNullException(nameof(catalog));
+            _log = log;
         }
 
         public event Action Changed;
@@ -86,7 +89,7 @@ namespace FateDeck.Runtime.Run
         public void StartNewRun(CardDefinition hero, int seed)
         {
             Session?.Dispose();
-            Session = new FateSession(_catalog, seed);
+            Session = new FateSession(_catalog, seed, _log);
             OriginalSeed = Session.Seed;
             Session.Events.Subscribe<PlayerDiedEvent>(OnPlayerDied);
             Session.Events.Subscribe<ActionResolvedEvent>(OnActionResolved);
@@ -116,7 +119,7 @@ namespace FateDeck.Runtime.Run
             }
 
             Session?.Dispose();
-            Session = new FateSession(_catalog, data.ResumeSeed);
+            Session = new FateSession(_catalog, data.ResumeSeed, _log);
             Session.Events.Subscribe<PlayerDiedEvent>(OnPlayerDied);
             Session.Events.Subscribe<ActionResolvedEvent>(OnActionResolved);
             Session.Events.Subscribe<CombatEndedEvent>(OnCombatEnded);
@@ -494,6 +497,15 @@ namespace FateDeck.Runtime.Run
             {
                 Session.AddGold(squadPurse);
                 Session.Bark($"\"Squad rates. {squadPurse}g hazard pay.\"");
+            }
+
+            if (_catalog.Rules.VictoryMend > 0 && Session.Deck.Wound.Count > 0)
+            {
+                int mended = Session.Deck.HealWounds(_catalog.Rules.VictoryMend);
+                if (mended > 0)
+                {
+                    Session.Bark($"\"Paid in full. {mended} page{(mended == 1 ? "" : "s")} out of escrow.\"");
+                }
             }
 
             Session.EndCombat();

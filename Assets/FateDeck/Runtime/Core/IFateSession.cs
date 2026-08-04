@@ -32,6 +32,11 @@ namespace FateDeck.Runtime.Core
 
         void AddKeys(int delta);
 
+        /// <summary>Banked Grit, spent between actions on Grit actions.</summary>
+        int Grit { get; }
+
+        void AddGrit(int amount);
+
         int Gold { get; }
 
         void AddGold(int delta);

@@ -267,7 +267,7 @@ namespace FateDeck.Runtime.Core
             }
         }
 
-        private void GainGrit(int amount)
+        public void AddGrit(int amount)
         {
             if (amount <= 0)
             {
@@ -652,7 +652,7 @@ namespace FateDeck.Runtime.Core
             if (force == Catalog.Doom)
             {
                 DoomFlipsThisRun++;
-                GainGrit(Rules.GritPerDebtFlip);
+                AddGrit(Rules.GritPerDebtFlip);
             }
 
             if (force != null)

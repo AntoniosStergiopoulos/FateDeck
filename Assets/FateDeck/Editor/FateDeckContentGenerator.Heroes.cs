@@ -71,7 +71,8 @@ namespace FateDeck.Editor
                 }));
 
             heroes.Add(Hero(fields, "The Debtor",
-                "Compound Interest - whenever Debt surfaces, the House pays you 3g. Starts 2 Debt deep.",
+                "Compound Interest - whenever Debt surfaces, the House pays you 3g and 1 extra Grit. "
+                + "Starts 2 Debt deep.",
                 pocketSlots: 2,
                 Deck("Debtor Starting Deck",
                     (CardOf("Iron"), 9), (CardOf("Fortune"), 3), (CardOf("Echo"), 1),
@@ -80,6 +81,7 @@ namespace FateDeck.Editor
                 {
                     var interest = new OnFateFlipTrigger { ForceFilter = forces.Doom };
                     interest.Effects.Add(new GainGoldEffect { Amount = 3 });
+                    interest.Effects.Add(new GainGritEffect { Amount = 1 });
                     TriggersOf(hero, fields.Triggers).Add(interest);
                 }));
 

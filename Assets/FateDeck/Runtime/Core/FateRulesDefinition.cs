@@ -43,5 +43,8 @@ namespace FateDeck.Runtime.Core
 
         [Tooltip("Maximum Grit the player can bank.")]
         [Min(1)] public int GritMax = 6;
+
+        [Tooltip("Escrowed cards automatically returned to the deck after winning a fight (0 disables).")]
+        [Min(0)] public int VictoryMend = 1;
     }
 }

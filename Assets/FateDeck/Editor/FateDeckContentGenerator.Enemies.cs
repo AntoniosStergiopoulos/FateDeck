@@ -335,21 +335,23 @@ namespace FateDeck.Editor
 
         private static CardDefinition TheCollector(Fields fields)
         {
-            return Enemy(fields, "THE COLLECTOR", 30, 25,
+            // Tuned by the balance lab (Documentation/BalanceReport.md): at 30 HP / open-3 /
+            // 4+4 attacks / +1 per 3 held, 72-87% of runs that reached it died here.
+            return Enemy(fields, "THE COLLECTOR", 26, 25,
                 "Confiscate: it appraises up to 3 copies of your most-numerous force into its Mantle; "
-                + "attacks gain +1 Force per 3 held. Hits of 5+ shake a card loose. Only the draw "
+                + "attacks gain +1 Force per 4 held. Hits of 5+ shake a card loose. Only the draw "
                 + "pile is read - discard, pocket and wounds are invisible to it.", card =>
             {
                 SetText(card, fields.Description,
                     "A vast pale hand in a sleeve of ledgers. It doesn't want you dead; it wants your assets.");
-                SetNumber(card, fields.MantleBonusPer, 3);
-                PatternOf(card, fields.Pattern).Add(Attack("Attack", 4));
+                SetNumber(card, fields.MantleBonusPer, 4);
+                PatternOf(card, fields.Pattern).Add(Attack("Attack", 3));
                 PatternOf(card, fields.Pattern).Add(Attack("Attack", 4));
                 PatternOf(card, fields.Pattern).Add(Special("Appraise", false,
                     new ConfiscateEffect { MaxTaken = 3 }));
 
                 var opening = new OnCombatStartTrigger();
-                opening.Effects.Add(new ConfiscateEffect { MaxTaken = 3 });
+                opening.Effects.Add(new ConfiscateEffect { MaxTaken = 2 });
                 TriggersOf(card, fields.Triggers).Add(opening);
 
                 var death = new OnEnemyDeathTrigger { SelfOnly = true };

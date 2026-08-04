@@ -54,9 +54,13 @@ namespace FateDeck.Runtime.Run
 
         public static bool Exists => File.Exists(SavePath);
 
+        /// <summary>Simulations set this so headless runs never touch the player's real save.</summary>
+        public static bool Suppressed;
+
         public static void Save(RunController run)
         {
-            if (run?.Session == null || run.Session.IsPlayerDead || run.Session.CurrentAction != null)
+            if (Suppressed || run?.Session == null || run.Session.IsPlayerDead
+                || run.Session.CurrentAction != null)
             {
                 return;
             }
@@ -73,6 +77,11 @@ namespace FateDeck.Runtime.Run
 
         public static void Delete()
         {
+            if (Suppressed)
+            {
+                return;
+            }
+
             try
             {
                 if (File.Exists(SavePath))
