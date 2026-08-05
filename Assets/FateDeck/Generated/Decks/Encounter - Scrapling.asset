@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Scrapling
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: c383fa37fbe548da8e139c35ed1dba9e
+    _value: 447fe573bd5847539da1bc4da38a0cfb
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: d6d6353e5a5ab0241807ccfdb57671dc, type: 2}

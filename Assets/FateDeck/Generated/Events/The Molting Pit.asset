@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Molting Pit
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: c5c61c2bca0746c19f326c183197e910
+    _value: ef8c5f7fb5f940c2a23aaf4756799bc5
   Intro: A pit of shed skins - old decks, old luck, old selves. Things left here
     stay left. The pit hums, patient.
   Options:
@@ -21,7 +21,7 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203961
+    - rid: 3602687400659124273
     ResultText: The old law slides off you. The pit sighs contentedly.
     FlipsFate: 0
     RitualOutcomes: []
@@ -31,8 +31,8 @@ MonoBehaviour:
     GoldCost: 8
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203962
-    - rid: 3602687399754203963
+    - rid: 3602687400659124274
+    - rid: 3602687400659124275
     ResultText: Something old leaves; something torn knits.
     FlipsFate: 0
     RitualOutcomes: []
@@ -50,17 +50,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203961
+    - rid: 3602687400659124273
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 1
         Count: 1
-    - rid: 3602687399754203962
+    - rid: 3602687400659124274
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 1
         Count: 1
-    - rid: 3602687399754203963
+    - rid: 3602687400659124275
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

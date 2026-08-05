@@ -13,122 +13,122 @@ MonoBehaviour:
   m_Name: Tempest
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: c8efa0fede2e4fab8d35de0916f0a498
+    _value: dd0b5086fce7460887fdc796f06ce0e2
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687397376295716
-  - rid: 3602687397376295717
-  - rid: 3602687397376295718
-  - rid: 3602687397376295719
-  - rid: 3602687397376295720
-  - rid: 3602687397376295721
-  - rid: 3602687397376295722
-  - rid: 3602687397376295723
-  - rid: 3602687397376295724
-  - rid: 3602687397376295725
-  - rid: 3602687397376295726
-  - rid: 3602687397376295727
+  - rid: 3602687400656502811
+  - rid: 3602687400656502812
+  - rid: 3602687400656502813
+  - rid: 3602687400656502814
+  - rid: 3602687400656502815
+  - rid: 3602687400656502816
+  - rid: 3602687400656502817
+  - rid: 3602687400656502818
+  - rid: 3602687400656502819
+  - rid: 3602687400656502820
+  - rid: 3602687400656502821
+  - rid: 3602687400656502822
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295716
+    - rid: 3602687400656502811
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687397376295728
-        - rid: 3602687397376295729
-    - rid: 3602687397376295717
+        - rid: 3602687400656502823
+        - rid: 3602687400656502824
+    - rid: 3602687400656502812
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687397376295730
-        - rid: 3602687397376295731
-    - rid: 3602687397376295718
+        - rid: 3602687400656502825
+        - rid: 3602687400656502826
+    - rid: 3602687400656502813
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687397376295732
-        - rid: 3602687397376295733
-    - rid: 3602687397376295719
+        - rid: 3602687400656502827
+        - rid: 3602687400656502828
+    - rid: 3602687400656502814
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687397376295734
-    - rid: 3602687397376295720
+        - rid: 3602687400656502829
+    - rid: 3602687400656502815
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687397376295735
-    - rid: 3602687397376295721
+        - rid: 3602687400656502830
+    - rid: 3602687400656502816
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687397376295722
+    - rid: 3602687400656502817
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687397376295723
+    - rid: 3602687400656502818
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687397376295724
+    - rid: 3602687400656502819
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687397376295725
+    - rid: 3602687400656502820
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.35, g: 0.62, b: 0.92, a: 1}
-    - rid: 3602687397376295726
+    - rid: 3602687400656502821
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: T
-    - rid: 3602687397376295727
+    - rid: 3602687400656502822
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: 'Lightning: your actions +1 Force and 2 damage arcs to the other enemies;
           on enemy actions the storm bites the attacker for 2.'
-    - rid: 3602687397376295728
+    - rid: 3602687400656502823
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 1
-    - rid: 3602687397376295729
+    - rid: 3602687400656502824
       type: {class: CleaveDamageEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 2
-    - rid: 3602687397376295730
+    - rid: 3602687400656502825
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 1
-    - rid: 3602687397376295731
+    - rid: 3602687400656502826
       type: {class: CleaveDamageEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 1
-    - rid: 3602687397376295732
+    - rid: 3602687400656502827
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: -1
-    - rid: 3602687397376295733
+    - rid: 3602687400656502828
       type: {class: CleaveDamageEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Amount: 2
-    - rid: 3602687397376295734
+    - rid: 3602687400656502829
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 3
-    - rid: 3602687397376295735
+    - rid: 3602687400656502830
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2

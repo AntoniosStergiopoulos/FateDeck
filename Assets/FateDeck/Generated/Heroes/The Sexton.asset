@@ -13,50 +13,50 @@ MonoBehaviour:
   m_Name: The Sexton
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: a296fdae8016425898ecdffef2614a62
+    _value: e58ef799480d49ee95927c4c54162ac4
   Schema: {fileID: 11400000, guid: c5844690b8dd13a4ab010d735d5fcf81, type: 2}
   _values:
-  - rid: 3602687399754203478
-  - rid: 3602687399754203479
-  - rid: 3602687399754203480
-  - rid: 3602687399754203481
+  - rid: 3602687400656503374
+  - rid: 3602687400656503375
+  - rid: 3602687400656503376
+  - rid: 3602687400656503377
   Variants: []
-  _creationDateTicks: 639214815498381958
+  _creationDateTicks: 639214849918993417
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203478
+    - rid: 3602687400656503374
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Gravework - at the end of every room, 1 wound card returns to your
           deck.
-    - rid: 3602687399754203479
+    - rid: 3602687400656503375
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}
         Value: 2
-    - rid: 3602687399754203480
+    - rid: 3602687400656503376
       type: {class: ObjectFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ad0a7b5acd9fff2479d7205008adc3b3, type: 2}
         Value: {fileID: 11400000, guid: fe92b3dda072efe4284b3c1ca96e0e96, type: 2}
-    - rid: 3602687399754203481
+    - rid: 3602687400656503377
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203482
-    - rid: 3602687399754203482
+        - rid: 3602687400656503378
+    - rid: 3602687400656503378
       type: {class: OnRoomEndTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203483
-    - rid: 3602687399754203483
+        - rid: 3602687400656503379
+    - rid: 3602687400656503379
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

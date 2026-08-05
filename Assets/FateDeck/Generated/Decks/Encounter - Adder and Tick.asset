@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Adder and Tick
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 4303f3e9a72c4e66950bc0f1b4c9e650
+    _value: 6e0004f8086940d1a2e97395b9d5785f
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: dfc6e75f52c6788438d4861c407cbded, type: 2}

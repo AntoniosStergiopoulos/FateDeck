@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Notary
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: e5d67cff94714e53bf574d70b21e21bd
+    _value: f8d1f71ab848485da89391bed8939a9b
   Blurb: The Notary stamps you smaller with every seal. Decline the door and its
     relic is gone forever.
   MinStep: 0

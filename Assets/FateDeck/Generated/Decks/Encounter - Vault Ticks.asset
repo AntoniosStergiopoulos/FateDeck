@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Vault Ticks
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 3bfa89c1101d47f7bf5a95df3a4c93d4
+    _value: 32f453b124e84fbb9c64997a2849035d
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 182eea3f86f023642a4bfb89ad139850, type: 2}

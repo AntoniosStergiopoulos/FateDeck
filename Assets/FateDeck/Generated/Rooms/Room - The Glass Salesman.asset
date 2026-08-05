@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Glass Salesman
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: f5d65cd168304df79d13eee2e1b5f880
+    _value: 05ba03e8eb8840c3873fbe62b8060b14
   Blurb: Something crystalline is whistling a jingle.
   MinStep: 0
   Event: {fileID: 11400000, guid: 9288c22397bc6ee4b877f3973271c01d, type: 2}

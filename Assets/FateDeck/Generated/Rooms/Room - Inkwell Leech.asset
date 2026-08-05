@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Inkwell Leech
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 7cef60a959d84c1eb041648adce7a700
+    _value: 7184efa4259d4d8e9ea6a35d48ab41ed
   Blurb: It drinks as fast as you cut. Burst it down.
   MinStep: 2
   Encounter: {fileID: 11400000, guid: 39e480d3ae9adef43b8f7cc84c22060f, type: 2}

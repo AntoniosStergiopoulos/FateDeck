@@ -13,51 +13,51 @@ MonoBehaviour:
   m_Name: Wound Clasp
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 0cd6dfbe36ea4b508de496025bae6f6d
+    _value: 236af24ed2e241e0b06c9509f14a6997
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687399754203358
-  - rid: 3602687399754203359
-  - rid: 3602687399754203360
-  - rid: 3602687399754203361
+  - rid: 3602687400656503253
+  - rid: 3602687400656503254
+  - rid: 3602687400656503255
+  - rid: 3602687400656503256
   Variants: []
-  _creationDateTicks: 639214815482922085
+  _creationDateTicks: 639214849904380814
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203358
+    - rid: 3602687400656503253
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Every card milled into the Wound Row pays 1g.
-    - rid: 3602687399754203359
+    - rid: 3602687400656503254
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687399754203360
+    - rid: 3602687400656503255
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203362
-    - rid: 3602687399754203361
+        - rid: 3602687400656503257
+    - rid: 3602687400656503256
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203362
+    - rid: 3602687400656503257
       type: {class: OnMillTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203363
+        - rid: 3602687400656503258
         ForceFilter: {fileID: 0}
         OnlyWhenExiled: 0
-    - rid: 3602687399754203363
+    - rid: 3602687400656503258
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 1

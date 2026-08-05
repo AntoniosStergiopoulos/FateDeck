@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Decay
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 5a65d9f22647459f9c75718179f30fc4
+    _value: 3ba5d1d5c4484de78979f04499109c7f
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687397376295929
-  - rid: 3602687397376295930
+  - rid: 3602687400656503024
+  - rid: 3602687400656503025
   Variants: []
-  _creationDateTicks: 639214815440750361
+  _creationDateTicks: 639214849871552309
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295929
+    - rid: 3602687400656503024
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 3e59cea685a6561459b670e17978c5fc, type: 2}
-    - rid: 3602687397376295930
+    - rid: 3602687400656503025
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

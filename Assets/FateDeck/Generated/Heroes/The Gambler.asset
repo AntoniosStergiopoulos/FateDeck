@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: The Gambler
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 56a6f2fd6a1d44d89e1d44213dfc2d59
+    _value: b135e70127b943a4a30e95aacd81abc4
   Schema: {fileID: 11400000, guid: c5844690b8dd13a4ab010d735d5fcf81, type: 2}
   _values:
-  - rid: 3602687399754203452
-  - rid: 3602687399754203453
-  - rid: 3602687399754203454
-  - rid: 3602687399754203455
+  - rid: 3602687400656503347
+  - rid: 3602687400656503348
+  - rid: 3602687400656503349
+  - rid: 3602687400656503350
   Variants: []
-  _creationDateTicks: 639214815493702800
+  _creationDateTicks: 639214849914160072
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203452
+    - rid: 3602687400656503347
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: 'Opening Hand - the first flip of each combat: draw 2, choose 1.'
-    - rid: 3602687399754203453
+    - rid: 3602687400656503348
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: add6cb350de532a429820d35ee773898, type: 2}
         Value: 2
-    - rid: 3602687399754203454
+    - rid: 3602687400656503349
       type: {class: ObjectFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ad0a7b5acd9fff2479d7205008adc3b3, type: 2}
         Value: {fileID: 11400000, guid: 9d9e22968cb953a4baf0b06562676aa7, type: 2}
-    - rid: 3602687399754203455
+    - rid: 3602687400656503350
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203456
-    - rid: 3602687399754203456
+        - rid: 3602687400656503351
+    - rid: 3602687400656503351
       type: {class: OnCombatStartTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203457
-    - rid: 3602687399754203457
+        - rid: 3602687400656503352
+    - rid: 3602687400656503352
       type: {class: DoubleDrawNextEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Charges: 1

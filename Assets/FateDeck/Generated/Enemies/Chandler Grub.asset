@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Chandler Grub
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 1148e0f12d7a476bbec408d7c2059c95
+    _value: 5704c902e3a642b99a25645bb970122a
   Schema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
   _values:
-  - rid: 3602687399754203577
-  - rid: 3602687399754203578
-  - rid: 3602687399754203579
-  - rid: 3602687399754203580
-  - rid: 3602687399754203581
-  - rid: 3602687399754203582
-  - rid: 3602687399754203583
-  - rid: 3602687399754203584
-  - rid: 3602687399754203585
-  - rid: 3602687399754203586
-  - rid: 3602687399754203587
-  - rid: 3602687399754203588
-  - rid: 3602687399754203589
-  - rid: 3602687399754203590
-  - rid: 3602687399754203591
+  - rid: 3602687400656503473
+  - rid: 3602687400656503474
+  - rid: 3602687400656503475
+  - rid: 3602687400656503476
+  - rid: 3602687400656503477
+  - rid: 3602687400656503478
+  - rid: 3602687400656503479
+  - rid: 3602687400656503480
+  - rid: 3602687400656503481
+  - rid: 3602687400656503482
+  - rid: 3602687400656503483
+  - rid: 3602687400656503484
+  - rid: 3602687400656503485
+  - rid: 3602687400656503486
+  - rid: 3602687400656503487
   Variants: []
-  _creationDateTicks: 639214815503219906
+  _creationDateTicks: 639214849923042270
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203577
+    - rid: 3602687400656503473
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
         Value: 5
-    - rid: 3602687399754203578
+    - rid: 3602687400656503474
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
         Value: 5
-    - rid: 3602687399754203579
+    - rid: 3602687400656503475
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
         Value: 4
-    - rid: 3602687399754203580
+    - rid: 3602687400656503476
       type: {class: EnemyPatternFieldValue, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
       data:
         Field: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
@@ -66,57 +66,57 @@ MonoBehaviour:
           Force: 4
           FlipsFate: 1
           Effects: []
-    - rid: 3602687399754203581
+    - rid: 3602687400656503477
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
         Value: 0
-    - rid: 3602687399754203582
+    - rid: 3602687400656503478
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
         Value: 0
-    - rid: 3602687399754203583
+    - rid: 3602687400656503479
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
         Value: 0
-    - rid: 3602687399754203584
+    - rid: 3602687400656503480
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
         Value: 0
-    - rid: 3602687399754203585
+    - rid: 3602687400656503481
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
         Value: 0
-    - rid: 3602687399754203586
+    - rid: 3602687400656503482
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
         Value: 0
-    - rid: 3602687399754203587
+    - rid: 3602687400656503483
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
         Value: 0
-    - rid: 3602687399754203588
+    - rid: 3602687400656503484
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
         Value: 1
-    - rid: 3602687399754203589
+    - rid: 3602687400656503485
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
         Value: Winds up, then swings hard. Guard on the wind-up.
-    - rid: 3602687399754203590
+    - rid: 3602687400656503486
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: A fat white worm dipped in wax.
-    - rid: 3602687399754203591
+    - rid: 3602687400656503487
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}

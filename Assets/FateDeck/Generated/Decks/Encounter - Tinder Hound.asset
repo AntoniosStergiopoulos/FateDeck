@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Tinder Hound
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 40cf109286b645cdb57460a2acc6dde2
+    _value: ae3418dd85974fea9665846592d6d4cd
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 646019b8fb6381f4bb448c86b029d519, type: 2}

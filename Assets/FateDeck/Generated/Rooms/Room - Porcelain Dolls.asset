@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Porcelain Dolls
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 402103a4443447d7ae9ab66182cb64d9
+    _value: 15fd4ba712cc4a9397bb35a8b01c3e20
   Blurb: Two dolls. Each one shatters into your deck when it dies.
   MinStep: 3
   Encounter: {fileID: 11400000, guid: c5929e0e226788f4a9c10c13bba779a7, type: 2}

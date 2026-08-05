@@ -13,103 +13,103 @@ MonoBehaviour:
   m_Name: Void
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: ab3bcc29c834437bb872b396b966c404
+    _value: 5ddf49b59d78459aad56c201ceea90cb
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687397376295646
-  - rid: 3602687397376295647
-  - rid: 3602687397376295648
-  - rid: 3602687397376295649
-  - rid: 3602687397376295650
-  - rid: 3602687397376295651
-  - rid: 3602687397376295652
-  - rid: 3602687397376295653
-  - rid: 3602687397376295654
-  - rid: 3602687397376295655
-  - rid: 3602687397376295656
-  - rid: 3602687397376295657
+  - rid: 3602687399754204117
+  - rid: 3602687399754204118
+  - rid: 3602687399754204119
+  - rid: 3602687399754204120
+  - rid: 3602687399754204121
+  - rid: 3602687399754204122
+  - rid: 3602687399754204123
+  - rid: 3602687399754204124
+  - rid: 3602687399754204125
+  - rid: 3602687399754204126
+  - rid: 3602687399754204127
+  - rid: 3602687399754204128
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295646
+    - rid: 3602687399754204117
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687397376295658
-    - rid: 3602687397376295647
+        - rid: 3602687399754204129
+    - rid: 3602687399754204118
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687397376295659
-    - rid: 3602687397376295648
+        - rid: 3602687399754204130
+    - rid: 3602687399754204119
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687397376295660
-    - rid: 3602687397376295649
+        - rid: 3602687399754204131
+    - rid: 3602687399754204120
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687397376295661
-    - rid: 3602687397376295650
+        - rid: 3602687399754204132
+    - rid: 3602687399754204121
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687397376295662
-    - rid: 3602687397376295651
+        - rid: 3602687399754204133
+    - rid: 3602687399754204122
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687397376295652
+    - rid: 3602687399754204123
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687397376295653
+    - rid: 3602687399754204124
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 0
-    - rid: 3602687397376295654
+    - rid: 3602687399754204125
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687397376295655
+    - rid: 3602687399754204126
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.82, g: 0.82, b: 0.86, a: 1}
-    - rid: 3602687397376295656
+    - rid: 3602687399754204127
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: O
-    - rid: 3602687397376295657
+    - rid: 3602687399754204128
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: 'A page the House left blank. The action resolves at Force 0 with
           no effects - but the Void takes nothing: a voided action of YOURS refunds
           your Main Action (once per fight).'
-    - rid: 3602687397376295658
+    - rid: 3602687399754204129
       type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data: 
-    - rid: 3602687397376295659
+    - rid: 3602687399754204130
       type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data: 
-    - rid: 3602687397376295660
+    - rid: 3602687399754204131
       type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data: 
-    - rid: 3602687397376295661
+    - rid: 3602687399754204132
       type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data: 
-    - rid: 3602687397376295662
+    - rid: 3602687399754204133
       type: {class: NegateActionEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data: 

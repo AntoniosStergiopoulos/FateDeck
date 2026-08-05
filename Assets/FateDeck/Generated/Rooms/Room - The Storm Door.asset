@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Storm Door
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: eaa7b5e2c46642b884b1f1324cc6d7fc
+    _value: 3072175503aa45f7998c70891633b489
   Blurb: You smell rain indoors.
   MinStep: 0
   Event: {fileID: 11400000, guid: 69e13513274cdc94887b8c4d56640098, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Wax Cherubs
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 8d3cb8e5170d473cac3b2b31b5ea13cc
+    _value: 4d6bb0246d534cc7931304af89673cb3
   Blurb: Two wax cherubs. Each one burns your reshuffle clock.
   MinStep: 0
   Encounter: {fileID: 11400000, guid: bc93eb56cb02018479f73d54e07ab8df, type: 2}

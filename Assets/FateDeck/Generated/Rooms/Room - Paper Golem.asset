@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Paper Golem
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: e838ddf448d04f1098dd39c689bcdf90
+    _value: 4af6cea54cf04c108ea571a52de1c0cd
   Blurb: Ten thousand unpaid invoices, folded into a fist.
   MinStep: 5
   Encounter: {fileID: 11400000, guid: 27f3a0f9bb8da9e4581b53f56cb9711c, type: 2}

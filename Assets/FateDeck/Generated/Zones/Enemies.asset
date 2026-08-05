@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemies
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 694d92b5c78d486283c2ca01c3b2cd3f
+    _value: dda729d879e64e45a4ca5633190e28ec
   Description: 
   Scope: 0
   Visibility: 0

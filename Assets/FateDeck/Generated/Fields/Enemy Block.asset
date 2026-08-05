@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Enemy Block
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 685a9f9934ad41bd84ecbeb71996bc34
+    _value: d540862546a148069d4f8fdd519843a1
   Kind:
-    rid: 3602687397376295513
+    rid: 3602687399754203984
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295513
+    - rid: 3602687399754203984
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 1

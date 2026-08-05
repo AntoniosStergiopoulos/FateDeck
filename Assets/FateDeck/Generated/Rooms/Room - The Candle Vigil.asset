@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Candle Vigil
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 4fdb08b2f7654948a0f4ae8f7f41c1df
+    _value: 0d3f16f871b943a794bd61b944c7dde5
   Blurb: A hundred small flames breathe in unison.
   MinStep: 0
   Event: {fileID: 11400000, guid: 5836cc4db108bcf4495001d9109bfe36, type: 2}

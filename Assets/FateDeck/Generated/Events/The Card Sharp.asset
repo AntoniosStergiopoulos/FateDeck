@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Card Sharp
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 12435de1ee4d454cbe5836ffb3253589
+    _value: 57bc7b805060448ca39c79849ab69a05
   Intro: A gaunt figure fans a deck that looks suspiciously like yours. "Two cards,
     any suit, free of charge. I'll just slip in a little something of mine."
   Options:
@@ -21,8 +21,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203903
-    - rid: 3602687399754203904
+    - rid: 3602687400656503799
+    - rid: 3602687400656503800
     ResultText: Two Iron join your fate - and something colder slides in with them.
     FlipsFate: 0
     RitualOutcomes: []
@@ -32,8 +32,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203905
-    - rid: 3602687399754203906
+    - rid: 3602687400656503801
+    - rid: 3602687400656503802
     ResultText: Two Flame join your fate - and something colder slides in with them.
     FlipsFate: 0
     RitualOutcomes: []
@@ -43,8 +43,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203907
-    - rid: 3602687399754203908
+    - rid: 3602687400656503803
+    - rid: 3602687400656503804
     ResultText: Two Fortune join your fate - and something colder slides in with
       them.
     FlipsFate: 0
@@ -63,42 +63,42 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203903
+    - rid: 3602687400656503799
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687399754203904
+    - rid: 3602687400656503800
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 21d0bcfa3988711439f8a21d52b77b04, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687399754203905
+    - rid: 3602687400656503801
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 92a968c5968886e48b808ca6e25c493c, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687399754203906
+    - rid: 3602687400656503802
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 21d0bcfa3988711439f8a21d52b77b04, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687399754203907
+    - rid: 3602687400656503803
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 8f2a71056e296624f86d0b531118a8db, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687399754203908
+    - rid: 3602687400656503804
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 21d0bcfa3988711439f8a21d52b77b04, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Chandler Grubs
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: b511057b2f684fd9b210eb5361b082c5
+    _value: 5b33a1bf91ce43b1a0a3966fc758b072
   Blurb: Two grubs wind up in alternation. Guard the slams.
   MinStep: 2
   Encounter: {fileID: 11400000, guid: a47956d3e6d759040ad8c5a7e27f4790, type: 2}

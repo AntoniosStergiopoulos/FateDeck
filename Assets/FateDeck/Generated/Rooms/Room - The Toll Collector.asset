@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Toll Collector
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 3b1eb8db8c724e54bcabc5d7ff8ee293
+    _value: be28a888ee65425b91eb148eabb0ad08
   Blurb: The Toll Collector waits with an open ledger. Its tithe cannot be blocked.
     Decline the door and its relic is gone forever.
   MinStep: 0

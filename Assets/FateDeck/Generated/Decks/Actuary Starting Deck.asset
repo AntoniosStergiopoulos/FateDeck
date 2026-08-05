@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Actuary Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: f17d0db5247d41c18c5a37165d75b81d
+    _value: 54051077940d4dec84f8380983fc79f2
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}

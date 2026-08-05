@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Snuffed Wick
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 7c01b99b1bf24b87a785781fd01f9cf3
+    _value: a1f593ed8d5b40e09754e26880ab8a2b
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687399754203236
-  - rid: 3602687399754203237
-  - rid: 3602687399754203238
-  - rid: 3602687399754203239
+  - rid: 3602687400656503131
+  - rid: 3602687400656503132
+  - rid: 3602687400656503133
+  - rid: 3602687400656503134
   Variants: []
-  _creationDateTicks: 639214815469855394
+  _creationDateTicks: 639214849893942164
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203236
+    - rid: 3602687400656503131
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Remove all Burn and Weak on you.
-    - rid: 3602687399754203237
+    - rid: 3602687400656503132
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687399754203240
-        - rid: 3602687399754203241
-    - rid: 3602687399754203238
+        - rid: 3602687400656503135
+        - rid: 3602687400656503136
+    - rid: 3602687400656503133
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687399754203239
+    - rid: 3602687400656503134
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203240
+    - rid: 3602687400656503135
       type: {class: ClearPlayerStatusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Status: 0
-    - rid: 3602687399754203241
+    - rid: 3602687400656503136
       type: {class: ClearPlayerStatusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Status: 1

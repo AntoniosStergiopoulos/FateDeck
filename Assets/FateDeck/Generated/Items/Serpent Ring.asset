@@ -13,50 +13,50 @@ MonoBehaviour:
   m_Name: Serpent Ring
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 8e2b500d17b440e48bbd819aab28836e
+    _value: 9ed998bc906b4d1ebf8e6ba97c235929
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687399754203434
-  - rid: 3602687399754203435
-  - rid: 3602687399754203436
-  - rid: 3602687399754203437
+  - rid: 3602687400656503329
+  - rid: 3602687400656503330
+  - rid: 3602687400656503331
+  - rid: 3602687400656503332
   Variants: []
-  _creationDateTicks: 639214815490040788
+  _creationDateTicks: 639214849911241342
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203434
+    - rid: 3602687400656503329
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: From round 2 on, your target suffers Weak 1 at each of your turn starts.
-    - rid: 3602687399754203435
+    - rid: 3602687400656503330
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687399754203436
+    - rid: 3602687400656503331
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203438
-    - rid: 3602687399754203437
+        - rid: 3602687400656503333
+    - rid: 3602687400656503332
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203438
+    - rid: 3602687400656503333
       type: {class: OnPlayerTurnStartTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203439
+        - rid: 3602687400656503334
         SkipFirstRound: 1
-    - rid: 3602687399754203439
+    - rid: 3602687400656503334
       type: {class: ApplyStatusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Status: 1

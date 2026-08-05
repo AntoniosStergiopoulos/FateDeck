@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Adder and Tick
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 340e47131e21430ba77bd20f50b365ea
+    _value: 61aa7845754440eb9de862ce525ec594
   Blurb: Venom for your arm, fingers for your purse.
   MinStep: 4
   Encounter: {fileID: 11400000, guid: 0c3f394060e51714aae94ceaacefaa69, type: 2}

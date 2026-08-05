@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Tinder Imp
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 21b50cb8efb94a32a1a7a0275589583b
+    _value: dc072955600448bcb03ee6f879a42f69
   Schema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
   _values:
-  - rid: 3602687399754203484
-  - rid: 3602687399754203485
-  - rid: 3602687399754203486
-  - rid: 3602687399754203487
-  - rid: 3602687399754203488
-  - rid: 3602687399754203489
-  - rid: 3602687399754203490
-  - rid: 3602687399754203491
-  - rid: 3602687399754203492
-  - rid: 3602687399754203493
-  - rid: 3602687399754203494
-  - rid: 3602687399754203495
-  - rid: 3602687399754203496
-  - rid: 3602687399754203497
-  - rid: 3602687399754203498
+  - rid: 3602687400656503380
+  - rid: 3602687400656503381
+  - rid: 3602687400656503382
+  - rid: 3602687400656503383
+  - rid: 3602687400656503384
+  - rid: 3602687400656503385
+  - rid: 3602687400656503386
+  - rid: 3602687400656503387
+  - rid: 3602687400656503388
+  - rid: 3602687400656503389
+  - rid: 3602687400656503390
+  - rid: 3602687400656503391
+  - rid: 3602687400656503392
+  - rid: 3602687400656503393
+  - rid: 3602687400656503394
   Variants: []
-  _creationDateTicks: 639214815499579821
+  _creationDateTicks: 639214849920072623
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203484
+    - rid: 3602687400656503380
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
         Value: 3
-    - rid: 3602687399754203485
+    - rid: 3602687400656503381
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
         Value: 3
-    - rid: 3602687399754203486
+    - rid: 3602687400656503382
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
         Value: 3
-    - rid: 3602687399754203487
+    - rid: 3602687400656503383
       type: {class: EnemyPatternFieldValue, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
       data:
         Field: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
@@ -61,57 +61,57 @@ MonoBehaviour:
           Force: 2
           FlipsFate: 1
           Effects: []
-    - rid: 3602687399754203488
+    - rid: 3602687400656503384
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
         Value: 0
-    - rid: 3602687399754203489
+    - rid: 3602687400656503385
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
         Value: 0
-    - rid: 3602687399754203490
+    - rid: 3602687400656503386
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
         Value: 0
-    - rid: 3602687399754203491
+    - rid: 3602687400656503387
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
         Value: 0
-    - rid: 3602687399754203492
+    - rid: 3602687400656503388
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
         Value: 0
-    - rid: 3602687399754203493
+    - rid: 3602687400656503389
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
         Value: 0
-    - rid: 3602687399754203494
+    - rid: 3602687400656503390
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
         Value: 0
-    - rid: 3602687399754203495
+    - rid: 3602687400656503391
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
         Value: 1
-    - rid: 3602687399754203496
+    - rid: 3602687400656503392
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
         Value: 
-    - rid: 3602687399754203497
+    - rid: 3602687400656503393
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: The tutorial punching bag.
-    - rid: 3602687399754203498
+    - rid: 3602687400656503394
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}

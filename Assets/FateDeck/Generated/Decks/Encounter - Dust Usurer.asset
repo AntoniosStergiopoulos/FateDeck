@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Dust Usurer
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: b7b8346db9114273bad7dd15977418f6
+    _value: 8edda8777dd043b69957b1de72fa0fda
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 9d308d8e537da184dabdcdb31b12a2fa, type: 2}

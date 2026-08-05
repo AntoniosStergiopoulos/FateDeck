@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Force Bonus
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: b5742c4f3f8842cebc8c2c73155b9a43
+    _value: 9b2d8b219849433f9813d3ab57846ff6
   Kind:
-    rid: 3602687397376295512
+    rid: 3602687399754203983
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295512
+    - rid: 3602687399754203983
       type: {class: NumberFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 1

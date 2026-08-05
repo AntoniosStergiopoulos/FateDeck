@@ -13,50 +13,50 @@ MonoBehaviour:
   m_Name: Round Bell
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: ec0fb7dbd53045788c462dcee487ad43
+    _value: 2db761fe9ce24de8b1ee15461c496c83
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687399754203376
-  - rid: 3602687399754203377
-  - rid: 3602687399754203378
-  - rid: 3602687399754203379
+  - rid: 3602687400656503271
+  - rid: 3602687400656503272
+  - rid: 3602687400656503273
+  - rid: 3602687400656503274
   Variants: []
-  _creationDateTicks: 639214815484752623
+  _creationDateTicks: 639214849905902045
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203376
+    - rid: 3602687400656503271
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: From round 2 on, each of your turns starts with 1 Block.
-    - rid: 3602687399754203377
+    - rid: 3602687400656503272
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687399754203378
+    - rid: 3602687400656503273
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203380
-    - rid: 3602687399754203379
+        - rid: 3602687400656503275
+    - rid: 3602687400656503274
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203380
+    - rid: 3602687400656503275
       type: {class: OnPlayerTurnStartTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203381
+        - rid: 3602687400656503276
         SkipFirstRound: 1
-    - rid: 3602687399754203381
+    - rid: 3602687400656503276
       type: {class: GainBlockEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 1

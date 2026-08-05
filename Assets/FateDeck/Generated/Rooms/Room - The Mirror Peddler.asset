@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Mirror Peddler
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 59f03f371b7e4d42a809a8c49821c1e8
+    _value: 49980d6e969e4505b62a699dea490b2f
   Blurb: You catch your deck's reflection in passing glass.
   MinStep: 0
   Event: {fileID: 11400000, guid: efa482a6280c8924bb9d38f9b604cd1f, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Dice Priest
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: da54a66be54546a49c2845ca83d6ab55
+    _value: 2f799f2e25c848e6aa4af2034a758374
   Blurb: Dice rattle in a cup somewhere close.
   MinStep: 0
   Event: {fileID: 11400000, guid: 4a35aba85c928384fa71b3be0bd8a9a6, type: 2}

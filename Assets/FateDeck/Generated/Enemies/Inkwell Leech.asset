@@ -13,45 +13,45 @@ MonoBehaviour:
   m_Name: Inkwell Leech
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: efa9eb8979c94c938d1dd4f5c06b3dce
+    _value: 99e1f3546c144e5db9328916e5ea8571
   Schema: {fileID: 11400000, guid: caa76426c59eb8f4e9c819d254fe70d6, type: 2}
   _values:
-  - rid: 3602687399754203592
-  - rid: 3602687399754203593
-  - rid: 3602687399754203594
-  - rid: 3602687399754203595
-  - rid: 3602687399754203596
-  - rid: 3602687399754203597
-  - rid: 3602687399754203598
-  - rid: 3602687399754203599
-  - rid: 3602687399754203600
-  - rid: 3602687399754203601
-  - rid: 3602687399754203602
-  - rid: 3602687399754203603
-  - rid: 3602687399754203604
-  - rid: 3602687399754203605
-  - rid: 3602687399754203606
+  - rid: 3602687400656503488
+  - rid: 3602687400656503489
+  - rid: 3602687400656503490
+  - rid: 3602687400656503491
+  - rid: 3602687400656503492
+  - rid: 3602687400656503493
+  - rid: 3602687400656503494
+  - rid: 3602687400656503495
+  - rid: 3602687400656503496
+  - rid: 3602687400656503497
+  - rid: 3602687400656503498
+  - rid: 3602687400656503499
+  - rid: 3602687400656503500
+  - rid: 3602687400656503501
+  - rid: 3602687400656503502
   Variants: []
-  _creationDateTicks: 639214815503821564
+  _creationDateTicks: 639214849923622225
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203592
+    - rid: 3602687400656503488
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: fcae79b59f8658747b83602d04e8d5b8, type: 2}
         Value: 6
-    - rid: 3602687399754203593
+    - rid: 3602687400656503489
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 688caaccd080afc4dae9ed53378b8109, type: 2}
         Value: 6
-    - rid: 3602687399754203594
+    - rid: 3602687400656503490
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: c9041fe7e803af147bc128b6907d658f, type: 2}
         Value: 5
-    - rid: 3602687399754203595
+    - rid: 3602687400656503491
       type: {class: EnemyPatternFieldValue, ns: FateDeck.Runtime.Combat, asm: FateDeck.Runtime}
       data:
         Field: {fileID: 11400000, guid: 12320dabb149d954bb8b28b677fdbfb1, type: 2}
@@ -71,63 +71,63 @@ MonoBehaviour:
           Force: 0
           FlipsFate: 0
           Effects:
-          - rid: 3602687399754203607
-    - rid: 3602687399754203596
+          - rid: 3602687400656503503
+    - rid: 3602687400656503492
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 83ced14af356c7d488255861124fa969, type: 2}
         Value: 0
-    - rid: 3602687399754203597
+    - rid: 3602687400656503493
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: eb1fda9fce948254cb79a6cd1f5bcad3, type: 2}
         Value: 0
-    - rid: 3602687399754203598
+    - rid: 3602687400656503494
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 60148742435ff184d976e4ac938fe5fb, type: 2}
         Value: 0
-    - rid: 3602687399754203599
+    - rid: 3602687400656503495
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 033c9d9ef8ef805438e935612adaf45c, type: 2}
         Value: 0
-    - rid: 3602687399754203600
+    - rid: 3602687400656503496
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 01f79a15d200c1e4e88ceb5f9d8a2380, type: 2}
         Value: 0
-    - rid: 3602687399754203601
+    - rid: 3602687400656503497
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 940037f987b3c5444840207363765a8e, type: 2}
         Value: 0
-    - rid: 3602687399754203602
+    - rid: 3602687400656503498
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: a8e8302327fb1f346b88aaaa2b273c40, type: 2}
         Value: 0
-    - rid: 3602687399754203603
+    - rid: 3602687400656503499
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e33ae8469ef7634a90d435a7c914ee6, type: 2}
         Value: 1
-    - rid: 3602687399754203604
+    - rid: 3602687400656503500
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 3efd2d64903b6a748b6cc9d9d595c29f, type: 2}
         Value: 'Drain: heals itself 2 every third action.'
-    - rid: 3602687399754203605
+    - rid: 3602687400656503501
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: It drinks the ledger's red ink. And yours.
-    - rid: 3602687399754203606
+    - rid: 3602687400656503502
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers: []
-    - rid: 3602687399754203607
+    - rid: 3602687400656503503
       type: {class: EnemySelfEffect, ns: FateDeck.Runtime.Effects.Enemies, asm: FateDeck.Runtime}
       data:
         Change: 0

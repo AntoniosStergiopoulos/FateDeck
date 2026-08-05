@@ -13,87 +13,87 @@ MonoBehaviour:
   m_Name: Debt
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: 5e83660863544a1caaed6624993ddd83
+    _value: 4d93d4e9554844deaf25751b045f4f2a
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687397376295697
-  - rid: 3602687397376295698
-  - rid: 3602687397376295699
-  - rid: 3602687397376295700
-  - rid: 3602687397376295701
-  - rid: 3602687397376295702
-  - rid: 3602687397376295703
-  - rid: 3602687397376295704
-  - rid: 3602687397376295705
-  - rid: 3602687397376295706
-  - rid: 3602687397376295707
-  - rid: 3602687397376295708
+  - rid: 3602687400656502792
+  - rid: 3602687400656502793
+  - rid: 3602687400656502794
+  - rid: 3602687400656502795
+  - rid: 3602687400656502796
+  - rid: 3602687400656502797
+  - rid: 3602687400656502798
+  - rid: 3602687400656502799
+  - rid: 3602687400656502800
+  - rid: 3602687400656502801
+  - rid: 3602687400656502802
+  - rid: 3602687400656502803
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295697
+    - rid: 3602687400656502792
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687397376295709
-        - rid: 3602687397376295710
-    - rid: 3602687397376295698
+        - rid: 3602687400656502804
+        - rid: 3602687400656502805
+    - rid: 3602687400656502793
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687397376295711
-        - rid: 3602687397376295712
-    - rid: 3602687397376295699
+        - rid: 3602687400656502806
+        - rid: 3602687400656502807
+    - rid: 3602687400656502794
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687397376295713
-    - rid: 3602687397376295700
+        - rid: 3602687400656502808
+    - rid: 3602687400656502795
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687397376295714
-    - rid: 3602687397376295701
+        - rid: 3602687400656502809
+    - rid: 3602687400656502796
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687397376295715
-    - rid: 3602687397376295702
+        - rid: 3602687400656502810
+    - rid: 3602687400656502797
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 1
-    - rid: 3602687397376295703
+    - rid: 3602687400656502798
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 1
-    - rid: 3602687397376295704
+    - rid: 3602687400656502799
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 1
-    - rid: 3602687397376295705
+    - rid: 3602687400656502800
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 0
-    - rid: 3602687397376295706
+    - rid: 3602687400656502801
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.62, g: 0.16, b: 0.19, a: 1}
-    - rid: 3602687397376295707
+    - rid: 3602687400656502802
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: X
-    - rid: 3602687397376295708
+    - rid: 3602687400656502803
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
@@ -101,33 +101,33 @@ MonoBehaviour:
           to 0 and you mill 1; enemy blows land +2 heavier. Cannot be pocketed or
           stacked. Milled Debt burns off the books forever - and every Debt that
           surfaces hardens you: +1 Grit.'
-    - rid: 3602687397376295709
+    - rid: 3602687400656502804
       type: {class: SetActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Value: 0
-    - rid: 3602687397376295710
+    - rid: 3602687400656502805
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
         Reason: the Debt
-    - rid: 3602687397376295711
+    - rid: 3602687400656502806
       type: {class: SetActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Value: 0
-    - rid: 3602687397376295712
+    - rid: 3602687400656502807
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
         Reason: the Debt
-    - rid: 3602687397376295713
+    - rid: 3602687400656502808
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 2
-    - rid: 3602687397376295714
+    - rid: 3602687400656502809
       type: {class: DoomLootEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Mill: 2
-    - rid: 3602687397376295715
+    - rid: 3602687400656502810
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fate Card Schema
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardSchema
   _id:
-    _value: 2b62abea8870475b86fd87398b955007
+    _value: 981ae05646dd4107baf355767197dfd8
   Fields:
   - {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
   - {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

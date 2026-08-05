@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Whetstone Monk
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 27538d0b083f465c8a102907bf9be784
+    _value: 60b41a8868d840c7a215070f642d49ca
   Blurb: A grinding wheel sings one clean note.
   MinStep: 0
   Event: {fileID: 11400000, guid: 5450d4611e94bbb44a9317ce12dbb723, type: 2}

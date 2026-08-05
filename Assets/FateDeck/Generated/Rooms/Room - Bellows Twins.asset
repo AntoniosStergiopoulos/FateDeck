@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Bellows Twins
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: f263080e1abd4f96a931b306f9ffac1a
+    _value: 5aa229192cc64b9e9628160a2a33ca59
   Blurb: 'Two of them, off-beat: one puffs while the other blasts.'
   MinStep: 0
   Encounter: {fileID: 11400000, guid: 3b2a8ac4ef0d10641b6e44378d5fcaed, type: 2}

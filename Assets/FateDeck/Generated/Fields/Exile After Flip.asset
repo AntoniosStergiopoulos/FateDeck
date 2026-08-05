@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Exile After Flip
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 545807a004bf4957a8705eeb00455cef
+    _value: 5fd8b9839a6a422bbf22a7e070dce5c6
   Kind:
-    rid: 3602687397376295504
+    rid: 3602687399754203975
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295504
+    - rid: 3602687399754203975
       type: {class: BooleanFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

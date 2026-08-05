@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Cannot Stack
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 3a703dcbb3d04f23b7a5e1987844acf2
+    _value: 15aeda6187c344fdb5748b7ff8cbd964
   Kind:
-    rid: 3602687397376295502
+    rid: 3602687399754203973
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295502
+    - rid: 3602687399754203973
       type: {class: BooleanFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

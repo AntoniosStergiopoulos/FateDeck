@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Mini-Shop
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ShopRoomDefinition
   _id:
-    _value: 0a707035b1f6463881017fade36f1084
+    _value: e6d65de2fad646799ce253f707c22ea9
   Blurb: A folding table of contraband odds.
   MinStep: 0
   MiniShop: 1

@@ -13,41 +13,41 @@ MonoBehaviour:
   m_Name: Second Sleeve
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: eed6938ef8f1479da3a077ff62577b7a
+    _value: 7293b345351c463f815c891828be22a5
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687399754203268
-  - rid: 3602687399754203269
-  - rid: 3602687399754203270
-  - rid: 3602687399754203271
+  - rid: 3602687400656503163
+  - rid: 3602687400656503164
+  - rid: 3602687400656503165
+  - rid: 3602687400656503166
   Variants: []
-  _creationDateTicks: 639214815473551505
+  _creationDateTicks: 639214849896941459
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203268
+    - rid: 3602687400656503163
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Put any card from your discard pile on top of your deck (rig your
           own flip).
-    - rid: 3602687399754203269
+    - rid: 3602687400656503164
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687399754203272
-    - rid: 3602687399754203270
+        - rid: 3602687400656503167
+    - rid: 3602687400656503165
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687399754203271
+    - rid: 3602687400656503166
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203272
+    - rid: 3602687400656503167
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 2

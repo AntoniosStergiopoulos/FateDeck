@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Chandelier Wight
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: c5bde223f07643dd8de7b07d1cefd0af
+    _value: b8480734db104165a5276204bab1353a
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: d7a97aaea25e1b14ab707d516ea5fbbd, type: 2}

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Law - Your Defense
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 8a8a03cc84c248e89fc2dcda090dffe2
+    _value: 8790d5f16aa746eda4dfde8672041a78
   Kind:
-    rid: 3602687397376295497
+    rid: 3602687399754203968
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295497
+    - rid: 3602687399754203968
       type: {class: EffectListFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

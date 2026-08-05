@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Item Layout
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Layout.CardLayout
   _id:
-    _value: 51276915c61d43109ba359b220e6672e
+    _value: 7175cb994c174010804ae20d948e95dd
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   DesignSize: {x: 640, y: 900}
   BackgroundColor: {r: 0.1, g: 0.09, b: 0.11, a: 1}
   BackLayout: {fileID: 0}
   Elements:
-  - rid: 3602687399754203173
-  - rid: 3602687399754203174
+  - rid: 3602687400656503068
+  - rid: 3602687400656503069
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203173
+    - rid: 3602687400656503068
       type: {class: NameLayoutElement, ns: AStergio.OmniCard.Runtime.Cards.Layout, asm: AStergio.OmniCard.Runtime}
       data:
         Rect:
@@ -44,7 +44,7 @@ MonoBehaviour:
           RichText: 1
           Font: {fileID: 0}
         StyleAsset: {fileID: 0}
-    - rid: 3602687399754203174
+    - rid: 3602687400656503069
       type: {class: FieldLayoutElement, ns: AStergio.OmniCard.Runtime.Cards.Layout, asm: AStergio.OmniCard.Runtime}
       data:
         Rect:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Scale of Debts
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 1f1afe99a9f943d786fd31fd7aeaa104
+    _value: 191a0b7c5f4d473b9114961a7cdab29c
   Intro: A brass scale the size of a door. One pan holds a feather. The other waits
     for your worst card.
   Options:
@@ -21,8 +21,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203941
-    - rid: 3602687399754203942
+    - rid: 3602687400659124253
+    - rid: 3602687400659124254
     ResultText: The scale tips. Something red and heavy is carried away.
     FlipsFate: 0
     RitualOutcomes: []
@@ -40,12 +40,12 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203941
+    - rid: 3602687400659124253
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
         Reason: 
-    - rid: 3602687399754203942
+    - rid: 3602687400659124254
       type: {class: ExileForceFromDrawEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Description
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 3588e08429194815994b8b679e7cb619
+    _value: 8b4988b7380f48db8effb5b8b60bdeb1
   Kind:
-    rid: 3602687397376295495
+    rid: 3602687399754203966
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295495
+    - rid: 3602687399754203966
       type: {class: TextFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Inkwell Leech
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 0129dd317a8249c28fa887135d11900f
+    _value: 304587ef5d4b41d89873978890126ac6
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 9f952456a9c9b294981416111f459b9b, type: 2}

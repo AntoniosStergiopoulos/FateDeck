@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: Grease Trap
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: f2f4ac1320c84851b75182422b5634c8
+    _value: 8c94fe6dd1fb48f2a9465f4f4e9b495d
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687399754203364
-  - rid: 3602687399754203365
-  - rid: 3602687399754203366
-  - rid: 3602687399754203367
+  - rid: 3602687400656503259
+  - rid: 3602687400656503260
+  - rid: 3602687400656503261
+  - rid: 3602687400656503262
   Variants: []
-  _creationDateTicks: 639214815483532592
+  _creationDateTicks: 639214849904861198
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203364
+    - rid: 3602687400656503259
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Every reshuffle grants you 3 Block.
-    - rid: 3602687399754203365
+    - rid: 3602687400656503260
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687399754203366
+    - rid: 3602687400656503261
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203368
-    - rid: 3602687399754203367
+        - rid: 3602687400656503263
+    - rid: 3602687400656503262
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203368
+    - rid: 3602687400656503263
       type: {class: OnReshuffleTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203369
-    - rid: 3602687399754203369
+        - rid: 3602687400656503264
+    - rid: 3602687400656503264
       type: {class: GainBlockEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 3

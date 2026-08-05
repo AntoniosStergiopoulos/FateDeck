@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Ledger Page
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 6a8a334ae8d545fd867f322bdd49d404
+    _value: e892dfee3f1746c49c70a5485c334fa6
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687399754203231
-  - rid: 3602687399754203232
-  - rid: 3602687399754203233
-  - rid: 3602687399754203234
+  - rid: 3602687400656503126
+  - rid: 3602687400656503127
+  - rid: 3602687400656503128
+  - rid: 3602687400656503129
   Variants: []
-  _creationDateTicks: 639214815469267914
+  _creationDateTicks: 639214849893433280
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203231
+    - rid: 3602687400656503126
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Gain 8 gold.
-    - rid: 3602687399754203232
+    - rid: 3602687400656503127
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687399754203235
-    - rid: 3602687399754203233
+        - rid: 3602687400656503130
+    - rid: 3602687400656503128
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687399754203234
+    - rid: 3602687400656503129
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203235
+    - rid: 3602687400656503130
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 8

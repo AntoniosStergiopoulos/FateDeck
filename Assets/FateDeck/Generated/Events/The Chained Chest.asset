@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Chained Chest
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 010d90fb5189493abb6de67bf20ef9fb
+    _value: bbdc8b1e43134f4b91cb87554de23a91
   Intro: A chest wound in chains, each link stamped PROPERTY OF THE HOUSE. The lock
     is honest. The contents are not the House's to keep.
   Options:
@@ -21,8 +21,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 1
     Effects:
-    - rid: 3602687399754203944
-    - rid: 3602687399754203945
+    - rid: 3602687400659124256
+    - rid: 3602687400659124257
     ResultText: The chains applaud as they fall. 18g and a spare key inside.
     FlipsFate: 0
     RitualOutcomes: []
@@ -38,27 +38,27 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
       ResultText: Iron against iron - the lock gives! 12g.
       Effects:
-      - rid: 3602687399754203946
+      - rid: 3602687400659124258
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 8b2b673095bd7a24098dc01b9ebedceb, type: 2}
       ResultText: The chains snap like bread. 15g.
       Effects:
-      - rid: 3602687399754203947
+      - rid: 3602687400659124259
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: db6a6c29ae0e45948b59992cb5e7f969, type: 2}
       ResultText: The chains glow, soften, drip. 14g, warm.
       Effects:
-      - rid: 3602687399754203948
+      - rid: 3602687400659124260
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 95d40b2e4f1510641b796a4fc25b9c97, type: 2}
       ResultText: The Key force IS a key. 16g, smugly.
       Effects:
-      - rid: 3602687399754203949
+      - rid: 3602687400659124261
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
       ResultText: The chains bite back.
       Effects:
-      - rid: 3602687399754203950
+      - rid: 3602687400659124262
       ClosesEvent: 1
     - Force: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
       ResultText: The lock swallows its own keyhole.
@@ -78,31 +78,31 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203944
+    - rid: 3602687400659124256
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 18
-    - rid: 3602687399754203945
+    - rid: 3602687400659124257
       type: {class: GainKeyEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1
-    - rid: 3602687399754203946
+    - rid: 3602687400659124258
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 12
-    - rid: 3602687399754203947
+    - rid: 3602687400659124259
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 15
-    - rid: 3602687399754203948
+    - rid: 3602687400659124260
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 14
-    - rid: 3602687399754203949
+    - rid: 3602687400659124261
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 16
-    - rid: 3602687399754203950
+    - rid: 3602687400659124262
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2

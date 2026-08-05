@@ -38,3 +38,4 @@ MonoBehaviour:
   GritPerDebtFlip: 1
   GritSpendCost: 3
   GritMax: 6
+  VictoryMend: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Chest
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ChestRoomDefinition
   _id:
-    _value: c22073a85ae74048bfd7e9c3e3bd68db
+    _value: cd9887fbd5b04250b8e465ddbc4a3d91
   Blurb: A chest, unlatched. Every chest is a knowing bet against your own composition.
   MinStep: 0
   Locked: 0

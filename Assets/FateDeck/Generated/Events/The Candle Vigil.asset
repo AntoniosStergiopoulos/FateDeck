@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Candle Vigil
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 45f87e1553e74bb5a6017c2765b5e289
+    _value: 736e15ff123e490f901955d21b80dd14
   Intro: A hundred candles around a single unlit wick. Light it, and the flame reads
     whatever fate you feed it.
   Options:
@@ -27,29 +27,29 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: db6a6c29ae0e45948b59992cb5e7f969, type: 2}
       ResultText: 'The flame ROARS approval: +5g and a Flame joins you.'
       Effects:
-      - rid: 3602687399754203933
-      - rid: 3602687399754203934
+      - rid: 3602687400659124245
+      - rid: 3602687400659124246
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: b360d1657d70238488946864f0b64a4c, type: 2}
       ResultText: 'The flame HOWLS: +8g and a Flame joins you.'
       Effects:
-      - rid: 3602687399754203935
-      - rid: 3602687399754203936
+      - rid: 3602687400659124247
+      - rid: 3602687400659124248
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
       ResultText: The wax sets iron-hard. An Iron joins your deck.
       Effects:
-      - rid: 3602687399754203937
+      - rid: 3602687400659124249
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: aea6d0b066f86d34bae7b403de17c40b, type: 2}
       ResultText: 'Molten gold beads on the wick: +10g.'
       Effects:
-      - rid: 3602687399754203938
+      - rid: 3602687400659124250
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 96b672feb50046845ab3541624c206b3, type: 2}
       ResultText: 'The flame doubles, pays double: +6g.'
       Effects:
-      - rid: 3602687399754203939
+      - rid: 3602687400659124251
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
       ResultText: The wick refuses. The vigil is over.
@@ -58,7 +58,7 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
       ResultText: Every candle dies at once.
       Effects:
-      - rid: 3602687399754203940
+      - rid: 3602687400659124252
       ClosesEvent: 1
     Repeatable: 0
     ClosesEvent: 1
@@ -74,44 +74,44 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203933
+    - rid: 3602687400659124245
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687399754203934
+    - rid: 3602687400659124246
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 92a968c5968886e48b808ca6e25c493c, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687399754203935
+    - rid: 3602687400659124247
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 8
-    - rid: 3602687399754203936
+    - rid: 3602687400659124248
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 92a968c5968886e48b808ca6e25c493c, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687399754203937
+    - rid: 3602687400659124249
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687399754203938
+    - rid: 3602687400659124250
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 10
-    - rid: 3602687399754203939
+    - rid: 3602687400659124251
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 6
-    - rid: 3602687399754203940
+    - rid: 3602687400659124252
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2

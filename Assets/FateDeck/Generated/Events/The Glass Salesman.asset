@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Glass Salesman
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: cebeba2dab2d4fa9aaba7ac0f6d45ec0
+    _value: 1311a9aa418e477f9f9f278c641eecbe
   Intro: A coat of a thousand shards. "Glass, friend. +4 Force, once - then it shatters
     beautifully. Nothing this bright is meant to last."
   Options:
@@ -21,7 +21,7 @@ MonoBehaviour:
     GoldCost: 12
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203911
+    - rid: 3602687400656503807
     ResultText: Two bright shards slide into your fate.
     FlipsFate: 0
     RitualOutcomes: []
@@ -31,8 +31,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203912
-    - rid: 3602687399754203913
+    - rid: 3602687400659124224
+    - rid: 3602687400659124225
     ResultText: One shard, one splinter of something colder.
     FlipsFate: 0
     RitualOutcomes: []
@@ -50,21 +50,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203911
+    - rid: 3602687400656503807
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 2fa61bcb0e8d3654ba2c53781f1048b1, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 2
-    - rid: 3602687399754203912
+    - rid: 3602687400659124224
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 2fa61bcb0e8d3654ba2c53781f1048b1, type: 2}
         Zone: 0
         RandomPosition: 1
         Count: 1
-    - rid: 3602687399754203913
+    - rid: 3602687400659124225
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 21d0bcfa3988711439f8a21d52b77b04, type: 2}

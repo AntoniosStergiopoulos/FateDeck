@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 15f89c7effcd4a35a23eb5dc533d0191
+    _value: 39c31e58fefe4ba1aabfd89fd9c321cd
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687399754203151
-  - rid: 3602687399754203152
+  - rid: 3602687400656503046
+  - rid: 3602687400656503047
   Variants: []
-  _creationDateTicks: 639214815448369288
+  _creationDateTicks: 639214849876891501
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203151
+    - rid: 3602687400656503046
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: d291a432e73b53e44872c2856ea81e91, type: 2}
-    - rid: 3602687399754203152
+    - rid: 3602687400656503047
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

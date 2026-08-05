@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Chandelier Wight
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 33d3576539754dfbac4cc60fde23993f
+    _value: 94e3b8defb014ea7a4f479d18bda71b0
   Blurb: A hundred candles with a grudge. Bring something for the Burn.
   MinStep: 4
   Encounter: {fileID: 11400000, guid: 72461d6feaa850240a2e0f15bb099e6f, type: 2}

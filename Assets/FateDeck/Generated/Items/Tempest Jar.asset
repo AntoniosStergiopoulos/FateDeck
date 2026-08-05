@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Tempest Jar
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 8a816acffeec4e658b4997a90fd920eb
+    _value: 3a23e10831ef4704af651c7b6b9c7280
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687399754203283
-  - rid: 3602687399754203284
-  - rid: 3602687399754203285
-  - rid: 3602687399754203286
+  - rid: 3602687400656503178
+  - rid: 3602687400656503179
+  - rid: 3602687400656503180
+  - rid: 3602687400656503181
   Variants: []
-  _creationDateTicks: 639214815475411293
+  _creationDateTicks: 639214849898350835
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203283
+    - rid: 3602687400656503178
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Deal 2 damage to ALL enemies. Costs your Main Action.
-    - rid: 3602687399754203284
+    - rid: 3602687400656503179
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687399754203287
-    - rid: 3602687399754203285
+        - rid: 3602687400656503182
+    - rid: 3602687400656503180
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 1
-    - rid: 3602687399754203286
+    - rid: 3602687400656503181
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203287
+    - rid: 3602687400656503182
       type: {class: DealDamageEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 2

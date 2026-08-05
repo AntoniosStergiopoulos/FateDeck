@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Underwriter
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 76e3b484ca8044daa8fddcc605625824
+    _value: 5bc3ba433efd4cd1870bb9ecdb0a62b8
   Blurb: The Underwriter re-prices your reshuffle clock itself. Decline the door
     and its relic is gone forever.
   MinStep: 0

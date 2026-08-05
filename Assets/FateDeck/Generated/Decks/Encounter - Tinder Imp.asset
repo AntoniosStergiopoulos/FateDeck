@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Tinder Imp
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: b1de112150694007922036472ae9823d
+    _value: f0f0106583a04dfc9e16f472280c82fc
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: f681265c804dd3e48857e6249d37abb4, type: 2}

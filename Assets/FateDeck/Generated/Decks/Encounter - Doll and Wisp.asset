@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Doll and Wisp
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 1a1d02e653874495924aba8d74e73377
+    _value: de5b6bce61cb4bb9b5674f1af0831c91
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 8f9866e470bb02e45af070d53c701b14, type: 2}

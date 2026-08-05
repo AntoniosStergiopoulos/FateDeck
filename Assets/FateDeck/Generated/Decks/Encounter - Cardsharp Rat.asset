@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Cardsharp Rat
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: b1d2ab067df04c8cbb5b02723cd875e7
+    _value: 1f959b597b7b43599186c7427ac38e2c
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 67b904470e3c88440845a9a707080413, type: 2}

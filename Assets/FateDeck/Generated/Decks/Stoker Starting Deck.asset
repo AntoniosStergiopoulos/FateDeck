@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stoker Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 77c69f195ace49c5aa0e134a440cdc0b
+    _value: fff22d8f9d384173b95647c3c032f32d
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}

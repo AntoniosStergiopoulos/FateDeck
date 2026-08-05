@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Debt Auction
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 12dc6b196e78421099bc98292bddeb49
+    _value: 181ba34deafe447bbba42fe8eb39c825
   Intro: 'A lectern, a gavel, a crowd of empty coats. "Lot 44: two certificates of
     DOOM. The House will PAY the taker fifteen gold. Do I hear a fool?"'
   Options:
@@ -21,8 +21,8 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203925
-    - rid: 3602687399754203926
+    - rid: 3602687400659124237
+    - rid: 3602687400659124238
     ResultText: The coats applaud silently. The gold is real. So is the Debt.
     FlipsFate: 0
     RitualOutcomes: []
@@ -40,11 +40,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203925
+    - rid: 3602687400659124237
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 15
-    - rid: 3602687399754203926
+    - rid: 3602687400659124238
       type: {class: AddFateCardEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Card: {fileID: 11400000, guid: 21d0bcfa3988711439f8a21d52b77b04, type: 2}

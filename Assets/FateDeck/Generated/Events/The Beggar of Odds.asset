@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Beggar of Odds
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: a31fdf4ab1234b27aae6d83614c97ef0
+    _value: b1aa2b676a81467db26bb6dfd65fdd96
   Intro: A beggar sits cross-legged on a pile of losing tickets. "Ten gold," he says,
     "and I eat one of your Debts. Market rate. No tricks."
   Options:
@@ -21,7 +21,7 @@ MonoBehaviour:
     GoldCost: 10
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203883
+    - rid: 3602687400656503779
     ResultText: He swallows the Debt whole. It does not come back.
     FlipsFate: 0
     RitualOutcomes: []
@@ -39,7 +39,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203883
+    - rid: 3602687400656503779
       type: {class: ExileForceFromDrawEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Dice Priest
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: 3abef20898e04c638d99faccb77787d7
+    _value: 24e79dbdc2294446bd6d5af3c02f69a3
   Intro: A priest of the Odds shakes a cup of dice carved from reshuffled decks.
     "One free blessing," she says, "denomination decided by your own fate."
   Options:
@@ -27,44 +27,44 @@ MonoBehaviour:
     - Force: {fileID: 11400000, guid: aea6d0b066f86d34bae7b403de17c40b, type: 2}
       ResultText: '"The Lady smiles!" Two Draw-2 charges.'
       Effects:
-      - rid: 3602687399754203951
+      - rid: 3602687400659124263
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 80033507d61aa704e91e9f94494b1b32, type: 2}
       ResultText: '"The Lady BEAMS!" Two Draw-2 charges and 5g.'
       Effects:
-      - rid: 3602687399754203952
-      - rid: 3602687399754203953
+      - rid: 3602687400659124264
+      - rid: 3602687400659124265
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 22c8642c4e977a64f8ab6ce6ea1c2373, type: 2}
       ResultText: '"Strength, then." +3 Force to your next action.'
       Effects:
-      - rid: 3602687399754203954
+      - rid: 3602687400659124266
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 8b2b673095bd7a24098dc01b9ebedceb, type: 2}
       ResultText: '"STRENGTH." +4 Force to your next action.'
       Effects:
-      - rid: 3602687399754203955
+      - rid: 3602687400659124267
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 96b672feb50046845ab3541624c206b3, type: 2}
       ResultText: '"Twice-blessed." One Draw-2 charge and Scry 2.'
       Effects:
-      - rid: 3602687399754203956
-      - rid: 3602687399754203957
+      - rid: 3602687400659124268
+      - rid: 3602687400659124269
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 76fff45ed69ab2a418ef76713ed4b83a, type: 2}
       ResultText: '"Sight, then." Scry 3, reorder.'
       Effects:
-      - rid: 3602687399754203958
+      - rid: 3602687400659124270
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 7c2e376943398b5458653cbc41678e04, type: 2}
       ResultText: '"Mending, then." Heal 2 wounds.'
       Effects:
-      - rid: 3602687399754203959
+      - rid: 3602687400659124271
       ClosesEvent: 0
     - Force: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
       ResultText: The dice come up skulls. All of them.
       Effects:
-      - rid: 3602687399754203960
+      - rid: 3602687400659124272
       ClosesEvent: 1
     - Force: {fileID: 11400000, guid: b125add7e470ac947b01aa947da886cf, type: 2}
       ResultText: The cup is empty. It was always empty.
@@ -84,45 +84,45 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203951
+    - rid: 3602687400659124263
       type: {class: DoubleDrawNextEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Charges: 2
-    - rid: 3602687399754203952
+    - rid: 3602687400659124264
       type: {class: DoubleDrawNextEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Charges: 2
-    - rid: 3602687399754203953
+    - rid: 3602687400659124265
       type: {class: GainGoldEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Amount: 5
-    - rid: 3602687399754203954
+    - rid: 3602687400659124266
       type: {class: NextActionBonusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 3
-    - rid: 3602687399754203955
+    - rid: 3602687400659124267
       type: {class: NextActionBonusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 4
-    - rid: 3602687399754203956
+    - rid: 3602687400659124268
       type: {class: DoubleDrawNextEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Charges: 1
-    - rid: 3602687399754203957
+    - rid: 3602687400659124269
       type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2
         AllowReorder: 1
-    - rid: 3602687399754203958
+    - rid: 3602687400659124270
       type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 3
         AllowReorder: 1
-    - rid: 3602687399754203959
+    - rid: 3602687400659124271
       type: {class: HealWoundsEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2
-    - rid: 3602687399754203960
+    - rid: 3602687400659124272
       type: {class: MillPlayerEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Moth Broker
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 84630f8a140744cd859ac4819149046d
+    _value: b92fa09d3dc546a08cf1ed3efea79033
   Blurb: A broker and its imp. The dust makes you swing soft.
   MinStep: 3
   Encounter: {fileID: 11400000, guid: a5abd9150004ff44a9914313bb0618aa, type: 2}

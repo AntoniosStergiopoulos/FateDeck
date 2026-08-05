@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sexton Starting Deck
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: 99473b0362c249a497360a8b7f9a8746
+    _value: 598fdc2219cd4e4ab2ce67d13bfbc60a
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: 13c40ab0fc1127e4db94428266c31da3, type: 2}

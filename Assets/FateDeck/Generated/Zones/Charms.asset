@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Charms
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 6abe24fb5fe0451ca281d769e9245abb
+    _value: 4135f2a9423246418ce6a755b16ef7d2
   Description: 
   Scope: 0
   Visibility: 0

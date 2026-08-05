@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pocket
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: f588887d724e404b944cf939907cbad6
+    _value: baf5cf2747344a89bba096df03ecec29
   Description: 
   Scope: 0
   Visibility: 0

@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Debt
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 09c090c74d15401187e769f70658dd9f
+    _value: b556d0a694c44d489cbad4fc4d2c39cf
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687399754203141
-  - rid: 3602687399754203142
+  - rid: 3602687400656503036
+  - rid: 3602687400656503037
   Variants: []
-  _creationDateTicks: 639214815444812100
+  _creationDateTicks: 639214849874469489
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203141
+    - rid: 3602687400656503036
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: 484174a52f2163a458711e3300ded8dd, type: 2}
-    - rid: 3602687399754203142
+    - rid: 3602687400656503037
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

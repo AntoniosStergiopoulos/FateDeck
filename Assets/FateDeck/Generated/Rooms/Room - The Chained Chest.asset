@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - The Chained Chest
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventRoomDefinition
   _id:
-    _value: 314e7dab8dfc4e39a724d3785b7efb9a
+    _value: 74bb5fea1cda482bb50399484e337efd
   Blurb: Chains rattle around something generous.
   MinStep: 0
   Event: {fileID: 11400000, guid: 9e43767901a4c624eae2968929fb7c66, type: 2}

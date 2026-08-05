@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Cannot Pocket
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Fields.Core.CardFieldDefinition
   _id:
-    _value: 0ef4aaa9274a4a5a9ecdae48f0932b4c
+    _value: f425bd672da7453094c9d3f248b18118
   Kind:
-    rid: 3602687397376295501
+    rid: 3602687399754203972
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295501
+    - rid: 3602687399754203972
       type: {class: BooleanFieldKind, ns: AStergio.OmniCard.Runtime.Cards.Fields.Kinds, asm: AStergio.OmniCard.Runtime}
       data:
         MutableAtRuntime: 0

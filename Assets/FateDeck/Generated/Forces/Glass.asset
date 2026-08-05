@@ -13,107 +13,107 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.MetaData.MetadataEntry
   _id:
-    _value: a997510f1c454102889cf349e12a02f2
+    _value: 317fbbb0c1674441868b8e4fb05500c7
   Kind: {fileID: 11400000, guid: e38340b8db4476f40816341f40f73f1b, type: 2}
   _values:
-  - rid: 3602687397376295794
-  - rid: 3602687397376295795
-  - rid: 3602687397376295796
-  - rid: 3602687397376295797
-  - rid: 3602687397376295798
-  - rid: 3602687397376295799
-  - rid: 3602687397376295800
-  - rid: 3602687397376295801
-  - rid: 3602687397376295802
-  - rid: 3602687397376295803
-  - rid: 3602687397376295804
-  - rid: 3602687397376295805
+  - rid: 3602687400656502889
+  - rid: 3602687400656502890
+  - rid: 3602687400656502891
+  - rid: 3602687400656502892
+  - rid: 3602687400656502893
+  - rid: 3602687400656502894
+  - rid: 3602687400656502895
+  - rid: 3602687400656502896
+  - rid: 3602687400656502897
+  - rid: 3602687400656502898
+  - rid: 3602687400656502899
+  - rid: 3602687400656502900
   references:
     version: 2
     RefIds:
-    - rid: 3602687397376295794
+    - rid: 3602687400656502889
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb3bc7b02af8ec049a68bd5ea92278cd, type: 2}
         Effects:
-        - rid: 3602687397376295806
-    - rid: 3602687397376295795
+        - rid: 3602687400656502901
+    - rid: 3602687400656502890
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 39df7d5856c9e724e873821750e0f35b, type: 2}
         Effects:
-        - rid: 3602687397376295807
-    - rid: 3602687397376295796
+        - rid: 3602687400656502902
+    - rid: 3602687400656502891
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 523a8e8e9da50fe4ca3cd88ec2b44c15, type: 2}
         Effects:
-        - rid: 3602687397376295808
-    - rid: 3602687397376295797
+        - rid: 3602687400656502903
+    - rid: 3602687400656502892
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ff296e7bd89b4204a83b331bfe6ad7e8, type: 2}
         Effects:
-        - rid: 3602687397376295809
-    - rid: 3602687397376295798
+        - rid: 3602687400656502904
+    - rid: 3602687400656502893
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 67b61db51b51bb2409a5861c736032c3, type: 2}
         Effects:
-        - rid: 3602687397376295810
-    - rid: 3602687397376295799
+        - rid: 3602687400656502905
+    - rid: 3602687400656502894
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 20163c7c2500c4041aaeb6cfa9749910, type: 2}
         Value: 0
-    - rid: 3602687397376295800
+    - rid: 3602687400656502895
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 822b8da0a91edf4439fd5ae5322e7aaa, type: 2}
         Value: 0
-    - rid: 3602687397376295801
+    - rid: 3602687400656502896
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9112ad12e2904a844b87270d4bf9da34, type: 2}
         Value: 1
-    - rid: 3602687397376295802
+    - rid: 3602687400656502897
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b1803ec9601942a4390f6267c70728db, type: 2}
         Value: 1
-    - rid: 3602687397376295803
+    - rid: 3602687400656502898
       type: {class: ColorFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: e28ec6199f19fcf42b2936b05c4e9361, type: 2}
         Value: {r: 0.62, g: 0.9, b: 0.92, a: 1}
-    - rid: 3602687397376295804
+    - rid: 3602687400656502899
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: b7b11aec2141a1242936eb009b565d60, type: 2}
         Value: G
-    - rid: 3602687397376295805
+    - rid: 3602687400656502900
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: 'One flash of brilliance: +4 Force on your actions, -3 on enemy actions,
           +8g loot - then it shatters (exiled after any flip, and when milled).'
-    - rid: 3602687397376295806
+    - rid: 3602687400656502901
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 4
-    - rid: 3602687397376295807
+    - rid: 3602687400656502902
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 4
-    - rid: 3602687397376295808
+    - rid: 3602687400656502903
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: -3
-    - rid: 3602687397376295809
+    - rid: 3602687400656502904
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 8
-    - rid: 3602687397376295810
+    - rid: 3602687400656502905
       type: {class: ModifyActionForceEffect, ns: FateDeck.Runtime.Effects.Laws, asm: FateDeck.Runtime}
       data:
         Delta: 3

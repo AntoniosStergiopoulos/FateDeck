@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter - Chandler Grubs
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Decks.DeckDefinition
   _id:
-    _value: e177de32fb28406392c95c0560bba138
+    _value: 708a3bf00bf9423f8795e733714d4438
   RuleSet: {fileID: 0}
   Cards:
   - Card: {fileID: 11400000, guid: c38258b2d76bfcd45b7116c401621487, type: 2}

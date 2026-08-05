@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Whetstone Monk
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.EventDefinition
   _id:
-    _value: d5c41f93147b4985b3d07adad572a72e
+    _value: 00a6d8f31262466db2fa0ed4f3ca75f8
   Intro: A monk kneels over a whetstone the size of a millwheel, sharpening nothing.
     "Bring me a law," he says, "and I will give it an edge."
   Options:
@@ -21,7 +21,7 @@ MonoBehaviour:
     GoldCost: 0
     KeyCost: 0
     Effects:
-    - rid: 3602687399754203943
+    - rid: 3602687400659124255
     ResultText: Sparks the color of your fate. The card comes back keener.
     FlipsFate: 0
     RitualOutcomes: []
@@ -39,7 +39,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203943
+    - rid: 3602687400659124255
       type: {class: ZoneChoiceEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Kind: 3

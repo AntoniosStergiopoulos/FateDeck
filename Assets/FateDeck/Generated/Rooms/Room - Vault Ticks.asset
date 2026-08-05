@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Vault Ticks
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 8a403a640553486d8dc72c3db33b81a1
+    _value: 8e5324deaced4860b7d52237829c458b
   Blurb: They want your purse, not your deck. Kill them to claw it all back.
   MinStep: 0
   Encounter: {fileID: 11400000, guid: 74003f7983895f94385cf1b985172472, type: 2}

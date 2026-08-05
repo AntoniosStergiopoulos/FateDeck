@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Chalk Stub
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 87030b80badb4caabac7271e2836d63d
+    _value: d7b721e31222481caaa4e2287b97026b
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687399754203206
-  - rid: 3602687399754203207
-  - rid: 3602687399754203208
-  - rid: 3602687399754203209
+  - rid: 3602687400656503101
+  - rid: 3602687400656503102
+  - rid: 3602687400656503103
+  - rid: 3602687400656503104
   Variants: []
-  _creationDateTicks: 639214815466226950
+  _creationDateTicks: 639214849890950718
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203206
+    - rid: 3602687400656503101
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Scry 2 and reorder.
-    - rid: 3602687399754203207
+    - rid: 3602687400656503102
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687399754203210
-    - rid: 3602687399754203208
+        - rid: 3602687400656503105
+    - rid: 3602687400656503103
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687399754203209
+    - rid: 3602687400656503104
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203210
+    - rid: 3602687400656503105
       type: {class: ScryEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Count: 2

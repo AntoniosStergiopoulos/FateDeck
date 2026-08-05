@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Escrow
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Game.Zones.ZoneDefinition
   _id:
-    _value: 22cae949b20b4f0cb753eff6d7ef11e7
+    _value: 74333c9013a64a139a562ecbb7161825
   Description: 
   Scope: 0
   Visibility: 0

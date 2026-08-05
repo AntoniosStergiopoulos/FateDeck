@@ -13,40 +13,40 @@ MonoBehaviour:
   m_Name: Moth Powder
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 471c25eb0029452a95b598c29172f35e
+    _value: 1f850b116f42417bb88d9c3c786a09ff
   Schema: {fileID: 11400000, guid: 30c23aaab17ec0d4783e6bd0b3c9b19b, type: 2}
   _values:
-  - rid: 3602687399754203278
-  - rid: 3602687399754203279
-  - rid: 3602687399754203280
-  - rid: 3602687399754203281
+  - rid: 3602687400656503173
+  - rid: 3602687400656503174
+  - rid: 3602687400656503175
+  - rid: 3602687400656503176
   Variants: []
-  _creationDateTicks: 639214815474777006
+  _creationDateTicks: 639214849897872623
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203278
+    - rid: 3602687400656503173
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: Every enemy suffers Weak 2.
-    - rid: 3602687399754203279
+    - rid: 3602687400656503174
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects:
-        - rid: 3602687399754203282
-    - rid: 3602687399754203280
+        - rid: 3602687400656503177
+    - rid: 3602687400656503175
       type: {class: BooleanFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 82a413becd9c64447a325ac8ed3e3cf4, type: 2}
         Value: 0
-    - rid: 3602687399754203281
+    - rid: 3602687400656503176
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203282
+    - rid: 3602687400656503177
       type: {class: ApplyStatusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Status: 1

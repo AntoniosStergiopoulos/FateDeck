@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Shrine of Ash
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.ShrineRoomDefinition
   _id:
-    _value: 8703c9c5daa54a44a4264feb04df391f
+    _value: 6c5dd162255d40039ad366f25bcddda7
   Blurb: Exile one card from your fate, free. Debt clings - it costs gold to burn.
   MinStep: 0
   Kind: 0

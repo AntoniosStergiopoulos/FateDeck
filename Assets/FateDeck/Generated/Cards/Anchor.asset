@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Anchor
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: 940818f52b774c5694133aff210fcdcf
+    _value: 4e669698ce204729907f3f269d4fb992
   Schema: {fileID: 11400000, guid: 9e4e589910d50054c819c56290620c41, type: 2}
   _values:
-  - rid: 3602687399754203159
-  - rid: 3602687399754203160
+  - rid: 3602687400656503054
+  - rid: 3602687400656503055
   Variants: []
-  _creationDateTicks: 639214815450581391
+  _creationDateTicks: 639214849878873306
   references:
     version: 2
     RefIds:
-    - rid: 3602687399754203159
+    - rid: 3602687400656503054
       type: {class: ReferenceFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: ceaeb2f06a056ba4fb5c2b4b839a49a3, type: 2}
         Value: {fileID: 11400000, guid: cd1a6fb9add101043bdb9f233683592f, type: 2}
-    - rid: 3602687399754203160
+    - rid: 3602687400656503055
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}

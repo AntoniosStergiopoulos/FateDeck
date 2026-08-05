@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room - Coil Adder
   m_EditorClassIdentifier: FateDeck.Runtime::FateDeck.Runtime.Run.FightRoomDefinition
   _id:
-    _value: 3cbd6a1b269b4f5ebb44e52135470cd1
+    _value: d792a9dc0f2d48f69f4e80f0e9cd3c3b
   Blurb: Something soft-scaled softens its meals first.
   MinStep: 0
   Encounter: {fileID: 11400000, guid: 6fd48b47e36f87b4495d1181002888d9, type: 2}

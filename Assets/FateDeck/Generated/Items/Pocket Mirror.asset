@@ -13,50 +13,50 @@ MonoBehaviour:
   m_Name: Pocket Mirror
   m_EditorClassIdentifier: AStergio.OmniCard.Runtime::AStergio.OmniCard.Runtime.Cards.Data.CardDefinition
   _id:
-    _value: f50a3391416f48839e0efb6445ba490b
+    _value: d84f0c378cf545cb8b7860a1b6bc7098
   Schema: {fileID: 11400000, guid: 81905b552ba08eb41a851db124911410, type: 2}
   _values:
-  - rid: 3602687399754203370
-  - rid: 3602687399754203371
-  - rid: 3602687399754203372
-  - rid: 3602687399754203373
+  - rid: 3602687400656503265
+  - rid: 3602687400656503266
+  - rid: 3602687400656503267
+  - rid: 3602687400656503268
   Variants: []
-  _creationDateTicks: 639214815484142272
+  _creationDateTicks: 639214849905361150
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3602687399754203370
+    - rid: 3602687400656503265
       type: {class: TextFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: bb2ae876f39ca7b4ba6bbea3221ce629, type: 2}
         Value: After you play a card from the Pocket, +2 Force to your next action.
-    - rid: 3602687399754203371
+    - rid: 3602687400656503266
       type: {class: EffectListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 9a454a2f24385c747958cb3652f5007f, type: 2}
         Effects: []
-    - rid: 3602687399754203372
+    - rid: 3602687400656503267
       type: {class: TriggerListFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 02b4b13469e4be74e9607480b8f16953, type: 2}
         Triggers:
-        - rid: 3602687399754203374
-    - rid: 3602687399754203373
+        - rid: 3602687400656503269
+    - rid: 3602687400656503268
       type: {class: NumberFieldValue, ns: AStergio.OmniCard.Runtime.Cards.Fields.Values, asm: AStergio.OmniCard.Runtime}
       data:
         Field: {fileID: 11400000, guid: 6e3deef33063fb544a738c450404bd97, type: 2}
         Value: 0
-    - rid: 3602687399754203374
+    - rid: 3602687400656503269
       type: {class: OnPocketPlayTrigger, ns: FateDeck.Runtime.Triggers, asm: FateDeck.Runtime}
       data:
         Condition:
           rid: -2
         Effects:
-        - rid: 3602687399754203375
+        - rid: 3602687400656503270
         EnemyActionsOnly: 0
-    - rid: 3602687399754203375
+    - rid: 3602687400656503270
       type: {class: NextActionBonusEffect, ns: FateDeck.Runtime.Effects.Gameplay, asm: FateDeck.Runtime}
       data:
         Delta: 2
